@@ -1,0 +1,55 @@
+{
+  "name": "react-webcomponents-example-project",
+  "version": "0.1.0",
+  "private": true,
+  "license": "",
+  "dependencies": {
+    "@adobe/aem-core-components-react-base": "file:../../react-base-components",
+    "@adobe/react-webcomponent": "^0.1.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1",
+    "react-router-dom": "^5.2.0"
+  },
+  "devDependencies": {
+    "aempack": "^1.1.9",
+    "del-cli": "^3.0.0",
+    "move-cli": "^1.2.1",
+    "cross-env": "^7.0.2",
+    "fs-extra": "^9.0.0",
+    "mini-css-extract-plugin": "latest",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "@types/jest": "^24.9.1",
+    "@types/node": "^12.12.31",
+    "@types/react": "^16.9.25",
+    "@types/react-dom": "^16.9.5",
+    "typescript": "^3.7.5",
+    "del": "^5.1.0"
+  },
+  "scripts": {
+    "aempack": "cross-env NODE_ENV=development node scripts/aempack.js",
+    "start": "react-scripts start",
+    "clean": "del ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm/react/clientlibs/react-webcomponents/resources --force",
+    "build": "npm run clean && react-scripts build && move-cli build ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm/react/clientlibs/react-webcomponents/resources",
+    "mv": "move-cli build ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm/react/clientlibs/react-webcomponents/resources",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
