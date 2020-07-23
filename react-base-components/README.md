@@ -1,6 +1,3 @@
-[![CircleCI](https://circleci.com/gh/adobe/aem-contrib-wcm-components.svg?style=svg)](https://circleci.com/gh/adobe/aem-contrib-wcm-components) [![codecov](https://codecov.io/gh/adobe/aem-contrib-wcm-components/branch/master/graph/badge.svg)](https://codecov.io/gh/adobe/aem-contrib-wcm-components)
-
-
 # AEM WCM Components - React Core implementation
 
 This module provides 
