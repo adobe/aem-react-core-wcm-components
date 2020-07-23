@@ -1,6 +1,6 @@
 {
   "name": "@adobe/aem-core-components-react-spa",
-  "version": "0.1.15",
+  "version": "0.1.17",
   "license": "Apache-2.0",
   "scripts": {
     "linter": "eslint --ext .js,.jsx .",
