@@ -17,6 +17,7 @@ package com.adobe.cq.wcm.core.examples.react.components.models.impl.core;
 
 import com.adobe.cq.wcm.core.components.models.NavigationItem;
 import com.adobe.cq.wcm.core.examples.react.components.models.RoutedModel;
+import com.adobe.cq.wcm.core.examples.react.components.utils.RouterUtil;
 import lombok.experimental.Delegate;
 
 
@@ -35,10 +36,7 @@ public class RoutedNavigationItem implements NavigationItem, RoutedModel {
         boolean isRouted = false;
         
         if(delegate != null){
-            String path = delegate.getPath();
-            if(path != null){
-                isRouted = path.startsWith("/content/core-components-react-spa-example");
-            }
+           isRouted = RouterUtil.isUrlRouted(delegate.getPath());
         }
         
         return isRouted;

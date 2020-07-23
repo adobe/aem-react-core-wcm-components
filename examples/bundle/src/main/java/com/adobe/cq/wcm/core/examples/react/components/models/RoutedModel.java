@@ -19,7 +19,12 @@ package com.adobe.cq.wcm.core.examples.react.components.models;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public interface RoutedModel {
-    
+     
+     /**
+      * Is the item SPA routed? if yes, page should not be reloaded when clicked.
+      * If no, treat the link as a regular one, refreshing the browser.
+      * @return
+      */
      @JsonProperty("routed")
      boolean isRouted();
     

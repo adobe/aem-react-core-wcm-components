@@ -33,14 +33,17 @@ import org.apache.sling.models.annotations.via.ForcedResourceType;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static com.adobe.cq.wcm.core.examples.react.components.models.impl.core.NavigationImpl.RESOURCE_TYPE;
 
 
 @Model(
         adaptables = SlingHttpServletRequest.class, adapters = {Navigation.class, ComponentExporter.class},
-        resourceType = "core-components-examples/wcm/react/components/navigation"
+        resourceType = RESOURCE_TYPE
 )
 @Exporter(name = ExporterConstants.SLING_MODEL_EXPORTER_NAME, extensions = ExporterConstants.SLING_MODEL_EXTENSION)
 public class NavigationImpl implements Navigation {
+    
+    static final String RESOURCE_TYPE = "core-components-examples/wcm/react/components/navigation";
     
     private interface Overrides{
         List<NavigationItem> getItems();
@@ -61,7 +64,7 @@ public class NavigationImpl implements Navigation {
     }
     
     public String getExportedType(){
-        return resource.getResourceType();
+        return RESOURCE_TYPE;
     }
     
 }
