@@ -23,7 +23,7 @@ config.entry = {
     'container/accordion/v1/AccordionV1': ['./src/container/accordion/v1/AccordionV1.jsx'],
     'container/carousel/v1/CarouselV1': ['./src/container/carousel/v1/CarouselV1.jsx'],
     'container/container/v1/ContainerV1': ['./src/container/container/v1/ContainerV1.jsx'],
-    'container/tabs/v2/TabsV2': ['./src/container/tabs/v2/TabsV2.jsx']
+    'container/tabs/v1/TabsV1': ['./src/container/tabs/v1/TabsV1.jsx']
 };
 
 module.exports = config;

@@ -12,7 +12,7 @@ import {ListV2, ListV2IsEmptyFn} from "@adobe/aem-core-components-react-base/dis
 
 
 import {ContainerV1, ContainerV1IsEmptyFn} from "@adobe/aem-core-components-react-spa/dist/container/container/v1/ContainerV1";
-import {TabsV2, TabsV2IsEmptyFn} from "@adobe/aem-core-components-react-spa/dist/container/tabs/v2/TabsV2";
+import {TabsV1, TabsV1IsEmptyFn} from "@adobe/aem-core-components-react-spa/dist/container/tabs/v1/TabsV1";
 import {CarouselV1, CarouselV1IsEmptyFn} from "@adobe/aem-core-components-react-spa/dist/container/carousel/v1/CarouselV1";
 import {AccordionV1, AccordionV1IsEmptyFn} from "@adobe/aem-core-components-react-spa/dist/container/accordion/v1/AccordionV1";
 
@@ -37,7 +37,7 @@ MapTo('core-components-examples/wcm/react/components/image')(withComponentMappin
 MapTo('core-components-examples/wcm/react/components/title')(withComponentMappingContext(TitleV2), {isEmpty: TitleV2IsEmptyFn});
 
 
-MapTo('core-components-examples/wcm/react/components/tabs')(withComponentMappingContext(TabsV2), {isEmpty: TabsV2IsEmptyFn});
+MapTo('core-components-examples/wcm/react/components/tabs')(withComponentMappingContext(TabsV1), {isEmpty: TabsV1IsEmptyFn});
 MapTo('core-components-examples/wcm/react/components/accordion')(withComponentMappingContext(AccordionV1), {isEmpty: AccordionV1IsEmptyFn});
 MapTo('core-components-examples/wcm/react/components/carousel')(withComponentMappingContext(CarouselV1), {isEmpty: CarouselV1IsEmptyFn});
 MapTo('core-components-examples/wcm/react/components/container')(withComponentMappingContext(ContainerV1), {isEmpty: ContainerV1IsEmptyFn});

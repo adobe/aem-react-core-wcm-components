@@ -7,7 +7,7 @@ Currently supported / exported components:
  - Accordion (V1)
  - Container (V1)
  - Carousel (V1)
- - Tabs (v2)
+ - Tabs (V1)
 
 
 ## Usage
