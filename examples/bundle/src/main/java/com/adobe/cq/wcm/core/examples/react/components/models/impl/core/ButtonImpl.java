@@ -31,16 +31,23 @@ import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.apache.sling.models.annotations.via.ResourceSuperType;
 
+import static com.adobe.cq.wcm.core.examples.react.components.models.impl.core.ButtonImpl.RESOURCE_TYPE;
+
 
 @Model(
         adaptables = SlingHttpServletRequest.class, adapters = {Button.class, ComponentExporter.class},
-        resourceType = "core-components-examples/wcm/react/components/button"
+        resourceType = RESOURCE_TYPE
 )
 @Exporter(name = ExporterConstants.SLING_MODEL_EXPORTER_NAME, extensions = ExporterConstants.SLING_MODEL_EXTENSION)
 public class ButtonImpl implements Button, RoutedModel {
     
+    private interface Excludes{
+        String getExportedType();
+    }
     
-    @Delegate(types = Button.class)
+    public static final String RESOURCE_TYPE = "core-components-examples/wcm/react/components/button";
+    
+    @Delegate(types = Button.class,excludes = Excludes.class)
     @Self
     @Via(type = ResourceSuperType.class)
     Button delegate;
@@ -48,9 +55,15 @@ public class ButtonImpl implements Button, RoutedModel {
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
     private String link;
     
+    
+    @Override
+    public String getExportedType() {
+        return RESOURCE_TYPE;
+    }
+    
     @Override
     public boolean isRouted() {
-        return StringUtils.isNotBlank(link) && link.startsWith("/content/contrib-react-spacomponents-examples");
+        return StringUtils.isNotBlank(link) && link.startsWith("/content/aem-react-core-spacomponents-example");
     }
     
     

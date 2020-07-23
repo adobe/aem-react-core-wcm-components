@@ -557,7 +557,7 @@
         "affectsGlobalScope": false
       },
       "./routing/routedlink.tsx": {
-        "version": "65686443425e5f3970a3fc8c54bdbc361dcdff397591aecb7551e74e32f2fb06",
+        "version": "eba930cc9c383dac9656de79f3862512abedc7a715273d6c220aacd0dffb304a",
         "signature": "ffee1766bff487aa834c530d8a4580bbb26c8efd37389b1e71619273ed30a062",
         "affectsGlobalScope": false
       },

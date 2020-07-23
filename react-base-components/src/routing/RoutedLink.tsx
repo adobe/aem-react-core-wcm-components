@@ -27,7 +27,7 @@ export const RoutedLink = (props:LinkProps) => {
 
     if(to === undefined){
         return <a href={'#'}
-            {...props}
+            {...otherProps}
         />;
     }
     const isExternal = /^https?:\/\//.test(to);
@@ -35,7 +35,7 @@ export const RoutedLink = (props:LinkProps) => {
     return isExternal || !isRouted?
         (<a
             href={to}
-            {...props}
+            {...otherProps}
         />)
         :
         ( <RouterLink {...otherProps}

@@ -37,7 +37,7 @@ public class RoutedNavigationItem implements NavigationItem, RoutedModel {
         if(delegate != null){
             String path = delegate.getPath();
             if(path != null){
-                isRouted = path.startsWith("/content/core-components-react-spa-example/");
+                isRouted = path.startsWith("/content/core-components-react-spa-example");
             }
         }
         
