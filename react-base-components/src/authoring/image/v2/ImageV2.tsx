@@ -31,7 +31,7 @@ export function ImageV2IsEmptyFn(props:TempImageComponentModel) {
     return (!props.src) || props.src.length === 0;
 }
 
-export class ImageV2<Model extends TempImageComponentModel,State extends CoreComponentState> extends AbstractCoreComponent<Model,State> {
+export default class ImageV2<Model extends TempImageComponentModel,State extends CoreComponentState> extends AbstractCoreComponent<Model,State> {
 
     public static defaultProps = {
         hidePlaceHolder: false,

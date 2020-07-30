@@ -19,7 +19,7 @@ import ReactDOM from 'react-dom';
 import {shallow} from 'enzyme';
 
 
-import {DownloadV1, DownloadV1Model} from "./DownloadV1";
+import DownloadV1, { DownloadV1Model} from "./DownloadV1";
 
 
 

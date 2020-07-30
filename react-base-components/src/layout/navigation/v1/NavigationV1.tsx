@@ -41,7 +41,7 @@ export function NavigationV1IsEmptyFn(props:NavigationV1Model): boolean{
     return props.items == null || props.items.length === 0;
 }
 
-export class NavigationV1<Model extends NavigationV1Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
+export default class NavigationV1<Model extends NavigationV1Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
 
     public static defaultProps = {
         isInEditor: false,

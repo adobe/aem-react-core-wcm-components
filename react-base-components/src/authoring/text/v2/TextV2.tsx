@@ -26,7 +26,7 @@ export function TextV2IsEmptyFn(props:TextV2Model): boolean{
     return props.text == null || props.text.length === 0;
 }
 
-export class TextV2<Model extends TextV2Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
+export default class TextV2<Model extends TextV2Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
 
     public static defaultProps = {
         hidePlaceHolder: false,

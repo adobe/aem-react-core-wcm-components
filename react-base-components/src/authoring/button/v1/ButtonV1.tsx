@@ -31,7 +31,7 @@ export function ButtonV1IsEmptyFn(props:ButtonV1Model): boolean{
     return props.text == null || props.text.length === 0;
 }
 
-export class ButtonV1<Model extends ButtonV1Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
+export default class ButtonV1<Model extends ButtonV1Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
 
     public static defaultProps = {
         isInEditor: false,

@@ -17,8 +17,8 @@
 
 import React from "react";
 import {AbstractCoreComponent, CoreComponentModel, CoreComponentState} from "../../../AbstractCoreComponent";
-import {ImageV2} from "../../../authoring/image/v2/ImageV2";
-import {TitleV2} from "../../../authoring/title/v2/TitleV2";
+import ImageV2 from "../../../authoring/image/v2/ImageV2";
+import TitleV2 from "../../../authoring/title/v2/TitleV2";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {RoutedCoreComponentModel, isItemRouted, RoutedModel} from "../../../routing/RoutedCoreComponent";
 
@@ -44,7 +44,7 @@ export interface TeaserV1Model extends RoutedCoreComponentModel{
     imagePath: string
 }
 
-export class TeaserV1<Model extends TeaserV1Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State>{
+export default class TeaserV1<Model extends TeaserV1Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State>{
 
     public static defaultProps = {
         hidePlaceHolder: false,

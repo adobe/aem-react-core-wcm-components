@@ -23,7 +23,7 @@ export function TabsV1IsEmptyFn(props){
 }
 
 
-export class TabsV1 extends AbstractCoreContainerComponent {
+export default class TabsV1 extends AbstractCoreContainerComponent {
 
     constructor(props) {
         super(props, 'cmp-tabs');

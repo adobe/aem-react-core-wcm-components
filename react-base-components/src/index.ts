@@ -17,20 +17,35 @@
 export * from "./AbstractCoreComponent";
 
 export * from "./authoring/list/v2/ListV2";
+export { default as ListV2 } from "./authoring/list/v2/ListV2";
+
 export * from "./authoring/text/v2/TextV2";
+export { default as TextV2 } from "./authoring/text/v2/TextV2";
 
 export * from './authoring/button/v1/ButtonV1';
-export * from './authoring/text/v2/TextV2';
+export { default as ButtonV1 } from './authoring/button/v1/ButtonV1';
 
 export * from "./authoring/title/v2/TitleV2";
-export * from "./authoring/image/v2/ImageV2";
-export * from "./authoring/teaser/v1/TeaserV1";
+export { default as TitleV2 } from "./authoring/title/v2/TitleV2";
 
+export * from "./authoring/image/v2/ImageV2";
+export { default as ImageV2 } from "./authoring/image/v2/ImageV2";
+
+export * from "./authoring/teaser/v1/TeaserV1";
+export { default as TeaserV1 } from "./authoring/teaser/v1/TeaserV1";
 
 export * from "./authoring/download/v1/DownloadV1";
+export { default as DownloadV1 } from "./authoring/download/v1/DownloadV1";
+
 export * from "./authoring/separator/v1/SeparatorV1";
+export { default as SeparatorV1 } from "./authoring/separator/v1/SeparatorV1";
 
 //layout
 export * from './layout/breadcrumb/v2/BreadCrumbV2';
+export { default as BreadCrumbV2 } from "./layout/breadcrumb/v2/BreadCrumbV2";
+
 export * from "./layout/navigation/v1/NavigationV1";
+export { default as NavigationV1 } from "./layout/navigation/v1/NavigationV1";
+
 export * from "./layout/language-navigation/v1/LanguageNavigationV1";
+export { default as LanguageNavigationV1 } from "./layout/language-navigation/v1/LanguageNavigationV1";

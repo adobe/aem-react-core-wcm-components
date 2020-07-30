@@ -15,6 +15,13 @@
  */
 
 export * from './container/tabs/v1/TabsV1';
+export { default as TabsV1 } from "./container/tabs/v1/TabsV1";
+
 export * from './container/accordion/v1/AccordionV1';
+export { default as AccordionV1 } from "./container/accordion/v1/AccordionV1";
+
 export * from './container/carousel/v1/CarouselV1';
+export { default as CarouselV1 } from "./container/carousel/v1/CarouselV1";
+
 export * from './container/container/v1/ContainerV1';
+export { default as ContainerV1 } from "./container/container/v1/ContainerV1";

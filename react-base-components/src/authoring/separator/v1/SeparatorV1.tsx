@@ -22,7 +22,7 @@ export function SeparatorV1IsEmptyFn(props:CoreComponentModel): boolean{
     return false
 }
 
-export class SeparatorV1<Model extends CoreComponentModel, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
+export default class SeparatorV1<Model extends CoreComponentModel, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
 
     public static defaultProps = {
         hidePlaceHolder: false,

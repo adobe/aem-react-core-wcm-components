@@ -19,7 +19,7 @@ import ReactDOM from 'react-dom';
 import {mount, shallow} from 'enzyme';
 
 import {items} from "./NavigationV1TestMockItems";
-import {NavigationV1, NavigationV1Model} from "./NavigationV1";
+import NavigationV1, { NavigationV1Model} from "./NavigationV1";
 import { MemoryRouter } from 'react-router-dom';
 
 

@@ -37,7 +37,7 @@ export function DownloadV1IsEmptyFn(props:DownloadV1Model): boolean{
     return (props.url == null || props.url.length === 0) && props.handleOnClick == null;
 }
 
-export class DownloadV1<Model extends DownloadV1Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
+export default class DownloadV1<Model extends DownloadV1Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
 
     displayFileName:boolean;
     displaySize: boolean;

@@ -16,7 +16,7 @@
 
 import React from 'react';
 import {CoreComponentState} from "../../../AbstractCoreComponent";
-import {NavigationV1, NavigationV1Item, NavigationV1Model} from "../../navigation/v1/NavigationV1";
+import NavigationV1, { NavigationV1Item, NavigationV1Model} from "../../navigation/v1/NavigationV1";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {isItemRouted} from "../../../routing/RoutedCoreComponent";
 
@@ -43,7 +43,7 @@ export function LanguageNavigationV1IsEmptyFn(props:LanguageNavigationV1Model): 
     return props.items == null || props.items.length === 0;
 }
 
-export class LanguageNavigationV1<Model extends LanguageNavigationV1Model, State extends CoreComponentState> extends NavigationV1<Model, State> {
+export default class LanguageNavigationV1<Model extends LanguageNavigationV1Model, State extends CoreComponentState> extends NavigationV1<Model, State> {
 
     navChildren: LanguageNavigationV1Item[];
 

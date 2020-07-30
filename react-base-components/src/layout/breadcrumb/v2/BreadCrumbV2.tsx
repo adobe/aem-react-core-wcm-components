@@ -35,7 +35,7 @@ export function BreadCrumbV2IsEmptyFn(props:BreadCrumbV2Model): boolean{
     return props.items == null || props.items.length === 0;
 }
 
-export class BreadCrumbV2<Model extends BreadCrumbV2Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
+export default class BreadCrumbV2<Model extends BreadCrumbV2Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
 
     public static defaultProps = {
         isInEditor: false,

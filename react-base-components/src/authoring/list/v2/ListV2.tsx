@@ -41,7 +41,7 @@ export function ListV2IsEmptyFn(props:ListV2Model): boolean{
     return props.items == null || props.items.length === 0;
 }
 
-export class ListV2<Model extends ListV2Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
+export default class ListV2<Model extends ListV2Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
 
     public static defaultProps = {
         isInEditor: false,

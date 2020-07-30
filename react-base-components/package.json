@@ -1,6 +1,6 @@
 {
   "name": "@adobe/aem-core-components-react-base",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "license": "Apache-2.0",
   "keywords": [
     "adobe",
@@ -30,6 +30,7 @@
     "build": "webpack --config config/webpack.config.core.js  && webpack --config config/webpack.config.lib.js  &&   tsc -p src/tsconfig.types.json",
     "build:production": "cross-env NODE_ENV=production webpack  --config config/webpack.config.core.js --mode=production && webpack --config config/webpack.config.lib.js  --mode=production &&  tsc -p src/tsconfig.types.json",
     "build:types": "tsc -p src/tsconfig.types.json",
+    "publish": "npm publish",
     "docs": "jsdoc -c ./jsdoc_conf.json && doxdox \"src/**/*.+(js|jsx)\" --layout templates/DOCUMENTATION.hbs --output DOCUMENTATION.md",
     "readme": "node node_modules/markdown-include/bin/cli.js markdown-include.config.json",
     "docs-readme": "npm run docs && npm run readme",
