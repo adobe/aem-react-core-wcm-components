@@ -21,12 +21,12 @@ const isEnvironmentTest = process.env.NODE_ENV === 'test';
 const isEnvironmentProd = process.env.NODE_ENV === 'production';
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-const sourceMap = (isEnvironmentProd) ? '' : 'inline-source-map';
+const mode = (isEnvironmentProd) ? 'production' : 'development';
 const ManifestPlugin = require('webpack-manifest-plugin');
 
 module.exports = {
-    mode: 'development',
-    devtool: sourceMap,
+    mode: mode,
+    devtool: 'inline-source-map',
     output: {
         globalObject: `typeof self !== 'undefined' ? self : this`,
         path: path.resolve(__dirname, '../dist'),

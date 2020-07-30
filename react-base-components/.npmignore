@@ -1,0 +1,9 @@
+config
+node
+node_modules
+.eslintignore
+.gitignore
+*.iml
+jest.config.js
+pom.xml
+tsconfig.json

@@ -1,6 +1,6 @@
 {
   "name": "@adobe/aem-core-components-react-spa",
-  "version": "0.1.17",
+  "version": "1.0.1",
   "license": "Apache-2.0",
   "scripts": {
     "linter": "eslint --ext .js,.jsx .",
@@ -19,11 +19,14 @@
     "postversion": "git push origin && git push origin --tags",
     "tmprelease": "node release.js"
   },
-  "author": "Adobe Systems Inc. - Niek Raaijmakers",
-  "homepage": "https://github.com/adobe/aem-contrib-wcm-components/blob/feature/react-wrapper/react/react-core-spa/README.md",
+  "description": "AEM Spa editor - React Implementation for the AEM Core Components",
+  "author": {
+    "name": "Adobe Systems Inc."
+  },
+  "homepage": "https://github.com/adobe/aem-react-core-wcm-components/blob/master/README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/adobe/aem-contrib-wcm-components/blob/feature/react-wrapper/react/react-core-spa"
+    "url": "https://github.com/adobe/aem-react-core-wcm-components"
   },
   "dependencies": {},
   "peerDependencies": {

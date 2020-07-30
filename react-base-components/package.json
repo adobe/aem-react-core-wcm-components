@@ -1,6 +1,6 @@
 {
   "name": "@adobe/aem-core-components-react-base",
-  "version": "0.1.20",
+  "version": "1.0.6",
   "license": "Apache-2.0",
   "keywords": [
     "adobe",
@@ -10,14 +10,16 @@
     "core",
     "components"
   ],
-  "description": "AEM - React Wrapper components - for the OOTB AEM Core Components",
-  "author": "Adobe Systems Inc. - Niek Raaijmakers",
+  "description": "AEM - React Implementation for the AEM Core Components",
+  "author": {
+    "name": "Adobe Systems Inc."
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "homepage": "https://github.com/adobe/aem-contrib-wcm-components/blob/feature/react-wrapper/react/react-core/README.md",
+  "homepage": "https://github.com/adobe/aem-react-core-wcm-components/blob/master/README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/adobe/aem-contrib-wcm-components/blob/feature/react-wrapper/react/react-core"
+    "url": "https://github.com/adobe/aem-react-core-wcm-components"
   },
   "scripts": {
     "linter": "eslint --ext .ts,.tsx .",

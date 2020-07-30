@@ -26,6 +26,7 @@
   },
   "scripts": {
     "build": "npm run clean && react-scripts build && move-cli build ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm/react/clientlibs/react-spacomponents/resources",
+    "build-prod": "npm run clean && cross-env GENERATE_SOURCEMAP=false react-scripts build && move-cli build ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm/react/clientlibs/react-spacomponents/resources",
     "aempack": "cross-env NODE_ENV=development node scripts/aempack.js",
     "start": "react-scripts start",
     "install:link-deps": "npm install && npm run link-deps",

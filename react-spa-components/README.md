@@ -1,14 +1,20 @@
-# AEM WCM Components - Community Contributions - React SPA core 
+# AEM WCM Components - Spa editor - React Core implementation
 
-These are only for the spa editor since they have a dependency on @adobe/cq-react-editable-components.
+This module provides a React implementation for the containers in the [AEM core components](https://www.aemcomponents.dev/). 
+This only works with the [AEM SPA editor](https://docs.adobe.com/content/help/en/experience-manager-64/developing/headless/spas/spa-overview.html).
 
-Currently supported / exported components:
+[Introduction Video and Demo](https://www.youtube.com/watch?v=9759AhM7fAc)
 
+Current supported / exported components:
+
+### Containers
  - Accordion (V1)
- - Container (V1)
  - Carousel (V1)
+ - Container (V1)
  - Tabs (V1)
-
+ 
+### Abstraction
+-  AbstractCoreContainerComponent
 
 ## Usage
 
@@ -19,11 +25,28 @@ Also, if you want to load all core components, but you want to lazyload them wit
 ### Importing the whole library: 
 
 ```
-import * as SpaCoreComponents  from "@adobe/aem-core-components-react-spa";
+import * as SpaCoreComponents from "@adobe/aem-core-components-react-spa";
+const {CarouselV1, CarouselV1IsEmptyFn} = BaseCoreComponents;
 ```
 
-### Importing the Accordion component individually:
+### Importing the CarouselV1 component individually:
  
 ```
-import {AccordionV1}             from "@adobe/aem-core-components-react-spa/dist/container/accordion/v1/AccordionV1";
+import {CarouselV1, CarouselV1IsEmptyFn} from "@adobe/aem-core-components-react-spa/dist/container/carousel/v1/CarouselV1";
 ```
+
+### Using the imported code
+
+Now that you have the CarouselV1 and CarouselV1IsEmptyFn imported, you can use them in your project.
+The properties of the Button 1 on 1 correspond to the Sling Model Exporter (.model.json) output.
+
+Note: There are some exceptions where some extra properties are added (mainly i18n labels) that are currently not present in the OOTB sling model exports.
+These can be added by the project itself with delegation. If they are not present, the default (English) values will be used.
+
+#### Carousel - Example with the spa editor:
+
+```
+MapTo('my-project/wcm/components/containers')(CarouselV1, {isEmpty: CarouselV1IsEmptyFn});
+```
+
+For a complete project with examples, visit the [github page](https://github.com/adobe/aem-react-core-wcm-components/tree/master/examples).

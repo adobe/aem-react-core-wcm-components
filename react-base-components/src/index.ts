@@ -14,8 +14,6 @@
  *  limitations under the License.
  */
 //general
-export * from './types';
-
 export * from "./AbstractCoreComponent";
 
 export * from "./authoring/list/v2/ListV2";
