@@ -53,7 +53,7 @@ export class DownloadV1<Model extends DownloadV1Model, State extends CoreCompone
     };
 
     constructor(props:Model) {
-        super(props, "cmp-download", 'Contrib Download V1');
+        super(props, "cmp-download", 'Download V1');
         this.handleOnClick = this.handleOnClick.bind(this);
         this.displayFileName = props.displayFilename && !!props.filename;
         this.displaySize = props.displaySize && !!props.size;
