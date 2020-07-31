@@ -6,6 +6,7 @@
   "dependencies": {
     "@adobe/aem-core-components-react-base": "file:../../react-base-components",
     "@adobe/react-webcomponent": "^0.1.2",
+    "react-universal-component": "^4.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",

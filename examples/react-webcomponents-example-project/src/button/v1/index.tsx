@@ -1,8 +1,9 @@
 import React, { MouseEvent, Component } from 'react';
-import {ButtonV1, ButtonV1Model} from "@adobe/aem-core-components-react-base/dist/authoring/button/v1/ButtonV1";
+import {ButtonV1Model} from "@adobe/aem-core-components-react-base/dist/authoring/button/v1/ButtonV1";
 // @ts-ignore
 import { createCustomElement, DOMModel, byChildContentVal, byAttrVal, registerEvent } from "@adobe/react-webcomponent";
 import MetaUtils from '../../utils/MetaUtils';
+import withAsyncImport from "../../utils/withAsyncImport";
 
 
 
@@ -21,7 +22,10 @@ class ReactButton extends Component<ButtonModel> {
     }
 
     render() {
+        const ButtonV1 = withAsyncImport(() => import(/* webpackChunkName: "ButtonV1" */ '@adobe/aem-core-components-react-base/dist/authoring/button/v1/ButtonV1'));
+
         return (
+
             <ButtonV1 {...this.props}
                 handleOnClick={this.handleOnClick}
             />
@@ -29,4 +33,5 @@ class ReactButton extends Component<ButtonModel> {
     }
 }
 const ButtonCustomElement = createCustomElement(ReactButton, ButtonModel, "element");
+// @ts-ignore
 window.customElements.define("core-button", ButtonCustomElement);
