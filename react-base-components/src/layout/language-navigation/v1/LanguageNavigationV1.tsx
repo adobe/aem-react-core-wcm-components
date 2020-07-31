@@ -19,6 +19,7 @@ import {CoreComponentState} from "../../../AbstractCoreComponent";
 import NavigationV1, { NavigationV1Item, NavigationV1Model} from "../../navigation/v1/NavigationV1";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {isItemRouted} from "../../../routing/RoutedCoreComponent";
+import {LanguageNavigationV1IsEmptyFn} from "./LanguageNavigationV1IsEmptyFn";
 
 export interface LanguageNavigationV1Item extends NavigationV1Item {
     level: number,
@@ -39,9 +40,6 @@ export interface LanguageNavigationV1Model extends NavigationV1Model{
     accessibilityLabel?: string
 }
 
-export function LanguageNavigationV1IsEmptyFn(props:LanguageNavigationV1Model): boolean{
-    return props.items == null || props.items.length === 0;
-}
 
 export default class LanguageNavigationV1<Model extends LanguageNavigationV1Model, State extends CoreComponentState> extends NavigationV1<Model, State> {
 
@@ -58,6 +56,10 @@ export default class LanguageNavigationV1<Model extends LanguageNavigationV1Mode
         this.baseCssCls = 'cmp-languagenavigation';
         this.emptyPlaceHolderText = 'LanguageNavigationV1';
         this.navChildren = props.items;
+    }
+
+    isEmpty(): boolean {
+        return LanguageNavigationV1IsEmptyFn(this.props);
     }
 
     renderLink(item:LanguageNavigationV1Item, isActive:boolean){

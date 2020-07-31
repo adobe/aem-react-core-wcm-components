@@ -15,6 +15,7 @@
  */
 import React, {MouseEvent} from 'react';
 import {CoreComponentModel, CoreComponentState,AbstractCoreComponent} from "../../../AbstractCoreComponent";
+import {DownloadV1IsEmptyFn} from "./DownloadV1IsEmptyFn";
 
 
 export interface DownloadV1Model extends CoreComponentModel{
@@ -33,9 +34,6 @@ export interface DownloadV1Model extends CoreComponentModel{
     handleOnClick?(event: MouseEvent): void
 }
 
-export function DownloadV1IsEmptyFn(props:DownloadV1Model): boolean{
-    return (props.url == null || props.url.length === 0) && props.handleOnClick == null;
-}
 
 export default class DownloadV1<Model extends DownloadV1Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
 

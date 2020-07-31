@@ -18,13 +18,10 @@ import React from "react";
 
 import {AbstractCoreContainerComponent} from "../../../AbstractCoreContainerComponent";
 import {ComponentMapping} from '@adobe/cq-react-editable-components';
+import {AccordionV1IsEmptyFn} from "./AccordionV1IsEmptyFn";
 
 
-export function AccordionV1IsEmptyFn(props){
-    return props.cqItems == null || props.cqItems.length === 0;
-}
-
-export class AccordionV1 extends AbstractCoreContainerComponent {
+export default class AccordionV1 extends AbstractCoreContainerComponent {
 
     constructor(props) {
         super(props, "cmp-accordion");

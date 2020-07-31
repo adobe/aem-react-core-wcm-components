@@ -18,6 +18,8 @@ import React, {MouseEvent} from 'react';
 import {AbstractCoreComponent, CoreComponentState} from "../../../AbstractCoreComponent";
 import {RoutedCoreComponentModel} from "../../../routing/RoutedCoreComponent";
 import {RoutedLink} from "../../../routing/RoutedLink";
+import {ButtonV1IsEmptyFn} from "./ButtonV1IsEmptyFn";
+
 
 export interface ButtonV1Model extends RoutedCoreComponentModel{
     text?: string;
@@ -27,9 +29,7 @@ export interface ButtonV1Model extends RoutedCoreComponentModel{
     handleOnClick?(event: MouseEvent): void
 }
 
-export function ButtonV1IsEmptyFn(props:ButtonV1Model): boolean{
-    return props.text == null || props.text.length === 0;
-}
+
 
 export default class ButtonV1<Model extends ButtonV1Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
 

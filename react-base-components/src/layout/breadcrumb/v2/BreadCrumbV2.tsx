@@ -18,6 +18,7 @@ import React from 'react';
 import {AbstractCoreComponent, CoreComponentModel, CoreComponentState} from "../../../AbstractCoreComponent";
 import {isItemRouted, RoutedCoreComponentModel, RoutedModel} from "../../../routing/RoutedCoreComponent";
 import {RoutedLink} from "../../../routing/RoutedLink";
+import {BreadCrumbV2IsEmptyFn} from "./BreadCrumbV2IsEmptyFn";
 
 export interface BreadCrumbV2ItemModel extends RoutedModel{
     active: boolean
@@ -30,10 +31,6 @@ export interface BreadCrumbV2Model extends RoutedCoreComponentModel {
     ariaLabelI18n: string
 }
 
-
-export function BreadCrumbV2IsEmptyFn(props:BreadCrumbV2Model): boolean{
-    return props.items == null || props.items.length === 0;
-}
 
 export default class BreadCrumbV2<Model extends BreadCrumbV2Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
 

@@ -18,8 +18,7 @@ import React from 'react';
 import {AbstractCoreComponent, CoreComponentModel, CoreComponentState} from "../../../AbstractCoreComponent";
 import {isItemRouted, RoutedCoreComponentModel, RoutedModel} from "../../../routing/RoutedCoreComponent";
 import {RoutedLink} from "../../../routing/RoutedLink";
-
-
+import {NavigationV1IsEmptyFn} from "./NavigationV1IsEmptyFn";
 
 export interface NavigationV1Item extends RoutedModel{
     level: number,
@@ -37,9 +36,6 @@ export interface NavigationV1Model extends RoutedCoreComponentModel{
     accessibilityLabel?: string
 }
 
-export function NavigationV1IsEmptyFn(props:NavigationV1Model): boolean{
-    return props.items == null || props.items.length === 0;
-}
 
 export default class NavigationV1<Model extends NavigationV1Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
 

@@ -16,15 +16,14 @@
 
 import React from 'react';
 import {AbstractCoreComponent, CoreComponentModel, CoreComponentState} from "../../../AbstractCoreComponent";
+import {TextV2IsEmptyFn} from "./TextV2IsEmptyFn";
 
 export interface TextV2Model extends CoreComponentModel{
     text?: string;
     richText?: boolean
 }
 
-export function TextV2IsEmptyFn(props:TextV2Model): boolean{
-    return props.text == null || props.text.length === 0;
-}
+
 
 export default class TextV2<Model extends TextV2Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
 

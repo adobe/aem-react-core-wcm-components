@@ -18,6 +18,7 @@ import React from 'react';
 import {AbstractCoreComponent, CoreComponentState} from "../../../AbstractCoreComponent";
 import {RoutedCoreComponentModel} from "../../../routing/RoutedCoreComponent";
 import {RoutedLink} from "../../../routing/RoutedLink";
+import {TitleV2IsEmptyFn} from "./TitleV2IsEmptyFn";
 
 export interface TitleV2Model extends RoutedCoreComponentModel{
     text?: string;
@@ -26,9 +27,7 @@ export interface TitleV2Model extends RoutedCoreComponentModel{
     type: string;
 }
 
-export function TitleV2IsEmptyFn(props:TitleV2Model): boolean{
-    return props.text == null || props.text.length === 0;
-}
+
 
 export default class TitleV2<Model extends TitleV2Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
 

@@ -17,10 +17,7 @@
 import React from "react";
 import {ComponentMapping} from '@adobe/cq-react-editable-components';
 import {AbstractCoreContainerComponent} from "../../../AbstractCoreContainerComponent";
-
-export function TabsV1IsEmptyFn(props){
-    return props.cqItems == null || props.cqItems.length === 0;
-}
+import {TabsV1IsEmptyFn} from "./TabsV1IsEmptyFn";
 
 
 export default class TabsV1 extends AbstractCoreContainerComponent {

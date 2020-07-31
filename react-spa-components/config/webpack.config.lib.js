@@ -20,6 +20,7 @@ config.output.library = 'cqSpaCoreComponents';
 
 config.entry = {
     'index': ['./src/index.js'],
+    'isEmptyFunctions': ['./src/isEmptyFunctions.js'],
     'container/accordion/v1/AccordionV1': ['./src/container/accordion/v1/AccordionV1.jsx'],
     'container/carousel/v1/CarouselV1': ['./src/container/carousel/v1/CarouselV1.jsx'],
     'container/container/v1/ContainerV1': ['./src/container/container/v1/ContainerV1.jsx'],

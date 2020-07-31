@@ -17,11 +17,8 @@
 import React from "react";
 import {Container, ResponsiveGrid, ComponentMapping} from '@adobe/cq-react-editable-components';
 
-export function ContainerV1IsEmptyFn(props) {
-    return props.cqItems == null || props.cqItems.length === 0;
-}
 
-export class ContainerV1 extends Container {
+export default class ContainerV1 extends Container {
 
     mainDiv;
 

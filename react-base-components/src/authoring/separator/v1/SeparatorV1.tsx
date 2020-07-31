@@ -16,11 +16,8 @@
 
 import React from "react";
 import {AbstractCoreComponent, CoreComponentModel, CoreComponentState} from "../../../AbstractCoreComponent";
+import {SeparatorV1IsEmptyFn} from "./SeparatorV1IsEmptyFn";
 
-
-export function SeparatorV1IsEmptyFn(props:CoreComponentModel): boolean{
-    return false
-}
 
 export default class SeparatorV1<Model extends CoreComponentModel, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
 

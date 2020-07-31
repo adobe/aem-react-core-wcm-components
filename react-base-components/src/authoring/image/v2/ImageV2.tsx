@@ -18,6 +18,8 @@ import React from 'react';
 import {AbstractCoreComponent, CoreComponentState} from "../../../AbstractCoreComponent";
 import {RoutedCoreComponentModel} from "../../../routing/RoutedCoreComponent";
 import {RoutedLink} from "../../../routing/RoutedLink";
+import {ImageV2IsEmptyFn} from "./ImageV2IsEmptyFn";
+
 
 export interface TempImageComponentModel extends RoutedCoreComponentModel{
     src: string
@@ -27,9 +29,6 @@ export interface TempImageComponentModel extends RoutedCoreComponentModel{
     link?: string
 }
 
-export function ImageV2IsEmptyFn(props:TempImageComponentModel) {
-    return (!props.src) || props.src.length === 0;
-}
 
 export default class ImageV2<Model extends TempImageComponentModel,State extends CoreComponentState> extends AbstractCoreComponent<Model,State> {
 

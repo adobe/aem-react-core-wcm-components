@@ -21,10 +21,7 @@ import ImageV2 from "../../../authoring/image/v2/ImageV2";
 import TitleV2 from "../../../authoring/title/v2/TitleV2";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {RoutedCoreComponentModel, isItemRouted, RoutedModel} from "../../../routing/RoutedCoreComponent";
-
-export function TeaserV1IsEmptyFn(props:TeaserV1Model): boolean{
-    return (!props.imagePath && !props.description &&  props.actions.length == 0)
-}
+import {TeaserV1IsEmptyFn} from "./TeaserV1IsEmptyFn";
 
 export interface TeaserV1Action extends RoutedModel{
     title: string

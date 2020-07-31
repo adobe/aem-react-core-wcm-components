@@ -18,6 +18,7 @@ import React from 'react';
 import {AbstractCoreComponent, CoreComponentState} from "../../../AbstractCoreComponent";
 import {RoutedCoreComponentModel, RoutedModel, isItemRouted} from "../../../routing/RoutedCoreComponent";
 import {RoutedLink} from "../../../routing/RoutedLink";
+import {ListV2IsEmptyFn} from "./ListV2IsEmptyFn";
 
 export interface ListV2Item extends RoutedModel{
     url?:string
@@ -37,9 +38,6 @@ export interface ListV2Model extends RoutedCoreComponentModel{
     linkItems: boolean
 }
 
-export function ListV2IsEmptyFn(props:ListV2Model): boolean{
-    return props.items == null || props.items.length === 0;
-}
 
 export default class ListV2<Model extends ListV2Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
 

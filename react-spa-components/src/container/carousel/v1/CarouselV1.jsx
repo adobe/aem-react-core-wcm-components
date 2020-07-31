@@ -18,10 +18,8 @@ import React from 'react';
 
 import {AbstractCoreContainerComponent} from "../../../AbstractCoreContainerComponent";
 import {ComponentMapping} from '@adobe/cq-react-editable-components';
+import {CarouselV1IsEmptyFn} from "./CarouselV1IsEmptyFn";
 
-export function CarouselV1IsEmptyFn(props){
-    return props.cqItems == null || props.cqItems.length === 0;
-}
 
 const formatFn = (value, args) => {
     var content = value;
@@ -32,7 +30,7 @@ const formatFn = (value, args) => {
     return content;
 };
 
-export class CarouselV1 extends AbstractCoreContainerComponent {
+export default class CarouselV1 extends AbstractCoreContainerComponent {
 
     interval;
 

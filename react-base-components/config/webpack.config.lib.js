@@ -20,6 +20,7 @@ config.output.library = 'cqCoreComponents';
 
 config.entry = {
     'index': ['./src/index.ts'],
+    'isEmptyFunctions': ['./src/isEmptyFunctions.ts'],
     'authoring/list/v2/ListV2': ['./src/authoring/list/v2/ListV2'],
     'authoring/button/v1/ButtonV1': ['./src/authoring/button/v1/ButtonV1'],
     'authoring/text/v2/TextV2': ['./src/authoring/text/v2/TextV2'],
