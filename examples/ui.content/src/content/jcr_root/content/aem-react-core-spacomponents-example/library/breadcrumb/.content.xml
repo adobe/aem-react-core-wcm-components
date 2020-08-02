@@ -14,8 +14,6 @@
         sling:resourceType="foundation/components/redirect">
         <image
             jcr:primaryType="nt:unstructured"
-            fileReference="/content/dam/core-components-examples/library/components/breadcrumb.svg">
-            <file/>
-        </image>
+            fileReference="/content/dam/core-components-examples/library/components/breadcrumb.svg"/>
     </jcr:content>
 </jcr:root>

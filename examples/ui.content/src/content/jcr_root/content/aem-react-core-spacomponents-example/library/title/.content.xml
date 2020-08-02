@@ -4,7 +4,7 @@
     <jcr:content
         cq:lastModified="{Date}2019-01-16T13:36:38.741+01:00"
         cq:lastModifiedBy="admin"
-        cq:tags="[react-spacomponents-example:component-type/basic]"
+        cq:tags="[]"
         cq:template="/conf/aem-react-core-spacomponents-example/settings/wcm/templates/contrib-spa-page-template"
         jcr:description="Display a page heading"
         jcr:primaryType="cq:PageContent"

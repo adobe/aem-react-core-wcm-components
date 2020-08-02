@@ -6,7 +6,7 @@
         cq:lastModifiedBy="admin"
         cq:tags="[core-components-examples:component-type/container]"
         cq:template="/conf/aem-react-core-spacomponents-example/settings/wcm/templates/contrib-spa-page-template"
-        jcr:description="Toggle panels of related content"
+        jcr:description="Switchable content panels"
         jcr:primaryType="cq:PageContent"
         jcr:title="Tabs"
         sling:resourceType="core-components-examples/wcm/react/components/page/react-spacomponents-page">
@@ -16,7 +16,7 @@
             <responsivegrid
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/foundation/components/responsivegrid">
-                <text_157623088
+                <text_1740702241
                     cq:styleIds="[1644862132301]"
                     jcr:created="{Date}2019-02-15T19:05:53.032+01:00"
                     jcr:createdBy="admin"
@@ -26,7 +26,7 @@
                     sling:resourceType="core-components-examples/wcm/react/components/text"
                     text="&lt;h1>Tabs&lt;sub>v1&lt;/sub>&lt;/h1>&#xa;"
                     textIsRich="true"/>
-                <text_493933780
+                <text
                     cq:styleIds="[1544762734201]"
                     jcr:created="{Date}2018-12-06T19:11:23.947+01:00"
                     jcr:createdBy="admin"
@@ -34,9 +34,9 @@
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="core-components-examples/wcm/react/components/text"
-                    text="&lt;p>Tabs allows users to toggle panels of related content. Panels of varying component type can be created.&lt;/p>&#xa;"
+                    text="&lt;p>Tabs allow a user to switch between panels of related content. Panels of varying component type can be created.&lt;/p>&#xa;"
                     textIsRich="true"/>
-                <teaser_497061132
+                <teaser
                     cq:styleIds="[1550165685463]"
                     jcr:created="{Date}2019-02-14T16:41:54.952+01:00"
                     jcr:createdBy="admin"
@@ -49,10 +49,10 @@
                     actionsEnabled="false"
                     descriptionFromPage="false"
                     fileReference="/content/dam/core-components-examples/library/github-logo.svg"
-                    linkURL="https://www.adobe.com/go/aem_cmp_tech_tabs_v1"
+                    linkURL="https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core-components-examples/wcm/react/components/tabs"
                     textIsRich="true"
                     titleFromPage="false"/>
-                <teaser_660608423
+                <teaser_556024830
                     cq:styleIds="[1550165685463]"
                     jcr:created="{Date}2019-02-14T16:41:59.595+01:00"
                     jcr:createdBy="admin"
@@ -68,7 +68,7 @@
                     linkURL="https://www.adobe.com/go/aem_cmp_tabs_v1"
                     textIsRich="true"
                     titleFromPage="false"/>
-                <title_153929501
+                <title_865328580
                     cq:styleIds="[1544759664489]"
                     jcr:created="{Date}2018-12-06T19:22:23.729+01:00"
                     jcr:createdBy="admin"
@@ -88,23 +88,22 @@
                     jcr:title="Standard"
                     sling:resourceType="core-components-examples/wcm/react/components/title"
                     type="h3"/>
-                <text_975671860
+                <text_1337506761
                     jcr:created="{Date}2018-12-06T19:23:41.968+01:00"
                     jcr:createdBy="admin"
                     jcr:lastModified="{Date}2018-12-07T13:08:28.707+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="core-components-examples/wcm/react/components/text"
-                    text="&lt;p>Tabs with three items with each item being a layout container.&lt;/p>&#xa;"
+                    text="&lt;p>Tabs with three tab panels with each tab panel being a layout container.&lt;/p>&#xa;"
                     textIsRich="true"/>
-                <demo_944707749
+                <demo_1029942976
                     jcr:created="{Date}2018-12-07T13:10:47.548+01:00"
                     jcr:createdBy="admin"
                     jcr:lastModified="{Date}2018-12-07T13:10:47.548+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="core-components-examples/components/demo"
-                    fullWidth="{Boolean}true">
+                    sling:resourceType="core-components-examples/components/demo">
                     <component
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="core-components-examples/components/demo/component">
@@ -115,24 +114,99 @@
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="core-components-examples/wcm/react/components/tabs">
-                            <item_021105873
-                                cq:panelTitle="Item 1"
+                            <item_1
+                                cq:panelTitle="Tab 1"
                                 jcr:primaryType="nt:unstructured"
-                                jcr:title="Item 1"
-                                sling:resourceType="wcm/foundation/components/responsivegrid"/>
-                            <item_560792289
-                                cq:panelTitle="Item 2"
+                                jcr:title="Tab 1"
+                                sling:resourceType="wcm/foundation/components/responsivegrid">
+                                <text
+                                        jcr:created="{Date}2018-12-07T13:12:23.990+01:00"
+                                        jcr:createdBy="admin"
+                                        jcr:lastModified="{Date}2019-01-22T12:45:56.367+01:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="core-components-examples/wcm/react/components/text"
+                                        text="&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu mi bibendum neque egestas congue quisque egestas. Varius morbi enim nunc faucibus a pellentesque. Scelerisque eleifend donec pretium vulputate sapien nec sagittis.&lt;/p>&#xa;"
+                                        textIsRich="true"/>
+                                <image
+                                        jcr:created="{Date}2018-12-07T13:12:26.882+01:00"
+                                        jcr:createdBy="admin"
+                                        jcr:lastModified="{Date}2018-12-07T13:13:13.580+01:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="core-components-examples/wcm/react/components/image"
+                                        fileReference="/content/dam/core-components-examples/library/sample-assets/lava-into-ocean.jpg"/>
+
+                            </item_1>
+                            <item_2
+                                cq:panelTitle="Tab 2"
                                 jcr:primaryType="nt:unstructured"
-                                jcr:title="Item 2"
-                                sling:resourceType="wcm/foundation/components/responsivegrid"/>
-                            <item_234605691
-                                cq:panelTitle="Item 3"
+                                jcr:title="Tab 2"
+                                sling:resourceType="wcm/foundation/components/responsivegrid">
+                                <text
+                                        jcr:created="{Date}2018-12-07T13:12:23.990+01:00"
+                                        jcr:createdBy="admin"
+                                        jcr:lastModified="{Date}2019-01-22T12:45:56.367+01:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="core-components-examples/wcm/react/components/text"
+                                        text="&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu mi bibendum neque egestas congue quisque egestas. Varius morbi enim nunc faucibus a pellentesque. Scelerisque eleifend donec pretium vulputate sapien nec sagittis.&lt;/p>&#xa;"
+                                        textIsRich="true"/>
+                                <image
+                                        jcr:created="{Date}2018-12-07T13:12:26.882+01:00"
+                                        jcr:createdBy="admin"
+                                        jcr:lastModified="{Date}2018-12-07T13:13:13.580+01:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="core-components-examples/wcm/react/components/image"
+                                        fileReference="/content/dam/core-components-examples/library/sample-assets/lava-into-ocean.jpg"/>
+                            </item_2>
+                            <item_1544184706953
+                                cq:panelTitle="Tab 3"
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="wcm/foundation/components/responsivegrid"/>
+                                sling:resourceType="wcm/foundation/components/responsivegrid">
+                                <text
+                                        jcr:created="{Date}2018-12-07T13:12:23.990+01:00"
+                                        jcr:createdBy="admin"
+                                        jcr:lastModified="{Date}2019-01-22T12:45:56.367+01:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="core-components-examples/wcm/react/components/text"
+                                        text="&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu mi bibendum neque egestas congue quisque egestas. Varius morbi enim nunc faucibus a pellentesque. Scelerisque eleifend donec pretium vulputate sapien nec sagittis.&lt;/p>&#xa;"
+                                        textIsRich="true"/>
+                                <image
+                                        jcr:created="{Date}2018-12-07T13:12:26.882+01:00"
+                                        jcr:createdBy="admin"
+                                        jcr:lastModified="{Date}2018-12-07T13:13:13.580+01:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="core-components-examples/wcm/react/components/image"
+                                        fileReference="/content/dam/core-components-examples/library/sample-assets/lava-into-ocean.jpg"/>
+
+                            </item_1544184706953>
                         </tabs>
                     </component>
-                </demo_944707749>
-                <title_837382079
+                    <info
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core-components-examples/wcm/react/components/tabs">
+                        <properties
+                            cq:panelTitle="Properties"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="core-components-examples/components/demo/properties"
+                            reference="../../component"/>
+                        <markup
+                            cq:panelTitle="Markup"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="core-components-examples/components/demo/markup"
+                            reference="../../component"/>
+                        <json
+                            cq:panelTitle="JSON"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="core-components-examples/components/demo/json"
+                            reference="../../component"/>
+                    </info>
+                </demo_1029942976>
+                <title_290385000
                     cq:styleIds="[1544759676459]"
                     jcr:created="{Date}2018-12-06T19:22:48.620+01:00"
                     jcr:createdBy="admin"
@@ -142,23 +216,22 @@
                     jcr:title="Sample Content"
                     sling:resourceType="core-components-examples/wcm/react/components/title"
                     type="h3"/>
-                <text_492503290
+                <text_1337505001
                     jcr:created="{Date}2018-12-06T19:23:41.968+01:00"
                     jcr:createdBy="admin"
                     jcr:lastModified="{Date}2018-12-07T13:08:45.563+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="core-components-examples/wcm/react/components/text"
-                    text="&lt;p>Tabs with three items with each item being a layout container and containing&amp;nbsp;sample content, with the second tab being active by default.&lt;/p>&#xa;"
+                    text="&lt;p>Tabs with three tab panels with each tab panel being a layout container and containing&amp;nbsp;sample content.&lt;/p>&#xa;"
                     textIsRich="true"/>
-                <demo_397543166
+                <demo_1865210207
                     jcr:created="{Date}2018-12-07T13:10:51.430+01:00"
                     jcr:createdBy="admin"
                     jcr:lastModified="{Date}2018-12-07T13:10:51.430+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="core-components-examples/components/demo"
-                    fullWidth="{Boolean}true">
+                    sling:resourceType="core-components-examples/components/demo">
                     <component
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="core-components-examples/components/demo/component">
@@ -168,27 +241,12 @@
                             jcr:lastModified="{Date}2018-12-07T13:12:10.691+01:00"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
-                            activeItem="item_779036566"
                             sling:resourceType="core-components-examples/wcm/react/components/tabs">
-                            <item_617130698
-                                cq:panelTitle="Item 1"
+                            <item_1
+                                cq:panelTitle="Tab 1"
                                 jcr:primaryType="nt:unstructured"
-                                jcr:title="Item 1"
+                                jcr:title="Tab 1"
                                 sling:resourceType="wcm/foundation/components/responsivegrid">
-                                <image
-                                    jcr:created="{Date}2018-12-07T13:12:26.882+01:00"
-                                    jcr:createdBy="admin"
-                                    jcr:lastModified="{Date}2018-12-07T13:13:13.580+01:00"
-                                    jcr:lastModifiedBy="admin"
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="core-components-examples/wcm/react/components/image"
-                                    fileReference="/content/dam/core-components-examples/library/sample-assets/lava-into-ocean.jpg">
-                                    <cq:responsive jcr:primaryType="nt:unstructured">
-                                        <default
-                                            jcr:primaryType="nt:unstructured"
-                                            width="6"/>
-                                    </cq:responsive>
-                                </image>
                                 <text
                                     jcr:created="{Date}2018-12-07T13:12:23.990+01:00"
                                     jcr:createdBy="admin"
@@ -197,33 +255,21 @@
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="core-components-examples/wcm/react/components/text"
                                     text="&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu mi bibendum neque egestas congue quisque egestas. Varius morbi enim nunc faucibus a pellentesque. Scelerisque eleifend donec pretium vulputate sapien nec sagittis.&lt;/p>&#xa;"
-                                    textIsRich="true">
-                                    <cq:responsive jcr:primaryType="nt:unstructured">
-                                        <default
-                                            jcr:primaryType="nt:unstructured"
-                                            width="6"/>
-                                    </cq:responsive>
-                                </text>
-                            </item_617130698>
-                            <item_779036566
-                                cq:panelTitle="Item 2"
-                                jcr:primaryType="nt:unstructured"
-                                jcr:title="Item 2"
-                                sling:resourceType="wcm/foundation/components/responsivegrid">
+                                    textIsRich="true"/>
                                 <image
-                                    jcr:created="{Date}2018-12-07T13:13:35.384+01:00"
+                                    jcr:created="{Date}2018-12-07T13:12:26.882+01:00"
                                     jcr:createdBy="admin"
-                                    jcr:lastModified="{Date}2018-12-07T13:14:44.428+01:00"
+                                    jcr:lastModified="{Date}2018-12-07T13:13:13.580+01:00"
                                     jcr:lastModifiedBy="admin"
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="core-components-examples/wcm/react/components/image"
-                                    fileReference="/content/dam/core-components-examples/library/sample-assets/snowy-mountain-glacier.jpg">
-                                    <cq:responsive jcr:primaryType="nt:unstructured">
-                                        <default
-                                            jcr:primaryType="nt:unstructured"
-                                            width="6"/>
-                                    </cq:responsive>
-                                </image>
+                                    fileReference="/content/dam/core-components-examples/library/sample-assets/lava-into-ocean.jpg"/>
+                            </item_1>
+                            <item_2
+                                cq:panelTitle="Tab 2"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Tab 2"
+                                sling:resourceType="wcm/foundation/components/responsivegrid">
                                 <text
                                     jcr:created="{Date}2018-12-07T13:13:32.541+01:00"
                                     jcr:createdBy="admin"
@@ -232,33 +278,21 @@
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="core-components-examples/wcm/react/components/text"
                                     text="&lt;p>Hac habitasse platea dictumst quisque sagittis purus. At risus viverra adipiscing at in tellus integer. Sit amet consectetur adipiscing elit duis tristique sollicitudin. Leo vel orci porta non pulvinar neque laoreet suspendisse. Volutpat diam ut venenatis tellus in metus vulputate eu.&lt;/p>&#xa;"
-                                    textIsRich="true">
-                                    <cq:responsive jcr:primaryType="nt:unstructured">
-                                        <default
-                                            jcr:primaryType="nt:unstructured"
-                                            width="6"/>
-                                    </cq:responsive>
-                                </text>
-                            </item_779036566>
-                            <item_770673778
-                                cq:panelTitle="Item 3"
-                                jcr:primaryType="nt:unstructured"
-                                jcr:title="Item 3"
-                                sling:resourceType="wcm/foundation/components/responsivegrid">
+                                    textIsRich="true"/>
                                 <image
-                                    jcr:created="{Date}2018-12-07T13:13:59.298+01:00"
+                                    jcr:created="{Date}2018-12-07T13:13:35.384+01:00"
                                     jcr:createdBy="admin"
-                                    jcr:lastModified="{Date}2018-12-07T13:14:50.727+01:00"
+                                    jcr:lastModified="{Date}2018-12-07T13:14:44.428+01:00"
                                     jcr:lastModifiedBy="admin"
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="core-components-examples/wcm/react/components/image"
-                                    fileReference="/content/dam/core-components-examples/library/sample-assets/mountain-range.jpg">
-                                    <cq:responsive jcr:primaryType="nt:unstructured">
-                                        <default
-                                            jcr:primaryType="nt:unstructured"
-                                            width="6"/>
-                                    </cq:responsive>
-                                </image>
+                                    fileReference="/content/dam/core-components-examples/library/sample-assets/snowy-mountain-glacier.jpg"/>
+                            </item_2>
+                            <item_1544184727261
+                                cq:panelTitle="Tab 3"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Tab 3"
+                                sling:resourceType="wcm/foundation/components/responsivegrid">
                                 <text
                                     jcr:created="{Date}2018-12-07T13:13:55.658+01:00"
                                     jcr:createdBy="admin"
@@ -267,20 +301,113 @@
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="core-components-examples/wcm/react/components/text"
                                     text="&lt;p>Libero id faucibus nisl tincidunt eget nullam non nisi. Hac habitasse platea dictumst vestibulum. Viverra orci sagittis eu volutpat odio facilisis mauris. Velit aliquet sagittis id consectetur purus ut. Orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt.&lt;/p>&#xa;"
-                                    textIsRich="true">
-                                    <cq:responsive jcr:primaryType="nt:unstructured">
-                                        <default
-                                            jcr:primaryType="nt:unstructured"
-                                            width="6"/>
-                                    </cq:responsive>
-                                </text>
-                            </item_770673778>
+                                    textIsRich="true"/>
+                                <image
+                                    jcr:created="{Date}2018-12-07T13:13:59.298+01:00"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2018-12-07T13:14:50.727+01:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="core-components-examples/wcm/react/components/image"
+                                    fileReference="/content/dam/core-components-examples/library/sample-assets/mountain-range.jpg"/>
+                            </item_1544184727261>
                         </tabs>
                     </component>
-                </demo_397543166>
-            
-           
-                <title_361068649
+                    <info
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core-components-examples/wcm/react/components/tabs">
+                        <properties
+                            cq:panelTitle="Properties"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="core-components-examples/components/demo/properties"
+                            reference="../../component"/>
+                        <markup
+                            cq:panelTitle="Markup"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="core-components-examples/components/demo/markup"
+                            reference="../../component"/>
+                        <json
+                            cq:panelTitle="JSON"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="core-components-examples/components/demo/json"
+                            reference="../../component"/>
+                    </info>
+                </demo_1865210207>
+                <title_290385005
+                    cq:styleIds="[1544759676459]"
+                    jcr:created="{Date}2018-12-06T19:22:48.620+01:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2018-12-07T13:08:59.216+01:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Default Active Item"
+                    sling:resourceType="core-components-examples/wcm/react/components/title"
+                    type="h3"/>
+                <text_1337505006
+                    jcr:created="{Date}2018-12-06T19:23:41.968+01:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2018-12-07T13:09:09.061+01:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="core-components-examples/wcm/react/components/text"
+                    text="&lt;p>Tabs with three tab panels with the default active item being the third tab.&lt;/p>&#xa;"
+                    textIsRich="true"/>
+                <demo_1469710036
+                    jcr:created="{Date}2018-12-07T13:11:13.013+01:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2018-12-07T13:11:13.013+01:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="core-components-examples/components/demo">
+                    <component
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core-components-examples/components/demo/component">
+                        <tabs
+                            jcr:created="{Date}2018-12-07T13:11:17.034+01:00"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2018-12-07T13:15:45.655+01:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="core-components-examples/wcm/react/components/tabs"
+                            activeItem="item_1544184936449">
+                            <item_1
+                                cq:panelTitle="Tab 1"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Tab 1"
+                                sling:resourceType="wcm/foundation/components/responsivegrid"/>
+                            <item_2
+                                cq:panelTitle="Tab 2"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Tab 2"
+                                sling:resourceType="wcm/foundation/components/responsivegrid"/>
+                            <item_1544184936449
+                                cq:panelTitle="Tab 3"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Tab 3"
+                                sling:resourceType="wcm/foundation/components/responsivegrid"/>
+                        </tabs>
+                    </component>
+                    <info
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core-components-examples/wcm/react/components/tabs">
+                        <properties
+                            cq:panelTitle="Properties"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="core-components-examples/components/demo/properties"
+                            reference="../../component"/>
+                        <markup
+                            cq:panelTitle="Markup"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="core-components-examples/components/demo/markup"
+                            reference="../../component"/>
+                        <json
+                            cq:panelTitle="JSON"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="core-components-examples/components/demo/json"
+                            reference="../../component"/>
+                    </info>
+                </demo_1469710036>
+                <title_290386000
                     cq:styleIds="[1544759676459]"
                     jcr:created="{Date}2018-12-06T19:22:48.620+01:00"
                     jcr:createdBy="admin"
@@ -290,23 +417,22 @@
                     jcr:title="Nested"
                     sling:resourceType="core-components-examples/wcm/react/components/title"
                     type="h3"/>
-                <text_741455954
+                <text_1337506001
                     jcr:created="{Date}2018-12-06T19:23:41.968+01:00"
                     jcr:createdBy="admin"
                     jcr:lastModified="{Date}2018-12-07T13:09:29.560+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="core-components-examples/wcm/react/components/text"
-                    text="&lt;p>Nested tabss, with each item containing an tabs component in its layout container.&lt;/p>&#xa;"
+                    text="&lt;p>Nested tabs structure with each tab panel containing a tabs component in its layout container.&lt;/p>&#xa;"
                     textIsRich="true"/>
-                <demo_275095838
+                <demo
                     jcr:created="{Date}2018-12-07T13:09:53.937+01:00"
                     jcr:createdBy="admin"
                     jcr:lastModified="{Date}2018-12-07T13:09:53.937+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="core-components-examples/components/demo"
-                    fullWidth="{Boolean}true">
+                    sling:resourceType="core-components-examples/components/demo">
                     <component
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="core-components-examples/components/demo/component">
@@ -317,54 +443,39 @@
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="core-components-examples/wcm/react/components/tabs">
-                            <item_215402425
-                                cq:panelTitle="Item 1"
+                            <item_1
+                                cq:panelTitle="Tab 1"
                                 jcr:primaryType="nt:unstructured"
-                                jcr:title="Item 1"
+                                jcr:title="Tab 1"
                                 sling:resourceType="wcm/foundation/components/responsivegrid">
-                                <tabs
+                                <tabs_copy
                                     jcr:created="{Date}2018-12-07T13:11:20.617+01:00"
                                     jcr:createdBy="admin"
                                     jcr:lastModified="{Date}2019-01-22T12:51:03.767+01:00"
                                     jcr:lastModifiedBy="admin"
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="core-components-examples/wcm/react/components/tabs">
-                                    <item_468781096
-                                        cq:panelTitle="Item 1.1"
+                                    <item_1
+                                        cq:panelTitle="Tab 1.1"
                                         jcr:primaryType="nt:unstructured"
-                                        jcr:title="Item 1.1"
-                                        sling:resourceType="wcm/foundation/components/responsivegrid">
-                                        <image
-                                                jcr:created="{Date}2018-12-07T13:12:26.882+01:00"
-                                                jcr:createdBy="admin"
-                                                jcr:lastModified="{Date}2018-12-07T13:13:13.580+01:00"
-                                                jcr:lastModifiedBy="admin"
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="core-components-examples/wcm/react/components/image"
-                                                fileReference="/content/dam/core-components-examples/library/sample-assets/lava-into-ocean.jpg">
-                                            <cq:responsive jcr:primaryType="nt:unstructured">
-                                                <default
-                                                        jcr:primaryType="nt:unstructured"
-                                                        width="6"/>
-                                            </cq:responsive>
-                                        </image>
-                                    </item_468781096>
-                                    <item_141376187
-                                        cq:panelTitle="Item 1.2"
-                                        jcr:primaryType="nt:unstructured"
-                                        jcr:title="Item 1.2"
+                                        jcr:title="Tab 1.1"
                                         sling:resourceType="wcm/foundation/components/responsivegrid"/>
-                                    <item_390197765
-                                        cq:panelTitle="Item 1.3"
+                                    <item_2
+                                        cq:panelTitle="Tab 1.2"
                                         jcr:primaryType="nt:unstructured"
-                                        jcr:title="Item 1.3"
+                                        jcr:title="Tab 1.2"
                                         sling:resourceType="wcm/foundation/components/responsivegrid"/>
-                                </tabs>
-                            </item_215402425>
-                            <item_467565399
-                                cq:panelTitle="Item 2"
+                                    <item_1544184727261
+                                        cq:panelTitle="Tab 1.3"
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Tab 1.3"
+                                        sling:resourceType="wcm/foundation/components/responsivegrid"/>
+                                </tabs_copy>
+                            </item_1>
+                            <item_2
+                                cq:panelTitle="Tab 2"
                                 jcr:primaryType="nt:unstructured"
-                                jcr:title="Item 2"
+                                jcr:title="Tab 2"
                                 sling:resourceType="wcm/foundation/components/responsivegrid">
                                 <tabs_copy
                                     jcr:created="{Date}2018-12-07T13:11:20.617+01:00"
@@ -373,70 +484,74 @@
                                     jcr:lastModifiedBy="admin"
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="core-components-examples/wcm/react/components/tabs">
-                                    <item_645266587
-                                        cq:panelTitle="Item 2.1"
+                                    <item_1
+                                        cq:panelTitle="Tab 2.1"
                                         jcr:primaryType="nt:unstructured"
-                                        jcr:title="Item 2.1"
+                                        jcr:title="Tab 2.1"
                                         sling:resourceType="wcm/foundation/components/responsivegrid"/>
-                                    <item_857227661
-                                        cq:panelTitle="Item 2.2"
+                                    <item_2
+                                        cq:panelTitle="Tab 2.2"
                                         jcr:primaryType="nt:unstructured"
-                                        jcr:title="Item 2.2"
+                                        jcr:title="Tab 2.2"
                                         sling:resourceType="wcm/foundation/components/responsivegrid"/>
-                                    <item_810812133
-                                        cq:panelTitle="Item 2.3"
+                                    <item_1544184727261
+                                        cq:panelTitle="Tab 2.3"
                                         jcr:primaryType="nt:unstructured"
-                                        jcr:title="Item 2.3"
+                                        jcr:title="Tab 2.3"
                                         sling:resourceType="wcm/foundation/components/responsivegrid"/>
                                 </tabs_copy>
-                            </item_467565399>
-                            <item_326905762
-                                cq:panelTitle="Item 3"
+                            </item_2>
+                            <item_1544185536409
+                                cq:panelTitle="Tab 3"
                                 jcr:primaryType="nt:unstructured"
-                                jcr:title="Item 3"
+                                jcr:title="Tab 3"
                                 sling:resourceType="wcm/foundation/components/responsivegrid">
-                                <tabs
+                                <tabs_copy
                                     jcr:created="{Date}2018-12-07T13:11:20.617+01:00"
                                     jcr:createdBy="admin"
                                     jcr:lastModified="{Date}2019-01-22T12:51:36.077+01:00"
                                     jcr:lastModifiedBy="admin"
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="core-components-examples/wcm/react/components/tabs">
-                                    <item_716487435
-                                        cq:panelTitle="Item 3.1"
+                                    <item_1
+                                        cq:panelTitle="Tab 3.1"
                                         jcr:primaryType="nt:unstructured"
-                                        jcr:title="Item 3.1"
+                                        jcr:title="Tab 3.1"
                                         sling:resourceType="wcm/foundation/components/responsivegrid"/>
-                                    <item_679027031
-                                        cq:panelTitle="Item 3.2"
+                                    <item_2
+                                        cq:panelTitle="Tab 3.2"
                                         jcr:primaryType="nt:unstructured"
-                                        jcr:title="Item 3.2"
+                                        jcr:title="Tab 3.2"
                                         sling:resourceType="wcm/foundation/components/responsivegrid"/>
-                                    <item_331258757
-                                        cq:panelTitle="Item 3.3"
+                                    <item_1544184727261
+                                        cq:panelTitle="Tab 3.3"
                                         jcr:primaryType="nt:unstructured"
-                                        jcr:title="Item 3.3"
-                                        sling:resourceType="wcm/foundation/components/responsivegrid">
-                                        <image
-                                                jcr:created="{Date}2018-12-07T13:12:26.882+01:00"
-                                                jcr:createdBy="admin"
-                                                jcr:lastModified="{Date}2018-12-07T13:13:13.580+01:00"
-                                                jcr:lastModifiedBy="admin"
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="core-components-examples/wcm/react/components/image"
-                                                fileReference="/content/dam/core-components-examples/library/sample-assets/snowy-mountain-glacier.jpg">
-                                            <cq:responsive jcr:primaryType="nt:unstructured">
-                                                <default
-                                                        jcr:primaryType="nt:unstructured"
-                                                        width="6"/>
-                                            </cq:responsive>
-                                        </image>
-                                    </item_331258757>
-                                </tabs>
-                            </item_326905762>
+                                        jcr:title="Tab 3.3"
+                                        sling:resourceType="wcm/foundation/components/responsivegrid"/>
+                                </tabs_copy>
+                            </item_1544185536409>
                         </tabs>
                     </component>
-                </demo_275095838>
+                    <info
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core-components-examples/wcm/react/components/tabs">
+                        <properties
+                            cq:panelTitle="Properties"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="core-components-examples/components/demo/properties"
+                            reference="../../component"/>
+                        <markup
+                            cq:panelTitle="Markup"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="core-components-examples/components/demo/markup"
+                            reference="../../component"/>
+                        <json
+                            cq:panelTitle="JSON"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="core-components-examples/components/demo/json"
+                            reference="../../component"/>
+                    </info>
+                </demo>
             </responsivegrid>
         </root>
         <image jcr:primaryType="nt:unstructured">

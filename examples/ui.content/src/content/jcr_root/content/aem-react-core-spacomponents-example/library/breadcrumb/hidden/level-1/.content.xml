@@ -38,13 +38,10 @@
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="core-components-examples/wcm/react/components/text"
                     text="&lt;p>This is a sample page representing a level in a breadcrumb hierarchy. For more information, return to the &lt;a href=&quot;/content/core-components-examples/library/breadcrumb/hidden/level-1/level-2/breadcrumb.html&quot;>Breadcrumb example page&lt;/a>.&amp;nbsp;&lt;/p>&#xa;"
-                    textIsRich="true">
-                </text>
+                    textIsRich="true"/>
             </responsivegrid>
         </root>
-        <image jcr:primaryType="nt:unstructured">
-            <file/>
-        </image>
+        <image jcr:primaryType="nt:unstructured"/>
     </jcr:content>
     <level-2/>
 </jcr:root>

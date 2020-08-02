@@ -4,7 +4,7 @@
     <jcr:content
         cq:lastModified="{Date}2019-05-27T23:24:13.683+02:00"
         cq:lastModifiedBy="admin"
-        cq:tags="[core-components-examples:component-type/basic]"
+        cq:tags="[]"
         cq:template="/conf/aem-react-core-spacomponents-example/settings/wcm/templates/contrib-spa-page-template"
         jcr:description="Display an asset for download"
         jcr:primaryType="cq:PageContent"
@@ -257,15 +257,11 @@
                             fileReference="/content/dam/core-components-examples/library/sample-assets/lava-into-ocean.jpg"
                             inline="true"
                             textIsRich="true"
-                            titleFromAsset="true">
-                            <file/>
-                        </download>
+                            titleFromAsset="true"/>
                     </component>
                 </demo_69071411>
             </responsivegrid>
         </root>
-        <image jcr:primaryType="nt:unstructured">
-            <file/>
-        </image>
+        <image jcr:primaryType="nt:unstructured"/>
     </jcr:content>
 </jcr:root>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
-          jcr:primaryType="cq:Page">
+    jcr:primaryType="cq:Page">
     <jcr:content
         cq:lastModified="{Date}2019-06-06T10:01:12.686+03:00"
         cq:lastModifiedBy="admin"
@@ -10,9 +10,7 @@
         jcr:title="Germany"
         sling:resourceType="core-components-examples/wcm/react/components/page/react-spacomponents-page"
         navTitle="Deutschland">
-        <image jcr:primaryType="nt:unstructured">
-            <file/>
-        </image>
+        <image jcr:primaryType="nt:unstructured"/>
     </jcr:content>
     <de/>
 </jcr:root>

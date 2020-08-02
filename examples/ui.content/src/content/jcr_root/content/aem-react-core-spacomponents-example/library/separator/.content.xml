@@ -116,7 +116,6 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="core-components-examples/wcm/react/components/separator"/>
                     </component>
-                   
                 </demo>
             </responsivegrid>
         </root>

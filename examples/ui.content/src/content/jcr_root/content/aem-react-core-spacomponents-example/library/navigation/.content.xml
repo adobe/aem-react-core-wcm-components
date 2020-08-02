@@ -117,8 +117,8 @@
                             collectAllPages="true"
                             hideCurrent="false"
                             navigationRoot="/content/core-components-examples"
-                            structureStart="1"
-                            showHidden="true"/>
+                            showHidden="true"
+                            structureStart="1"/>
                     </component>
                 </demo>
                 <title_290386545
@@ -160,10 +160,9 @@
                             collectAllPages="true"
                             hideCurrent="false"
                             navigationRoot="/content/core-components-examples"
-                            structureStart="0"
-                            showHidden="true"/>
+                            showHidden="true"
+                            structureStart="0"/>
                     </component>
-                   
                 </demo_56474747>
                 <title_2061144506
                     jcr:created="{Date}2019-11-11T15:35:19.374+01:00"
@@ -204,7 +203,6 @@
                             navigationRoot="/content/core-components-examples"
                             structureStart="2"/>
                     </component>
-                 
                 </demo_1435920429>
                 <title
                     jcr:created="{Date}2019-05-21T19:07:47.223+03:00"
@@ -244,16 +242,13 @@
                             collectAllPages="false"
                             hideCurrent="false"
                             navigationRoot="/content/core-components-examples"
-                            structureStart="0"
                             showHidden="true"
-                            structureDepth="1"/>
+                            structureDepth="1"
+                            structureStart="0"/>
                     </component>
-                    
                 </demo_650088868>
             </responsivegrid>
         </root>
-        <image jcr:primaryType="nt:unstructured">
-            <file/>
-        </image>
+        <image jcr:primaryType="nt:unstructured"/>
     </jcr:content>
 </jcr:root>

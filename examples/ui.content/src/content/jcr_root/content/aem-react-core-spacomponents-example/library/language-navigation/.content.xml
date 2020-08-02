@@ -9,9 +9,7 @@
         jcr:primaryType="cq:PageContent"
         jcr:title="Language Navigation"
         sling:resourceType="core-components-examples/wcm/react/components/page/react-spacomponents-page">
-        <image jcr:primaryType="nt:unstructured">
-            <file/>
-        </image>
+        <image jcr:primaryType="nt:unstructured"/>
     </jcr:content>
     <language-structure/>
 </jcr:root>

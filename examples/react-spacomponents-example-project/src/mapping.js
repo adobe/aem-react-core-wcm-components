@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {MapTo, withComponentMappingContext, Container} from '@adobe/cq-react-editable-components';
+import {MapTo, withComponentMappingContext,Container} from '@adobe/cq-react-editable-components';
 
 import {TitleV2IsEmptyFn, ListV2IsEmptyFn, BreadCrumbV2IsEmptyFn, TextV2IsEmptyFn, ButtonV1IsEmptyFn, ImageV2IsEmptyFn, TeaserV1IsEmptyFn, DownloadV1IsEmptyFn, SeparatorV1IsEmptyFn} from "@adobe/aem-core-components-react-base/dist/isEmptyFunctions";
 import {AccordionV1IsEmptyFn, CarouselV1IsEmptyFn, ContainerV1IsEmptyFn, TabsV1IsEmptyFn} from "@adobe/aem-core-components-react-spa/dist/isEmptyFunctions";
@@ -9,8 +9,10 @@ import withAsyncImport from "./utils/withAsyncImport";
 
 import withRoute from './utils/RouteHelper';
 import ContribPage from './components/Page';
-import Demo from './components/Demo';
-
+import Demo from './components/demo/Demo';
+import Json from './components/demo/Json';
+import Markup from "./components/demo/Markup";
+import Properties from "./components/demo/Properties";
 
 const TitleV2 = withAsyncImport(() => import(/* webpackChunkName: "TitleV2" */ '@adobe/aem-core-components-react-base/dist/authoring/title/v2/TitleV2'));
 const BreadCrumbV2 = withAsyncImport(() => import(/* webpackChunkName: "BreadCrumbV2" */ '@adobe/aem-core-components-react-base/dist/layout/breadcrumb/v2/BreadCrumbV2'));
@@ -49,6 +51,9 @@ MapTo('core-components-examples/wcm/react/components/accordion')(withComponentMa
 MapTo('core-components-examples/wcm/react/components/carousel')(withComponentMappingContext(CarouselV1), {isEmpty: CarouselV1IsEmptyFn});
 MapTo('core-components-examples/wcm/react/components/container')(withComponentMappingContext(ContainerV1), {isEmpty: ContainerV1IsEmptyFn});
 
+MapTo('core-components-examples/components/demo/json')(Json);
+MapTo('core-components-examples/components/demo/properties')(Properties);
+MapTo('core-components-examples/components/demo/markup')(Markup);
 MapTo('core-components-examples/components/demo')(withComponentMappingContext(Demo));
 MapTo('core-components-examples/components/demo/component')(withComponentMappingContext(Container));
 MapTo('core-components-examples/wcm/react/components/page/react-spacomponents-page')(withComponentMappingContext(withRoute(ContribPage)), {});

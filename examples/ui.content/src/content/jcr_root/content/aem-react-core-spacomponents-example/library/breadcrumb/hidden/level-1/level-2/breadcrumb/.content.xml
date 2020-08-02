@@ -321,8 +321,6 @@
                 </Copy_x0020_of_x0020_demo_copy>
             </responsivegrid>
         </root>
-        <image jcr:primaryType="nt:unstructured">
-            <file/>
-        </image>
+        <image jcr:primaryType="nt:unstructured"/>
     </jcr:content>
 </jcr:root>

@@ -59,7 +59,7 @@ public class HierarchyPageImpl implements HierarchyPage {
     /**
      * Resource type of associated with the current implementation
      */
-    protected static final String RESOURCE_TYPE = "core-components-examples/wcm/react/components/page/react-spacomponents-page";
+    public static final String RESOURCE_TYPE = "core-components-examples/wcm/react/components/page/react-spacomponents-page";
 
     /**
      * Request attribute key of the component context

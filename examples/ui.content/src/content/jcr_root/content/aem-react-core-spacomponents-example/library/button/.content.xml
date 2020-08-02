@@ -4,7 +4,7 @@
     <jcr:content
         cq:lastModified="{Date}2019-01-09T20:30:27.177+01:00"
         cq:lastModifiedBy="admin"
-        cq:tags="[react-spacomponents-example:component-type/basic]"
+        cq:tags="[]"
         cq:template="/conf/aem-react-core-spacomponents-example/settings/wcm/templates/contrib-spa-page-template"
         jcr:description="Display a button or anchor button"
         jcr:primaryType="cq:PageContent"

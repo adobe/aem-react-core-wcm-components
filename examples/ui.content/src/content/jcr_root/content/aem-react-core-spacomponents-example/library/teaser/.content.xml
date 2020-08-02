@@ -123,7 +123,6 @@
                             textIsRich="true"
                             titleFromPage="false"/>
                     </component>
-                   
                 </demo>
                 <title_290385000
                     cq:styleIds="[1544759676459]"
@@ -170,7 +169,6 @@
                             textIsRich="true"
                             titleFromPage="false"/>
                     </component>
-                   
                 </demo_1160408466>
                 <title_290386000
                     cq:styleIds="[1544759676459]"
@@ -217,7 +215,6 @@
                             textIsRich="true"
                             titleFromPage="false"/>
                     </component>
-                 
                 </demo_1789748122>
                 <title_290387000
                     cq:styleIds="[1544759676459]"
@@ -270,7 +267,6 @@
                             </actions>
                         </teaser>
                     </component>
-                 
                 </demo_1878698139>
                 <title_290388000
                     cq:styleIds="[1544759676459]"
@@ -327,7 +323,6 @@
                             </actions>
                         </teaser_2781767054>
                     </component>
-                 f
                 </demo_1581767054>
                 <title_290389000
                     cq:styleIds="[1544759676459]"
@@ -372,12 +367,9 @@
                             textIsRich="true"
                             titleFromPage="true"/>
                     </component>
-                   
                 </demo_1257101605>
             </responsivegrid>
         </root>
-        <image jcr:primaryType="nt:unstructured">
-            <file/>
-        </image>
+        <image jcr:primaryType="nt:unstructured"/>
     </jcr:content>
 </jcr:root>

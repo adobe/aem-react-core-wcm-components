@@ -122,7 +122,6 @@
                             showModificationDate="false"
                             sortOrder="asc"/>
                     </component>
-                   
                 </demo>
                 <title_290387112
                     cq:styleIds="[1544759676459]"
@@ -169,7 +168,6 @@
                             sortOrder="asc"
                             tagsMatch="any"/>
                     </component>
-                   
                 </demo_1611536266>
                 <title_290388111
                     cq:styleIds="[1544759676459]"
@@ -217,7 +215,6 @@
                             sortOrder="asc"
                             tagsMatch="any"/>
                     </component>
-                   
                 </demo_839079176>
                 <title_290385000
                     cq:styleIds="[1544759676459]"
@@ -265,7 +262,6 @@
                             tagsMatch="any"
                             tagsSearchRoot="/content/aem-react-core-spacomponents-example/library"/>
                     </component>
-                   
                 </demo_491373107>
                 <title_290385102
                     cq:styleIds="[1544759676459]"
@@ -312,7 +308,6 @@
                             showModificationDate="false"
                             sortOrder="desc"/>
                     </component>
-                   
                 </demo_2081031248>
                 <title_290385104
                     cq:styleIds="[1544759676459]"
@@ -359,7 +354,6 @@
                             showModificationDate="false"
                             sortOrder="asc"/>
                     </component>
-                   
                 </demo_1675126228>
                 <title_290385105
                     cq:styleIds="[1544759676459]"
@@ -405,12 +399,9 @@
                             showModificationDate="true"
                             sortOrder="asc"/>
                     </component>
-                 
                 </demo_1381767468>
             </responsivegrid>
         </root>
-        <image jcr:primaryType="nt:unstructured">
-            <file/>
-        </image>
+        <image jcr:primaryType="nt:unstructured"/>
     </jcr:content>
 </jcr:root>
