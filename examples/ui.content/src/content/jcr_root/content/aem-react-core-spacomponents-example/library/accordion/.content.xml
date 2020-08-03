@@ -12,10 +12,10 @@
         sling:resourceType="core-components-examples/wcm/react/components/page/react-spacomponents-page">
         <root
             jcr:primaryType="nt:unstructured"
-            sling:resourceType="wcm/foundation/components/responsivegrid">
+            sling:resourceType="core-components-examples/wcm/react/components/main-responsive-grid">
             <responsivegrid
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="wcm/foundation/components/responsivegrid">
+                sling:resourceType="core-components-examples/wcm/react/components/grid-without-wrapper">
                 <text_1740702241
                     cq:styleIds="[1644862132301]"
                     jcr:created="{Date}2019-02-15T19:05:53.032+01:00"

@@ -11,9 +11,18 @@ class ContribPage extends Page {
         // @ts-ignore
         let attrs = super.containerProps;
           // @ts-ignore
-        attrs.className = (attrs.className || '') + ' ContribPage ' + (this.props.cssClassNames || '');
+        attrs.className = (attrs.className || '') + ' root cmp-examples-structure ' + (this.props.cssClassNames || '');
         return attrs
     }
+
+    // render() {
+    //     return (
+    //         <>
+    //             { this.childComponents }
+    //             { this.childPages }
+    //         </>
+    //     );
+    // }
 
 }
 

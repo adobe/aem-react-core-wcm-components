@@ -13,11 +13,13 @@ import Demo from './components/demo/Demo';
 import Json from './components/demo/Json';
 import Markup from "./components/demo/Markup";
 import Properties from "./components/demo/Properties";
+import NavigationV1 from '@adobe/aem-core-components-react-base/dist/layout/navigation/v1/NavigationV1';
+import MainResponsiveGrid from "./components/MainResponsiveGrid";
+import GridWithoutWrapper from "./components/GridWithoutWrapper";
 
 const TitleV2 = withAsyncImport(() => import(/* webpackChunkName: "TitleV2" */ '@adobe/aem-core-components-react-base/dist/authoring/title/v2/TitleV2'));
 const BreadCrumbV2 = withAsyncImport(() => import(/* webpackChunkName: "BreadCrumbV2" */ '@adobe/aem-core-components-react-base/dist/layout/breadcrumb/v2/BreadCrumbV2'));
 const TextV2 = withAsyncImport(() => import(/* webpackChunkName: "TextV2" */ '@adobe/aem-core-components-react-base/dist/authoring/text/v2/TextV2'));
-const NavigationV1 = withAsyncImport(() => import(/* webpackChunkName: "NavigationV1" */ '@adobe/aem-core-components-react-base/dist/layout/navigation/v1/NavigationV1'));
 const ButtonV1 = withAsyncImport(() => import(/* webpackChunkName: "ButtonV1" */ '@adobe/aem-core-components-react-base/dist/authoring/button/v1/ButtonV1'));
 const ImageV2 = withAsyncImport(() => import(/* webpackChunkName: "ImageV2" */ '@adobe/aem-core-components-react-base/dist/authoring/image/v2/ImageV2'));
 const LanguageNavigationV1 = withAsyncImport(() => import(/* webpackChunkName: "LanguageNavigationV1" */ '@adobe/aem-core-components-react-base/dist/layout/language-navigation/v1/LanguageNavigationV1'));
@@ -51,6 +53,8 @@ MapTo('core-components-examples/wcm/react/components/accordion')(withComponentMa
 MapTo('core-components-examples/wcm/react/components/carousel')(withComponentMappingContext(CarouselV1), {isEmpty: CarouselV1IsEmptyFn});
 MapTo('core-components-examples/wcm/react/components/container')(withComponentMappingContext(ContainerV1), {isEmpty: ContainerV1IsEmptyFn});
 
+MapTo('core-components-examples/wcm/react/components/grid-without-wrapper')(withComponentMappingContext(MainResponsiveGrid));
+MapTo('core-components-examples/wcm/react/components/main-responsive-grid')(withComponentMappingContext(MainResponsiveGrid));
 MapTo('core-components-examples/components/demo/json')(Json);
 MapTo('core-components-examples/components/demo/properties')(Properties);
 MapTo('core-components-examples/components/demo/markup')(Markup);

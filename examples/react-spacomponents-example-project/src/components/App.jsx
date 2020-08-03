@@ -6,10 +6,10 @@ class App extends Page {
 
     render() {
         return (
-            <div className="App">
+            <>
                 { this.childComponents }
                 { this.childPages }
-            </div>
+            </>
           );
     }
 }

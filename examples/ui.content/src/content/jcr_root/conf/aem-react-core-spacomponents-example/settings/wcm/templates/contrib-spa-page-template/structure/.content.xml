@@ -30,7 +30,7 @@
                 jcr:lastModified="{Date}2020-04-19T07:26:23.949+02:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="core-components-examples/wcm/react/components/navigation"
+                sling:resourceType="core-components-examples/wcm/react/components/aside-navigation"
                 accessibilityLabel="navigation"
                 collectAllPages="true"
                 navigationRoot="/content/aem-react-core-spacomponents-example/library"
@@ -48,7 +48,7 @@
                 jcr:lastModified="{Date}2017-12-07T16:48:57.968+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="wcm/foundation/components/responsivegrid"
+                sling:resourceType="core-components-examples/wcm/react/components/grid-without-wrapper"
                 editable="{Boolean}true">
                 <cq:responsive jcr:primaryType="nt:unstructured">
                     <default
