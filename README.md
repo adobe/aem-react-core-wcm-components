@@ -76,7 +76,7 @@ Setup your local development environment for [AEM as a Cloud Service SDK](https:
 
 ### Building
 
-To compile your own version of the Core Components, you can build and install everything on your running AEM instance by issuing the following command in the top level folder of the project:
+To compile your own version of the React Core Components, you can build and install everything on your running AEM instance by issuing the following command in the top level folder of the project:
 
     mvn clean install -PautoInstallSinglePackage
 

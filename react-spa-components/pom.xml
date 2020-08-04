@@ -40,51 +40,99 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>com.github.eirslett</groupId>
-                <artifactId>frontend-maven-plugin</artifactId>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.3.2</version>
                 <executions>
+                    <!-- Required: The following will ensure `npm install` is called
+                         before anything else during the 'Default Lifecycle' -->
                     <execution>
-                        <id>install node and npm</id>
-                        <phase>validate</phase>
+                        <id>npm install (initialize)</id>
                         <goals>
-                            <goal>install-node-and-npm</goal>
+                            <goal>exec</goal>
                         </goals>
+                        <phase>initialize</phase>
                         <configuration>
-                            <nodeVersion>${node.version}</nodeVersion>
-                            <npmVersion>${npm.version}</npmVersion>
+                            <executable>npm</executable>
+                            <arguments>
+                                <argument>install</argument>
+                            </arguments>
                         </configuration>
                     </execution>
+                    <!-- Required: The following will ensure `npm install` is called
+                         before anything else during the 'Clean Lifecycle' -->
                     <execution>
-                        <id>npm install</id>
-                        <phase>generate-resources</phase>
+                        <id>npm install (clean)</id>
                         <goals>
-                            <goal>npm</goal>
+                            <goal>exec</goal>
                         </goals>
+                        <phase>pre-clean</phase>
                         <configuration>
-                            <arguments>install</arguments>
+                            <executable>npm</executable>
+                            <arguments>
+                                <argument>install</argument>
+                            </arguments>
                         </configuration>
                     </execution>
+            
+            
+                    <!-- Required: This following calls `npm run build` where 'build' is
+                         the script name I used in my project, change this if yours is
+                             different -->
                     <execution>
-                        <id>test</id>
+                        <id>npm run build (compile)</id>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <phase>compile</phase>
+                        <configuration>
+                            <executable>npm</executable>
+                            <arguments>
+                                <argument>run</argument>
+                                <argument>build</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+            
+            
+                    <!-- Optional: The following will publish to npm if you run
+                         `mvn deploy`. -->
+                    <execution>
+                        <id>npm run publish (deploy)</id>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <phase>deploy</phase>
+                        <configuration>
+                            <executable>npm</executable>
+                            <arguments>
+                                <argument>publish</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+            
+                    <!-- Required: The following will run unit tests.  My test scripts
+                         in npm look for the property 'skipTests', so I map it to
+                             'maven.test.skip'
+                             Note: the douple '-' syntax used below only works with npm >= 2. -->
+                    <execution>
+                        <id>npm run test (test)</id>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
                         <phase>test</phase>
-                        <goals>
-                            <goal>npm</goal>
-                        </goals>
                         <configuration>
-                            <arguments>run test</arguments>
+                            <executable>npm</executable>
+                            <arguments>
+                                <argument>run</argument>
+                                <argument>test</argument>
+                            </arguments>
                         </configuration>
                     </execution>
-                    <execution>
-                        <id>build</id>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>npm</goal>
-                        </goals>
-                        <configuration>
-                            <arguments>run build:production</arguments>
-                        </configuration>
-                    </execution>
+        
+        
                 </executions>
+    
             </plugin>
         </plugins>
     </build>

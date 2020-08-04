@@ -12,7 +12,7 @@ class Demo extends Container{
     get containerProps() {
         let attrs = super.containerProps;
 
-        const cssClass = 'cmp-examples-demo__component cmp-examples-demo__component--width' +  (this.props.fullWidth === true ? 'Full': 'Auto');
+        const cssClass = 'cmp-react-examples-demo__component cmp-react-examples-demo__component--width' +  (this.props.fullWidth === true ? 'Full': 'Auto');
         attrs['className'] = attrs['className'] + ' ' + cssClass;
 
         return attrs;
@@ -21,8 +21,8 @@ class Demo extends Container{
     render(){
 
         return (
-            <div className="cmp-examples-demo" data-cmp-examples-is="demo">
-                <div className="cmp-examples-demo__top t-cmp-clean t-cmp-clean--light cmp-examples-demo__info--open">
+            <div className="cmp-react-examples-demo" data-cmp-react-examples-is="demo">
+                <div className="cmp-react-examples-demo__top t-cmp-clean t-cmp-clean--light cmp-react-examples-demo__info--open">
                     {super.render()}
                 </div>
             </div>

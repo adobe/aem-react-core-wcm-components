@@ -35,7 +35,7 @@
                     sling:resourceType="core/wcm/components/image/v2/image"
                     altValueFromDAM="true"
                     displayPopupTitle="true"
-                    fileReference="/content/dam/aem-react-core-webcomponents-example/library/aem-corecomponents-logo.svg"
+                    fileReference="/content/dam/core-components-examples/library/aem-corecomponents-logo.svg"
                     isDecorative="false"
                     linkURL="/content/aem-react-core-webcomponents-example/library"
                     titleValueFromDAM="true"/>
@@ -58,7 +58,7 @@
                     sling:resourceType="core/wcm/components/image/v2/image"
                     altValueFromDAM="true"
                     displayPopupTitle="true"
-                    fileReference="/content/dam/aem-react-core-webcomponents-example/library/aem-corecomponents-logo.svg"
+                    fileReference="/content/dam/core-components-examples/library/aem-corecomponents-logo.svg"
                     isDecorative="false"
                     linkURL="/content/aem-react-core-webcomponents-example/library"
                     titleValueFromDAM="true"/>

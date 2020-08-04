@@ -8,15 +8,15 @@ class Properties extends Component {
         const keys = Object.keys(this.props.properties);
         return (
             <div>
-                <ol className="cmp-examples-demo__properties">
+                <ol className="cmp-react-examples-demo__properties">
                     {
                         keys.map((key) => {
 
                             return (
-                                <li key={key} className="cmp-examples-demo__property">
-                                <span className="cmp-examples-demo__property-title">{key}<span
-                                    className="cmp-examples-demo__property-separator">:</span></span>
-                                    <span className="cmp-examples-demo__property-value">{this.props.properties[key]}</span>
+                                <li key={key} className="cmp-react-examples-demo__property">
+                                <span className="cmp-react-examples-demo__property-title">{key}<span
+                                    className="cmp-react-examples-demo__property-separator">:</span></span>
+                                    <span className="cmp-react-examples-demo__property-value">{this.props.properties[key]}</span>
                                 </li>
                             )
                         })

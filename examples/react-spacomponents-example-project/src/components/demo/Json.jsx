@@ -8,7 +8,7 @@ class Json extends Component{
         const prettyJson = JSON.stringify(JSON.parse(this.props.json),null,2);
         return (
             <div>
-                <pre className="cmp-examples-demo__info-content cmp-examples-demo__info-content--json prettyprint linenums">{prettyJson}</pre>
+                <pre className="cmp-react-examples-demo__info-content cmp-react-examples-demo__info-content--json prettyprint linenums">{prettyJson}</pre>
             </div>
 
         )

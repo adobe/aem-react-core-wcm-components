@@ -1,0 +1,90 @@
+/*
+ *  Copyright 2018 Adobe
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+
+@cmp-react-examples-notification-right: @cmp-react-examples-spacing-8;
+@cmp-react-examples-notification-animation-offset: @cmp-react-examples-spacing-3;
+@cmp-react-examples-notification-bottom: @cmp-react-examples-notification-right - @cmp-react-examples-notification-animation-offset;
+
+.cmp-react-examples-notification {
+    position: fixed;
+    bottom: @cmp-react-examples-notification-bottom;
+    right: @cmp-react-examples-notification-right;
+    z-index: @cmp-react-examples-z-index-notification;
+
+    display: flex;
+    align-items: center;
+    max-width: 290*@px;
+    border-radius: @cmp-react-examples-border-radius;
+    padding: @cmp-react-examples-spacing-3 @cmp-react-examples-spacing-5;
+    line-height: @cmp-react-examples-line-height;
+
+    font-size: @cmp-react-examples-font-size-s;
+    font-weight: @cmp-react-examples-font-weight-regular;
+    color: @cmp-react-examples-color-white;
+    background-color: @cmp-react-examples-color-notice;
+    white-space: nowrap;
+
+    animation: ~'cmp-react-examples-notification-in linear @{cmp-react-examples-animation-duration-4}';
+    animation-iteration-count: 1;
+
+    .user-select(none);
+}
+
+.cmp-react-examples-notification__text {
+    margin-left: @cmp-react-examples-spacing-4;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cmp-react-examples-notification--out {
+    animation: ~'cmp-react-examples-notification-out linear @{cmp-react-examples-animation-duration-4}';
+    animation-iteration-count: 1;
+}
+
+.cmp-react-examples-notification--success {
+    background-color: @cmp-react-examples-color-success;
+}
+
+.cmp-react-examples-notification--error {
+    background-color: @cmp-react-examples-color-error;
+}
+
+.cmp-react-examples-notification--warning {
+    background-color: @cmp-react-examples-color-warning;
+}
+
+@keyframes cmp-react-examples-notification-in {
+    0% {
+        opacity: 0;
+        .transform(~'translate(0, @{cmp-react-examples-notification-animation-offset})');
+    }
+    100% {
+        opacity: 1;
+        .transform(translate(0, 0));
+    }
+}
+
+@keyframes cmp-react-examples-notification-out {
+    0% {
+        opacity: 1;
+        .transform(translate(0, 0));
+    }
+    100% {
+        opacity: 0;
+        .transform(~'translate(0, @{cmp-react-examples-notification-animation-offset})');
+    }
+}

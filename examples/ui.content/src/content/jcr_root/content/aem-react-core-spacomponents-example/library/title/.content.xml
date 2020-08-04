@@ -123,11 +123,7 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="core-components-examples/components/demo/properties"
                             reference="../../component"/>
-                        <markup
-                            cq:panelTitle="Markup"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="core-components-examples/components/demo/markup"
-                            reference="../../component"/>
+                     
                         <json
                             cq:panelTitle="JSON"
                             jcr:primaryType="nt:unstructured"
@@ -181,11 +177,7 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="core-components-examples/components/demo/properties"
                             reference="../../component"/>
-                        <markup
-                            cq:panelTitle="Markup"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="core-components-examples/components/demo/markup"
-                            reference="../../component"/>
+                        
                         <json
                             cq:panelTitle="JSON"
                             jcr:primaryType="nt:unstructured"
@@ -239,11 +231,6 @@
                             cq:panelTitle="Properties"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="core-components-examples/components/demo/properties"
-                            reference="../../component"/>
-                        <markup
-                            cq:panelTitle="Markup"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="core-components-examples/components/demo/markup"
                             reference="../../component"/>
                         <json
                             cq:panelTitle="JSON"
@@ -299,11 +286,7 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="core-components-examples/components/demo/properties"
                             reference="../../component"/>
-                        <markup
-                            cq:panelTitle="Markup"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="core-components-examples/components/demo/markup"
-                            reference="../../component"/>
+                     
                         <json
                             cq:panelTitle="JSON"
                             jcr:primaryType="nt:unstructured"
