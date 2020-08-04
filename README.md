@@ -79,7 +79,12 @@ Setup your local development environment for [AEM as a Cloud Service SDK](https:
 To compile your own version of the React Core Components, you can build and install everything on your running AEM instance by issuing the following command in the top level folder of the project:
 
     mvn clean install -PautoInstallSinglePackage
-
+    
+If you get "invariant failed" error in the React / browser console, try running dedupe: (warning, this takes long)
+    
+    mvn clean install -PautoInstallSinglePackage -PrunDedupe
+    
+    
 You can also install individual packages/bundles by issuing the following command in the top-level folder of the project:
 
     mvn clean install -PautoInstallPackage -pl <project_name(s)> -am
