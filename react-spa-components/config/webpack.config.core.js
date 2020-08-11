@@ -22,7 +22,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 config.output.library = 'AbstractCoreContainerComponent';
 
 config.entry = {
-    'AbstractCoreContainerComponent': ['./src/AbstractCoreContainerComponent.jsx'],
+    'AbstractCoreContainerComponent': ['./src/AbstractCoreContainerComponent.tsx'],
 };
 
 config.plugins.push(new CleanWebpackPlugin());

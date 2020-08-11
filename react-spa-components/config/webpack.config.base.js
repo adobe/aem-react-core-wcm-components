@@ -37,13 +37,13 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$|\.jsx$/,
+                test: /\.ts$|\.tsx$/,
                 exclude: /(node_modules|dist)/,
-                use: 'babel-loader',
+                use: 'ts-loader',
                 enforce: 'post',
             }].concat(isEnvironmentTest ?
             {
-                test: /\.js$|\.jsx$/,
+                test: /\.ts$|\.tsx$/,
                 include: path.resolve(__dirname, 'src'),
                 use: {
                     loader: 'istanbul-instrumenter-loader',
@@ -64,7 +64,7 @@ module.exports = {
         alias: {
             'react-router-dom': path.resolve('./node_modules/react-router-dom')
         },
-        extensions: ['.js', '.jsx']
+        extensions: ['.ts', '.tsx']
     },
     plugins: [
         new CleanWebpackPlugin(),

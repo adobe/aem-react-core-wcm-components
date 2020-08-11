@@ -16,12 +16,13 @@
 
 import React from 'react';
 
-import {AbstractCoreContainerComponent} from "../../../AbstractCoreContainerComponent";
+import {AbstractCoreContainerComponent,CoreContainerProperties,CoreContainerState, CoreContainerItem} from "../../../AbstractCoreContainerComponent";
 import {ComponentMapping} from '@adobe/cq-react-editable-components';
+
 import {CarouselV1IsEmptyFn} from "./CarouselV1IsEmptyFn";
 
 
-const formatFn = (value, args) => {
+const formatFn = (value:string, args:string[]) => {
     var content = value;
     for (var i = 0; i < args.length; i++) {
         var replacement = '{' + i + '}';
@@ -30,14 +31,39 @@ const formatFn = (value, args) => {
     return content;
 };
 
-export default class CarouselV1 extends AbstractCoreContainerComponent {
+export interface CarouselV1Properties extends CoreContainerProperties{
+    autoplay: boolean;
+    autopauseDisabled: boolean;
+    accessibilityLabel:string;
+    accessibility: CarouselV1AccessibilityProperties;
+    delay: number;
+}
 
-    interval;
+export interface CarouselV1AccessibilityProperties{
+    play: string;
+    pause: string;
+    next: string;
+    previous: string;
+    slide: string;
+    indicator: string;
+    indicators: string;
+}
+export interface CarouselV1State extends CoreContainerState{
+    activeIndex: number,
+    isMouseEntered: boolean,
+    autoPlay: boolean,
+}
+
+export default class CarouselV1<P extends CarouselV1Properties, S extends CarouselV1State> extends AbstractCoreContainerComponent<P,S> {
+
+    interval:number = 0;
 
 
     static defaultProps = {
+        _allowedComponentPlaceholderListEmptyLabel: 'CarouselV1',
         isInEditor: false,
         autoplay: false,
+        cqPath: '',
         cqItems: {},
         cqItemsOrder: [],
         accessibilityLabel: 'Carousel',
@@ -52,9 +78,10 @@ export default class CarouselV1 extends AbstractCoreContainerComponent {
         }
     };
 
-    constructor(props) {
+    constructor(props:P) {
         super(props,"cmp-carousel");
 
+        //@ts-ignore
         this.state = {
             activeIndex: 0,
             isMouseEntered: false,
@@ -68,10 +95,18 @@ export default class CarouselV1 extends AbstractCoreContainerComponent {
         this.handleOnMouseEnter   = this.handleOnMouseEnter.bind(this);
         this.handleOnMouseLeave   = this.handleOnMouseLeave.bind(this);
 
+    }
+    
+    componentDidMount(){
         if( this.props.autoplay && !this.props.isInEditor){
             this.autoPlay();
         }
+    }
 
+    componentWillUnmount(){
+        if(this.interval){
+            this.clearAutoPlay();
+        }
     }
 
     handleOnMouseEnter(){
@@ -95,7 +130,7 @@ export default class CarouselV1 extends AbstractCoreContainerComponent {
     }
 
 
-    handleIndicatorClick(index){
+    handleIndicatorClick(index:number){
 
         if(this.state.activeIndex !== index){
 
@@ -106,7 +141,7 @@ export default class CarouselV1 extends AbstractCoreContainerComponent {
     }
 
     autoPlay(){
-        this.interval = setInterval(() => {
+        this.interval = window.setInterval(() => {
             this.autoPlayTick();
         }, this.props.delay);
     }
@@ -121,10 +156,10 @@ export default class CarouselV1 extends AbstractCoreContainerComponent {
     };
 
     clearAutoPlay = () => {
-        clearInterval(this.interval);
+        window.clearInterval(this.interval);
     };
 
-    toggleAutoPlay(toggle){
+    toggleAutoPlay(toggle:boolean){
         this.setState({
             autoPlay: toggle
         })
@@ -157,7 +192,7 @@ export default class CarouselV1 extends AbstractCoreContainerComponent {
         return this.state.activeIndex;
     }
 
-    __setSlide(index){
+    __setSlide(index:number){
 
         this.setState({
             activeIndex: index
@@ -183,14 +218,14 @@ export default class CarouselV1 extends AbstractCoreContainerComponent {
 
     }
 
-    displayItem(item, index){
+    displayItem(item:JSX.Element, index:number){
 
         const isActive = index === this.state.activeIndex;
         //we display the item if active is true, or if we are in the author mode. we need to always display the item for the author mode to work properly.
         const display = !!(isActive || this.props.isInEditor);
 
         const cssClass = isActive ? `${this.baseCssCls}__item ${this.baseCssCls}__item--active` : `${this.baseCssCls}__item`;
-        const ariaLabel = formatFn(this.props.accessibility.slide, [(index + 1), this.props.cqItemsOrder.length]);
+        const ariaLabel = formatFn(this.props.accessibility.slide, [(index + 1).toString(), this.props.cqItemsOrder.length.toString()]);
 
         return (
             <div key={'item-' + index}
@@ -228,7 +263,7 @@ export default class CarouselV1 extends AbstractCoreContainerComponent {
                         const item = this.props.cqItems[key];
 
                         const cssClass = (index === this.state.activeIndex) ? `${this.baseCssCls}__indicator ${this.baseCssCls}__indicator--active` : `${this.baseCssCls}__indicator`;
-                        const ariaLabelItem = formatFn(this.props.accessibility.indicator, [(index + 1)]);
+                        const ariaLabelItem = formatFn(this.props.accessibility.indicator, [(index + 1).toString()]);
                         return (
                             <li
                                 key={'item-' + index}

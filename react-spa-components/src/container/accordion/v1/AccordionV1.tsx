@@ -14,17 +14,27 @@
  *  limitations under the License.
  */
 
-import React from "react";
+import * as React from 'react';
 
-import {AbstractCoreContainerComponent} from "../../../AbstractCoreContainerComponent";
+import {AbstractCoreContainerComponent,CoreContainerProperties,CoreContainerState} from "../../../AbstractCoreContainerComponent";
 import {ComponentMapping} from '@adobe/cq-react-editable-components';
 import {AccordionV1IsEmptyFn} from "./AccordionV1IsEmptyFn";
 
+export interface AccordionV1V1Properties extends CoreContainerProperties{
+    singleExpansion: boolean;
+    headingElement: string;
+    expandedItems: string[];
+}
 
-export default class AccordionV1 extends AbstractCoreContainerComponent {
+export interface AccordionV1V1State extends CoreContainerState{
+    expandedItems: string[];
+}
 
-    constructor(props) {
+export default class AccordionV1<P extends AccordionV1V1Properties, S extends AccordionV1V1State> extends AbstractCoreContainerComponent<P,S> {
+
+    constructor(props:P) {
         super(props, "cmp-accordion");
+        //@ts-ignore
         this.state = {
             componentMapping: this.props.componentMapping || ComponentMapping,
             expandedItems: this.props.expandedItems
@@ -33,7 +43,7 @@ export default class AccordionV1 extends AbstractCoreContainerComponent {
         this.handleAccordionNavClick = this.handleAccordionNavClick.bind(this);
     }
 
-    handleAccordionNavClick(itemKey){
+    handleAccordionNavClick(itemKey:string){
 
         const isActive = this.state.expandedItems.indexOf(itemKey) > -1;
         const isSingleExpansion = this.props.singleExpansion;
@@ -54,7 +64,7 @@ export default class AccordionV1 extends AbstractCoreContainerComponent {
         });
     }
 
-    isItemExpanded(key){
+    isItemExpanded(key:string){
         return this.state.expandedItems.indexOf(key) > -1;
     }
 
@@ -62,10 +72,11 @@ export default class AccordionV1 extends AbstractCoreContainerComponent {
         let attrs = this.containerProps;
         attrs['className'] = attrs.className + ' ' + this.baseCssCls;
         attrs['data-cmp-is'] = 'accordion';
+        return attrs;
     }
 
 
-    displayItem(key,isExpanded) {
+    displayItem(key:string,isExpanded:boolean) {
 
         const indexToShow = this.props.cqItemsOrder.indexOf(key);
 
@@ -83,7 +94,7 @@ export default class AccordionV1 extends AbstractCoreContainerComponent {
         return null;
     }
 
-    renderHeadingButton(key, item,buttonCssClass){
+    renderHeadingButton(key:string, item:any,buttonCssClass:string){
         return (
             <button className={buttonCssClass} onClick={() => { this.handleAccordionNavClick(key) }}>
                 <span className={this.baseCssCls + '__title'}>{item["cq:panelTitle"]}</span>
