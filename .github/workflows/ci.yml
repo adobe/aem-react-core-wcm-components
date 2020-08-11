@@ -5,24 +5,26 @@ jobs:
   test-react-base-components:
     name: test react-base-components
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: react-base-components
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: '12'
       - run: npm install
-        - working-directory: react-base-components
       - run: npm test
-        - working-directory: react-base-components
   test-react-spa-components:
     name: test react-spa-components
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: react-spa-components
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: '12'
       - run: npm install
-        - working-directory: react-spa-components
       - run: npm test
-        - working-directory: react-spa-components
