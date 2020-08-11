@@ -21,7 +21,7 @@ import {RoutedLink} from "../../../routing/RoutedLink";
 import {ImageV2IsEmptyFn} from "./ImageV2IsEmptyFn";
 
 
-export interface TempImageComponentModel extends RoutedCoreComponentModel{
+export interface ImageV2Model extends RoutedCoreComponentModel{
     src: string
     alt: string
     displayPopupTitle?: boolean
@@ -30,7 +30,7 @@ export interface TempImageComponentModel extends RoutedCoreComponentModel{
 }
 
 
-export default class ImageV2<Model extends TempImageComponentModel,State extends CoreComponentState> extends AbstractCoreComponent<Model,State> {
+export default class ImageV2<Model extends ImageV2Model,State extends CoreComponentState> extends AbstractCoreComponent<Model,State> {
 
     public static defaultProps = {
         hidePlaceHolder: false,
