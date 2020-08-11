@@ -18,6 +18,7 @@ import React from "react";
 import {EditorPlaceHolder} from "./common/placeholder";
 
 export interface CoreComponentModel {
+    baseCssClass?: string
     hidePlaceHolder: boolean
     isInEditor:boolean
 }
@@ -48,7 +49,7 @@ export abstract class AbstractCoreComponent<Model extends CoreComponentModel, St
      */
     protected constructor(props:Model,baseCssCls:string,emptyPlaceHolderText:string) {
         super(props);
-        this.baseCssCls = baseCssCls;
+        this.baseCssCls = props.baseCssClass || baseCssCls;
         this.emptyPlaceHolderText = emptyPlaceHolderText;
     }
 

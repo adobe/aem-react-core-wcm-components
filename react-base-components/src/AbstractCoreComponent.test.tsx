@@ -35,7 +35,7 @@ class ImplementingClass extends AbstractCoreComponent<TestType, CoreComponentSta
     }
 
     renderComponent(): JSX.Element {
-        return <div>My awesome component</div>;
+        return <div className={this.baseCssCls}>My awesome component</div>;
     }
 
 }
@@ -52,7 +52,7 @@ it('Renders without crashing', () => {
 
 it('Should show our awesome text if the component is not empty', () => {
     const wrapper = shallow(<ImplementingClass  hidePlaceHolder={false} isInEditor={false} forceEmptyFlag={false}/>);
-    expect(wrapper.html()).toEqual("<div>My awesome component</div>");
+    expect(wrapper.html()).toEqual("<div class=\"base-class\">My awesome component</div>");
 });
 
 it('Should not show anything if wcmmode is disabled and component is empty', () => {
@@ -68,4 +68,9 @@ it('Should show the proper placeholder if wcmmode is edit and component is empty
 it('Should NOT show the proper placeholder if wcmmode is edit and component is empty, and hidePlaceHolder is set to true.', () => {
     const wrapper = shallow(<ImplementingClass  hidePlaceHolder={true} isInEditor={true} forceEmptyFlag={true}/>);
     expect(wrapper.html()).toEqual("");
+});
+
+it('Should change the baseClass if we specify it with properties', () => {
+    const wrapper = shallow(<ImplementingClass baseCssClass={"overridden"}  hidePlaceHolder={false} isInEditor={false} forceEmptyFlag={false}/>);
+    expect(wrapper.html()).toEqual("<div class=\"overridden\">My awesome component</div>");
 });

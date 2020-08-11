@@ -25,7 +25,7 @@ export interface LinkProps {
 export const RoutedLink = (props:LinkProps) => {
     const {to, isRouted, ...otherProps} = props;
 
-    if(to === undefined){
+    if(to === undefined || to.trim().length === 0){
         return <a href={'#'}
             {...otherProps}
         />;

@@ -17,13 +17,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {mount} from 'enzyme';
-import { createMemoryHistory, MemoryHistory } from 'history';
 
-import ImageV2, { ImageV2Model} from "./ImageV2";
-import { Router , Switch, Route } from 'react-router-dom';
+import ImageV2, {ImageV2Model} from "./ImageV2";
+import {ImageV2IsEmptyFn} from "./ImageV2IsEmptyFn";
 
-import { render, fireEvent } from '@testing-library/react'
+it('Has a proper isEmpty function', () => {
 
+    const props1:ImageV2Model = {
+        src: "/content/dam/image.jpg",
+        alt: "Some Image",
+        hidePlaceHolder: false,
+        isInEditor: false
+    };
+
+    expect(ImageV2IsEmptyFn(props1)).toEqual(false);
+
+    const props2:ImageV2Model = {
+        src: " ",
+        alt: "Some Image",
+        hidePlaceHolder: false,
+        isInEditor: false
+    };
+
+    expect(ImageV2IsEmptyFn(props2)).toEqual(true);
+
+});
 
 it('Renders without crashing', () => {
     const div = document.createElement('div');
@@ -35,26 +53,6 @@ it('Renders without crashing', () => {
     expect(1).toBe(1);
 });
 
-const createRoutedImageV2 = (props:ImageV2Model) => {
-    const history:MemoryHistory = createMemoryHistory({
-        initialEntries: ['/page1'],
-        initialIndex: 0
-    });
-    return {
-        ...render(
-            <Router history={history}>
-                <Switch>
-                    <Route exact={true} path={"/page2"}>
-                        <div><h1 className={"dummy"}>Hello World</h1></div>
-                    </Route>
-                    <Route exact={true} path={"/page1"}>
-                        <ImageV2 {...props}/>
-                    </Route>
-                </Switch>
-            </Router>
-        )
-    }
-};
 
 it('Renders without link', () => {
 
@@ -109,35 +107,3 @@ it('Renders with title', () => {
 });
 
 
-it('Renders and routes properly', () => {
-
-    //let captured = false;
-    const props:ImageV2Model = {
-        src: "/content/dam/image.jpg",
-        link: "/page2",
-        alt: "Some Image",
-        hidePlaceHolder: false,
-        isInEditor: false,
-        routed: true
-    };
-
-    const { container } = createRoutedImageV2(props);
-
-    const image:HTMLElement|null = container.querySelector('.cmp-image');
-
-    expect(image).toBeDefined();
-
-    const anchor = container.querySelector('a.cmp-image__link');
-
-    expect(anchor).toBeDefined();
-
-    if(anchor != null){
-        fireEvent.click(anchor);
-    }
-
-    const h1 = container.querySelector("h1.dummy");
-    expect(h1).toBeDefined();
-
-
-
-});
