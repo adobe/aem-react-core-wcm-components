@@ -10,9 +10,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '12'
-      - working-directory: cd react-base-components
       - run: npm install
+        - working-directory: react-base-components
       - run: npm test
+        - working-directory: react-base-components
   test-react-spa-components:
     name: test react-spa-components
     runs-on: ubuntu-latest
@@ -21,6 +22,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '12'
-      - working-directory: cd react-spa-components
       - run: npm install
+        - working-directory: react-spa-components
       - run: npm test
+        - working-directory: react-spa-components
