@@ -6,21 +6,21 @@ jobs:
     name: test react-base-components
     runs-on: ubuntu-latest
     steps:
-      - working-directory: cd react-base-components
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: '12'
+      - working-directory: cd react-base-components
       - run: npm install
       - run: npm test
   test-react-spa-components:
     name: test react-spa-components
     runs-on: ubuntu-latest
     steps:
-      - working-directory: cd react-spa-components
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: '12'
+      - working-directory: cd react-spa-components
       - run: npm install
       - run: npm test
