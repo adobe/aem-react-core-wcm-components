@@ -45,6 +45,6 @@ jobs:
           source-root: react-spa-components
       - name: Upload coverage report
         uses: actions/upload-artifact@v2
-          with:
-            name: spa-coverage
-            path: react-spa-components/coverage
+        with:
+          name: spa-coverage
+          path: react-spa-components/coverage
