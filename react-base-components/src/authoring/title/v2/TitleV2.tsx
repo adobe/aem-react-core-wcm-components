@@ -21,10 +21,11 @@ import {RoutedLink} from "../../../routing/RoutedLink";
 import {TitleV2IsEmptyFn} from "./TitleV2IsEmptyFn";
 
 export interface TitleV2Model extends RoutedCoreComponentModel{
-    text?: string;
+    text: string;
     linkURL?: string;
     linkDisabled: boolean;
-    type: string;
+    type?: string;
+    nested?: boolean
 }
 
 
@@ -44,9 +45,13 @@ export default class TitleV2<Model extends TitleV2Model, State extends CoreCompo
         return TitleV2IsEmptyFn(this.props);
     }
 
+    private get bemModifierPrefix(): string{
+        return this.props.nested ? '-' : '__';
+    }
+
     generateLink(){
         return (
-            <RoutedLink className={this.baseCssCls + '__link'} isRouted={this.props.routed} to={this.props.linkURL}>
+            <RoutedLink className={this.baseCssCls + this.bemModifierPrefix +  'link'} isRouted={this.props.routed} to={this.props.linkURL}>
                 {this.props.text}
             </RoutedLink>
         )
@@ -67,13 +72,13 @@ export default class TitleV2<Model extends TitleV2Model, State extends CoreCompo
 
     renderComponent(){
 
+        const elementType:string = (!!this.props.type) ? this.props.type.toString() : 'h3';
         return (
             <div className={this.baseCssCls}>
                 {
-                    React.createElement(
-                     this.props.type || 'h3',
+                    React.createElement(elementType,
                         {
-                            className: this.baseCssCls + '__text',
+                            className: this.baseCssCls + this.bemModifierPrefix + 'text',
                         },
                         this.getContents()
                     )
