@@ -42,8 +42,6 @@ class DownloadV1Impl extends React.Component<DownloadV1Model> {
     displayFormat: boolean;
 
     public static defaultProps = {
-        isInEditor: false,
-        hidePlaceHolder: false,
         titleType: 'h3',
         displaySize: false,
         displayFormat: false,
@@ -124,8 +122,6 @@ class DownloadV1Impl extends React.Component<DownloadV1Model> {
     }
 
     renderDownloadLink() {
-
-
         return (
             <a onClick={this.handleOnClick} className={this.props.baseCssClass + '__action'} href={this.getHref()}>
                 <span className={this.props.baseCssClass + '__action-text'}>{this.props.actionText}</span>
@@ -150,10 +146,10 @@ class DownloadV1Impl extends React.Component<DownloadV1Model> {
 
 
 
-const Wrapped = (props:DownloadV1Model) => {
+const DownloadV1 = (props:DownloadV1Model) => {
 
     const Wrapped = AbstractCoreComponentWrap(DownloadV1Impl, DownloadV1IsEmptyFn, "cmp-download", "Download V1");
     return <Wrapped {...props}/>
 };
 
-export default Wrapped;
+export default DownloadV1;

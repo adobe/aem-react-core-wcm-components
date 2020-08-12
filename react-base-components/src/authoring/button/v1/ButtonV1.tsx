@@ -33,11 +33,6 @@ export interface ButtonV1Model extends RoutedCoreComponentModel{
 
 class ButtonV1Impl extends React.Component<ButtonV1Model> {
 
-    public static defaultProps = {
-        isInEditor: false,
-        hidePlaceHolder: false
-    };
-
     constructor(props:ButtonV1Model) {
         super(props);
         this.handleOnClick = this.handleOnClick.bind(this);
@@ -55,10 +50,6 @@ class ButtonV1Impl extends React.Component<ButtonV1Model> {
                 <span className={this.props.baseCssClass + '__text'}>{this.props.text}</span>
             </>
         );
-    }
-
-    isEmpty(): boolean{
-        return ButtonV1IsEmptyFn(this.props);
     }
 
     render(){
@@ -88,9 +79,9 @@ class ButtonV1Impl extends React.Component<ButtonV1Model> {
 };
 
 
-const Wrapped = (props:ButtonV1Model) => {
+const ButtonV1 = (props:ButtonV1Model) => {
     const Wrapped = AbstractCoreComponentWrap(ButtonV1Impl, ButtonV1IsEmptyFn, "cmp-button", "Button V1")
     return <Wrapped {...props}/>
 };
 
-export default Wrapped;
+export default ButtonV1;

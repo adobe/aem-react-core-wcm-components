@@ -22,31 +22,12 @@ import {mount} from 'enzyme';
 import DownloadV1, { DownloadV1Model} from "./DownloadV1";
 
 
-let captured = false;
-const props:DownloadV1Model = {
-    actionText: "Download now!!!",
-    description: "<p>Asset uploaded directly from a local file system</p>\\r\\n",
-    displayFilename: true,
-    displayFormat: true,
-    displaySize: true,
-    extension: "jpg",
-    filename: "lava-into-ocean.jpg",
-    format: "image/jpeg",
-    hidePlaceHolder: false,
-    isInEditor: false,
-    size: "81 KB",
-    title: "Uploaded Asset",
-    titleType: "h2",
-    handleOnClick: ()=> {
-        captured = true;
-    },
-    url: "/content/core-components-examples/library/page-authoring/download/jcr:content/root/responsivegrid/demo_68071479/component/download/file.coredownload.jpeg/lava-into-ocean.jpg"
-};
+
 
 it('Renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
-        <DownloadV1 {...props} />,
+        <DownloadV1 title="test" titleType="h2" displayFilename={true} displaySize={true} displayFormat={true} />,
         div
     );
     ReactDOM.unmountComponentAtNode(div);

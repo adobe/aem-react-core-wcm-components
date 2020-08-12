@@ -14,34 +14,28 @@
  *  limitations under the License.
  */
 
-import React from "react";
-import {AbstractCoreComponent, CoreComponentModel, CoreComponentState} from "../../../AbstractCoreComponent";
+import React, { Component } from "react";
+import {AbstractCoreComponent, CoreComponentModel, CoreComponentState, AbstractCoreComponentWrap} from "../../../AbstractCoreComponent";
 import {SeparatorV1IsEmptyFn} from "./SeparatorV1IsEmptyFn";
 
 
-export default class SeparatorV1<Model extends CoreComponentModel, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
+class SeparatorV1Impl extends Component<CoreComponentModel> {
 
-    public static defaultProps = {
-        hidePlaceHolder: false,
-        isInEditor: false
-    };
-
-
-    constructor(props: Model) {
-        super(props, 'cmp-separator', 'SeparatorV1');
-    }
-
-    isEmpty(): boolean{
-        return SeparatorV1IsEmptyFn(this.props);
-    }
-
-    renderComponent(): JSX.Element {
+    render(): JSX.Element {
         return (
-            <div className={this.baseCssCls}>
-                <hr className={this.baseCssCls + '__horizontal-rule'}/>
+            <div className={this.props.baseCssClass}>
+                <hr className={this.props.baseCssClass + '__horizontal-rule'}/>
             </div>
         )
     }
 
 
 }
+
+
+const SeparatorV1 = (props:CoreComponentModel) => {
+    const Wrapped = AbstractCoreComponentWrap(SeparatorV1Impl, SeparatorV1IsEmptyFn, "cmp-separator", "Separator V1")
+    return <Wrapped {...props}/>
+};
+
+export default SeparatorV1;

@@ -19,12 +19,13 @@ import {ComponentType} from 'react';
 
 import {EditorPlaceHolder} from "./common/placeholder";
 
-export interface CoreComponentModel {
+export interface HasBaseCssClass {
     baseCssClass?: string
-    hidePlaceHolder: boolean
-    isInEditor:boolean
-    baseCssClass?: string;
+}
 
+export interface CoreComponentModel extends HasBaseCssClass{
+    hidePlaceHolder?: boolean
+    isInEditor?:boolean
 }
 
 export interface CoreComponentState {
@@ -102,7 +103,7 @@ export abstract class AbstractCoreComponent<Model extends CoreComponentModel, St
     protected abstract renderComponent():JSX.Element;
 
     private __hidePlaceHolder():boolean{
-        return this.props.hidePlaceHolder;
+        return this.props.hidePlaceHolder === true;
     }
 
     private __renderPlaceHolder(title?:string, emptyText?:string):JSX.Element{

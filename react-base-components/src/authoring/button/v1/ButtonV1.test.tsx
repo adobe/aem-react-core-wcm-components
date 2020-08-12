@@ -25,7 +25,7 @@ import { MemoryRouter } from 'react-router-dom';
 it('Renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
-       <ButtonV1 hidePlaceHolder={true} isInEditor={true}  />,
+       <ButtonV1 />,
         div
     );
     ReactDOM.unmountComponentAtNode(div);

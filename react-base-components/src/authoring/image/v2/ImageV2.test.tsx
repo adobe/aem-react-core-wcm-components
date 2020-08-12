@@ -45,6 +45,7 @@ it('Has a proper isEmpty function', () => {
 
 it('Renders without crashing', () => {
     const div = document.createElement('div');
+
     ReactDOM.render(
         <ImageV2 src={"/content/dam/image.jpg"} alt={"Some Image"} />,
         div

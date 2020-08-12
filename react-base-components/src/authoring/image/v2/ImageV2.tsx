@@ -14,8 +14,8 @@
  *  limitations under the License.
  */
 
-import React from 'react';
-import {AbstractCoreComponent, CoreComponentState} from "../../../AbstractCoreComponent";
+import React, { Component } from 'react';
+import {AbstractCoreComponent, CoreComponentState, AbstractCoreComponentWrap} from "../../../AbstractCoreComponent";
 import {RoutedCoreComponentModel} from "../../../routing/RoutedCoreComponent";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {ImageV2IsEmptyFn} from "./ImageV2IsEmptyFn";
@@ -30,21 +30,16 @@ export interface ImageV2Model extends RoutedCoreComponentModel{
 }
 
 
-export default class ImageV2<Model extends ImageV2Model,State extends CoreComponentState> extends AbstractCoreComponent<Model,State> {
+class ImageV2Impl extends Component<ImageV2Model> {
 
     public static defaultProps = {
         hidePlaceHolder: false,
         isInEditor: false
     };
 
-
-    constructor(props: Model) {
-        super(props, 'cmp-image', 'ImageV2');
-    }
-
     generateLink(){
         return (
-            <RoutedLink className={this.baseCssCls + '__link'} isRouted={this.props.routed} to={this.props.link}>
+            <RoutedLink className={this.props.baseCssClass + '__link'} isRouted={this.props.routed} to={this.props.link}>
                 {this.getInnerContents()}
             </RoutedLink>
         )
@@ -54,10 +49,10 @@ export default class ImageV2<Model extends ImageV2Model,State extends CoreCompon
         return (
             <>
                 <img src={this.props.src}
-                     className={this.baseCssCls + '__image'}
+                     className={this.props.baseCssClass + '__image'}
                      alt={this.props.alt}/>
                 {
-                    !!(this.props.title) && <span className={this.baseCssCls + '__title'} itemProp="caption">{this.props.title}</span>
+                    !!(this.props.title) && <span className={this.props.baseCssClass + '__title'} itemProp="caption">{this.props.title}</span>
                 }
                 {
                     this.props.displayPopupTitle && (!!this.props.title) && <meta itemProp="caption" content={this.props.title}/>
@@ -73,12 +68,8 @@ export default class ImageV2<Model extends ImageV2Model,State extends CoreCompon
         return this.getInnerContents();
     }
 
-    isEmpty(): boolean {
-        return ImageV2IsEmptyFn(this.props);
-    }
-
-    renderComponent(): JSX.Element {
-        const cssClassName = (this.props.isInEditor) ? this.baseCssCls + ' cq-dd-image' : this.baseCssCls;
+    render(): JSX.Element {
+        const cssClassName = (this.props.isInEditor) ? this.props.baseCssClass + ' cq-dd-image' : this.props.baseCssClass;
 
         return (
             <div className={cssClassName}>
@@ -88,3 +79,11 @@ export default class ImageV2<Model extends ImageV2Model,State extends CoreCompon
     }
 
 }
+
+const ImageV2 = (props:ImageV2Model) => {
+
+    const Wrapped = AbstractCoreComponentWrap(ImageV2Impl, ImageV2IsEmptyFn, "cmp-image", "Image V2");
+    return <Wrapped {...props}/>
+};
+
+export default ImageV2;

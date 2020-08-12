@@ -14,8 +14,8 @@
  *  limitations under the License.
  */
 
-import React from 'react';
-import {AbstractCoreComponent, CoreComponentModel, CoreComponentState} from "../../../AbstractCoreComponent";
+import React, { Component } from 'react';
+import {AbstractCoreComponent, CoreComponentModel, CoreComponentState, AbstractCoreComponentWrap} from "../../../AbstractCoreComponent";
 import {TextV2IsEmptyFn} from "./TextV2IsEmptyFn";
 
 export interface TextV2Model extends CoreComponentModel{
@@ -24,42 +24,37 @@ export interface TextV2Model extends CoreComponentModel{
 }
 
 
-
-export default class TextV2<Model extends TextV2Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
+class TextV2Impl extends Component<TextV2Model> {
 
     public static defaultProps = {
-        hidePlaceHolder: false,
-        isInEditor: false,
         richText: false
     };
-
-    constructor(props: Model) {
-        super(props, 'cmp-text', 'TextV2');
-    }
-
-    isEmpty(): boolean{
-        return TextV2IsEmptyFn(this.props);
-    }
 
     renderRichText(){
         const text:string = this.props.text as string;
         return (
-            <div className={this.baseCssCls} dangerouslySetInnerHTML={{__html: text}}></div>
+            <div className={this.props.baseCssClass} dangerouslySetInnerHTML={{__html: text}}></div>
         )
     }
 
     renderPlainText(){
         return (
-            <div className={this.baseCssCls}>
+            <div className={this.props.baseCssClass}>
                 <p className="cmp-text__paragraph">{this.props.text}</p>
             </div>
         )
     }
-
-
-    renderComponent(): JSX.Element {
+    render(): JSX.Element {
         return (this.props.richText) ? this.renderRichText() : this.renderPlainText();
     }
 
-
 }
+
+
+
+const TextV2 = (props:TextV2Model) => {
+    const Wrapped = AbstractCoreComponentWrap(TextV2Impl, TextV2IsEmptyFn, "cmp-text", "Text V2")
+    return <Wrapped {...props}/>
+};
+
+export default TextV2;

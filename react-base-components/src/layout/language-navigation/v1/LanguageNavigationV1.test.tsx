@@ -16,7 +16,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {mount, shallow} from 'enzyme';
+import {mount} from 'enzyme';
 
 import {items} from "./LanguageNavigationV1TestMockItems";
 import LanguageNavigationV1, { LanguageNavigationV1Model} from "./LanguageNavigationV1";
@@ -26,7 +26,7 @@ import { MemoryRouter } from 'react-router-dom';
 it('Renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
-        <LanguageNavigationV1 {...items} />,
+        <LanguageNavigationV1 items={items}/>,
         div
     );
     ReactDOM.unmountComponentAtNode(div);
@@ -41,7 +41,7 @@ it('Renders a basic navigation properly', () => {
         isInEditor: false,
         items: items
     };
-    const wrapper = shallow(<LanguageNavigationV1  {...properties} />);
+    const wrapper = mount(<LanguageNavigationV1  {...properties} />);
     const nav = wrapper.find('nav');
 
     expect(nav).toHaveLength(1);

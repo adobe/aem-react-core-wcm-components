@@ -14,8 +14,8 @@
  *  limitations under the License.
  */
 
-import React from 'react';
-import {AbstractCoreComponent, CoreComponentState} from "../../../AbstractCoreComponent";
+import React, { Component } from 'react';
+import {AbstractCoreComponent, CoreComponentState, AbstractCoreComponentWrap} from "../../../AbstractCoreComponent";
 import {RoutedCoreComponentModel, RoutedModel, isItemRouted} from "../../../routing/RoutedCoreComponent";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {ListV2IsEmptyFn} from "./ListV2IsEmptyFn";
@@ -38,27 +38,13 @@ export interface ListV2Model extends RoutedCoreComponentModel{
     linkItems: boolean
 }
 
-
-export default class ListV2<Model extends ListV2Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
-
-    public static defaultProps = {
-        isInEditor: false,
-        hidePlaceHolder: false
-    };
-
-    constructor(props: Model) {
-        super(props, 'cmp-list', 'ListV2');
-    }
-
-    isEmpty(): boolean{
-        return ListV2IsEmptyFn(this.props);
-    }
+class ListV2Impl extends Component<ListV2Model> {
 
     renderListItemContent(item:ListV2Item, index:number){
 
         return (
             <>
-                <span className={this.baseCssCls + '__item-title'}>{item.title}</span>
+                <span className={this.props.baseCssClass + '__item-title'}>{item.title}</span>
                 {this.props.showModificationDate && this.renderItemModificationDate(item,index)}
             </>
         )
@@ -68,14 +54,14 @@ export default class ListV2<Model extends ListV2Model, State extends CoreCompone
 
         const dateStringToDisplay = item.lastModifiedFormatted ? item.lastModifiedFormatted : "";
         return (
-            <span className={this.baseCssCls + '__item-date'}>{dateStringToDisplay}</span>
+            <span className={this.props.baseCssClass + '__item-date'}>{dateStringToDisplay}</span>
         )
     }
 
     renderListAnchor(item:ListV2Item, index:number){
 
         return (
-            <RoutedLink isRouted={isItemRouted(this.props, item)} className={this.baseCssCls + '__item-link'} to={item.url}>
+            <RoutedLink isRouted={isItemRouted(this.props, item)} className={this.props.baseCssClass + '__item-link'} to={item.url}>
                 {this.renderListItemContent(item,index)}
             </RoutedLink>
         )
@@ -83,13 +69,13 @@ export default class ListV2<Model extends ListV2Model, State extends CoreCompone
 
     renderListItemDescription(item: ListV2Item, index: number) {
         return (
-            <span className={this.baseCssCls + '__item-description'}>${item.description}</span>
+            <span className={this.props.baseCssClass + '__item-description'}>${item.description}</span>
         )
     }
 
     renderListItem(item:ListV2Item, index:number){
         return (
-            <li className={this.baseCssCls + '__item'} key={"cmp-list-" + index}>
+            <li className={this.props.baseCssClass + '__item'} key={"cmp-list-" + index}>
                 <article>
                     {this.props.linkItems && !!item.url && this.renderListAnchor(item,index)}
                     {!this.props.linkItems && this.renderListItemContent(item,index)}
@@ -99,10 +85,10 @@ export default class ListV2<Model extends ListV2Model, State extends CoreCompone
         )
     }
 
-    renderComponent(){
+    render(){
 
         return (
-            <ul className={this.baseCssCls}>
+            <ul className={this.props.baseCssClass}>
                 {this.props.items.map((item, index) => this.renderListItem(item, index))}
             </ul>
         )
@@ -110,3 +96,11 @@ export default class ListV2<Model extends ListV2Model, State extends CoreCompone
 
 
 }
+
+
+const ListV2 = (props:ListV2Model) => {
+    const Wrapped = AbstractCoreComponentWrap(ListV2Impl, ListV2IsEmptyFn, "cmp-list", "List V2")
+    return <Wrapped {...props}/>
+};
+
+export default ListV2;

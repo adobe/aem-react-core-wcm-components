@@ -14,9 +14,9 @@
  *  limitations under the License.
  */
 
-import React from 'react';
-import {CoreComponentState} from "../../../AbstractCoreComponent";
-import NavigationV1, { NavigationV1Item, NavigationV1Model} from "../../navigation/v1/NavigationV1";
+import React, { Component } from 'react';
+import {CoreComponentState, AbstractCoreComponentWrap} from "../../../AbstractCoreComponent";
+import NavigationV1, { NavigationV1Item, NavigationV1Model, determineIsActive, NavigationV1Group} from "../../navigation/v1/NavigationV1";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {isItemRouted} from "../../../routing/RoutedCoreComponent";
 import {LanguageNavigationV1IsEmptyFn} from "./LanguageNavigationV1IsEmptyFn";
@@ -39,52 +39,84 @@ export interface LanguageNavigationV1Model extends NavigationV1Model{
     items:LanguageNavigationV1Item[]
     accessibilityLabel?: string
 }
-
-
-export default class LanguageNavigationV1<Model extends LanguageNavigationV1Model, State extends CoreComponentState> extends NavigationV1<Model, State> {
-
-    navChildren: LanguageNavigationV1Item[];
-
-    public static defaultProps = {
-        isInEditor: false,
-        hidePlaceHolder: false,
-        items: []
-    };
-
-    constructor(props:Model) {
-        super(props);
-        this.baseCssCls = 'cmp-languagenavigation';
-        this.emptyPlaceHolderText = 'LanguageNavigationV1';
-        this.navChildren = props.items;
+export const LanguageNavigationV1Link = (props:LanguageNavigationV1Item) => {
+    if(props.level > 0){
+        return (
+            <RoutedLink
+                isRouted={isItemRouted(props, props)}
+                className={props.baseCssClass + '__item-link'}
+                to={props.url}
+                hrefLang={props.language}
+                lang={props.language}
+                rel="alternate"
+                title={props.title}>{props.title}</RoutedLink>
+        )
+    }else{
+        return (
+            <span className={ props.baseCssClass + '__item-title'} lang={props.language}>{props.title}</span>
+        )
     }
+}
 
-    isEmpty(): boolean {
-        return LanguageNavigationV1IsEmptyFn(this.props);
-    }
+export const LanguageNavigationV1Group = (item:LanguageNavigationV1Item) => {
+    return (
+        <>
+            {!!item.children && item.children.length > 0 &&  (
+                <ul className={item.baseCssClass + '__group'}>
+                    {item.children.map(
+                        (item,index) => <LanguageNavigationV1Item {...item} key={item.baseCssClass + '__item-' + index} index={index}/>
+                    )}
+                </ul>
+            )}
+        </>
+    )
+}
 
-    renderLink(item:LanguageNavigationV1Item, isActive:boolean){
+export const LanguageNavigationV1Item = (item:LanguageNavigationV1Item) => {
 
-        if(item.level > 0){
-            return (
-                <RoutedLink
-                    isRouted={isItemRouted(this.props, item)}
-                    className={this.baseCssCls + '__item-link'}
-                    to={item.url}
-                    hrefLang={item.language}
-                    lang={item.language}
-                    rel="alternate"
-                    title={item.title}>{item.title}</RoutedLink>
-            )
-        }else{
-            return (
-                <span className={ this.baseCssCls + '__item-title'} lang={item.language}>{item.title}</span>
-            )
-        }
-
-    }
-
-    getExtraNavItemCssClss(item: LanguageNavigationV1Item, index: number) {
-        return `${this.baseCssCls}__item--countrycode-${item.country} ${this.baseCssCls}__item--langcode-${item.language}`;
-    }
+    const isActive = determineIsActive(item);
+    const cssClass = item.baseCssClass + '__item ' +
+                    item.baseCssClass + '__item--level-' + item.level + ' ' + 
+                    `${item.baseCssClass}__item--countrycode-${item.country} ${item.baseCssClass}__item--langcode-${item.language}` + 
+                     + (isActive ? ' ' + item.baseCssClass + '__item--active' : '');
+    return (
+        <li className={cssClass}>
+                <LanguageNavigationV1Link {...item}/>
+                {
+                    !!item.children && item.children.length > 0 && <NavigationV1Group {...item}/>
+                }
+        </li>
+    )
 
 }
+
+const LanguageNavigationV1Impl = (props:LanguageNavigationV1Model) => {
+    const selfClone:LanguageNavigationV1Item = {
+        active: false,
+        lastModified: 0,
+        level: 0,
+        path: "",
+        title: "",
+        url: "",
+        language: "",
+        country: "",
+        locale: "",
+        children: props.items
+    };
+
+    return (
+        <nav className={props.baseCssClass}
+             role="navigation"
+             itemScope itemType="http://schema.org/SiteNavigationElement"
+             aria-label={props.accessibilityLabel}>
+            <LanguageNavigationV1Group {...selfClone}/>
+        </nav>
+    )
+}
+
+const LanguageNavigation = (props:LanguageNavigationV1Model) => {
+    const Wrapped = AbstractCoreComponentWrap(LanguageNavigationV1Impl, LanguageNavigationV1IsEmptyFn, "cmp-languagenavigation", "LanguageNavigation V1")
+    return <Wrapped {...props}/>
+};
+
+export default LanguageNavigation;
