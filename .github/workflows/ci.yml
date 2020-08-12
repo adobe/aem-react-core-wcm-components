@@ -14,12 +14,17 @@ jobs:
         with:
           node-version: '12'
       - run: npm install
-      - run: npm test
+      - run: npm run test:coverage
       - uses: hallee/eslint-action@1.0.3
         if: ${{ github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository }}
         with:
           repo-token: ${{secrets.GITHUB_TOKEN}}
           source-root: react-base-components
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v2
+        with:
+          name: react-base-components/coverage
+          path: react-base-components/coverage
   test-react-spa-components:
     name: test react-spa-components
     runs-on: ubuntu-latest
@@ -32,9 +37,14 @@ jobs:
         with:
           node-version: '12'
       - run: npm install
-      - run: npm test
+      - run: npm run test:coverage
       - uses: hallee/eslint-action@1.0.3
         if: ${{ github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository }}
         with:
           repo-token: ${{secrets.GITHUB_TOKEN}}
           source-root: react-spa-components
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v2
+        with:
+          name: react-base-components/coverage
+          path: react-base-components/coverage
