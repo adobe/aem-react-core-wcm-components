@@ -15,18 +15,55 @@
  */
 
 import * as React from 'react';
+import {ComponentType} from 'react';
 
 import {EditorPlaceHolder} from "./common/placeholder";
 
 export interface CoreComponentModel {
     hidePlaceHolder: boolean
     isInEditor:boolean
+    baseCssClass?: string;
+
 }
 
 export interface CoreComponentState {
 
 }
 
+export const AbstractCoreComponentWrap = <M extends CoreComponentModel>
+            (
+                Component:ComponentType<M>, 
+                isEmpty:(props:M) => boolean, 
+                defaultBaseCssClass:string,
+                componentTitle?:string, emptyText?:string
+            ):React.ComponentType<M>  => {
+    return (props:M) => {
+
+        const baseCssClass = props.baseCssClass;
+        const toBeUsedCssClass = baseCssClass && baseCssClass.trim().length > 0 ? baseCssClass : defaultBaseCssClass;
+
+        const mergedProps: M= {
+            ...props,
+            baseCssClass: toBeUsedCssClass
+        };
+
+        const isEmptyResult:boolean = isEmpty(mergedProps);
+        return (
+            <>
+                { !isEmptyResult &&
+                <Component {...mergedProps} />
+                }
+                {
+                    (isEmptyResult && props.isInEditor && !props.hidePlaceHolder) &&
+                    <EditorPlaceHolder
+                        emptyTextAppend={emptyText}
+                        componentTitle={componentTitle}
+                    />
+                }
+            </>
+        );
+    }
+};
 
 /**
  * AbstractCoreComponent - provides abstraction and helper methods to show a placeholder if the component is empty and author mode is on.

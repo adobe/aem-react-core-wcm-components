@@ -15,7 +15,7 @@
  */
 
 import React, {MouseEvent} from 'react';
-import {AbstractCoreComponent, CoreComponentState} from "../../../AbstractCoreComponent";
+import {AbstractCoreComponentWrap} from "../../../AbstractCoreComponent";
 import {RoutedCoreComponentModel} from "../../../routing/RoutedCoreComponent";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {ButtonV1IsEmptyFn} from "./ButtonV1IsEmptyFn";
@@ -31,15 +31,15 @@ export interface ButtonV1Model extends RoutedCoreComponentModel{
 
 
 
-export default class ButtonV1<Model extends ButtonV1Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
+class ButtonV1Impl extends React.Component<ButtonV1Model> {
 
     public static defaultProps = {
         isInEditor: false,
         hidePlaceHolder: false
     };
 
-    constructor(props:Model) {
-        super(props, "cmp-button", "ButtonV1");
+    constructor(props:ButtonV1Model) {
+        super(props);
         this.handleOnClick = this.handleOnClick.bind(this);
     }
 
@@ -51,8 +51,8 @@ export default class ButtonV1<Model extends ButtonV1Model, State extends CoreCom
     getContent(){
         return (
             <>
-                { this.props.icon && <span className={`${this.baseCssCls}__icon ${this.baseCssCls}__icon--${this.props.icon}`}></span>  }
-                <span className={this.baseCssCls + '__text'}>{this.props.text}</span>
+                { this.props.icon && <span className={`${this.props.baseCssClass}__icon ${this.props.baseCssClass}__icon--${this.props.icon}`}></span>  }
+                <span className={this.props.baseCssClass + '__text'}>{this.props.text}</span>
             </>
         );
     }
@@ -61,7 +61,7 @@ export default class ButtonV1<Model extends ButtonV1Model, State extends CoreCom
         return ButtonV1IsEmptyFn(this.props);
     }
 
-    renderComponent(){
+    render(){
 
         const isLink =  (!!this.props.link);
         let props = this.generateAttributes(isLink);
@@ -75,7 +75,7 @@ export default class ButtonV1<Model extends ButtonV1Model, State extends CoreCom
 
     generateAttributes(isLink: boolean) {
         let props: any = {
-            className: this.baseCssCls,
+            className: this.props.baseCssClass,
             onClick: this.handleOnClick
         };
 
@@ -86,3 +86,11 @@ export default class ButtonV1<Model extends ButtonV1Model, State extends CoreCom
         return props;
     }
 };
+
+
+const Wrapped = (props:ButtonV1Model) => {
+    const Wrapped = AbstractCoreComponentWrap(ButtonV1Impl, ButtonV1IsEmptyFn, "cmp-button", "Button V1")
+    return <Wrapped {...props}/>
+};
+
+export default Wrapped;

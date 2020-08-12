@@ -16,18 +16,37 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {shallow} from 'enzyme';
+import {mount} from 'enzyme';
 
 
 import DownloadV1, { DownloadV1Model} from "./DownloadV1";
 
 
-
+let captured = false;
+const props:DownloadV1Model = {
+    actionText: "Download now!!!",
+    description: "<p>Asset uploaded directly from a local file system</p>\\r\\n",
+    displayFilename: true,
+    displayFormat: true,
+    displaySize: true,
+    extension: "jpg",
+    filename: "lava-into-ocean.jpg",
+    format: "image/jpeg",
+    hidePlaceHolder: false,
+    isInEditor: false,
+    size: "81 KB",
+    title: "Uploaded Asset",
+    titleType: "h2",
+    handleOnClick: ()=> {
+        captured = true;
+    },
+    url: "/content/core-components-examples/library/page-authoring/download/jcr:content/root/responsivegrid/demo_68071479/component/download/file.coredownload.jpeg/lava-into-ocean.jpg"
+};
 
 it('Renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
-        <DownloadV1 title={"Download me"} />,
+        <DownloadV1 {...props} />,
         div
     );
     ReactDOM.unmountComponentAtNode(div);
@@ -58,7 +77,7 @@ it('Renders out properly', () => {
         url: "/content/core-components-examples/library/page-authoring/download/jcr:content/root/responsivegrid/demo_68071479/component/download/file.coredownload.jpeg/lava-into-ocean.jpg"
     };
 
-    const wrapper = shallow(<DownloadV1  {...props} />);
+    const wrapper = mount(<DownloadV1  {...props} />);
 
     const properties = wrapper.find('.cmp-download__property');
 

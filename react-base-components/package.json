@@ -24,6 +24,7 @@
   "scripts": {
     "linter": "eslint --ext .ts,.tsx .",
     "linter:fix": "eslint --ext .ts,.tsx . --fix",
+    "test-clear": "jest --clearCache",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:debug": "jest --coverage --watchAll",
