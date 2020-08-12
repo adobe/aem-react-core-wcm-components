@@ -30,12 +30,13 @@ export interface TeaserV1Action extends RoutedModel{
 
 export interface TeaserV1Model extends RoutedCoreComponentModel{
     pretitle?: string
-    title?: string
+    title: string
     description?: string
     titleType: string
     linkURL: string
     actionsEnabled: boolean
     imageLinkHidden: boolean
+    imageAlt: string
     titleLinkHidden: boolean
     actions: TeaserV1Action[]
     imagePath: string
@@ -59,7 +60,7 @@ export default class TeaserV1<Model extends TeaserV1Model, State extends CoreCom
     get image(){
         return this.props.imagePath && (
             <div className={this.baseCssCls + '__image'}>
-                <ImageV2 isInEditor={this.props.isInEditor} src={this.props.imagePath} alt={"temporary image"}/>
+                <ImageV2 isInEditor={this.props.isInEditor} src={this.props.imagePath} alt={this.props.imageAlt}/>
             </div>
         );
     }
@@ -71,7 +72,9 @@ export default class TeaserV1<Model extends TeaserV1Model, State extends CoreCom
 
     get title(){
         return this.props.title && (
-            <TitleV2 type={this.props.titleType}
+            <TitleV2 baseCssClass={this.baseCssCls + '__title'}
+                     nested={true}
+                     type={this.props.titleType}
                      isInEditor={this.props.isInEditor}
                      linkDisabled={false}
                      text={this.props.title}
@@ -87,9 +90,7 @@ export default class TeaserV1<Model extends TeaserV1Model, State extends CoreCom
     }
 
     generateLink(action:TeaserV1Action, index:number){
-        return (
-            <RoutedLink isRouted={isItemRouted(this.props, action)} className={this.baseCssCls + '__action-link'} to={action.URL}>${action.title}</RoutedLink>
-        )
+        return <RoutedLink key={"link-" + index} isRouted={isItemRouted(this.props, action)} className={this.baseCssCls + '__action-link'} to={action.URL}>${action.title}</RoutedLink>
     }
 
     get actions(){
@@ -98,7 +99,7 @@ export default class TeaserV1<Model extends TeaserV1Model, State extends CoreCom
             <div className={this.baseCssCls + '__action-container'}>
                 {
                     this.props.actions.map((action, index) => {
-                        this.generateLink(action,index)
+                        return this.generateLink(action,index)
                     })
                 }
             </div>
