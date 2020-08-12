@@ -24,7 +24,7 @@ export interface PlaceHolderModel {
 
 export class EditorPlaceHolder extends Component<PlaceHolderModel, any>{
 
-    static DEFAULT_EMPTY_TEXT_LABEL: string = 'Please configure the component';
+    static DEFAULT_EMPTY_TEXT_LABEL = 'Please configure the component';
 
     render() {
         const part1: string = (this.props.componentTitle != null && this.props.componentTitle.length > 0) ?  this.props.componentTitle +  ' - ' : '';

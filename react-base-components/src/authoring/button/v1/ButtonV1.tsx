@@ -64,7 +64,7 @@ export default class ButtonV1<Model extends ButtonV1Model, State extends CoreCom
     renderComponent(){
 
         const isLink =  (!!this.props.link);
-        let props = this.generateAttributes(isLink);
+        const props = this.generateAttributes(isLink);
 
         if(isLink){
             return <RoutedLink isRouted={this.props.routed} to={this.props.link} {...props} children={this.getContent()} />
@@ -74,7 +74,7 @@ export default class ButtonV1<Model extends ButtonV1Model, State extends CoreCom
     }
 
     generateAttributes(isLink: boolean) {
-        let props: any = {
+        const props: any = {
             className: this.baseCssCls,
             onClick: this.handleOnClick
         };
@@ -85,4 +85,4 @@ export default class ButtonV1<Model extends ButtonV1Model, State extends CoreCom
         }
         return props;
     }
-};
+}

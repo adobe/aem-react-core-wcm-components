@@ -118,7 +118,7 @@ export default class CarouselV1 extends AbstractCoreContainerComponent {
         }
 
         this.nextSlide();
-    };
+    }
 
     clearAutoPlay = () => {
         clearInterval(this.interval);

@@ -42,4 +42,4 @@ export default class DefaultV1Component<Model extends DefaultV1Model, State exte
         return DefaultV1IsEmptyFn(this.props);
     }
 
-};
+}

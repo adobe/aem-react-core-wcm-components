@@ -22,9 +22,7 @@ export interface CoreComponentModel {
     isInEditor:boolean
 }
 
-export interface CoreComponentState {
-
-}
+export interface CoreComponentState {}
 
 
 /**
