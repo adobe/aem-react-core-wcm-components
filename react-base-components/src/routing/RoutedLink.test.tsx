@@ -18,7 +18,7 @@ const RoutedDummyComponent = (props:DummyModel) => {
     )
 };
 
-const createRoutedDummyComponent = (url:string, routed:boolean = true) => {
+const createRoutedDummyComponent = (url:string, routed = true) => {
     const history:MemoryHistory = createMemoryHistory({
         initialEntries: ['/page1'],
         initialIndex: 0
@@ -76,7 +76,7 @@ it('Does NOT route if the link is empty', () => {
 
     expect(anchor).toBeDefined();
 
-    let found:boolean = false;
+    let found = false;
 
     if(anchor != null){
         const href:Attr | null = anchor.attributes.getNamedItem("href");
