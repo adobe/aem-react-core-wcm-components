@@ -19,7 +19,7 @@ import ReactDOM from 'react-dom';
 import {mount} from 'enzyme';
 
 import ButtonV1, {ButtonV1Model} from './ButtonV1';
-import { MemoryRouter } from 'react-router-dom';
+import {MemoryRouter} from 'react-router-dom';
 
 
 it('Renders without crashing', () => {

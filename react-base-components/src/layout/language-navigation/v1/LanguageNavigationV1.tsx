@@ -14,9 +14,9 @@
  *  limitations under the License.
  */
 
-import React, { Component } from 'react';
-import {CoreComponentState, AbstractCoreComponentWrap} from "../../../AbstractCoreComponent";
-import NavigationV1, { NavigationV1Item, NavigationV1Model, determineIsActive, NavigationV1Group} from "../../navigation/v1/NavigationV1";
+import React from 'react';
+import {withConditionalPlaceHolder} from "../../../AbstractCoreComponent";
+import {determineIsActive, NavigationV1Group, NavigationV1Item, NavigationV1Model} from "../../navigation/v1/NavigationV1";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {isItemRouted} from "../../../routing/RoutedCoreComponent";
 import {LanguageNavigationV1IsEmptyFn} from "./LanguageNavigationV1IsEmptyFn";
@@ -115,7 +115,7 @@ const LanguageNavigationV1Impl = (props:LanguageNavigationV1Model) => {
 }
 
 const LanguageNavigation = (props:LanguageNavigationV1Model) => {
-    const Wrapped = AbstractCoreComponentWrap(LanguageNavigationV1Impl, LanguageNavigationV1IsEmptyFn, "cmp-languagenavigation", "LanguageNavigation V1")
+    const Wrapped = withConditionalPlaceHolder(LanguageNavigationV1Impl, LanguageNavigationV1IsEmptyFn, "cmp-languagenavigation", "LanguageNavigation V1")
     return <Wrapped {...props}/>
 };
 

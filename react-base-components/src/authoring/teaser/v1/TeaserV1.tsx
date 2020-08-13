@@ -15,12 +15,12 @@
  */
 
 
-import React, { Component } from "react";
-import {AbstractCoreComponent, CoreComponentModel, CoreComponentState, AbstractCoreComponentWrap} from "../../../AbstractCoreComponent";
+import React, {Component} from "react";
+import {withConditionalPlaceHolder} from "../../../AbstractCoreComponent";
 import ImageV2 from "../../../authoring/image/v2/ImageV2";
 import TitleV2 from "../../../authoring/title/v2/TitleV2";
 import {RoutedLink} from "../../../routing/RoutedLink";
-import {RoutedCoreComponentModel, isItemRouted, RoutedModel} from "../../../routing/RoutedCoreComponent";
+import {isItemRouted, RoutedCoreComponentModel, RoutedModel} from "../../../routing/RoutedCoreComponent";
 import {TeaserV1IsEmptyFn} from "./TeaserV1IsEmptyFn";
 
 export interface TeaserV1Action extends RoutedModel{
@@ -114,7 +114,7 @@ class TeaserV1Impl extends Component<TeaserV1Model>{
 
 
 const TeaserV1 = (props:TeaserV1Model) => {
-    const Wrapped = AbstractCoreComponentWrap(TeaserV1Impl, TeaserV1IsEmptyFn, "cmp-teaser", "Teaser V1")
+    const Wrapped = withConditionalPlaceHolder(TeaserV1Impl, TeaserV1IsEmptyFn, "cmp-teaser", "Teaser V1")
     return <Wrapped {...props}/>
 };
 

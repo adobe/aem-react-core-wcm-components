@@ -14,8 +14,8 @@
  *  limitations under the License.
  */
 
-import React, { Component } from 'react';
-import {AbstractCoreComponent, CoreComponentModel, CoreComponentState, AbstractCoreComponentWrap, HasBaseCssClass} from "../../../AbstractCoreComponent";
+import React from 'react';
+import {HasBaseCssClass, withConditionalPlaceHolder} from "../../../AbstractCoreComponent";
 import {isItemRouted, RoutedCoreComponentModel, RoutedModel} from "../../../routing/RoutedCoreComponent";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {NavigationV1IsEmptyFn} from "./NavigationV1IsEmptyFn";
@@ -100,7 +100,7 @@ export const NavigationV1Impl = (props:NavigationV1Model) => {
 
 
 export const NavigationV1 = (props:NavigationV1Model) => {
-    const Wrapped = AbstractCoreComponentWrap(NavigationV1Impl, NavigationV1IsEmptyFn, "cmp-navigation", "Navigation V1")
+    const Wrapped = withConditionalPlaceHolder(NavigationV1Impl, NavigationV1IsEmptyFn, "cmp-navigation", "Navigation V1")
     return <Wrapped {...props}/>
 };
 

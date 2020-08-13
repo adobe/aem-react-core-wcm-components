@@ -14,8 +14,8 @@
  *  limitations under the License.
  */
 
-import {AbstractCoreComponent, CoreComponentModel, CoreComponentState, AbstractCoreComponentWrap} from "../../AbstractCoreComponent";
-import React, { Component } from "react";
+import {CoreComponentModel, withConditionalPlaceHolder} from "../../AbstractCoreComponent";
+import React, {Component} from "react";
 import {DefaultV1IsEmptyFn} from "./DefaultV1ComponentIsEmptyFn";
 
 export interface DefaultV1Model extends CoreComponentModel{
@@ -31,7 +31,7 @@ class DefaultV1ComponentImpl extends Component<DefaultV1Model> {
 };
 
 const DefaultV1Component = (props:DefaultV1Model) => {
-    const Wrapped = AbstractCoreComponentWrap(DefaultV1ComponentImpl, DefaultV1IsEmptyFn, "cmp-default", "Default SPA Component")
+    const Wrapped = withConditionalPlaceHolder(DefaultV1ComponentImpl, DefaultV1IsEmptyFn, "cmp-default", "Default SPA Component")
     return <Wrapped {...props}/>
 };
 

@@ -14,8 +14,8 @@
  *  limitations under the License.
  */
 
-import React, { Component } from 'react';
-import {AbstractCoreComponent, CoreComponentModel, CoreComponentState, AbstractCoreComponentWrap} from "../../../AbstractCoreComponent";
+import React, {Component} from 'react';
+import {withConditionalPlaceHolder} from "../../../AbstractCoreComponent";
 import {isItemRouted, RoutedCoreComponentModel, RoutedModel} from "../../../routing/RoutedCoreComponent";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {BreadCrumbV2IsEmptyFn} from "./BreadCrumbV2IsEmptyFn";
@@ -92,7 +92,7 @@ class BreadCrumbV2Impl extends Component<BreadCrumbV2Model> {
 
 
 const BreadCrumbV2 = (props:BreadCrumbV2Model) => {
-    const Wrapped = AbstractCoreComponentWrap(BreadCrumbV2Impl, BreadCrumbV2IsEmptyFn, "cmp-breadcrumb", "Breadcrumb V2")
+    const Wrapped = withConditionalPlaceHolder(BreadCrumbV2Impl, BreadCrumbV2IsEmptyFn, "cmp-breadcrumb", "Breadcrumb V2")
     return <Wrapped {...props}/>
 };
 

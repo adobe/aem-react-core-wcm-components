@@ -32,7 +32,7 @@ export interface CoreComponentState {
 
 }
 
-export const AbstractCoreComponentWrap = <M extends CoreComponentModel>
+export const withConditionalPlaceHolder = <M extends CoreComponentModel>
             (
                 Component:ComponentType<M>, 
                 isEmpty:(props:M) => boolean, 
@@ -66,68 +66,3 @@ export const AbstractCoreComponentWrap = <M extends CoreComponentModel>
         );
     }
 };
-
-/**
- * AbstractCoreComponent - provides abstraction and helper methods to show a placeholder if the component is empty and author mode is on.
- */
-export abstract class AbstractCoreComponent<Model extends CoreComponentModel, State extends CoreComponentState> extends React.Component<Model,State> {
-
-    public static defaultProps = {
-        hidePlaceHolder: false,
-        isInEditor: false
-    };
-
-    baseCssCls: string;
-    emptyPlaceHolderText: string;
-
-    /**
-     * Base Constructor
-     * @param props component properties
-     * @param baseCssCls the base BEM css class to be used for the component
-     * @param emptyPlaceHolderText empty placeholder label for when the component needs to be configured in author mode
-     */
-    protected constructor(props:Model,baseCssCls:string,emptyPlaceHolderText:string) {
-        super(props);
-        this.baseCssCls = props.baseCssClass || baseCssCls;
-        this.emptyPlaceHolderText = emptyPlaceHolderText;
-    }
-
-    /**
-     * Method that needs to be overloaded, to determine whether the component should be treated as 'empty'
-     */
-    protected abstract isEmpty():boolean;
-
-    /**
-     * Render method that get's called if the component is not considered empty
-     */
-    protected abstract renderComponent():JSX.Element;
-
-    private __hidePlaceHolder():boolean{
-        return this.props.hidePlaceHolder === true;
-    }
-
-    private __renderPlaceHolder(title?:string, emptyText?:string):JSX.Element{
-        return(
-            <EditorPlaceHolder
-                emptyTextAppend={emptyText}
-                componentTitle={title}
-            />
-        )
-    }
-
-    render(){
-        const isEmpty:boolean = this.isEmpty();
-
-        return (
-            <>
-                { !isEmpty &&
-                    this.renderComponent()
-                }
-                {
-                    (isEmpty && this.props.isInEditor && !this.__hidePlaceHolder()) && this.__renderPlaceHolder(this.emptyPlaceHolderText)
-                }
-            </>
-        )
-    }
-
-}

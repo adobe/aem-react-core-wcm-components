@@ -14,8 +14,8 @@
  *  limitations under the License.
  */
 
-import React, { Component } from 'react';
-import {AbstractCoreComponent, CoreComponentState, AbstractCoreComponentWrap} from "../../../AbstractCoreComponent";
+import React, {Component} from 'react';
+import {withConditionalPlaceHolder} from "../../../AbstractCoreComponent";
 import {RoutedCoreComponentModel} from "../../../routing/RoutedCoreComponent";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {ImageV2IsEmptyFn} from "./ImageV2IsEmptyFn";
@@ -82,7 +82,7 @@ class ImageV2Impl extends Component<ImageV2Model> {
 
 const ImageV2 = (props:ImageV2Model) => {
 
-    const Wrapped = AbstractCoreComponentWrap(ImageV2Impl, ImageV2IsEmptyFn, "cmp-image", "Image V2");
+    const Wrapped = withConditionalPlaceHolder(ImageV2Impl, ImageV2IsEmptyFn, "cmp-image", "Image V2");
     return <Wrapped {...props}/>
 };
 

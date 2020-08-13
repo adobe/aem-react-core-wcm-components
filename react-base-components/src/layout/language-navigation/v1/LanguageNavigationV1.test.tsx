@@ -19,8 +19,8 @@ import ReactDOM from 'react-dom';
 import {mount} from 'enzyme';
 
 import {items} from "./LanguageNavigationV1TestMockItems";
-import LanguageNavigationV1, { LanguageNavigationV1Model} from "./LanguageNavigationV1";
-import { MemoryRouter } from 'react-router-dom';
+import LanguageNavigationV1, {LanguageNavigationV1Model} from "./LanguageNavigationV1";
+import {MemoryRouter} from 'react-router-dom';
 
 
 it('Renders without crashing', () => {

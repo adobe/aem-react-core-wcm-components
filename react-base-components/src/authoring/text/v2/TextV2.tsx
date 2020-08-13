@@ -14,8 +14,8 @@
  *  limitations under the License.
  */
 
-import React, { Component } from 'react';
-import {AbstractCoreComponent, CoreComponentModel, CoreComponentState, AbstractCoreComponentWrap} from "../../../AbstractCoreComponent";
+import React, {Component} from 'react';
+import {CoreComponentModel, withConditionalPlaceHolder} from "../../../AbstractCoreComponent";
 import {TextV2IsEmptyFn} from "./TextV2IsEmptyFn";
 
 export interface TextV2Model extends CoreComponentModel{
@@ -53,7 +53,7 @@ class TextV2Impl extends Component<TextV2Model> {
 
 
 const TextV2 = (props:TextV2Model) => {
-    const Wrapped = AbstractCoreComponentWrap(TextV2Impl, TextV2IsEmptyFn, "cmp-text", "Text V2")
+    const Wrapped = withConditionalPlaceHolder(TextV2Impl, TextV2IsEmptyFn, "cmp-text", "Text V2")
     return <Wrapped {...props}/>
 };
 

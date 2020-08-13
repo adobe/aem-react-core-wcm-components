@@ -14,8 +14,8 @@
  *  limitations under the License.
  */
 
-import React, { Component } from "react";
-import {AbstractCoreComponent, CoreComponentModel, CoreComponentState, AbstractCoreComponentWrap} from "../../../AbstractCoreComponent";
+import React, {Component} from "react";
+import {CoreComponentModel, withConditionalPlaceHolder} from "../../../AbstractCoreComponent";
 import {SeparatorV1IsEmptyFn} from "./SeparatorV1IsEmptyFn";
 
 
@@ -34,7 +34,7 @@ class SeparatorV1Impl extends Component<CoreComponentModel> {
 
 
 const SeparatorV1 = (props:CoreComponentModel) => {
-    const Wrapped = AbstractCoreComponentWrap(SeparatorV1Impl, SeparatorV1IsEmptyFn, "cmp-separator", "Separator V1")
+    const Wrapped = withConditionalPlaceHolder(SeparatorV1Impl, SeparatorV1IsEmptyFn, "cmp-separator", "Separator V1")
     return <Wrapped {...props}/>
 };
 

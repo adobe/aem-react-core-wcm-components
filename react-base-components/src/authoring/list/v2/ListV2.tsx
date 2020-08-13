@@ -14,9 +14,9 @@
  *  limitations under the License.
  */
 
-import React, { Component } from 'react';
-import {AbstractCoreComponent, CoreComponentState, AbstractCoreComponentWrap} from "../../../AbstractCoreComponent";
-import {RoutedCoreComponentModel, RoutedModel, isItemRouted} from "../../../routing/RoutedCoreComponent";
+import React, {Component} from 'react';
+import {withConditionalPlaceHolder} from "../../../AbstractCoreComponent";
+import {isItemRouted, RoutedCoreComponentModel, RoutedModel} from "../../../routing/RoutedCoreComponent";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {ListV2IsEmptyFn} from "./ListV2IsEmptyFn";
 
@@ -99,7 +99,7 @@ class ListV2Impl extends Component<ListV2Model> {
 
 
 const ListV2 = (props:ListV2Model) => {
-    const Wrapped = AbstractCoreComponentWrap(ListV2Impl, ListV2IsEmptyFn, "cmp-list", "List V2")
+    const Wrapped = withConditionalPlaceHolder(ListV2Impl, ListV2IsEmptyFn, "cmp-list", "List V2")
     return <Wrapped {...props}/>
 };
 

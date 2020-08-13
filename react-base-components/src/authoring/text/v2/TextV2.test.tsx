@@ -18,7 +18,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {mount} from 'enzyme';
 
-import TextV2, { TextV2Model} from './TextV2';
+import TextV2, {TextV2Model} from './TextV2';
 import {TextV2IsEmptyFn} from "./TextV2IsEmptyFn";
 
 it('Has a proper isEmpty function', () => {

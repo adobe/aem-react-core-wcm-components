@@ -19,9 +19,7 @@ import ReactDOM from 'react-dom';
 import {mount} from 'enzyme';
 
 
-import DownloadV1, { DownloadV1Model} from "./DownloadV1";
-
-
+import DownloadV1, {DownloadV1Model} from "./DownloadV1";
 
 
 it('Renders without crashing', () => {
