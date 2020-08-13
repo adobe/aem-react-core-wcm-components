@@ -1,7 +1,7 @@
 
 import * as React from 'react';
 import CarouselV1 , {CarouselV1Properties} from "./CarouselV1";
-import {mount} from "enzyme";
+import {mount, ReactWrapper} from "enzyme";
 import ReactDOM from 'react-dom';
 
 import ComponentMapping, {dummyItems} from "../../TestComponentMapping";
@@ -66,6 +66,14 @@ beforeEach(() => {
 
 });
 
+const validateComponentPresent = (wrapper:ReactWrapper, text:string) =>{
+
+    wrapper.update();
+    const dummyComp = wrapper.find(".dummyCmp");
+    expect(dummyComp).toHaveLength(1);
+    expect(dummyComp.text()).toEqual(text);
+}
+
 it('Renders a basic carousel properly and reacts on clicks', () => {
 
     // const Wrapped = withComponentMappingContext(AccordionV1);
@@ -74,13 +82,9 @@ it('Renders a basic carousel properly and reacts on clicks', () => {
 
     expect(content).toHaveLength(1);
 
-    let dummyComp;
+    validateComponentPresent(wrapper, "Component1");
 
-    dummyComp = wrapper.find(".dummyCmp");
-
-    expect(dummyComp).toHaveLength(1);
-    expect(dummyComp.text()).toEqual("Some Text");
-    expect(wrapper.find(".cmp-carousel__item--active").text()).toEqual("Some Text");
+    expect(wrapper.find(".cmp-carousel__item--active").text()).toEqual("Component1");
     expect(wrapper.find(".cmp-carousel__item").first().prop("aria-label")).toEqual("Slide 1 of 2");
     expect(wrapper.find(".cmp-carousel__item").last().prop("aria-label")).toEqual("Slide 2 of 2");
 
@@ -99,19 +103,22 @@ it('Renders a basic carousel properly and reacts on clicks', () => {
     wrapper.update();
 
 
-    dummyComp = wrapper.find(".dummyCmp");
-
-    expect(dummyComp).toHaveLength(1);
-    expect(dummyComp.text()).toEqual("Some Other Text");
+    validateComponentPresent(wrapper, "Component2");
 
     prevButton.simulate("click");
 
-    dummyComp = wrapper.find(".dummyCmp");
+    validateComponentPresent(wrapper, "Component1");
 
-    expect(dummyComp).toHaveLength(1);
-    expect(dummyComp.text()).toEqual("Some Text");
+    const indicator1 = wrapper.find(".cmp-carousel__indicators li").first();
+    const indicator2 = wrapper.find(".cmp-carousel__indicators li").last();
 
+    indicator2.simulate('click');
 
+    validateComponentPresent(wrapper, "Component2");
+
+    indicator1.simulate('click');
+
+    validateComponentPresent(wrapper, "Component1");
 
 });
 
@@ -125,12 +132,12 @@ it('Automatically slides forward', (done) => {
     const content = wrapper.find('.cmp-carousel__content');
 
     expect(content).toHaveLength(1);
+    validateComponentPresent(wrapper, "Component1");
 
     setTimeout(()=> {
         wrapper.update();
-        const dummyComp = wrapper.find(".dummyCmp");
-        expect(dummyComp).toHaveLength(1);
-        expect(dummyComp.text()).toEqual("Some Other Text");
+        validateComponentPresent(wrapper, "Component2");
+
         done();
     },1000);
 
@@ -149,10 +156,8 @@ it('Does NOT Automatically slide forward if we turn it off', (done) => {
     expect(pauseButton).toHaveLength(0);
 
     setTimeout(()=> {
-        wrapper.update();
-        const dummyComp = wrapper.find(".dummyCmp");
-        expect(dummyComp).toHaveLength(1);
-        expect(dummyComp.text()).toEqual("Some Text");
+        validateComponentPresent(wrapper, "Component1");
+
         done();
     },1000);
 
@@ -170,20 +175,17 @@ it('Does NOT Automatically slide forward if we click pause, and resumes if we cl
 
     pauseButton.simulate("click");
 
+    validateComponentPresent(wrapper, "Component1");
+
     setTimeout(()=> {
         wrapper.update();
-        let dummyComp = wrapper.find(".dummyCmp");
-        expect(dummyComp).toHaveLength(1);
-        expect(dummyComp.text()).toEqual("Some Text");
+        validateComponentPresent(wrapper, "Component1");
 
         const resumeButton = wrapper.find(".cmp-carousel__action--play");
 
         resumeButton.simulate("click");
         setTimeout( ()=> {
-            wrapper.update();
-            dummyComp = wrapper.find(".dummyCmp");
-            expect(dummyComp).toHaveLength(1);
-            expect(dummyComp.text()).toEqual("Some Other Text");
+            resumeButton.simulate("click");
             done();
         }, 500);
 
@@ -206,18 +208,16 @@ it('Temporary stops sliding if we hover over it, and resume once we hover out.',
 
     setTimeout(()=> {
         wrapper.update();
-        let dummyComp = wrapper.find(".dummyCmp");
-        expect(dummyComp).toHaveLength(1);
-        expect(dummyComp.text()).toEqual("Some Text");
+        validateComponentPresent(wrapper, "Component1");
+
 
         //trigger hover out
         content.simulate('mouseleave');
 
         setTimeout(() => {
 
-            wrapper.update();
-            dummyComp = wrapper.find(".dummyCmp");
-            expect(dummyComp.text()).toEqual("Some Other Text");
+            validateComponentPresent(wrapper, "Component2");
+
             done();
         }, 1000);
 
@@ -237,11 +237,12 @@ it('Does not temporarily stop sliding if I hover over it, if we disabled autopau
     //trigger hover in
     content.simulate('mouseenter');
 
+    validateComponentPresent(wrapper, "Component1");
+
     setTimeout(()=> {
         wrapper.update();
-        let dummyComp = wrapper.find(".dummyCmp");
-        expect(dummyComp).toHaveLength(1);
-        expect(dummyComp.text()).toEqual("Some Other Text");
+        validateComponentPresent(wrapper, "Component2");
+
 
         done();
 
@@ -258,11 +259,9 @@ it('Renders a basic carousel without autoplay', () => {
 
     expect(content).toHaveLength(1);
 
-    const dummyComp = wrapper.find(".dummyCmp");
+    validateComponentPresent(wrapper, "Component1");
 
-    expect(dummyComp).toHaveLength(1);
-    expect(dummyComp.text()).toEqual("Some Text");
-    expect(wrapper.find(".cmp-carousel__item--active").text()).toEqual("Some Text");
+    expect(wrapper.find(".cmp-carousel__item--active").text()).toEqual("Component1");
     expect(wrapper.find(".cmp-carousel__item").first().prop("aria-label")).toEqual("Slide 1 of 2");
     expect(wrapper.find(".cmp-carousel__item").last().prop("aria-label")).toEqual("Slide 2 of 2");
 

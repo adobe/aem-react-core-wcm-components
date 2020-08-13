@@ -13,13 +13,13 @@ export const dummyItems:{ [key: string]: Model } = {
     "test": {
         ":type": "core/components/dummy",
         "cq:panelTitle": "Item1",
-        "value": "Some Text",
+        "value": "Component1",
 
     },
     "test2": {
         ":type": "core/components/dummy",
         "cq:panelTitle": "Item2",
-        "value": "Some Other Text"
+        "value": "Component2"
     }
 };
 

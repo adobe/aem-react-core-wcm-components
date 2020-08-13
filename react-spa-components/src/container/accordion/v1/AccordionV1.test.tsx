@@ -66,7 +66,7 @@ it('Renders a basic accordion properly', () => {
 
     const component = accordionRoot.find(".dummyCmp");
     expect(component).toHaveLength(1);
-    expect(component.text()).toEqual("Some Text")
+    expect(component.text()).toEqual("Component1")
 
 });
 
@@ -93,7 +93,7 @@ it('Changes item when you click - single expansion', () => {
 
     let component = wrapper.find(".dummyCmp");
     expect(component).toHaveLength(1);
-    expect(component.text()).toEqual("Some Text");
+    expect(component.text()).toEqual("Component1");
 
     const button2 = wrapper.find(".cmp-accordion__item:last-child .cmp-accordion__button");
 
@@ -107,7 +107,7 @@ it('Changes item when you click - single expansion', () => {
     component = wrapper.find(".dummyCmp");
 
     expect(component).toHaveLength(1);
-    expect(component.text()).toEqual("Some Other Text");
+    expect(component.text()).toEqual("Component2");
 
 });
 
@@ -122,7 +122,7 @@ it('Changes item when you click - multi expansion', () => {
 
     let component = wrapper.find(".dummyCmp");
     expect(component).toHaveLength(1);
-    expect(component.text()).toEqual("Some Text");
+    expect(component.text()).toEqual("Component1");
 
     const headingElement = wrapper.find(".cmp-accordion__item:last-child .cmp-accordion__header");
     expect(headingElement.is("h2")).toEqual(true);
