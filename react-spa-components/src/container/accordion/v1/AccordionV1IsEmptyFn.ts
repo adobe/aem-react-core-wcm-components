@@ -1,6 +1,6 @@
 import {CoreContainerProperties} from "../../../AbstractCoreContainerComponent";
-import { AccordionV1V1Properties } from "./AccordionV1";
+import { AccordionV1Properties } from "./AccordionV1";
 
-export function AccordionV1IsEmptyFn(props:AccordionV1V1Properties){
-    return props.cqItems == null || props.cqItems.length === 0;
+export function AccordionV1IsEmptyFn(props:AccordionV1Properties){
+    return props.cqItemsOrder == null || props.cqItemsOrder.length == 0;
 }

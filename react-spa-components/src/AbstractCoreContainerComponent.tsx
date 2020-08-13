@@ -16,7 +16,7 @@
 
 import * as React from 'react';
 
-import {AllowedComponentsContainer,ContainerProperties, ContainerState, AllowedComponentsProperties} from '@adobe/cq-react-editable-components';
+import {AllowedComponentsContainer, ContainerState, AllowedComponentsProperties} from '@adobe/cq-react-editable-components';
 
 export interface CoreContainerProperties extends AllowedComponentsProperties{
     

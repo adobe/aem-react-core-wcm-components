@@ -20,7 +20,7 @@ import {AbstractCoreContainerComponent,CoreContainerProperties,CoreContainerStat
 import {ComponentMapping} from '@adobe/cq-react-editable-components';
 import {AccordionV1IsEmptyFn} from "./AccordionV1IsEmptyFn";
 
-export interface AccordionV1V1Properties extends CoreContainerProperties{
+export interface AccordionV1Properties extends CoreContainerProperties{
     singleExpansion: boolean;
     headingElement: string;
     expandedItems: string[];
@@ -30,7 +30,7 @@ export interface AccordionV1V1State extends CoreContainerState{
     expandedItems: string[];
 }
 
-export default class AccordionV1<P extends AccordionV1V1Properties, S extends AccordionV1V1State> extends AbstractCoreContainerComponent<P,S> {
+export default class AccordionV1<P extends AccordionV1Properties, S extends AccordionV1V1State> extends AbstractCoreContainerComponent<P,S> {
 
     constructor(props:P) {
         super(props, "cmp-accordion");
@@ -111,7 +111,7 @@ export default class AccordionV1<P extends AccordionV1V1Properties, S extends Ac
                 const isExpanded = this.isItemExpanded(key);
                 const buttonCssClass = (isExpanded) ? `${this.baseCssCls}__button ${this.baseCssCls}__button--expanded` : `${this.baseCssCls}__button`;
                 return (
-                    <div
+                    <div key={"accordion-index" + index}
                         className={this.baseCssCls + '__item'}
                         data-cmp-index={index}
                         data-cmp-expanded={isExpanded}>
