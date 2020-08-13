@@ -16,8 +16,8 @@
 
 import React from 'react';
 
-import {AbstractCoreContainerComponent,CoreContainerProperties,CoreContainerState, CoreContainerItem} from "../../../AbstractCoreContainerComponent";
-import {ComponentMapping} from '@adobe/cq-react-editable-components';
+import {CoreContainerProperties, CoreContainerState, withStandardBaseCssClass} from "../../../AbstractCoreContainerComponent";
+import {ComponentMapping, Container} from '@adobe/cq-react-editable-components';
 
 import {CarouselV1IsEmptyFn} from "./CarouselV1IsEmptyFn";
 
@@ -54,7 +54,7 @@ export interface CarouselV1State extends CoreContainerState{
     autoPlay: boolean,
 }
 
-export default class CarouselV1<P extends CarouselV1Properties, S extends CarouselV1State> extends AbstractCoreContainerComponent<P,S> {
+class CarouselV1Impl extends Container<CarouselV1Properties,CarouselV1State> {
 
     interval:number = 0;
 
@@ -78,8 +78,8 @@ export default class CarouselV1<P extends CarouselV1Properties, S extends Carous
         }
     };
 
-    constructor(props:P) {
-        super(props,"cmp-carousel");
+    constructor(props:CarouselV1Properties) {
+        super(props);
 
         //@ts-ignore
         this.state = {
@@ -205,7 +205,7 @@ export default class CarouselV1<P extends CarouselV1Properties, S extends Carous
 
         const isEmpty = CarouselV1IsEmptyFn(this.props);
         return (
-            <div className={this.baseCssCls}
+            <div className={this.props.baseCssClass}
                  role="group"
                  aria-label={this.props.accessibilityLabel}
                  aria-roledescription="carousel">
@@ -224,7 +224,7 @@ export default class CarouselV1<P extends CarouselV1Properties, S extends Carous
         //we display the item if active is true, or if we are in the author mode. we need to always display the item for the author mode to work properly.
         const display = !!(isActive || this.props.isInEditor);
 
-        const cssClass = isActive ? `${this.baseCssCls}__item ${this.baseCssCls}__item--active` : `${this.baseCssCls}__item`;
+        const cssClass = isActive ? `${this.props.baseCssClass}__item ${this.props.baseCssClass}__item--active` : `${this.props.baseCssClass}__item`;
         const ariaLabel = formatFn(this.props.accessibility.slide, [(index + 1).toString(), this.props.cqItemsOrder.length.toString()]);
 
         return (
@@ -241,7 +241,7 @@ export default class CarouselV1<P extends CarouselV1Properties, S extends Carous
     renderCarousel(){
         return (
 
-            <div className={this.baseCssCls + '__content'} onMouseEnter={()=>this.handleOnMouseEnter()} onMouseLeave={()=>this.handleOnMouseLeave()} >
+            <div className={this.props.baseCssClass + '__content'} onMouseEnter={()=>this.handleOnMouseEnter()} onMouseLeave={()=>this.handleOnMouseLeave()} >
                 {
                     this.childComponents.map((childComponent, index) => this.displayItem(childComponent,index))
                 }
@@ -253,7 +253,7 @@ export default class CarouselV1<P extends CarouselV1Properties, S extends Carous
 
     renderCarouselIndicators(){
         return (
-            <ol className={this.baseCssCls + '__indicators'}
+            <ol className={this.props.baseCssClass + '__indicators'}
                 role="tablist"
                 aria-label={this.props.accessibility.indicators}>
                 {
@@ -262,7 +262,7 @@ export default class CarouselV1<P extends CarouselV1Properties, S extends Carous
 
                         const item = this.props.cqItems[key];
 
-                        const cssClass = (index === this.state.activeIndex) ? `${this.baseCssCls}__indicator ${this.baseCssCls}__indicator--active` : `${this.baseCssCls}__indicator`;
+                        const cssClass = (index === this.state.activeIndex) ? `${this.props.baseCssClass}__indicator ${this.props.baseCssClass}__indicator--active` : `${this.props.baseCssClass}__indicator`;
                         const ariaLabelItem = formatFn(this.props.accessibility.indicator, [(index + 1).toString()]);
                         return (
                             <li
@@ -280,38 +280,38 @@ export default class CarouselV1<P extends CarouselV1Properties, S extends Carous
     }
     renderCarouselActions(){
         return (
-            <div className={this.baseCssCls + '__actions'}>
+            <div className={this.props.baseCssClass + '__actions'}>
                 <button onClick={()=>this.handleOnButtonPrev()}
-                        className={`${this.baseCssCls}__action ${this.baseCssCls}__action--previous`}
+                        className={`${this.props.baseCssClass}__action ${this.props.baseCssClass}__action--previous`}
                         type="button"
                         aria-label={this.props.accessibility.previous}>
-                    <span className={this.baseCssCls + '__action-icon'}></span>
-                    <span className={this.baseCssCls + '__action-text'}>{this.props.accessibility.previous}</span>
+                    <span className={this.props.baseCssClass + '__action-icon'}></span>
+                    <span className={this.props.baseCssClass + '__action-text'}>{this.props.accessibility.previous}</span>
                 </button>
                 <button onClick={()=>this.handleOnButtonNext()}
-                        className={`${this.baseCssCls}__action ${this.baseCssCls}__action--next`}
+                        className={`${this.props.baseCssClass}__action ${this.props.baseCssClass}__action--next`}
                         type="button"
                         aria-label={this.props.accessibility.next}>
-                    <span className={this.baseCssCls + '__action-icon'}></span>
-                    <span className={this.baseCssCls + '__action-text'}>{this.props.accessibility.next}</span>
+                    <span className={this.props.baseCssClass + '__action-icon'}></span>
+                    <span className={this.props.baseCssClass + '__action-text'}>{this.props.accessibility.next}</span>
                 </button>
                 {
                     this.props.autoplay &&
                     <>
-                        <button className={`${this.baseCssCls}__action ${this.baseCssCls}__action--pause ` + (!this.state.autoPlay ? this.baseCssCls + '__action--disabled' : '')}
+                        <button className={`${this.props.baseCssClass}__action ${this.props.baseCssClass}__action--pause ` + (!this.state.autoPlay ? this.props.baseCssClass + '__action--disabled' : '')}
                                 type="button"
                                 aria-label={this.props.accessibility.pause}
                                 onClick={()=>this.toggleAutoPlay(false)}>
-                            <span className={this.baseCssCls + '__action-icon'}></span>
-                            <span className={this.baseCssCls + '__action-text'}>{this.props.accessibility.pause}</span>
+                            <span className={this.props.baseCssClass + '__action-icon'}></span>
+                            <span className={this.props.baseCssClass + '__action-text'}>{this.props.accessibility.pause}</span>
                         </button>
-                        <button className={`${this.baseCssCls}__action ${this.baseCssCls}__action--play ` + (this.state.autoPlay ? this.baseCssCls + '__action--disabled' : '')}
+                        <button className={`${this.props.baseCssClass}__action ${this.props.baseCssClass}__action--play ` + (this.state.autoPlay ? this.props.baseCssClass + '__action--disabled' : '')}
                                 type="button"
                                 aria-label={this.props.accessibility.play}
                                 onClick={()=>this.toggleAutoPlay(true)}
                         >
-                            <span className={this.baseCssCls + '__action-icon'}></span>
-                            <span className={this.baseCssCls + '__action-text'}>{this.props.accessibility.play}</span>
+                            <span className={this.props.baseCssClass + '__action-icon'}></span>
+                            <span className={this.props.baseCssClass + '__action-text'}>{this.props.accessibility.play}</span>
                         </button>
                     </>
                 }
@@ -321,3 +321,5 @@ export default class CarouselV1<P extends CarouselV1Properties, S extends Carous
     }
 
 }
+
+export default withStandardBaseCssClass(CarouselV1Impl, "cmp-carousel");
