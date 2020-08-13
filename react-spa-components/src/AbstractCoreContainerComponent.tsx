@@ -17,9 +17,10 @@
 import * as React from 'react';
 
 import {AllowedComponentsContainer, ContainerState, AllowedComponentsProperties} from '@adobe/cq-react-editable-components';
+import {ComponentType} from "react";
 
 export interface CoreContainerProperties extends AllowedComponentsProperties{
-    
+    baseCssClass?:string;
 }
 
 export interface CoreContainerItem {
@@ -29,6 +30,26 @@ export interface CoreContainerItem {
 export interface CoreContainerState extends ContainerState {
 
 }
+
+
+export const withStandardBaseCssClass = <M extends CoreContainerProperties>
+(
+    Component:ComponentType<M>,
+    defaultBaseCssClass:string
+):React.ComponentType<M>  => {
+    return (props:M) => {
+
+        const baseCssClass = props.baseCssClass;
+        const toBeUsedCssClass = baseCssClass && baseCssClass.trim().length > 0 ? baseCssClass : defaultBaseCssClass;
+
+        const mergedProps: M= {
+            ...props,
+            baseCssClass: toBeUsedCssClass
+        };
+
+        return <Component {...mergedProps} />;
+    }
+};
 
 export abstract class AbstractCoreContainerComponent<P extends CoreContainerProperties, S extends CoreContainerState> extends AllowedComponentsContainer<P,S>{
 
