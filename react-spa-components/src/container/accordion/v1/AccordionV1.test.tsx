@@ -4,15 +4,14 @@ import AccordionV1, {AccordionV1Properties} from "./AccordionV1";
 import {mount} from "enzyme";
 import ReactDOM from 'react-dom';
 
-import ComponentMapping from "../../TestComponentMapping";
+import ComponentMapping, {dummyItems} from "../../TestComponentMapping";
 import {ModelManager} from "@adobe/cq-spa-page-model-manager"
-import {AllowedComponents, AllowedComponent, withComponentMappingContext} from "@adobe/cq-react-editable-components"
+import {AllowedComponents, AllowedComponent} from "@adobe/cq-react-editable-components"
 
 const allowedComponent:AllowedComponent = {
     path: "/apps/core/components/dummy",
     title: "Some Component"
 };
-
 
 
 const allowedComponents:AllowedComponents = {
@@ -23,19 +22,7 @@ const defaultProps:AccordionV1Properties = {
     expandedItems: ["test"],
     headingElement: "h2",
     singleExpansion: false,
-    cqItems: {
-        "test": {
-            ":type": "core/components/dummy",
-            "cq:panelTitle": "Item1",
-            "value": "Some Text",
-
-        },
-        "test2": {
-            ":type": "core/components/dummy",
-            "cq:panelTitle": "Item2",
-            "value": "Some Other Text"
-        }
-    },
+    cqItems: dummyItems,
     cqItemsOrder: ["test", "test2"],
     title: "Accordion",
     isInEditor: false,
