@@ -26,12 +26,12 @@ export interface TabsV1Properties extends CoreContainerProperties{
 }
 
 
-export interface TabsV1Sstate extends CoreContainerState{
+export interface TabsV1State extends CoreContainerState{
     activeIndex: number;
 }
 
 
-class TabsV1Impl extends Container<TabsV1Properties,TabsV1Sstate> {
+class TabsV1Impl extends Container<TabsV1Properties,TabsV1State> {
 
     constructor(props:TabsV1Properties) {
         super(props);
