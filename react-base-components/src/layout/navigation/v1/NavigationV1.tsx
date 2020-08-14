@@ -15,13 +15,14 @@
  */
 
 import React from 'react';
-import {AbstractCoreComponent, CoreComponentModel, CoreComponentState} from "../../../AbstractCoreComponent";
+import {HasBaseCssClass, withConditionalPlaceHolder} from "../../../AbstractCoreComponent";
 import {isItemRouted, RoutedCoreComponentModel, RoutedModel} from "../../../routing/RoutedCoreComponent";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {NavigationV1IsEmptyFn} from "./NavigationV1IsEmptyFn";
 
-export interface NavigationV1Item extends RoutedModel{
+export interface NavigationV1Item extends RoutedModel,HasBaseCssClass{
     level: number,
+    index?: number,
     active: boolean,
     title: string,
     url: string,
@@ -36,86 +37,71 @@ export interface NavigationV1Model extends RoutedCoreComponentModel{
     accessibilityLabel?: string
 }
 
+export const determineIsActive = (item:NavigationV1Item) => {
+    return item.active;
+}
 
-export default class NavigationV1<Model extends NavigationV1Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
+export const NavigationV1Group = (item:NavigationV1Item) => {
+    return (
+        <>
+            {!!item.children && item.children.length > 0 &&  (
+                <ul  className={item.baseCssClass + '__group'}>
+                    {item.children.map(
+                        (item,index) => <NavigationV1Item key={item.baseCssClass + '__item-' + index} {...item} index={index}/>
+                    )}
+                </ul>
+            )}
+        </>
+    )
+}
 
-    public static defaultProps = {
-        isInEditor: false,
-        hidePlaceHolder: false,
-        items: []
+export const NavigationV1Item = (item:NavigationV1Item) => {
+
+    const isActive = determineIsActive(item);
+    const cssClass = item.baseCssClass + '__item ' +
+                    item.baseCssClass + '__item--level-' + item.level + ' '
+                     + (isActive ? ' ' + item.baseCssClass + '__item--active' : '');
+    return (
+        <li className={cssClass}>
+                <RoutedLink isRouted={isItemRouted(item,item)} to={item.url} title={item.title} aria-current={isActive && 'page'}
+                    className={item.baseCssClass + '__item-link'}>{item.title
+               }</RoutedLink>
+                {
+                    !!item.children && item.children.length > 0 && <NavigationV1Group {...item}/>
+                }
+        </li>
+    )
+
+}
+
+export const NavigationV1Impl = (props:NavigationV1Model) => {
+
+    const selfClone:NavigationV1Item = {
+        active: false,
+        lastModified: 0,
+        level: 0,
+        path: "",
+        title: "",
+        url: "",
+        children: props.items
     };
 
-    constructor(props:Model) {
-        super(props, "cmp-navigation", 'NavigationV1');
-    }
+    return (
+        <nav className={props.baseCssClass}
+             role="navigation"
+             itemScope itemType="http://schema.org/SiteNavigationElement"
+             aria-label={props.accessibilityLabel}>
+            <NavigationV1Group {...selfClone}/>
+        </nav>
+    )
 
-    isEmpty(): boolean{
-        return NavigationV1IsEmptyFn(this.props);
-    }
-
-    determineIsActive(item:NavigationV1Item){
-        return item.active;
-    }
-
-    renderComponent(){
-
-        const selfClone:NavigationV1Item = {
-            active: false,
-            lastModified: 0,
-            level: 0,
-            path: "",
-            title: "",
-            url: "",
-            children: this.props.items
-        };
-
-        return (
-            <nav className={this.baseCssCls}
-                 role="navigation"
-                 itemScope itemType="http://schema.org/SiteNavigationElement"
-                 aria-label={this.props.accessibilityLabel}>
-                {this.renderGroup(selfClone)}
-            </nav>
-        )
-    }
-
-    renderGroup(item:NavigationV1Item){
-        return (
-            <>
-                {!!item.children && item.children.length > 0 &&  (
-                    <ul className={this.baseCssCls + '__group'}>
-                        {item.children.map(
-                            (item,index) => { return this.renderNavItem(item,index)}
-                        )}
-                    </ul>
-                )}
-           </>
-        )
-    }
-
-    renderLink(item:NavigationV1Item, isActive:boolean){
-        return (
-            <RoutedLink isRouted={isItemRouted(this.props,item)} to={item.url} title={item.title} aria-current={isActive && 'page'}
-               className={this.baseCssCls + '__item-link'}>{item.title}</RoutedLink>
-        )
-    }
-    renderNavItem(item: NavigationV1Item, index: number) {
-        const isActive = this.determineIsActive(item);
-        const cssClass = this.baseCssCls + '__item ' +
-                         this.baseCssCls + '__item--level-' + item.level + ' '
-                         + ' ' + this.getExtraNavItemCssClss(item, index)
-                         + (isActive ? ' ' + this.baseCssCls + '__item--active' : '');
-        return (
-            <li key={this.baseCssCls + '__item-' + index} className={cssClass}>
-                    { this.renderLink(item, isActive) }
-                    {
-                        !!item.children && item.children.length > 0 && this.renderGroup(item)
-                    }
-            </li>
-        )
-    }
-
-    getExtraNavItemCssClss(item: NavigationV1Item, index: number) {
-        return "";
-    }
 }
+
+
+
+export const NavigationV1 = (props:NavigationV1Model) => {
+    const Wrapped = withConditionalPlaceHolder(NavigationV1Impl, NavigationV1IsEmptyFn, "cmp-navigation", "Navigation V1")
+    return <Wrapped {...props}/>
+};
+
+export default NavigationV1;

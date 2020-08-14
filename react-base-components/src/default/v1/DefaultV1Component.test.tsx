@@ -18,46 +18,47 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {mount} from 'enzyme';
 
-import {items} from "./NavigationV1TestMockItems";
-import NavigationV1, {NavigationV1Model} from "./NavigationV1";
-import {MemoryRouter} from 'react-router-dom';
-
+import DefaultV1Component, {DefaultV1Model} from "./DefaultV1Component";
+import {DefaultV1IsEmptyFn} from "./DefaultV1ComponentIsEmptyFn";
 
 it('Renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
-        <NavigationV1 items={items} {...items} />,
+        <DefaultV1Component html={"<h1>test</h1>"} />,
         div
     );
     ReactDOM.unmountComponentAtNode(div);
     expect(1).toBe(1);
 });
 
+it('Has a proper isEmpty function', () => {
 
-it('Renders a basic navigation properly', () => {
-
-    const properties:NavigationV1Model = {
-        hidePlaceHolder: false,
+    const props1:DefaultV1Model = {
+        html:"<h1>some content</h1>",
         isInEditor: false,
-        items: items
+        hidePlaceHolder: false
     };
-    const wrapper = mount(<NavigationV1  {...properties} />);
-    const nav = wrapper.find('nav');
 
-    expect(nav).toHaveLength(1);
+    expect(DefaultV1IsEmptyFn(props1)).toEqual(false);
+
+    const props2:DefaultV1Model = {
+        html:" ",
+        isInEditor: false,
+        hidePlaceHolder: false
+    };
+
+    expect(DefaultV1IsEmptyFn(props2)).toEqual(true);
+
 });
 
+it('Renders some proper HTML', () => {
 
-it('Renders a basic navigation properly even with routing enabled', () => {
-
-    const properties:NavigationV1Model = {
-        hidePlaceHolder: false,
+    const props1:DefaultV1Model = {
+        html:"<h1>some content</h1>",
         isInEditor: false,
-        items: items,
-        routed: true
+        hidePlaceHolder: false
     };
-    const wrapper = mount(<MemoryRouter><NavigationV1  {...properties} /></MemoryRouter>);
-    const nav = wrapper.find('nav');
+    const element = mount(<DefaultV1Component {...props1} />);
+    expect(element.html()).toEqual("<div class=\"cmp-default-wrapper\"><h1>some content</h1></div>");
 
-    expect(nav).toHaveLength(1);
 });

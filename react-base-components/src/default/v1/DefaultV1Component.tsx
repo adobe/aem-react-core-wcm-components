@@ -14,32 +14,25 @@
  *  limitations under the License.
  */
 
-import {AbstractCoreComponent, CoreComponentModel, CoreComponentState} from "../../AbstractCoreComponent";
-import React from "react";
+import {CoreComponentModel, withConditionalPlaceHolder} from "../../AbstractCoreComponent";
+import React, {Component} from "react";
 import {DefaultV1IsEmptyFn} from "./DefaultV1ComponentIsEmptyFn";
 
 export interface DefaultV1Model extends CoreComponentModel{
     html: string
 }
 
-export default class DefaultV1Component<Model extends DefaultV1Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
+class DefaultV1ComponentImpl extends Component<DefaultV1Model> {
 
-    public static defaultProps = {
-        isInEditor: false,
-        hidePlaceHolder: false
-    };
-
-    constructor(props:Model) {
-        super(props, "cmp-default", "Default SPA Component");
-    }
-
-
-    renderComponent(){
+    render(){
           return <div className={"cmp-default-wrapper"} dangerouslySetInnerHTML={{__html: this.props.html}}></div>
     }
 
-    isEmpty(): boolean {
-        return DefaultV1IsEmptyFn(this.props);
-    }
+}
 
+const DefaultV1Component = (props:DefaultV1Model) => {
+    const Wrapped = withConditionalPlaceHolder(DefaultV1ComponentImpl, DefaultV1IsEmptyFn, "cmp-default", "Default SPA Component")
+    return <Wrapped {...props}/>
 };
+
+export default DefaultV1Component;

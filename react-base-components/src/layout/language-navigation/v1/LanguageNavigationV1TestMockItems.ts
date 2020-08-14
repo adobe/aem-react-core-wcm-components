@@ -1,4 +1,4 @@
-import {LanguageNavigationV1Item, LanguageNavigationV1Model} from "./LanguageNavigationV1";
+import {LanguageNavigationV1Item} from "./LanguageNavigationV1";
 
 export const items:LanguageNavigationV1Item[] = [
     {

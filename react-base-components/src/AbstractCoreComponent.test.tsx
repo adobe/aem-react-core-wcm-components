@@ -14,36 +14,30 @@
  *  limitations under the License.
  */
 
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import {shallow} from 'enzyme';
+import {mount} from 'enzyme';
 
-import {AbstractCoreComponent, CoreComponentModel, CoreComponentState} from './AbstractCoreComponent';
+import {CoreComponentModel, withConditionalPlaceHolder} from './AbstractCoreComponent';
 
 interface TestType extends CoreComponentModel{
     forceEmptyFlag:boolean
 }
 
-class ImplementingClass extends AbstractCoreComponent<TestType, CoreComponentState>{
-
-    constructor(props:TestType) {
-        super(props, "base-class", "AwesomeComponent");
-    }
-
-    isEmpty(): boolean {
-        return this.props.forceEmptyFlag;
-    }
-
-    renderComponent(): JSX.Element {
-        return <div>My awesome component</div>;
+class ImplementingClass extends Component<TestType>{
+    
+    render(): JSX.Element {
+        return <div className={this.props.baseCssClass}>My awesome component</div>;
     }
 
 }
 
+const WrappedClass = withConditionalPlaceHolder(ImplementingClass, (props) => props.forceEmptyFlag, "base-class", "AwesomeComponent");
+
 it('Renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
-        <ImplementingClass  hidePlaceHolder={false} isInEditor={false} forceEmptyFlag={true}/>,
+        <WrappedClass  hidePlaceHolder={false} isInEditor={false} forceEmptyFlag={true}/>,
         div
     );
     ReactDOM.unmountComponentAtNode(div);
@@ -51,21 +45,29 @@ it('Renders without crashing', () => {
 });
 
 it('Should show our awesome text if the component is not empty', () => {
-    const wrapper = shallow(<ImplementingClass  hidePlaceHolder={false} isInEditor={false} forceEmptyFlag={false}/>);
-    expect(wrapper.html()).toEqual("<div>My awesome component</div>");
+    const wrapper = mount(<WrappedClass  hidePlaceHolder={false} isInEditor={false} forceEmptyFlag={false}/>);
+    expect(wrapper.html()).toEqual("<div class=\"base-class\">My awesome component</div>");
 });
 
 it('Should not show anything if wcmmode is disabled and component is empty', () => {
-    const wrapper = shallow(<ImplementingClass  hidePlaceHolder={false} isInEditor={false} forceEmptyFlag={true}/>);
-    expect(wrapper.html()).toEqual("");
+    const wrapper = mount(<WrappedClass  hidePlaceHolder={false} isInEditor={false} forceEmptyFlag={true}/>);
+    expect(wrapper.html()).toBeNull();
 });
 
-it('Should show the proper placeholder if wcmmode is edit and component is empty', () => {
-    const wrapper = shallow(<ImplementingClass  hidePlaceHolder={false} isInEditor={true} forceEmptyFlag={true}/>);
-    expect(wrapper.html()).toEqual("<div class=\"cq-placeholder\">AwesomeComponent - Please configure the component</div>");
+it('Should show the proper placeholder with a custom text if wcmmode is edit and component is empty', () => {
+
+    const WrappedOverride = withConditionalPlaceHolder(ImplementingClass, (props) => props.forceEmptyFlag, "base-class", "AwesomeComponent", "Custom Configure Text");
+
+    const wrapper = mount(<WrappedOverride  hidePlaceHolder={false} isInEditor={true} forceEmptyFlag={true}/>);
+    expect(wrapper.html()).toEqual("<div class=\"cq-placeholder\">AwesomeComponent - Custom Configure Text</div>");
 });
 
 it('Should NOT show the proper placeholder if wcmmode is edit and component is empty, and hidePlaceHolder is set to true.', () => {
-    const wrapper = shallow(<ImplementingClass  hidePlaceHolder={true} isInEditor={true} forceEmptyFlag={true}/>);
-    expect(wrapper.html()).toEqual("");
+    const wrapper = mount(<WrappedClass  hidePlaceHolder={true} isInEditor={true} forceEmptyFlag={true}/>);
+    expect(wrapper.html()).toBeNull();
+});
+
+it('Should change the baseClass if we specify it with properties', () => {
+    const wrapper = mount(<WrappedClass baseCssClass={"overridden"}  hidePlaceHolder={false} isInEditor={false} forceEmptyFlag={false}/>);
+    expect(wrapper.html()).toEqual("<div class=\"overridden\">My awesome component</div>");
 });

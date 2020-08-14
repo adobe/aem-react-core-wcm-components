@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 import React, {MouseEvent} from 'react';
-import {CoreComponentModel, CoreComponentState,AbstractCoreComponent} from "../../../AbstractCoreComponent";
+import {CoreComponentModel, withConditionalPlaceHolder} from "../../../AbstractCoreComponent";
 import {DownloadV1IsEmptyFn} from "./DownloadV1IsEmptyFn";
 
 
@@ -35,23 +35,21 @@ export interface DownloadV1Model extends CoreComponentModel{
 }
 
 
-export default class DownloadV1<Model extends DownloadV1Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
+class DownloadV1Impl extends React.Component<DownloadV1Model> {
 
     displayFileName:boolean;
     displaySize: boolean;
     displayFormat: boolean;
 
     public static defaultProps = {
-        isInEditor: false,
-        hidePlaceHolder: false,
         titleType: 'h3',
         displaySize: false,
         displayFormat: false,
         displayFilename: false
     };
 
-    constructor(props:Model) {
-        super(props, "cmp-download", 'Download V1');
+    constructor(props:DownloadV1Model) {
+        super(props);
         this.handleOnClick = this.handleOnClick.bind(this);
         this.displayFileName = props.displayFilename && !!props.filename;
         this.displaySize = props.displaySize && !!props.size;
@@ -65,16 +63,13 @@ export default class DownloadV1<Model extends DownloadV1Model, State extends Cor
         }
     }
 
-    isEmpty(): boolean{
-        return DownloadV1IsEmptyFn(this.props);
-    }
 
     renderHeadingContent(){
         return (
             <>
                 {!!this.props.url || !!this.props.handleOnClick && (
                     <a onClick={this.handleOnClick}
-                       className={this.baseCssCls + '__title-link'}
+                       className={this.props.baseCssClass + '__title-link'}
                        href={this.getHref()}>
                         {this.props.title}
                     </a>
@@ -89,7 +84,7 @@ export default class DownloadV1<Model extends DownloadV1Model, State extends Cor
             React.createElement(
                 `${this.props.titleType}`,
                 {
-                    className: this.baseCssCls + '__title"',
+                    className: this.props.baseCssClass + '__title"',
                 },
                 this.renderHeadingContent()
             )
@@ -98,16 +93,16 @@ export default class DownloadV1<Model extends DownloadV1Model, State extends Cor
 
     renderDetails(){
         return (
-            <dl className={this.baseCssCls + '__properties'}>
+            <dl className={this.props.baseCssClass + '__properties'}>
                 {this.displayFileName && this.renderProperty('Filename', this.props.filename, 'filename')}
                 {this.displaySize     && this.renderProperty('Size',     this.props.size,     'size')}
                 {this.displayFormat   && this.renderProperty('Format',   this.props.format,   'format')}
             </dl>
         )
     }
-    renderComponent(){
+    render(){
 
-        const cssClass = this.baseCssCls + ( this.props.isInEditor  ? ' cq-dd-file' : '');
+        const cssClass = this.props.baseCssClass + ( this.props.isInEditor  ? ' cq-dd-file' : '');
         return (
             <div className={cssClass}>
                 {!!this.props.title && this.renderHeading()}
@@ -122,26 +117,24 @@ export default class DownloadV1<Model extends DownloadV1Model, State extends Cor
     renderDescription() {
         const html:string = String(this.props.description) || '';
         return (
-            <div className={this.baseCssCls + '__description'} dangerouslySetInnerHTML={{__html: html}}></div>
+            <div className={this.props.baseCssClass + '__description'} dangerouslySetInnerHTML={{__html: html}}></div>
         )
     }
 
     renderDownloadLink() {
-
-
         return (
-            <a onClick={this.handleOnClick} className={this.baseCssCls + '__action'} href={this.getHref()}>
-                <span className={this.baseCssCls + '__action-text'}>{this.props.actionText}</span>
+            <a onClick={this.handleOnClick} className={this.props.baseCssClass + '__action'} href={this.getHref()}>
+                <span className={this.props.baseCssClass + '__action-text'}>{this.props.actionText}</span>
             </a>
         )
     }
 
     renderProperty(label: string, content: string|undefined, cssClassModifier: string) {
-        const cssClass = `${this.baseCssCls}__property ${this.baseCssCls}__property--' + ${cssClassModifier}`;
+        const cssClass = `${this.props.baseCssClass}__property ${this.props.baseCssClass}__property--' + ${cssClassModifier}`;
         return (
             <div className={cssClass}>
-                <dt className={this.baseCssCls + '__property-label'}>{label}</dt>
-                <dd className={this.baseCssCls + '__property-content'}>{content}</dd>
+                <dt className={this.props.baseCssClass + '__property-label'}>{label}</dt>
+                <dd className={this.props.baseCssClass + '__property-content'}>{content}</dd>
             </div>
         );
     }
@@ -150,3 +143,13 @@ export default class DownloadV1<Model extends DownloadV1Model, State extends Cor
         return (!!this.props.url && this.props.url.length > 0) ? this.props.url : '#';
     }
 }
+
+
+
+const DownloadV1 = (props:DownloadV1Model) => {
+
+    const Wrapped = withConditionalPlaceHolder(DownloadV1Impl, DownloadV1IsEmptyFn, "cmp-download", "Download V1");
+    return <Wrapped {...props}/>
+};
+
+export default DownloadV1;

@@ -16,9 +16,9 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {shallow} from 'enzyme';
+import {mount} from 'enzyme';
 
-import TextV2, { TextV2Model} from './TextV2';
+import TextV2, {TextV2Model} from './TextV2';
 import {TextV2IsEmptyFn} from "./TextV2IsEmptyFn";
 
 it('Has a proper isEmpty function', () => {
@@ -55,7 +55,7 @@ it('Renders without crashing', () => {
 
 it('Renders plain text', () => {
 
-    const element = shallow(<TextV2 text={'plain text'}/>);
+    const element = mount(<TextV2 text={'plain text'}/>);
 
     const p = element.find('.cmp-text__paragraph');
     expect(p.text()).toEqual("plain text");
@@ -67,7 +67,7 @@ it('Renders rich text', () => {
 
     const richText = '<div class="myclass">richtext</div>';
     const expectedHtml = '<div class="cmp-text"><div class="myclass">richtext</div></div>';
-    const element = shallow(<TextV2 richText={true} text={richText}/>);
+    const element = mount(<TextV2 richText={true} text={richText}/>);
 
     const actualHtml = element.html();
     expect(actualHtml).toEqual(expectedHtml);

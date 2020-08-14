@@ -19,7 +19,7 @@ import ReactDOM from 'react-dom';
 import {mount} from 'enzyme';
 
 import ButtonV1, {ButtonV1Model} from './ButtonV1';
-import { MemoryRouter } from 'react-router-dom';
+import {MemoryRouter} from 'react-router-dom';
 
 
 it('Renders without crashing', () => {
@@ -35,7 +35,7 @@ it('Renders without crashing', () => {
 
 it('Renders a proper button with link', () => {
 
-    let captured:boolean = false;
+    let captured = false;
 
     const properties:ButtonV1Model = {
         isInEditor: false,
@@ -72,7 +72,7 @@ it('Renders a proper button with link', () => {
 
 it('Renders a proper button with link', () => {
 
-    let captured:boolean = false;
+    let captured = false;
 
     const properties:ButtonV1Model = {
         isInEditor: false,

@@ -18,6 +18,7 @@ export * from "./AbstractCoreComponent";
 
 export * from "./default/v1/DefaultV1Component";
 export * from "./default/v1/DefaultV1ComponentIsEmptyFn";
+export { default as DefaultV1Component } from "./default/v1/DefaultV1Component";
 
 export * from "./authoring/list/v2/ListV2";
 export * from "./authoring/list/v2/ListV2IsEmptyFn"
@@ -59,7 +60,6 @@ export { default as BreadCrumbV2 } from "./layout/breadcrumb/v2/BreadCrumbV2";
 
 export * from "./layout/navigation/v1/NavigationV1";
 export * from "./layout/navigation/v1/NavigationV1IsEmptyFn";
-export { default as NavigationV1 } from "./layout/navigation/v1/NavigationV1";
 
 export * from "./layout/language-navigation/v1/LanguageNavigationV1";
 export * from "./layout/language-navigation/v1/LanguageNavigationV1IsEmptyFn";

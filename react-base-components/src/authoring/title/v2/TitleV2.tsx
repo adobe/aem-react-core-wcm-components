@@ -14,39 +14,31 @@
  *  limitations under the License.
  */
 
-import React from 'react';
-import {AbstractCoreComponent, CoreComponentState} from "../../../AbstractCoreComponent";
+import React, {Component} from 'react';
+import {withConditionalPlaceHolder} from "../../../AbstractCoreComponent";
 import {RoutedCoreComponentModel} from "../../../routing/RoutedCoreComponent";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {TitleV2IsEmptyFn} from "./TitleV2IsEmptyFn";
 
 export interface TitleV2Model extends RoutedCoreComponentModel{
-    text?: string;
+    text: string;
     linkURL?: string;
     linkDisabled: boolean;
-    type: string;
+    type?: string;
+    nested?: boolean
 }
 
 
 
-export default class TitleV2<Model extends TitleV2Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
+class TitleV2Impl extends Component<TitleV2Model> {
 
-    public static defaultProps = {
-        isInEditor: false,
-        hidePlaceHolder: false
-    };
-
-    constructor(props: Model) {
-        super(props, 'cmp-title', 'TitleV2');
-    }
-
-    isEmpty(): boolean{
-        return TitleV2IsEmptyFn(this.props);
+    private get bemModifierPrefix(): string{
+        return this.props.nested ? '-' : '__';
     }
 
     generateLink(){
         return (
-            <RoutedLink className={this.baseCssCls + '__link'} isRouted={this.props.routed} to={this.props.linkURL}>
+            <RoutedLink className={this.props.baseCssClass + this.bemModifierPrefix +  'link'} isRouted={this.props.routed} to={this.props.linkURL}>
                 {this.props.text}
             </RoutedLink>
         )
@@ -65,15 +57,15 @@ export default class TitleV2<Model extends TitleV2Model, State extends CoreCompo
         )
     }
 
-    renderComponent(){
+    render(){
 
+        const elementType:string = (!!this.props.type) ? this.props.type.toString() : 'h3';
         return (
-            <div className={this.baseCssCls}>
+            <div className={this.props.baseCssClass}>
                 {
-                    React.createElement(
-                     this.props.type || 'h3',
+                    React.createElement(elementType,
                         {
-                            className: this.baseCssCls + '__text',
+                            className: this.props.baseCssClass + this.bemModifierPrefix + 'text',
                         },
                         this.getContents()
                     )
@@ -83,3 +75,12 @@ export default class TitleV2<Model extends TitleV2Model, State extends CoreCompo
         )
     }
 }
+
+
+
+const TitleV2 = (props:TitleV2Model) => {
+    const Wrapped = withConditionalPlaceHolder(TitleV2Impl, TitleV2IsEmptyFn, "cmp-title", "TitleV2")
+    return <Wrapped {...props}/>
+};
+
+export default TitleV2;

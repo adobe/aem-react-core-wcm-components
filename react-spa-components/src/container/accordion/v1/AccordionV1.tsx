@@ -26,11 +26,11 @@ export interface AccordionV1Properties extends CoreContainerProperties{
     expandedItems: string[];
 }
 
-export interface AccordionV1V1State extends CoreContainerState{
+export interface AccordionV1State extends CoreContainerState{
     expandedItems: string[];
 }
 
-export default class AccordionV1<P extends AccordionV1Properties, S extends AccordionV1V1State> extends AbstractCoreContainerComponent<P,S> {
+export default class AccordionV1<P extends AccordionV1Properties, S extends AccordionV1State> extends AbstractCoreContainerComponent<P,S> {
 
     constructor(props:P) {
         super(props, "cmp-accordion");
@@ -69,7 +69,7 @@ export default class AccordionV1<P extends AccordionV1Properties, S extends Acco
     }
 
     get accordionContainerProps(){
-        let attrs = this.containerProps;
+        const attrs = this.containerProps;
         attrs['className'] = attrs.className + ' ' + this.baseCssCls;
         attrs['data-cmp-is'] = 'accordion';
         return attrs;
