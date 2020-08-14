@@ -6,6 +6,7 @@
     "linter": "eslint --ext .ts,.tsx .",
     "linter:fix": "eslint --ext .ts,.tsx . --fix",
     "test": "jest",
+    "test-clear": "jest --clearCache",
     "test:coverage": "jest --coverage",
     "test:debug": "jest --coverage --watchAll",
     "build": "webpack --config config/webpack.config.core.js  && webpack --config config/webpack.config.lib.js  &&   tsc -p src/tsconfig.types.json",
