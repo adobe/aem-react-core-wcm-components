@@ -16,7 +16,8 @@
 
 import React from 'react';
 
-import {CoreContainerProperties, CoreContainerState, withStandardBaseCssClass} from "../../../AbstractCoreContainerComponent";
+
+import {CoreContainerProperties, CoreContainerState, withStandardBaseCssClass, CoreContainerItem} from "../../../AbstractCoreContainerComponent";
 import {ComponentMapping, Container} from '@adobe/cq-react-editable-components';
 
 import {CarouselV1IsEmptyFn} from "./CarouselV1IsEmptyFn";
@@ -31,12 +32,15 @@ const formatFn = (value:string, args:string[]) => {
     return content;
 };
 
+
+
 export interface CarouselV1Properties extends CoreContainerProperties{
     autoplay: boolean;
     autopauseDisabled: boolean;
     accessibilityLabel:string;
     accessibility: CarouselV1AccessibilityProperties;
     delay: number;
+    cqItems: { [key: string]: CoreContainerItem };
 }
 
 export interface CarouselV1AccessibilityProperties{
@@ -260,7 +264,7 @@ class CarouselV1Impl extends Container<CarouselV1Properties,CarouselV1State> {
 
                     this.props.cqItemsOrder.map((key, index) => {
 
-                        const item = this.props.cqItems[key];
+                        const item:CoreContainerItem = this.props.cqItems[key];
 
                         const cssClass = (index === this.state.activeIndex) ? `${this.props.baseCssClass}__indicator ${this.props.baseCssClass}__indicator--active` : `${this.props.baseCssClass}__indicator`;
                         const ariaLabelItem = formatFn(this.props.accessibility.indicator, [(index + 1).toString()]);
@@ -270,7 +274,7 @@ class CarouselV1Impl extends Container<CarouselV1Properties,CarouselV1State> {
                                 onClick={()=>this.handleIndicatorClick(index)}
                                 className={cssClass}
                                 role="tab"
-                                aria-label={ariaLabelItem}>{item.title}</li>
+                                aria-label={ariaLabelItem}>{item["cq:panelTitle"]}</li>
                         )
                     })
                 }

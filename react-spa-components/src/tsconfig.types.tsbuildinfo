@@ -217,8 +217,8 @@
         "affectsGlobalScope": true
       },
       "../node_modules/csstype/index.d.ts": {
-        "version": "522796fdcf08b59500619868b1dfc18b2c193393a866ccb4c07dc07d031ed2b1",
-        "signature": "522796fdcf08b59500619868b1dfc18b2c193393a866ccb4c07dc07d031ed2b1",
+        "version": "859b1245cdfd0d6e0752cdb59913e36fb2946e919f5d99846ef7f8ab45d5735e",
+        "signature": "859b1245cdfd0d6e0752cdb59913e36fb2946e919f5d99846ef7f8ab45d5735e",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/prop-types/index.d.ts": {
@@ -230,6 +230,141 @@
         "version": "6dbb6d38449af937829d2bd38a2ff5bfd45b164c6e22bed25dff9fd0bea9cf47",
         "signature": "6dbb6d38449af937829d2bd38a2ff5bfd45b164c6e22bed25dff9fd0bea9cf47",
         "affectsGlobalScope": true
+      },
+      "../../../spa-react-editable-components/node_modules/@types/react/global.d.ts": {
+        "version": "ecf78e637f710f340ec08d5d92b3f31b134a46a4fcf2e758690d8c46ce62cba6",
+        "signature": "ecf78e637f710f340ec08d5d92b3f31b134a46a4fcf2e758690d8c46ce62cba6",
+        "affectsGlobalScope": true
+      },
+      "../../../spa-react-editable-components/node_modules/csstype/index.d.ts": {
+        "version": "859b1245cdfd0d6e0752cdb59913e36fb2946e919f5d99846ef7f8ab45d5735e",
+        "signature": "859b1245cdfd0d6e0752cdb59913e36fb2946e919f5d99846ef7f8ab45d5735e",
+        "affectsGlobalScope": false
+      },
+      "../../../spa-react-editable-components/node_modules/@types/prop-types/index.d.ts": {
+        "version": "a7e32dcb90bf0c1b7a1e4ac89b0f7747cbcba25e7beddc1ebf17be1e161842ad",
+        "signature": "a7e32dcb90bf0c1b7a1e4ac89b0f7747cbcba25e7beddc1ebf17be1e161842ad",
+        "affectsGlobalScope": false
+      },
+      "../../../spa-react-editable-components/node_modules/@types/react/index.d.ts": {
+        "version": "b0de1737a447411ed29ff2cf75b82b9f4e89791337f743c3b6bcbd05a95ec524",
+        "signature": "b0de1737a447411ed29ff2cf75b82b9f4e89791337f743c3b6bcbd05a95ec524",
+        "affectsGlobalScope": true
+      },
+      "../../../spa-component-mapping/dist/componentmapping.d.ts": {
+        "version": "f762a7d594540ad27c80d17fc3790eca74e69659bba9018340b04a80aa536304",
+        "signature": "f762a7d594540ad27c80d17fc3790eca74e69659bba9018340b04a80aa536304",
+        "affectsGlobalScope": false
+      },
+      "../../../spa-component-mapping/dist/types.d.ts": {
+        "version": "d8cfd5d4e4509c50a3a13befe145618420a2116d4a6769b3e00566bf47355154",
+        "signature": "d8cfd5d4e4509c50a3a13befe145618420a2116d4a6769b3e00566bf47355154",
+        "affectsGlobalScope": false
+      },
+      "../../../spa-react-editable-components/dist/components/editablecomponent.d.ts": {
+        "version": "3cdd8c75fde625210a2d591983b05922c6300e1c8217032b515bccb166bdf77a",
+        "signature": "3cdd8c75fde625210a2d591983b05922c6300e1c8217032b515bccb166bdf77a",
+        "affectsGlobalScope": false
+      },
+      "../../../spa-react-editable-components/dist/componentmapping.d.ts": {
+        "version": "aa20320b32ea1a7c77dd87a099e4db3b70d08799adad9ca0e020cbfc6c63feba",
+        "signature": "aa20320b32ea1a7c77dd87a099e4db3b70d08799adad9ca0e020cbfc6c63feba",
+        "affectsGlobalScope": false
+      },
+      "../../../spa-page-model-manager/dist/modelrouter.d.ts": {
+        "version": "74ffd4b668cd557605424fa26b3e7fa7640ec803682dd02f972a66f3d0a98b40",
+        "signature": "74ffd4b668cd557605424fa26b3e7fa7640ec803682dd02f972a66f3d0a98b40",
+        "affectsGlobalScope": false
+      },
+      "../../../spa-page-model-manager/dist/model.d.ts": {
+        "version": "4b53860fe21555741efc125b65cabfcd4c63dcc1e558379780efa3d909fb1770",
+        "signature": "4b53860fe21555741efc125b65cabfcd4c63dcc1e558379780efa3d909fb1770",
+        "affectsGlobalScope": false
+      },
+      "../../../spa-page-model-manager/dist/modelclient.d.ts": {
+        "version": "eaab1ddae04abbde6bb7aa55e895a973713058553af90bcee5fe4359f17d5622",
+        "signature": "eaab1ddae04abbde6bb7aa55e895a973713058553af90bcee5fe4359f17d5622",
+        "affectsGlobalScope": false
+      },
+      "../../../spa-page-model-manager/dist/modelstore.d.ts": {
+        "version": "905045f67617e6f36b5c84ad0345986b7775948c25bf0ef7e4fe3acc7beddc49",
+        "signature": "905045f67617e6f36b5c84ad0345986b7775948c25bf0ef7e4fe3acc7beddc49",
+        "affectsGlobalScope": false
+      },
+      "../../../spa-page-model-manager/dist/modelmanager.d.ts": {
+        "version": "341665248f8bd9045bd49b327627a6ce2be92c11f201a06ac16c9c99aec33b8e",
+        "signature": "341665248f8bd9045bd49b327627a6ce2be92c11f201a06ac16c9c99aec33b8e",
+        "affectsGlobalScope": false
+      },
+      "../../../spa-page-model-manager/dist/pathutils.d.ts": {
+        "version": "c227e359813312cce9512a8be5fae1f453466919347023254a75d64a2b595532",
+        "signature": "c227e359813312cce9512a8be5fae1f453466919347023254a75d64a2b595532",
+        "affectsGlobalScope": false
+      },
+      "../../../spa-page-model-manager/dist/constants.d.ts": {
+        "version": "ef2d4fc482c71c9d505cad9e0edbc5ed1b38f67da0161969595d736e4056fac7",
+        "signature": "ef2d4fc482c71c9d505cad9e0edbc5ed1b38f67da0161969595d736e4056fac7",
+        "affectsGlobalScope": false
+      },
+      "../../../spa-page-model-manager/dist/types.d.ts": {
+        "version": "5d1f5915d8aecd649fdd6f9ff8271aaf1bf7a30aece2dfeffbe8228a855596c6",
+        "signature": "5d1f5915d8aecd649fdd6f9ff8271aaf1bf7a30aece2dfeffbe8228a855596c6",
+        "affectsGlobalScope": false
+      },
+      "../../../spa-react-editable-components/dist/components/container.d.ts": {
+        "version": "bd43b22aec650806828955661d38e4e626de82e9b3c1b3748ba053107f092ced",
+        "signature": "bd43b22aec650806828955661d38e4e626de82e9b3c1b3748ba053107f092ced",
+        "affectsGlobalScope": false
+      },
+      "../../../spa-react-editable-components/dist/components/allowedcomponents/allowedcomponentscontainer.d.ts": {
+        "version": "964469a519fe6d8f533e822dc0144f646ca2e8768a5070ab2232f1ea0b3fac35",
+        "signature": "964469a519fe6d8f533e822dc0144f646ca2e8768a5070ab2232f1ea0b3fac35",
+        "affectsGlobalScope": false
+      },
+      "../../../spa-react-editable-components/dist/components/modelprovider.d.ts": {
+        "version": "6f1d4fb4cecf3f7a675f259b51e6a5cf4050165c2b8347e721ea2cb5beb6282b",
+        "signature": "6f1d4fb4cecf3f7a675f259b51e6a5cf4050165c2b8347e721ea2cb5beb6282b",
+        "affectsGlobalScope": false
+      },
+      "../../../spa-react-editable-components/dist/components/page.d.ts": {
+        "version": "80b77005531272637989fb762c678cf5a796f23a2339e722866dd4b074225a4e",
+        "signature": "80b77005531272637989fb762c678cf5a796f23a2339e722866dd4b074225a4e",
+        "affectsGlobalScope": false
+      },
+      "../../../spa-react-editable-components/dist/components/responsivegrid.d.ts": {
+        "version": "8d86dd64968ec57677bb8a76ce998d757713ada065e9a6812b42acf63264e5f7",
+        "signature": "8d86dd64968ec57677bb8a76ce998d757713ada065e9a6812b42acf63264e5f7",
+        "affectsGlobalScope": false
+      },
+      "../../../spa-react-editable-components/dist/constants.d.ts": {
+        "version": "8fd5515c7f4f393b914bbaa6ec6e2c7f8ec04eaf72d1b68cc184621412f88edc",
+        "signature": "8fd5515c7f4f393b914bbaa6ec6e2c7f8ec04eaf72d1b68cc184621412f88edc",
+        "affectsGlobalScope": false
+      },
+      "../../../spa-react-editable-components/dist/editorcontext.d.ts": {
+        "version": "458431f270429effda1102b30806a3d64532c91ae54734685755274189bbf43a",
+        "signature": "458431f270429effda1102b30806a3d64532c91ae54734685755274189bbf43a",
+        "affectsGlobalScope": false
+      },
+      "../../../spa-react-editable-components/dist/utils.d.ts": {
+        "version": "f1043f30a6cd763d8bb194771ce970998be76b1f86fca10aef832ffd921a90de",
+        "signature": "f1043f30a6cd763d8bb194771ce970998be76b1f86fca10aef832ffd921a90de",
+        "affectsGlobalScope": false
+      },
+      "../../../spa-react-editable-components/dist/types.d.ts": {
+        "version": "b53a2ded347686e49c0f411866748d5480aa66306b71f8d2ab24b87fc1a2fc46",
+        "signature": "b53a2ded347686e49c0f411866748d5480aa66306b71f8d2ab24b87fc1a2fc46",
+        "affectsGlobalScope": false
+      },
+      "./abstractcorecontainercomponent.tsx": {
+        "version": "b3371bcc24e8a5e90d7a133688874c45251ce100fd56a0fef1f078fa902f2561",
+        "signature": "9844fd8c7d486b6c529175031a82144824b763a1b8b8588a12bfe23e367ecc90",
+        "affectsGlobalScope": false
+      },
+      "./testcomponentmapping.tsx": {
+        "version": "7ae27dd108972a80ed73afd2885c8f4881ca7a39a5a6f6e8ad65e45ada94b902",
+        "signature": "0070d7da6d262a871a83e9f09cc8879376bf96ffb664493f059145b08899608b",
+        "affectsGlobalScope": false
       },
       "./container/accordion/v1/accordionv1.tsx": {
         "version": "e4a4d5f426732547d529dc45750efb0069028455ef82766ee0fb8417ce0e6376",
@@ -252,8 +387,8 @@
         "affectsGlobalScope": false
       },
       "./container/carousel/v1/carouselv1.tsx": {
-        "version": "1efa61fc55739218593f45f487c89f27448117823bf2396d1a77fba74f7c80ba",
-        "signature": "bf03b13cbffef278a587e728186b3e4d82ff356b3625b0e7b140b508c4115faf",
+        "version": "0cba43426fd338a59db028841924f942bd46bed4a6701b19eceeaccf7c9d2c21",
+        "signature": "6602f574c5300a788cf265ad2e4cdfbdabc0a739e91bd1956125620167512eb4",
         "affectsGlobalScope": false
       },
       "./container/carousel/v1/carouselv1isemptyfn.ts": {
@@ -262,8 +397,8 @@
         "affectsGlobalScope": false
       },
       "./container/tabs/v1/tabsv1.tsx": {
-        "version": "e88a0c0e84d522cf7afbe266ffc3baf65a04c7cc5d7405c2708dad4131922d86",
-        "signature": "40c5bc494ae3f910233305cfdaa2777088a718f209cd3442bcb71ee8b039c841",
+        "version": "f15503d1a67f78eca5f4d8e29159c844757bf279d8a76dc4699f9a750e357a2a",
+        "signature": "626f1fbc179c282f076a628e1f7ecd50cc763a8f4f23d8ccd23f1e1b75b3403d",
         "affectsGlobalScope": false
       },
       "./container/tabs/v1/tabsv1isemptyfn.ts": {
@@ -279,11 +414,6 @@
       "./index.ts": {
         "version": "766fdb6a983aaa98ec72c3df23179359478a7a61bb5cae47a7a671f79a60c4fb",
         "signature": "f906e161131f4f9dd4b7b285921fe965b8c0509bb237a28d31327ccdeb25bae2",
-        "affectsGlobalScope": false
-      },
-      "./abstractcorecontainercomponent.tsx": {
-        "version": "3dc693a68d4418d86976fd3691321840c2e4483afa7683682a2ce3699c82aeb9",
-        "signature": "5d3b03cff0792fb1ccb800aeff25360cb5785101c9ab47a048dd24b74f08c2da",
         "affectsGlobalScope": false
       },
       "./index.test.ts": {
@@ -561,88 +691,43 @@
         "signature": "8483a29c17f7feb768a1f4333cf12ccf1e7341bd89dadcf407e012d5315228d0",
         "affectsGlobalScope": false
       },
-      "../../../spa-page-model-manager/dist/modelrouter.d.ts": {
-        "version": "74ffd4b668cd557605424fa26b3e7fa7640ec803682dd02f972a66f3d0a98b40",
-        "signature": "74ffd4b668cd557605424fa26b3e7fa7640ec803682dd02f972a66f3d0a98b40",
-        "affectsGlobalScope": false
-      },
-      "../../../spa-page-model-manager/dist/model.d.ts": {
-        "version": "77d83ce0707e59123e01bb77076e84b5e0ec31eb189e1f38064c56d206973c5a",
-        "signature": "77d83ce0707e59123e01bb77076e84b5e0ec31eb189e1f38064c56d206973c5a",
-        "affectsGlobalScope": false
-      },
-      "../../../spa-page-model-manager/dist/modelclient.d.ts": {
-        "version": "eaab1ddae04abbde6bb7aa55e895a973713058553af90bcee5fe4359f17d5622",
-        "signature": "eaab1ddae04abbde6bb7aa55e895a973713058553af90bcee5fe4359f17d5622",
-        "affectsGlobalScope": false
-      },
-      "../../../spa-page-model-manager/dist/modelstore.d.ts": {
-        "version": "905045f67617e6f36b5c84ad0345986b7775948c25bf0ef7e4fe3acc7beddc49",
-        "signature": "905045f67617e6f36b5c84ad0345986b7775948c25bf0ef7e4fe3acc7beddc49",
-        "affectsGlobalScope": false
-      },
-      "../../../spa-page-model-manager/dist/modelmanager.d.ts": {
-        "version": "341665248f8bd9045bd49b327627a6ce2be92c11f201a06ac16c9c99aec33b8e",
-        "signature": "341665248f8bd9045bd49b327627a6ce2be92c11f201a06ac16c9c99aec33b8e",
-        "affectsGlobalScope": false
-      },
-      "../../../spa-page-model-manager/dist/pathutils.d.ts": {
-        "version": "c227e359813312cce9512a8be5fae1f453466919347023254a75d64a2b595532",
-        "signature": "c227e359813312cce9512a8be5fae1f453466919347023254a75d64a2b595532",
-        "affectsGlobalScope": false
-      },
-      "../../../spa-page-model-manager/dist/constants.d.ts": {
-        "version": "ef2d4fc482c71c9d505cad9e0edbc5ed1b38f67da0161969595d736e4056fac7",
-        "signature": "ef2d4fc482c71c9d505cad9e0edbc5ed1b38f67da0161969595d736e4056fac7",
-        "affectsGlobalScope": false
-      },
-      "../../../spa-page-model-manager/dist/types.d.ts": {
-        "version": "5d1f5915d8aecd649fdd6f9ff8271aaf1bf7a30aece2dfeffbe8228a855596c6",
-        "signature": "5d1f5915d8aecd649fdd6f9ff8271aaf1bf7a30aece2dfeffbe8228a855596c6",
-        "affectsGlobalScope": false
-      },
-      "../testcomponentmapping.tsx": {
-        "version": "056b348af2d5eba6272e5527bb67b7d792f07392b26fcf47361b45e9aac09954",
-        "signature": "0ef929e55660b82f5a28140af434af04f2280f10c98816d7aed166d2483eebe7",
-        "affectsGlobalScope": false
-      },
       "./container/accordion/v1/accordionv1.test.tsx": {
-        "version": "e2432bf48cce58fd57252cb24b87269a36362738f4766fd625257b0adb431d66",
+        "version": "680b473e0c5f0b1891daeb798a4920371b548ba978107a4eea4cf8c415c384cd",
         "signature": "c89ef4a67bb527b35740d8a9fd786f4421ec87f058906eabc4655dbdd151664e",
         "affectsGlobalScope": false
       },
       "./container/accordion/v1/accordionv1isemptyfn.test.tsx": {
-        "version": "ef54222697e390234886ddcc5a386b228e89fbdfae43ae0bb10e52319a2587cb",
+        "version": "b57acada133a365631aaf7f1f99a0549e7cb3b1facd10c3f904844fbf826ca24",
         "signature": "869901fe6d54d18f4d0a2affe1d096f986fe0a350b9e5d12102c73e784f5e0ba",
         "affectsGlobalScope": false
       },
       "./container/carousel/v1/carouselv1.test.tsx": {
-        "version": "df12e6d87d7ff4c0cd1cf8a1843a5f26c62cf50006d8352f8fd9a0f57d3678ea",
+        "version": "75755c8fa97279e85730d9845de73d592c5481b5395b3b7e7e2871e283bcb2fa",
         "signature": "2ab45497c5421d832b2e9e410f4003e826def85d6b7fe7031cb080300dee867f",
         "affectsGlobalScope": false
       },
       "./container/carousel/v1/carouselv1isemptyfn.test.tsx": {
-        "version": "37bcba4ecade0e33b31d5333afb08565c07b74bcb431db3f4653bfb4d1a4c7e9",
+        "version": "a5ca8f6338729a1fbee0bfcd0da2abe609fb33e4bd8f1324562a2f2eb9040805",
         "signature": "ead18b3d0fda820e96ed6f42870497649601729558a394aa521ebc64bc988f2f",
         "affectsGlobalScope": false
       },
       "./container/container/v1/containerv1.test.tsx": {
-        "version": "74ca87809ebf98cfd8d60b524279f9c47750d1f441004245e8091c4443ae85e3",
+        "version": "a44aeb9d94c506851abdff85e1be545db2b4025def39a6fae7d076e555aca242",
         "signature": "0b2e280bd9a41150ecc58113d41bbe191c6184490b5388766ead571f2d5cf579",
         "affectsGlobalScope": false
       },
       "./container/container/v1/containerv1isemptyfn.test.tsx": {
-        "version": "429fd3251c0c749da7d480eb392121ebc20f0cbe0dadd3859d866308072299a1",
+        "version": "27e8695eccaa1c4f9159e09ebf366072b073665c80630243f80f4540da830e4a",
         "signature": "213e5d38a1c49aa6a19882727cafc9684f2d105db98b2470123f31b071d24494",
         "affectsGlobalScope": false
       },
       "./container/tabs/v1/tabsv1.test.tsx": {
-        "version": "3427496e0146e6694ac2803544d20296fcf745d67e5a3f4ead5fd3e8fa38605e",
+        "version": "021097ca895c1e3ac2ffe9cad4ea2c8eef924fdaca06981326d2dc57225bdc16",
         "signature": "e91a75a90321b121183dde9f447384d6ed988cbb719f8ea38a1e41a7b36167b1",
         "affectsGlobalScope": false
       },
       "./container/tabs/v1/tabsv1isemptyfn.test.tsx": {
-        "version": "92acf3f8c59553fd505444487e86eb9b7a0369257f75d87ccc12475c21bbb656",
+        "version": "b8d564a4ec3306990a496b93c86e09eb8ff5ebfbaa0adf0d6caafb2e9f77af1b",
         "signature": "b06e272bab2df3a68946895cc40ceefb848194f706c944274dc75b0298abba49",
         "affectsGlobalScope": false
       },
@@ -1001,10 +1086,22 @@
       "baseUrl": "./",
       "paths": {
         "@adobe/cq-react-editable-components": [
-          "./"
+          "node_modules/@adobe/cq-react-editable-components"
         ],
         "@adobe/cq-react-editable-components/*": [
-          "./*"
+          "node_modules/@adobe/cq-react-editable-components/*"
+        ],
+        "@adobe/cq-spa-component-mapping": [
+          "node_modules/@adobe/cq-spa-component-mapping"
+        ],
+        "@adobe/cq-spa-component-mapping/*": [
+          "node_modules/@adobe/cq-spa-component-mapping/*"
+        ],
+        "@adobe/cq-spa-page-model-manager": [
+          "node_modules/@adobe/cq-spa-page-model-manager"
+        ],
+        "@adobe/cq-spa-page-model-manager/*": [
+          "node_modules/@adobe/cq-spa-page-model-manager/*"
         ]
       },
       "composite": true,
@@ -2363,16 +2460,18 @@
         "../node_modules/@types/node/util.d.ts"
       ],
       "./abstractcorecontainercomponent.tsx": [
+        "../../../spa-page-model-manager/dist/types.d.ts",
+        "../../../spa-react-editable-components/dist/types.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/react/index.d.ts",
-        "./index.ts"
+        "../node_modules/@types/react/index.d.ts"
       ],
       "./container/accordion/v1/accordionv1.test.tsx": [
         "../../../spa-page-model-manager/dist/types.d.ts",
+        "../../../spa-react-editable-components/dist/types.d.ts",
         "../node_modules/@types/enzyme/index.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -2381,11 +2480,11 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/react-dom/index.d.ts",
         "../node_modules/@types/react/index.d.ts",
-        "../testcomponentmapping.tsx",
         "./container/accordion/v1/accordionv1.tsx",
-        "./index.ts"
+        "./testcomponentmapping.tsx"
       ],
       "./container/accordion/v1/accordionv1.tsx": [
+        "../../../spa-react-editable-components/dist/types.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -2393,20 +2492,19 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/react/index.d.ts",
         "./abstractcorecontainercomponent.tsx",
-        "./container/accordion/v1/accordionv1isemptyfn.ts",
-        "./index.ts"
+        "./container/accordion/v1/accordionv1isemptyfn.ts"
       ],
       "./container/accordion/v1/accordionv1isemptyfn.test.tsx": [
+        "../../../spa-react-editable-components/dist/types.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/react/index.d.ts",
-        "../testcomponentmapping.tsx",
         "./container/accordion/v1/accordionv1.tsx",
         "./container/accordion/v1/accordionv1isemptyfn.ts",
-        "./index.ts"
+        "./testcomponentmapping.tsx"
       ],
       "./container/accordion/v1/accordionv1isemptyfn.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -2418,6 +2516,7 @@
       ],
       "./container/carousel/v1/carouselv1.test.tsx": [
         "../../../spa-page-model-manager/dist/types.d.ts",
+        "../../../spa-react-editable-components/dist/types.d.ts",
         "../node_modules/@types/enzyme/index.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -2426,11 +2525,11 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/react-dom/index.d.ts",
         "../node_modules/@types/react/index.d.ts",
-        "../testcomponentmapping.tsx",
         "./container/carousel/v1/carouselv1.tsx",
-        "./index.ts"
+        "./testcomponentmapping.tsx"
       ],
       "./container/carousel/v1/carouselv1.tsx": [
+        "../../../spa-react-editable-components/dist/types.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -2438,20 +2537,19 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/react/index.d.ts",
         "./abstractcorecontainercomponent.tsx",
-        "./container/carousel/v1/carouselv1isemptyfn.ts",
-        "./index.ts"
+        "./container/carousel/v1/carouselv1isemptyfn.ts"
       ],
       "./container/carousel/v1/carouselv1isemptyfn.test.tsx": [
+        "../../../spa-react-editable-components/dist/types.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/react/index.d.ts",
-        "../testcomponentmapping.tsx",
         "./container/carousel/v1/carouselv1.tsx",
         "./container/carousel/v1/carouselv1isemptyfn.ts",
-        "./index.ts"
+        "./testcomponentmapping.tsx"
       ],
       "./container/carousel/v1/carouselv1isemptyfn.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -2464,6 +2562,7 @@
       ],
       "./container/container/v1/containerv1.test.tsx": [
         "../../../spa-page-model-manager/dist/types.d.ts",
+        "../../../spa-react-editable-components/dist/types.d.ts",
         "../node_modules/@types/enzyme/index.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -2472,31 +2571,30 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/react-dom/index.d.ts",
         "../node_modules/@types/react/index.d.ts",
-        "../testcomponentmapping.tsx",
         "./container/container/v1/containerv1.tsx",
-        "./index.ts"
+        "./testcomponentmapping.tsx"
       ],
       "./container/container/v1/containerv1.tsx": [
+        "../../../spa-react-editable-components/dist/types.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/react/index.d.ts",
-        "./abstractcorecontainercomponent.tsx",
-        "./index.ts"
+        "./abstractcorecontainercomponent.tsx"
       ],
       "./container/container/v1/containerv1isemptyfn.test.tsx": [
+        "../../../spa-react-editable-components/dist/types.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/react/index.d.ts",
-        "../testcomponentmapping.tsx",
         "./container/container/v1/containerv1.tsx",
         "./container/container/v1/containerv1isemptyfn.ts",
-        "./index.ts"
+        "./testcomponentmapping.tsx"
       ],
       "./container/container/v1/containerv1isemptyfn.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -2508,6 +2606,7 @@
       ],
       "./container/tabs/v1/tabsv1.test.tsx": [
         "../../../spa-page-model-manager/dist/types.d.ts",
+        "../../../spa-react-editable-components/dist/types.d.ts",
         "../node_modules/@types/enzyme/index.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -2516,11 +2615,11 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/react-dom/index.d.ts",
         "../node_modules/@types/react/index.d.ts",
-        "../testcomponentmapping.tsx",
         "./container/tabs/v1/tabsv1.tsx",
-        "./index.ts"
+        "./testcomponentmapping.tsx"
       ],
       "./container/tabs/v1/tabsv1.tsx": [
+        "../../../spa-react-editable-components/dist/types.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -2528,20 +2627,19 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/react/index.d.ts",
         "./abstractcorecontainercomponent.tsx",
-        "./container/tabs/v1/tabsv1isemptyfn.ts",
-        "./index.ts"
+        "./container/tabs/v1/tabsv1isemptyfn.ts"
       ],
       "./container/tabs/v1/tabsv1isemptyfn.test.tsx": [
+        "../../../spa-react-editable-components/dist/types.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/react/index.d.ts",
-        "../testcomponentmapping.tsx",
         "./container/tabs/v1/tabsv1.tsx",
         "./container/tabs/v1/tabsv1isemptyfn.ts",
-        "./index.ts"
+        "./testcomponentmapping.tsx"
       ],
       "./container/tabs/v1/tabsv1isemptyfn.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -2593,15 +2691,31 @@
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts"
       ],
-      "../testcomponentmapping.tsx": [
+      "./testcomponentmapping.tsx": [
         "../../../spa-page-model-manager/dist/types.d.ts",
+        "../../../spa-react-editable-components/dist/types.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/react/index.d.ts",
-        "./index.ts"
+        "./abstractcorecontainercomponent.tsx"
+      ],
+      "../../../spa-component-mapping/dist/componentmapping.d.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../../../spa-component-mapping/dist/types.d.ts": [
+        "../../../spa-component-mapping/dist/componentmapping.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
       ],
       "../../../spa-page-model-manager/dist/constants.d.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -2664,6 +2778,143 @@
         "../../../spa-page-model-manager/dist/modelmanager.d.ts",
         "../../../spa-page-model-manager/dist/modelrouter.d.ts",
         "../../../spa-page-model-manager/dist/pathutils.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../../../spa-react-editable-components/dist/componentmapping.d.ts": [
+        "../../../spa-component-mapping/dist/types.d.ts",
+        "../../../spa-react-editable-components/dist/components/editablecomponent.d.ts",
+        "../../../spa-react-editable-components/node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../../../spa-react-editable-components/dist/components/allowedcomponents/allowedcomponentscontainer.d.ts": [
+        "../../../spa-react-editable-components/dist/components/container.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../spa-react-editable-components/dist/components/container.d.ts": [
+        "../../../spa-page-model-manager/dist/types.d.ts",
+        "../../../spa-react-editable-components/dist/componentmapping.d.ts",
+        "../../../spa-react-editable-components/node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../../../spa-react-editable-components/dist/components/editablecomponent.d.ts": [
+        "../../../spa-react-editable-components/dist/componentmapping.d.ts",
+        "../../../spa-react-editable-components/node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../../../spa-react-editable-components/dist/components/modelprovider.d.ts": [
+        "../../../spa-react-editable-components/dist/componentmapping.d.ts",
+        "../../../spa-react-editable-components/node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../../../spa-react-editable-components/dist/components/page.d.ts": [
+        "../../../spa-page-model-manager/dist/types.d.ts",
+        "../../../spa-react-editable-components/dist/components/container.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../spa-react-editable-components/dist/components/responsivegrid.d.ts": [
+        "../../../spa-react-editable-components/dist/components/allowedcomponents/allowedcomponentscontainer.d.ts",
+        "../../../spa-react-editable-components/dist/components/container.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../../../spa-react-editable-components/dist/constants.d.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../../../spa-react-editable-components/dist/editorcontext.d.ts": [
+        "../../../spa-react-editable-components/node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../../../spa-react-editable-components/dist/types.d.ts": [
+        "../../../spa-react-editable-components/dist/componentmapping.d.ts",
+        "../../../spa-react-editable-components/dist/components/allowedcomponents/allowedcomponentscontainer.d.ts",
+        "../../../spa-react-editable-components/dist/components/container.d.ts",
+        "../../../spa-react-editable-components/dist/components/editablecomponent.d.ts",
+        "../../../spa-react-editable-components/dist/components/modelprovider.d.ts",
+        "../../../spa-react-editable-components/dist/components/page.d.ts",
+        "../../../spa-react-editable-components/dist/components/responsivegrid.d.ts",
+        "../../../spa-react-editable-components/dist/constants.d.ts",
+        "../../../spa-react-editable-components/dist/editorcontext.d.ts",
+        "../../../spa-react-editable-components/dist/utils.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../../../spa-react-editable-components/dist/utils.d.ts": [
+        "../../../spa-page-model-manager/dist/types.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../../../spa-react-editable-components/node_modules/@types/prop-types/index.d.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../../../spa-react-editable-components/node_modules/@types/react/global.d.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../../../spa-react-editable-components/node_modules/@types/react/index.d.ts": [
+        "../../../spa-react-editable-components/node_modules/@types/react/global.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/prop-types/index.d.ts",
+        "../node_modules/csstype/index.d.ts"
+      ],
+      "../../../spa-react-editable-components/node_modules/csstype/index.d.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -4017,8 +4268,9 @@
         "../node_modules/@types/node/util.d.ts"
       ],
       "./abstractcorecontainercomponent.tsx": [
-        "../node_modules/@types/react/index.d.ts",
-        "./index.ts"
+        "../../../spa-page-model-manager/dist/types.d.ts",
+        "../../../spa-react-editable-components/dist/types.d.ts",
+        "../node_modules/@types/react/index.d.ts"
       ],
       "./container/accordion/v1/accordionv1.tsx": [
         "../node_modules/@types/react/index.d.ts",
@@ -4035,9 +4287,9 @@
         "./container/carousel/v1/carouselv1.tsx"
       ],
       "./container/container/v1/containerv1.tsx": [
+        "../../../spa-react-editable-components/dist/types.d.ts",
         "../node_modules/@types/react/index.d.ts",
-        "./abstractcorecontainercomponent.tsx",
-        "./index.ts"
+        "./abstractcorecontainercomponent.tsx"
       ],
       "./container/container/v1/containerv1isemptyfn.ts": [
         "./container/container/v1/containerv1.tsx"
@@ -4063,9 +4315,24 @@
         "./container/container/v1/containerv1isemptyfn.ts",
         "./container/tabs/v1/tabsv1isemptyfn.ts"
       ],
-      "../testcomponentmapping.tsx": [
-        "../../../spa-page-model-manager/dist/types.d.ts",
-        "./index.ts"
+      "./testcomponentmapping.tsx": [
+        "../../../spa-react-editable-components/dist/types.d.ts",
+        "./abstractcorecontainercomponent.tsx"
+      ],
+      "../../../spa-component-mapping/dist/componentmapping.d.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../../../spa-component-mapping/dist/types.d.ts": [
+        "../../../spa-component-mapping/dist/componentmapping.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
       ],
       "../../../spa-page-model-manager/dist/constants.d.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -4128,6 +4395,143 @@
         "../../../spa-page-model-manager/dist/modelmanager.d.ts",
         "../../../spa-page-model-manager/dist/modelrouter.d.ts",
         "../../../spa-page-model-manager/dist/pathutils.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../../../spa-react-editable-components/dist/componentmapping.d.ts": [
+        "../../../spa-component-mapping/dist/types.d.ts",
+        "../../../spa-react-editable-components/dist/components/editablecomponent.d.ts",
+        "../../../spa-react-editable-components/node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../../../spa-react-editable-components/dist/components/allowedcomponents/allowedcomponentscontainer.d.ts": [
+        "../../../spa-react-editable-components/dist/components/container.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../spa-react-editable-components/dist/components/container.d.ts": [
+        "../../../spa-page-model-manager/dist/types.d.ts",
+        "../../../spa-react-editable-components/dist/componentmapping.d.ts",
+        "../../../spa-react-editable-components/node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../../../spa-react-editable-components/dist/components/editablecomponent.d.ts": [
+        "../../../spa-react-editable-components/dist/componentmapping.d.ts",
+        "../../../spa-react-editable-components/node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../../../spa-react-editable-components/dist/components/modelprovider.d.ts": [
+        "../../../spa-react-editable-components/dist/componentmapping.d.ts",
+        "../../../spa-react-editable-components/node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../../../spa-react-editable-components/dist/components/page.d.ts": [
+        "../../../spa-page-model-manager/dist/types.d.ts",
+        "../../../spa-react-editable-components/dist/components/container.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../spa-react-editable-components/dist/components/responsivegrid.d.ts": [
+        "../../../spa-react-editable-components/dist/components/allowedcomponents/allowedcomponentscontainer.d.ts",
+        "../../../spa-react-editable-components/dist/components/container.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../../../spa-react-editable-components/dist/constants.d.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../../../spa-react-editable-components/dist/editorcontext.d.ts": [
+        "../../../spa-react-editable-components/node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../../../spa-react-editable-components/dist/types.d.ts": [
+        "../../../spa-react-editable-components/dist/componentmapping.d.ts",
+        "../../../spa-react-editable-components/dist/components/allowedcomponents/allowedcomponentscontainer.d.ts",
+        "../../../spa-react-editable-components/dist/components/container.d.ts",
+        "../../../spa-react-editable-components/dist/components/editablecomponent.d.ts",
+        "../../../spa-react-editable-components/dist/components/modelprovider.d.ts",
+        "../../../spa-react-editable-components/dist/components/page.d.ts",
+        "../../../spa-react-editable-components/dist/components/responsivegrid.d.ts",
+        "../../../spa-react-editable-components/dist/constants.d.ts",
+        "../../../spa-react-editable-components/dist/editorcontext.d.ts",
+        "../../../spa-react-editable-components/dist/utils.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../../../spa-react-editable-components/dist/utils.d.ts": [
+        "../../../spa-page-model-manager/dist/types.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../../../spa-react-editable-components/node_modules/@types/prop-types/index.d.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../../../spa-react-editable-components/node_modules/@types/react/global.d.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../../../spa-react-editable-components/node_modules/@types/react/index.d.ts": [
+        "../../../spa-react-editable-components/node_modules/@types/react/global.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/prop-types/index.d.ts",
+        "../node_modules/csstype/index.d.ts"
+      ],
+      "../../../spa-react-editable-components/node_modules/csstype/index.d.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -4301,2388 +4705,30 @@
       "../node_modules/typescript/lib/lib.esnext.intl.d.ts",
       "../node_modules/typescript/lib/lib.esnext.promise.d.ts",
       "../node_modules/typescript/lib/lib.esnext.string.d.ts",
-      [
-        "./abstractcorecontainercomponent.tsx",
-        [
-          {
-            "file": "./abstractcorecontainercomponent.tsx",
-            "start": 641,
-            "length": 26,
-            "messageText": "Module '\".\"' has no exported member 'AllowedComponentsContainer'.",
-            "category": 1,
-            "code": 2305
-          },
-          {
-            "file": "./abstractcorecontainercomponent.tsx",
-            "start": 669,
-            "length": 14,
-            "messageText": "Module '\".\"' has no exported member 'ContainerState'.",
-            "category": 1,
-            "code": 2305
-          },
-          {
-            "file": "./abstractcorecontainercomponent.tsx",
-            "start": 685,
-            "length": 27,
-            "messageText": "Module '\".\"' has no exported member 'AllowedComponentsProperties'.",
-            "category": 1,
-            "code": 2305
-          }
-        ]
-      ],
-      [
-        "./container/accordion/v1/accordionv1.test.tsx",
-        [
-          {
-            "file": "./container/accordion/v1/accordionv1.test.tsx",
-            "start": 313,
-            "length": 17,
-            "messageText": "Module '\"../../..\"' has no exported member 'AllowedComponents'.",
-            "category": 1,
-            "code": 2305
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.test.tsx",
-            "start": 332,
-            "length": 16,
-            "messageText": "Module '\"../../..\"' has no exported member 'AllowedComponent'.",
-            "category": 1,
-            "code": 2305
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.test.tsx",
-            "start": 749,
-            "length": 19,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ expandedItems: string[]; headingElement: string; singleExpansion: false; cqItems: { [key: string]: DummyItem; }; cqItemsOrder: string[]; title: string; isInEditor: boolean; cqPath: string; allowedComponents: any; componentMapping: any; }' is not assignable to type 'AccordionV1Properties'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Object literal may only specify known properties, and 'cqItems' does not exist in type 'AccordionV1Properties'.",
-                  "category": 1,
-                  "code": 2353
-                }
-              ]
-            }
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.test.tsx",
-            "start": 1778,
-            "length": 16,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ componentMapping: any; singleExpansion: boolean; headingElement: string; expandedItems: string[]; baseCssClass?: string | undefined; }' is not assignable to type 'IntrinsicAttributes & AccordionV1Properties & { children?: ReactNode; }'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Property 'componentMapping' does not exist on type 'IntrinsicAttributes & AccordionV1Properties & { children?: ReactNode; }'.",
-                  "category": 1,
-                  "code": 2339
-                }
-              ]
-            }
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.test.tsx",
-            "start": 2263,
-            "length": 10,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ isInEditor: boolean; componentMapping: any; singleExpansion: boolean; headingElement: string; expandedItems: string[]; baseCssClass?: string | undefined; }' is not assignable to type 'IntrinsicAttributes & AccordionV1Properties & { children?: ReactNode; }'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Property 'isInEditor' does not exist on type 'IntrinsicAttributes & AccordionV1Properties & { children?: ReactNode; }'.",
-                  "category": 1,
-                  "code": 2339
-                }
-              ]
-            }
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.test.tsx",
-            "start": 2734,
-            "length": 16,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ singleExpansion: true; componentMapping: any; headingElement: string; expandedItems: string[]; baseCssClass?: string | undefined; }' is not assignable to type 'IntrinsicAttributes & AccordionV1Properties & { children?: ReactNode; }'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Property 'componentMapping' does not exist on type 'IntrinsicAttributes & AccordionV1Properties & { children?: ReactNode; }'.",
-                  "category": 1,
-                  "code": 2339
-                }
-              ]
-            }
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.test.tsx",
-            "start": 3727,
-            "length": 16,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ componentMapping: any; singleExpansion: boolean; headingElement: string; expandedItems: string[]; baseCssClass?: string | undefined; }' is not assignable to type 'IntrinsicAttributes & AccordionV1Properties & { children?: ReactNode; }'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Property 'componentMapping' does not exist on type 'IntrinsicAttributes & AccordionV1Properties & { children?: ReactNode; }'.",
-                  "category": 1,
-                  "code": 2339
-                }
-              ]
-            }
-          }
-        ]
-      ],
-      [
-        "./container/accordion/v1/accordionv1.tsx",
-        [
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 768,
-            "length": 16,
-            "messageText": "Module '\"../../..\"' has no exported member 'ComponentMapping'.",
-            "category": 1,
-            "code": 2305
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 786,
-            "length": 9,
-            "messageText": "Module '\"../../..\"' has no exported member 'Container'. Did you mean 'ContainerV1'?",
-            "category": 1,
-            "code": 2724
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 1329,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'state' does not exist on type 'AccordionV1Impl'."
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 1374,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'AccordionV1Impl'."
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 1450,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'AccordionV1Impl'."
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 1645,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'state' does not exist on type 'AccordionV1Impl'."
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 1727,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'AccordionV1Impl'."
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 1784,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'state' does not exist on type 'AccordionV1Impl'."
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 1970,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'state' does not exist on type 'AccordionV1Impl'."
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 2156,
-            "length": 8,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'setState' does not exist on type 'AccordionV1Impl'."
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 2279,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'state' does not exist on type 'AccordionV1Impl'."
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 2385,
-            "length": 14,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'containerProps' does not exist on type 'AccordionV1Impl'."
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 2459,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'AccordionV1Impl'."
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 2636,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'AccordionV1Impl'."
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 2686,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'AccordionV1Impl'."
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 2778,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'AccordionV1Impl'."
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 2812,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'AccordionV1Impl'."
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 2859,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'AccordionV1Impl'."
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 2893,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'AccordionV1Impl'."
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 3056,
-            "length": 15,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'childComponents' does not exist on type 'AccordionV1Impl'."
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 3388,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'AccordionV1Impl'."
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 3489,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'AccordionV1Impl'."
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 3630,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'AccordionV1Impl'."
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 3654,
-            "length": 3,
-            "messageText": "Parameter 'key' implicitly has an 'any' type.",
-            "category": 1,
-            "code": 7006
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 3659,
-            "length": 5,
-            "messageText": "Parameter 'index' implicitly has an 'any' type.",
-            "category": 1,
-            "code": 7006
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 3705,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'AccordionV1Impl'."
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 3848,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'AccordionV1Impl'."
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 3883,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'AccordionV1Impl'."
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 3932,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'AccordionV1Impl'."
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 4084,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'AccordionV1Impl'."
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 4333,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'AccordionV1Impl'."
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 4451,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'AccordionV1Impl'."
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 4862,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'AccordionV1Impl'."
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 5017,
-            "length": 20,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'placeholderComponent' does not exist on type 'AccordionV1Impl'."
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1.tsx",
-            "start": 5119,
-            "length": 15,
-            "code": 2345,
-            "category": 1,
-            "messageText": {
-              "messageText": "Argument of type 'typeof AccordionV1Impl' is not assignable to parameter of type 'ComponentType<AccordionV1Properties>'.",
-              "category": 1,
-              "code": 2345,
-              "next": [
-                {
-                  "messageText": "Type 'typeof AccordionV1Impl' is not assignable to type 'ComponentClass<AccordionV1Properties, any>'.",
-                  "category": 1,
-                  "code": 2322,
-                  "next": [
-                    {
-                      "messageText": "Type 'AccordionV1Impl' is missing the following properties from type 'Component<AccordionV1Properties, any, any>': context, setState, forceUpdate, props, and 2 more.",
-                      "category": 1,
-                      "code": 2740
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        ]
-      ],
-      [
-        "./container/accordion/v1/accordionv1isemptyfn.test.tsx",
-        [
-          {
-            "file": "./container/accordion/v1/accordionv1isemptyfn.test.tsx",
-            "start": 237,
-            "length": 17,
-            "messageText": "Module '\"../../..\"' has no exported member 'AllowedComponents'.",
-            "category": 1,
-            "code": 2305
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1isemptyfn.test.tsx",
-            "start": 256,
-            "length": 16,
-            "messageText": "Module '\"../../..\"' has no exported member 'AllowedComponent'.",
-            "category": 1,
-            "code": 2305
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1isemptyfn.test.tsx",
-            "start": 674,
-            "length": 19,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ expandedItems: string[]; headingElement: string; singleExpansion: false; cqItems: { [key: string]: DummyItem; }; cqItemsOrder: string[]; title: string; isInEditor: boolean; cqPath: string; allowedComponents: any; componentMapping: any; }' is not assignable to type 'AccordionV1Properties'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Object literal may only specify known properties, and 'cqItems' does not exist in type 'AccordionV1Properties'.",
-                  "category": 1,
-                  "code": 2353
-                }
-              ]
-            }
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1isemptyfn.test.tsx",
-            "start": 1034,
-            "length": 11,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ expandedItems: string[]; headingElement: string; singleExpansion: false; cqItems: {}; cqItemsOrder: never[]; title: string; isInEditor: boolean; cqPath: string; allowedComponents: any; componentMapping: any; }' is not assignable to type 'AccordionV1Properties'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Object literal may only specify known properties, and 'cqItems' does not exist in type 'AccordionV1Properties'.",
-                  "category": 1,
-                  "code": 2353
-                }
-              ]
-            }
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1isemptyfn.test.tsx",
-            "start": 1371,
-            "length": 11,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ expandedItems: string[]; headingElement: string; singleExpansion: false; cqItems: {}; cqItemsOrder: null; title: string; isInEditor: boolean; cqPath: string; allowedComponents: any; componentMapping: any; }' is not assignable to type 'AccordionV1Properties'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Object literal may only specify known properties, and 'cqItems' does not exist in type 'AccordionV1Properties'.",
-                  "category": 1,
-                  "code": 2353
-                }
-              ]
-            }
-          }
-        ]
-      ],
-      [
-        "./container/accordion/v1/accordionv1isemptyfn.ts",
-        [
-          {
-            "file": "./container/accordion/v1/accordionv1isemptyfn.ts",
-            "start": 138,
-            "length": 12,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'cqItemsOrder' does not exist on type 'AccordionV1Properties'."
-          },
-          {
-            "file": "./container/accordion/v1/accordionv1isemptyfn.ts",
-            "start": 168,
-            "length": 12,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'cqItemsOrder' does not exist on type 'AccordionV1Properties'."
-          }
-        ]
-      ],
-      [
-        "./container/carousel/v1/carouselv1.test.tsx",
-        [
-          {
-            "file": "./container/carousel/v1/carouselv1.test.tsx",
-            "start": 325,
-            "length": 17,
-            "messageText": "Module '\"../../..\"' has no exported member 'AllowedComponents'.",
-            "category": 1,
-            "code": 2305
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.test.tsx",
-            "start": 344,
-            "length": 16,
-            "messageText": "Module '\"../../..\"' has no exported member 'AllowedComponent'.",
-            "category": 1,
-            "code": 2305
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.test.tsx",
-            "start": 1023,
-            "length": 19,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ accessibilityLabel: string; accessibility: { play: string; pause: string; next: string; previous: string; slide: string; indicator: string; indicators: string; }; autopauseDisabled: false; autoplay: true; ... 7 more ...; componentMapping: any; }' is not assignable to type 'CarouselV1Properties'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Object literal may only specify known properties, and 'cqItems' does not exist in type 'CarouselV1Properties'.",
-                  "category": 1,
-                  "code": 2353
-                }
-              ]
-            }
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.test.tsx",
-            "start": 2302,
-            "length": 16,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ componentMapping: any; autoplay: boolean; autopauseDisabled: boolean; accessibilityLabel: string; accessibility: CarouselV1AccessibilityProperties; delay: number; baseCssClass?: string | undefined; }' is not assignable to type 'IntrinsicAttributes & CarouselV1Properties & { children?: ReactNode; }'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Property 'componentMapping' does not exist on type 'IntrinsicAttributes & CarouselV1Properties & { children?: ReactNode; }'.",
-                  "category": 1,
-                  "code": 2339
-                }
-              ]
-            }
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.test.tsx",
-            "start": 4000,
-            "length": 16,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ componentMapping: any; autoplay: boolean; autopauseDisabled: boolean; accessibilityLabel: string; accessibility: CarouselV1AccessibilityProperties; delay: number; baseCssClass?: string | undefined; }' is not assignable to type 'IntrinsicAttributes & CarouselV1Properties & { children?: ReactNode; }'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Property 'componentMapping' does not exist on type 'IntrinsicAttributes & CarouselV1Properties & { children?: ReactNode; }'.",
-                  "category": 1,
-                  "code": 2339
-                }
-              ]
-            }
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.test.tsx",
-            "start": 4546,
-            "length": 16,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ autoplay: false; componentMapping: any; autopauseDisabled: boolean; accessibilityLabel: string; accessibility: CarouselV1AccessibilityProperties; delay: number; baseCssClass?: string | undefined; }' is not assignable to type 'IntrinsicAttributes & CarouselV1Properties & { children?: ReactNode; }'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Property 'componentMapping' does not exist on type 'IntrinsicAttributes & CarouselV1Properties & { children?: ReactNode; }'.",
-                  "category": 1,
-                  "code": 2339
-                }
-              ]
-            }
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.test.tsx",
-            "start": 5141,
-            "length": 16,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ componentMapping: any; autoplay: boolean; autopauseDisabled: boolean; accessibilityLabel: string; accessibility: CarouselV1AccessibilityProperties; delay: number; baseCssClass?: string | undefined; }' is not assignable to type 'IntrinsicAttributes & CarouselV1Properties & { children?: ReactNode; }'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Property 'componentMapping' does not exist on type 'IntrinsicAttributes & CarouselV1Properties & { children?: ReactNode; }'.",
-                  "category": 1,
-                  "code": 2339
-                }
-              ]
-            }
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.test.tsx",
-            "start": 6007,
-            "length": 16,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ componentMapping: any; autoplay: boolean; autopauseDisabled: boolean; accessibilityLabel: string; accessibility: CarouselV1AccessibilityProperties; delay: number; baseCssClass?: string | undefined; }' is not assignable to type 'IntrinsicAttributes & CarouselV1Properties & { children?: ReactNode; }'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Property 'componentMapping' does not exist on type 'IntrinsicAttributes & CarouselV1Properties & { children?: ReactNode; }'.",
-                  "category": 1,
-                  "code": 2339
-                }
-              ]
-            }
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.test.tsx",
-            "start": 6777,
-            "length": 16,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ autopauseDisabled: true; componentMapping: any; autoplay: boolean; accessibilityLabel: string; accessibility: CarouselV1AccessibilityProperties; delay: number; baseCssClass?: string | undefined; }' is not assignable to type 'IntrinsicAttributes & CarouselV1Properties & { children?: ReactNode; }'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Property 'componentMapping' does not exist on type 'IntrinsicAttributes & CarouselV1Properties & { children?: ReactNode; }'.",
-                  "category": 1,
-                  "code": 2339
-                }
-              ]
-            }
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.test.tsx",
-            "start": 7370,
-            "length": 16,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ autoplay: false; componentMapping: any; autopauseDisabled: boolean; accessibilityLabel: string; accessibility: CarouselV1AccessibilityProperties; delay: number; baseCssClass?: string | undefined; }' is not assignable to type 'IntrinsicAttributes & CarouselV1Properties & { children?: ReactNode; }'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Property 'componentMapping' does not exist on type 'IntrinsicAttributes & CarouselV1Properties & { children?: ReactNode; }'.",
-                  "category": 1,
-                  "code": 2339
-                }
-              ]
-            }
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.test.tsx",
-            "start": 8114,
-            "length": 10,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ isInEditor: boolean; componentMapping: any; autoplay: boolean; autopauseDisabled: boolean; accessibilityLabel: string; accessibility: CarouselV1AccessibilityProperties; delay: number; baseCssClass?: string | undefined; }' is not assignable to type 'IntrinsicAttributes & CarouselV1Properties & { children?: ReactNode; }'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Property 'isInEditor' does not exist on type 'IntrinsicAttributes & CarouselV1Properties & { children?: ReactNode; }'.",
-                  "category": 1,
-                  "code": 2339
-                }
-              ]
-            }
-          }
-        ]
-      ],
-      [
-        "./container/carousel/v1/carouselv1.tsx",
-        [
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 763,
-            "length": 16,
-            "messageText": "Module '\"../../..\"' has no exported member 'ComponentMapping'.",
-            "category": 1,
-            "code": 2305
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 781,
-            "length": 9,
-            "messageText": "Module '\"../../..\"' has no exported member 'Container'. Did you mean 'ContainerV1'?",
-            "category": 1,
-            "code": 2724
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 2566,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 2617,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 3088,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 3112,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 3326,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 3358,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 3469,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 3501,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 3740,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'state' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 3788,
-            "length": 8,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'setState' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 3983,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 4044,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'state' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 4067,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 4296,
-            "length": 8,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'setState' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 4458,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 4735,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 4890,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'state' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 4960,
-            "length": 8,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'setState' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 5088,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 5146,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 5230,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 5419,
-            "length": 20,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'placeholderComponent' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 5569,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'state' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 5787,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 5851,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 5884,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 5929,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 5997,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 6054,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 6477,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 6646,
-            "length": 15,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'childComponents' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 6667,
-            "length": 14,
-            "messageText": "Parameter 'childComponent' implicitly has an 'any' type.",
-            "category": 1,
-            "code": 7006
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 6683,
-            "length": 5,
-            "messageText": "Parameter 'index' implicitly has an 'any' type.",
-            "category": 1,
-            "code": 7006
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 6965,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 7066,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 7143,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 7167,
-            "length": 3,
-            "messageText": "Parameter 'key' implicitly has an 'any' type.",
-            "category": 1,
-            "code": 7006
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 7172,
-            "length": 5,
-            "messageText": "Parameter 'index' implicitly has an 'any' type.",
-            "category": 1,
-            "code": 7006
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 7227,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 7305,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'state' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 7334,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 7372,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 7422,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 7515,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 8126,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 8268,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 8303,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 8422,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 8495,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 8583,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 8627,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 8797,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 8832,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 8947,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 9016,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 9104,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 9148,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 9250,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 9342,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 9377,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 9423,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'state' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 9445,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 9589,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 9740,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 9836,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 9880,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 9999,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 10034,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 10078,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'state' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 10100,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 10244,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 10418,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 10514,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 10558,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'CarouselV1Impl'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1.tsx",
-            "start": 10747,
-            "length": 14,
-            "code": 2345,
-            "category": 1,
-            "messageText": {
-              "messageText": "Argument of type 'typeof CarouselV1Impl' is not assignable to parameter of type 'ComponentType<CarouselV1Properties>'.",
-              "category": 1,
-              "code": 2345,
-              "next": [
-                {
-                  "messageText": "Type 'typeof CarouselV1Impl' is not assignable to type 'ComponentClass<CarouselV1Properties, any>'.",
-                  "category": 1,
-                  "code": 2322,
-                  "next": [
-                    {
-                      "messageText": "Type 'CarouselV1Impl' is missing the following properties from type 'Component<CarouselV1Properties, any, any>': context, setState, forceUpdate, props, and 2 more.",
-                      "category": 1,
-                      "code": 2740
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        ]
-      ],
-      [
-        "./container/carousel/v1/carouselv1isemptyfn.test.tsx",
-        [
-          {
-            "file": "./container/carousel/v1/carouselv1isemptyfn.test.tsx",
-            "start": 233,
-            "length": 17,
-            "messageText": "Module '\"../../..\"' has no exported member 'AllowedComponents'.",
-            "category": 1,
-            "code": 2305
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1isemptyfn.test.tsx",
-            "start": 252,
-            "length": 16,
-            "messageText": "Module '\"../../..\"' has no exported member 'AllowedComponent'.",
-            "category": 1,
-            "code": 2305
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1isemptyfn.test.tsx",
-            "start": 930,
-            "length": 19,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ accessibilityLabel: string; accessibility: { play: string; pause: string; next: string; previous: string; slide: string; indicator: string; indicators: string; }; autopauseDisabled: false; autoplay: true; ... 7 more ...; componentMapping: any; }' is not assignable to type 'CarouselV1Properties'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Object literal may only specify known properties, and 'cqItems' does not exist in type 'CarouselV1Properties'.",
-                  "category": 1,
-                  "code": 2353
-                }
-              ]
-            }
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1isemptyfn.test.tsx",
-            "start": 1550,
-            "length": 11,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ accessibilityLabel: string; accessibility: { play: string; pause: string; next: string; previous: string; slide: string; indicator: string; indicators: string; }; autopauseDisabled: false; autoplay: true; ... 7 more ...; componentMapping: any; }' is not assignable to type 'CarouselV1Properties'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Object literal may only specify known properties, and 'cqItems' does not exist in type 'CarouselV1Properties'.",
-                  "category": 1,
-                  "code": 2353
-                }
-              ]
-            }
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1isemptyfn.test.tsx",
-            "start": 2147,
-            "length": 11,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ accessibilityLabel: string; accessibility: { play: string; pause: string; next: string; previous: string; slide: string; indicator: string; indicators: string; }; autopauseDisabled: false; autoplay: true; ... 7 more ...; componentMapping: any; }' is not assignable to type 'CarouselV1Properties'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Object literal may only specify known properties, and 'cqItems' does not exist in type 'CarouselV1Properties'.",
-                  "category": 1,
-                  "code": 2353
-                }
-              ]
-            }
-          }
-        ]
-      ],
-      [
-        "./container/carousel/v1/carouselv1isemptyfn.ts",
-        [
-          {
-            "file": "./container/carousel/v1/carouselv1isemptyfn.ts",
-            "start": 217,
-            "length": 12,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'cqItemsOrder' does not exist on type 'CarouselV1Properties'."
-          },
-          {
-            "file": "./container/carousel/v1/carouselv1isemptyfn.ts",
-            "start": 247,
-            "length": 12,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'cqItemsOrder' does not exist on type 'CarouselV1Properties'."
-          }
-        ]
-      ],
-      [
-        "./container/container/v1/containerv1.test.tsx",
-        [
-          {
-            "file": "./container/container/v1/containerv1.test.tsx",
-            "start": 314,
-            "length": 17,
-            "messageText": "Module '\"../../..\"' has no exported member 'AllowedComponents'.",
-            "category": 1,
-            "code": 2305
-          },
-          {
-            "file": "./container/container/v1/containerv1.test.tsx",
-            "start": 333,
-            "length": 16,
-            "messageText": "Module '\"../../..\"' has no exported member 'AllowedComponent'.",
-            "category": 1,
-            "code": 2305
-          },
-          {
-            "file": "./container/container/v1/containerv1.test.tsx",
-            "start": 837,
-            "length": 22,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ id: string; title: string; cqItems: { [key: string]: DummyItem; }; cqItemsOrder: string[]; layout: \"responsiveGrid\"; backgroundStyle: string; isInEditor: boolean; cqPath: string; columnClassNames: { ...; }; gridClassNames: string; allowedComponents: any; componentMapping: any; }' is not assignable to type 'ContainerV1Properties'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Object literal may only specify known properties, and 'title' does not exist in type 'ContainerV1Properties'.",
-                  "category": 1,
-                  "code": 2353
-                }
-              ]
-            }
-          },
-          {
-            "file": "./container/container/v1/containerv1.test.tsx",
-            "start": 2091,
-            "length": 16,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ componentMapping: any; backgroundStyle: string; id: string; layout?: \"responsiveGrid\" | \"simple\" | undefined; baseCssClass?: string | undefined; }' is not assignable to type 'IntrinsicAttributes & ContainerV1Properties & { children?: ReactNode; }'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Property 'componentMapping' does not exist on type 'IntrinsicAttributes & ContainerV1Properties & { children?: ReactNode; }'.",
-                  "category": 1,
-                  "code": 2339
-                }
-              ]
-            }
-          },
-          {
-            "file": "./container/container/v1/containerv1.test.tsx",
-            "start": 2905,
-            "length": 16,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ layout: \"simple\"; componentMapping: any; backgroundStyle: string; id: string; baseCssClass?: string | undefined; }' is not assignable to type 'IntrinsicAttributes & ContainerV1Properties & { children?: ReactNode; }'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Property 'componentMapping' does not exist on type 'IntrinsicAttributes & ContainerV1Properties & { children?: ReactNode; }'.",
-                  "category": 1,
-                  "code": 2339
-                }
-              ]
-            }
-          }
-        ]
-      ],
-      [
-        "./container/container/v1/containerv1.tsx",
-        [
-          {
-            "file": "./container/container/v1/containerv1.tsx",
-            "start": 649,
-            "length": 16,
-            "messageText": "Module '\"../../..\"' has no exported member 'ComponentMapping'.",
-            "category": 1,
-            "code": 2305
-          },
-          {
-            "file": "./container/container/v1/containerv1.tsx",
-            "start": 667,
-            "length": 9,
-            "messageText": "Module '\"../../..\"' has no exported member 'Container'. Did you mean 'ContainerV1'?",
-            "category": 1,
-            "code": 2724
-          },
-          {
-            "file": "./container/container/v1/containerv1.tsx",
-            "start": 678,
-            "length": 14,
-            "messageText": "Module '\"../../..\"' has no exported member 'ResponsiveGrid'.",
-            "category": 1,
-            "code": 2305
-          },
-          {
-            "file": "./container/container/v1/containerv1.tsx",
-            "start": 694,
-            "length": 24,
-            "messageText": "Module '\"../../..\"' has no exported member 'ResponsiveGridProperties'.",
-            "category": 1,
-            "code": 2305
-          },
-          {
-            "file": "./container/container/v1/containerv1.tsx",
-            "start": 1352,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'ContainerV1Impl'."
-          },
-          {
-            "file": "./container/container/v1/containerv1.tsx",
-            "start": 1578,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'ContainerV1Impl'."
-          },
-          {
-            "file": "./container/container/v1/containerv1.tsx",
-            "start": 1743,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'ContainerV1Impl'."
-          },
-          {
-            "file": "./container/container/v1/containerv1.tsx",
-            "start": 2038,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'ContainerV1Impl'."
-          },
-          {
-            "file": "./container/container/v1/containerv1.tsx",
-            "start": 2136,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'ContainerV1Impl'."
-          },
-          {
-            "file": "./container/container/v1/containerv1.tsx",
-            "start": 2194,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'ContainerV1Impl'."
-          },
-          {
-            "file": "./container/container/v1/containerv1.tsx",
-            "start": 2250,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'ContainerV1Impl'."
-          },
-          {
-            "file": "./container/container/v1/containerv1.tsx",
-            "start": 2299,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'ContainerV1Impl'."
-          },
-          {
-            "file": "./container/container/v1/containerv1.tsx",
-            "start": 2344,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'ContainerV1Impl'."
-          },
-          {
-            "file": "./container/container/v1/containerv1.tsx",
-            "start": 2411,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'ContainerV1Impl'."
-          },
-          {
-            "file": "./container/container/v1/containerv1.tsx",
-            "start": 2599,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'ContainerV1Impl'."
-          },
-          {
-            "file": "./container/container/v1/containerv1.tsx",
-            "start": 2646,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'ContainerV1Impl'."
-          },
-          {
-            "file": "./container/container/v1/containerv1.tsx",
-            "start": 2695,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'ContainerV1Impl'."
-          },
-          {
-            "file": "./container/container/v1/containerv1.tsx",
-            "start": 2716,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'ContainerV1Impl'."
-          },
-          {
-            "file": "./container/container/v1/containerv1.tsx",
-            "start": 2844,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'state' does not exist on type 'ContainerV1Impl'."
-          },
-          {
-            "file": "./container/container/v1/containerv1.tsx",
-            "start": 2924,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'ContainerV1Impl'."
-          },
-          {
-            "file": "./container/container/v1/containerv1.tsx",
-            "start": 2990,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'ContainerV1Impl'."
-          },
-          {
-            "file": "./container/container/v1/containerv1.tsx",
-            "start": 3050,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'ContainerV1Impl'."
-          },
-          {
-            "file": "./container/container/v1/containerv1.tsx",
-            "start": 3116,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'ContainerV1Impl'."
-          },
-          {
-            "file": "./container/container/v1/containerv1.tsx",
-            "start": 3230,
-            "length": 15,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'childComponents' does not exist on type 'ContainerV1Impl'."
-          },
-          {
-            "file": "./container/container/v1/containerv1.tsx",
-            "start": 3322,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'ContainerV1Impl'."
-          },
-          {
-            "file": "./container/container/v1/containerv1.tsx",
-            "start": 3343,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'ContainerV1Impl'."
-          },
-          {
-            "file": "./container/container/v1/containerv1.tsx",
-            "start": 3590,
-            "length": 15,
-            "code": 2345,
-            "category": 1,
-            "messageText": {
-              "messageText": "Argument of type 'typeof ContainerV1Impl' is not assignable to parameter of type 'ComponentType<ContainerV1Properties>'.",
-              "category": 1,
-              "code": 2345,
-              "next": [
-                {
-                  "messageText": "Type 'typeof ContainerV1Impl' is not assignable to type 'ComponentClass<ContainerV1Properties, any>'.",
-                  "category": 1,
-                  "code": 2322,
-                  "next": [
-                    {
-                      "messageText": "Type 'ContainerV1Impl' is missing the following properties from type 'Component<ContainerV1Properties, any, any>': context, setState, forceUpdate, props, and 2 more.",
-                      "category": 1,
-                      "code": 2740
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        ]
-      ],
-      [
-        "./container/container/v1/containerv1isemptyfn.test.tsx",
-        [
-          {
-            "file": "./container/container/v1/containerv1isemptyfn.test.tsx",
-            "start": 237,
-            "length": 17,
-            "messageText": "Module '\"../../..\"' has no exported member 'AllowedComponents'.",
-            "category": 1,
-            "code": 2305
-          },
-          {
-            "file": "./container/container/v1/containerv1isemptyfn.test.tsx",
-            "start": 256,
-            "length": 16,
-            "messageText": "Module '\"../../..\"' has no exported member 'AllowedComponent'.",
-            "category": 1,
-            "code": 2305
-          },
-          {
-            "file": "./container/container/v1/containerv1isemptyfn.test.tsx",
-            "start": 760,
-            "length": 22,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ id: string; title: string; cqItems: { [key: string]: DummyItem; }; cqItemsOrder: string[]; layout: \"responsiveGrid\"; backgroundStyle: string; isInEditor: boolean; cqPath: string; columnClassNames: { ...; }; gridClassNames: string; allowedComponents: any; componentMapping: any; }' is not assignable to type 'ContainerV1Properties'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Object literal may only specify known properties, and 'title' does not exist in type 'ContainerV1Properties'.",
-                  "category": 1,
-                  "code": 2353
-                }
-              ]
-            }
-          },
-          {
-            "file": "./container/container/v1/containerv1isemptyfn.test.tsx",
-            "start": 1277,
-            "length": 22,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ id: string; title: string; cqItems: {}; cqItemsOrder: never[]; layout: \"responsiveGrid\"; backgroundStyle: string; isInEditor: boolean; cqPath: string; columnClassNames: { test: string; test2: string; }; gridClassNames: string; allowedComponents: any; componentMapping: any; }' is not assignable to type 'ContainerV1Properties'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Object literal may only specify known properties, and 'title' does not exist in type 'ContainerV1Properties'.",
-                  "category": 1,
-                  "code": 2353
-                }
-              ]
-            }
-          },
-          {
-            "file": "./container/container/v1/containerv1isemptyfn.test.tsx",
-            "start": 1755,
-            "length": 31,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ accessibilityLabel: string; accessibility: { play: string; pause: string; next: string; previous: string; slide: string; indicator: string; indicators: string; }; autopauseDisabled: boolean; autoplay: boolean; ... 7 more ...; componentMapping: any; }' is not assignable to type 'ContainerV1Properties'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Object literal may only specify known properties, and 'accessibilityLabel' does not exist in type 'ContainerV1Properties'.",
-                  "category": 1,
-                  "code": 2353
-                }
-              ]
-            }
-          }
-        ]
-      ],
-      [
-        "./container/container/v1/containerv1isemptyfn.ts",
-        [
-          {
-            "file": "./container/container/v1/containerv1isemptyfn.ts",
-            "start": 139,
-            "length": 12,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'cqItemsOrder' does not exist on type 'ContainerV1Properties'."
-          },
-          {
-            "file": "./container/container/v1/containerv1isemptyfn.ts",
-            "start": 169,
-            "length": 12,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'cqItemsOrder' does not exist on type 'ContainerV1Properties'."
-          }
-        ]
-      ],
-      [
-        "./container/tabs/v1/tabsv1.test.tsx",
-        [
-          {
-            "file": "./container/tabs/v1/tabsv1.test.tsx",
-            "start": 311,
-            "length": 16,
-            "messageText": "Module '\"../../..\"' has no exported member 'AllowedComponent'.",
-            "category": 1,
-            "code": 2305
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.test.tsx",
-            "start": 329,
-            "length": 17,
-            "messageText": "Module '\"../../..\"' has no exported member 'AllowedComponents'.",
-            "category": 1,
-            "code": 2305
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.test.tsx",
-            "start": 694,
-            "length": 17,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ accessibilityLabel: string; title: string; cqItems: { [key: string]: DummyItem; }; cqItemsOrder: string[]; isInEditor: boolean; cqPath: string; allowedComponents: any; componentMapping: any; }' is not assignable to type 'TabsV1Properties'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Object literal may only specify known properties, and 'title' does not exist in type 'TabsV1Properties'.",
-                  "category": 1,
-                  "code": 2353
-                }
-              ]
-            }
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.test.tsx",
-            "start": 1958,
-            "length": 16,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ componentMapping: any; accessibilityLabel: string; activeItem?: string | undefined; baseCssClass?: string | undefined; }' is not assignable to type 'IntrinsicAttributes & TabsV1Properties & { children?: ReactNode; }'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Property 'componentMapping' does not exist on type 'IntrinsicAttributes & TabsV1Properties & { children?: ReactNode; }'.",
-                  "category": 1,
-                  "code": 2339
-                }
-              ]
-            }
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.test.tsx",
-            "start": 3372,
-            "length": 10,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ isInEditor: boolean; componentMapping: any; accessibilityLabel: string; activeItem?: string | undefined; baseCssClass?: string | undefined; }' is not assignable to type 'IntrinsicAttributes & TabsV1Properties & { children?: ReactNode; }'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Property 'isInEditor' does not exist on type 'IntrinsicAttributes & TabsV1Properties & { children?: ReactNode; }'.",
-                  "category": 1,
-                  "code": 2339
-                }
-              ]
-            }
-          }
-        ]
-      ],
-      [
-        "./container/tabs/v1/tabsv1.tsx",
-        [
-          {
-            "file": "./container/tabs/v1/tabsv1.tsx",
-            "start": 635,
-            "length": 16,
-            "messageText": "Module '\"../../..\"' has no exported member 'ComponentMapping'.",
-            "category": 1,
-            "code": 2305
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.tsx",
-            "start": 653,
-            "length": 9,
-            "messageText": "Module '\"../../..\"' has no exported member 'Container'. Did you mean 'ContainerV1'?",
-            "category": 1,
-            "code": 2724
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.tsx",
-            "start": 1364,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'TabsV1Impl'."
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.tsx",
-            "start": 1449,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'TabsV1Impl'."
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.tsx",
-            "start": 1798,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'TabsV1Impl'."
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.tsx",
-            "start": 2065,
-            "length": 15,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'childComponents' does not exist on type 'TabsV1Impl'."
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.tsx",
-            "start": 2086,
-            "length": 4,
-            "messageText": "Parameter 'item' implicitly has an 'any' type.",
-            "category": 1,
-            "code": 7006
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.tsx",
-            "start": 2092,
-            "length": 5,
-            "messageText": "Parameter 'index' implicitly has an 'any' type.",
-            "category": 1,
-            "code": 7006
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.tsx",
-            "start": 2156,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'state' does not exist on type 'TabsV1Impl'."
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.tsx",
-            "start": 2393,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'TabsV1Impl'."
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.tsx",
-            "start": 2459,
-            "length": 15,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'childComponents' does not exist on type 'TabsV1Impl'."
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.tsx",
-            "start": 2723,
-            "length": 15,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'childComponents' does not exist on type 'TabsV1Impl'."
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.tsx",
-            "start": 2744,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'state' does not exist on type 'TabsV1Impl'."
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.tsx",
-            "start": 2834,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'state' does not exist on type 'TabsV1Impl'."
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.tsx",
-            "start": 2881,
-            "length": 8,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'setState' does not exist on type 'TabsV1Impl'."
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.tsx",
-            "start": 3049,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'TabsV1Impl'."
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.tsx",
-            "start": 3072,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'TabsV1Impl'."
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.tsx",
-            "start": 3221,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'TabsV1Impl'."
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.tsx",
-            "start": 3288,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'TabsV1Impl'."
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.tsx",
-            "start": 3411,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'TabsV1Impl'."
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.tsx",
-            "start": 3435,
-            "length": 4,
-            "messageText": "Parameter 'item' implicitly has an 'any' type.",
-            "category": 1,
-            "code": 7006
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.tsx",
-            "start": 3441,
-            "length": 5,
-            "messageText": "Parameter 'index' implicitly has an 'any' type.",
-            "category": 1,
-            "code": 7006
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.tsx",
-            "start": 3498,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'TabsV1Impl'."
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.tsx",
-            "start": 3580,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'state' does not exist on type 'TabsV1Impl'."
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.tsx",
-            "start": 3875,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'TabsV1Impl'."
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.tsx",
-            "start": 3929,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'TabsV1Impl'."
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.tsx",
-            "start": 4412,
-            "length": 14,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'containerProps' does not exist on type 'TabsV1Impl'."
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.tsx",
-            "start": 4486,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'TabsV1Impl'."
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.tsx",
-            "start": 4635,
-            "length": 5,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'props' does not exist on type 'TabsV1Impl'."
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.tsx",
-            "start": 4844,
-            "length": 20,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'placeholderComponent' does not exist on type 'TabsV1Impl'."
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1.tsx",
-            "start": 4946,
-            "length": 10,
-            "code": 2345,
-            "category": 1,
-            "messageText": {
-              "messageText": "Argument of type 'typeof TabsV1Impl' is not assignable to parameter of type 'ComponentType<TabsV1Properties>'.",
-              "category": 1,
-              "code": 2345,
-              "next": [
-                {
-                  "messageText": "Type 'typeof TabsV1Impl' is not assignable to type 'ComponentClass<TabsV1Properties, any>'.",
-                  "category": 1,
-                  "code": 2322,
-                  "next": [
-                    {
-                      "messageText": "Type 'TabsV1Impl' is missing the following properties from type 'Component<TabsV1Properties, any, any>': context, setState, forceUpdate, props, and 2 more.",
-                      "category": 1,
-                      "code": 2740
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        ]
-      ],
-      [
-        "./container/tabs/v1/tabsv1isemptyfn.test.tsx",
-        [
-          {
-            "file": "./container/tabs/v1/tabsv1isemptyfn.test.tsx",
-            "start": 217,
-            "length": 17,
-            "messageText": "Module '\"../../..\"' has no exported member 'AllowedComponents'.",
-            "category": 1,
-            "code": 2305
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1isemptyfn.test.tsx",
-            "start": 236,
-            "length": 16,
-            "messageText": "Module '\"../../..\"' has no exported member 'AllowedComponent'.",
-            "category": 1,
-            "code": 2305
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1isemptyfn.test.tsx",
-            "start": 751,
-            "length": 17,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ accessibilityLabel: string; title: string; cqItems: { [key: string]: DummyItem; }; cqItemsOrder: string[]; isInEditor: boolean; cqPath: string; allowedComponents: any; componentMapping: any; }' is not assignable to type 'TabsV1Properties'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Object literal may only specify known properties, and 'title' does not exist in type 'TabsV1Properties'.",
-                  "category": 1,
-                  "code": 2353
-                }
-              ]
-            }
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1isemptyfn.test.tsx",
-            "start": 1054,
-            "length": 17,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ accessibilityLabel: string; title: string; cqItems: {}; cqItemsOrder: never[]; isInEditor: boolean; cqPath: string; allowedComponents: any; componentMapping: any; }' is not assignable to type 'TabsV1Properties'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Object literal may only specify known properties, and 'title' does not exist in type 'TabsV1Properties'.",
-                  "category": 1,
-                  "code": 2353
-                }
-              ]
-            }
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1isemptyfn.test.tsx",
-            "start": 1334,
-            "length": 17,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ accessibilityLabel: string; title: string; cqItems: {}; cqItemsOrder: null; isInEditor: boolean; cqPath: string; allowedComponents: any; componentMapping: any; }' is not assignable to type 'TabsV1Properties'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Object literal may only specify known properties, and 'title' does not exist in type 'TabsV1Properties'.",
-                  "category": 1,
-                  "code": 2353
-                }
-              ]
-            }
-          }
-        ]
-      ],
-      [
-        "./container/tabs/v1/tabsv1isemptyfn.ts",
-        [
-          {
-            "file": "./container/tabs/v1/tabsv1isemptyfn.ts",
-            "start": 201,
-            "length": 12,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'cqItemsOrder' does not exist on type 'TabsV1Properties'."
-          },
-          {
-            "file": "./container/tabs/v1/tabsv1isemptyfn.ts",
-            "start": 231,
-            "length": 12,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'cqItemsOrder' does not exist on type 'TabsV1Properties'."
-          }
-        ]
-      ],
+      "./abstractcorecontainercomponent.tsx",
+      "./container/accordion/v1/accordionv1.test.tsx",
+      "./container/accordion/v1/accordionv1.tsx",
+      "./container/accordion/v1/accordionv1isemptyfn.test.tsx",
+      "./container/accordion/v1/accordionv1isemptyfn.ts",
+      "./container/carousel/v1/carouselv1.test.tsx",
+      "./container/carousel/v1/carouselv1.tsx",
+      "./container/carousel/v1/carouselv1isemptyfn.test.tsx",
+      "./container/carousel/v1/carouselv1isemptyfn.ts",
+      "./container/container/v1/containerv1.test.tsx",
+      "./container/container/v1/containerv1.tsx",
+      "./container/container/v1/containerv1isemptyfn.test.tsx",
+      "./container/container/v1/containerv1isemptyfn.ts",
+      "./container/tabs/v1/tabsv1.test.tsx",
+      "./container/tabs/v1/tabsv1.tsx",
+      "./container/tabs/v1/tabsv1isemptyfn.test.tsx",
+      "./container/tabs/v1/tabsv1isemptyfn.ts",
       "./index.test.ts",
       "./index.ts",
       "./isemptyfunctions.ts",
       "./setuptests.ts",
-      [
-        "../testcomponentmapping.tsx",
-        [
-          {
-            "file": "../testcomponentmapping.tsx",
-            "start": 50,
-            "length": 10,
-            "messageText": "Module '\"./src\"' has no exported member 'EditConfig'.",
-            "category": 1,
-            "code": 2305
-          },
-          {
-            "file": "../testcomponentmapping.tsx",
-            "start": 62,
-            "length": 25,
-            "messageText": "Module '\"./src\"' has no exported member 'MappedComponentProperties'.",
-            "category": 1,
-            "code": 2305
-          },
-          {
-            "file": "../testcomponentmapping.tsx",
-            "start": 89,
-            "length": 16,
-            "messageText": "Module '\"./src\"' has no exported member 'ComponentMapping'.",
-            "category": 1,
-            "code": 2305
-          },
-          {
-            "file": "../testcomponentmapping.tsx",
-            "start": 107,
-            "length": 5,
-            "messageText": "Module '\"./src\"' has no exported member 'MapTo'.",
-            "category": 1,
-            "code": 2305
-          }
-        ]
-      ],
+      "./testcomponentmapping.tsx",
+      "../../../spa-component-mapping/dist/componentmapping.d.ts",
+      "../../../spa-component-mapping/dist/types.d.ts",
       "../../../spa-page-model-manager/dist/constants.d.ts",
       "../../../spa-page-model-manager/dist/model.d.ts",
       "../../../spa-page-model-manager/dist/modelclient.d.ts",
@@ -6690,7 +4736,22 @@
       "../../../spa-page-model-manager/dist/modelrouter.d.ts",
       "../../../spa-page-model-manager/dist/modelstore.d.ts",
       "../../../spa-page-model-manager/dist/pathutils.d.ts",
-      "../../../spa-page-model-manager/dist/types.d.ts"
+      "../../../spa-page-model-manager/dist/types.d.ts",
+      "../../../spa-react-editable-components/dist/componentmapping.d.ts",
+      "../../../spa-react-editable-components/dist/components/allowedcomponents/allowedcomponentscontainer.d.ts",
+      "../../../spa-react-editable-components/dist/components/container.d.ts",
+      "../../../spa-react-editable-components/dist/components/editablecomponent.d.ts",
+      "../../../spa-react-editable-components/dist/components/modelprovider.d.ts",
+      "../../../spa-react-editable-components/dist/components/page.d.ts",
+      "../../../spa-react-editable-components/dist/components/responsivegrid.d.ts",
+      "../../../spa-react-editable-components/dist/constants.d.ts",
+      "../../../spa-react-editable-components/dist/editorcontext.d.ts",
+      "../../../spa-react-editable-components/dist/types.d.ts",
+      "../../../spa-react-editable-components/dist/utils.d.ts",
+      "../../../spa-react-editable-components/node_modules/@types/prop-types/index.d.ts",
+      "../../../spa-react-editable-components/node_modules/@types/react/global.d.ts",
+      "../../../spa-react-editable-components/node_modules/@types/react/index.d.ts",
+      "../../../spa-react-editable-components/node_modules/csstype/index.d.ts"
     ]
   },
   "version": "3.9.7"

@@ -4,7 +4,7 @@ import { CoreContainerItem } from "./src";
 export interface DummyProperties extends MappedComponentProperties {
     value: string;
 }
-interface DummyItem extends Model, CoreContainerItem {
+interface DummyItem extends Model, CoreContainerItem, CoreContainerItem {
     value: string;
 }
 export declare const dummyItems: {

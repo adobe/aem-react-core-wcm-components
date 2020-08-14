@@ -2,7 +2,7 @@
 import * as React from 'react';
 import  {ContainerV1Properties} from "./ContainerV1";
 
-import ComponentMapping, {dummyItems} from "../../../../TestComponentMapping";
+import ComponentMapping, {dummyItems} from "../../../TestComponentMapping";
 import {ContainerV1IsEmptyFn} from "./ContainerV1IsEmptyFn";
 import { AllowedComponents, AllowedComponent } from '@adobe/cq-react-editable-components';
 

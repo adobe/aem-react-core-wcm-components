@@ -2,7 +2,7 @@
 import * as React from 'react';
 import  {AccordionV1Properties} from "./AccordionV1";
 
-import ComponentMapping, {dummyItems} from "../../../../TestComponentMapping";
+import ComponentMapping, {dummyItems} from "../../../TestComponentMapping";
 import {AccordionV1IsEmptyFn} from "./AccordionV1IsEmptyFn";
 import { AllowedComponents, AllowedComponent } from '@adobe/cq-react-editable-components';
 

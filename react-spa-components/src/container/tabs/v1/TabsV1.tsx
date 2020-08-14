@@ -16,13 +16,14 @@
 
 import React from "react";
 import {ComponentMapping, Container} from '@adobe/cq-react-editable-components';
-import {CoreContainerProperties, CoreContainerState, withStandardBaseCssClass} from "../../../AbstractCoreContainerComponent";
+import {CoreContainerProperties, CoreContainerState, withStandardBaseCssClass, CoreContainerItem} from "../../../AbstractCoreContainerComponent";
 import {TabsV1IsEmptyFn} from "./TabsV1IsEmptyFn";
 
 export interface TabsV1Properties extends CoreContainerProperties{
     
     accessibilityLabel:string;
-    activeItem?: string
+    activeItem?: string;
+    cqItems: { [key: string]: CoreContainerItem };
 }
 
 

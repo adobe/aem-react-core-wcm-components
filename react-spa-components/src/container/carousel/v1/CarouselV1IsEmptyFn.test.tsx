@@ -2,7 +2,7 @@
 import * as React from 'react';
 import  {CarouselV1Properties} from "./CarouselV1";
 
-import ComponentMapping, {dummyItems} from "../../../../TestComponentMapping";
+import ComponentMapping, {dummyItems} from "../../../TestComponentMapping";
 import {CarouselV1IsEmptyFn} from "./CarouselV1IsEmptyFn";
 import { AllowedComponents, AllowedComponent } from '@adobe/cq-react-editable-components';
 

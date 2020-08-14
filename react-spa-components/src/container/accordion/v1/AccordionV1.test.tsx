@@ -4,7 +4,7 @@ import AccordionV1, {AccordionV1Properties} from "./AccordionV1";
 import {mount} from "enzyme";
 import ReactDOM from 'react-dom';
 
-import ComponentMapping, {dummyItems} from "../../../../TestComponentMapping";
+import ComponentMapping, {dummyItems} from "../../../TestComponentMapping";
 import {ModelManager} from "@adobe/cq-spa-page-model-manager"
 import {AllowedComponents, AllowedComponent} from "@adobe/cq-react-editable-components"
 

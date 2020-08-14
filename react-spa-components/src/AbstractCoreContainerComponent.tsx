@@ -16,14 +16,15 @@
 
 import * as React from 'react';
 
-import {AllowedComponentsContainer, ContainerState, AllowedComponentsProperties} from '@adobe/cq-react-editable-components';
+import {ContainerState, AllowedComponentsProperties} from '@adobe/cq-react-editable-components';
 import {ComponentType} from "react";
+import { Model } from '@adobe/cq-spa-page-model-manager';
 
 export interface CoreContainerProperties extends AllowedComponentsProperties{
     baseCssClass?:string;
 }
 
-export interface CoreContainerItem {
+export interface CoreContainerItem extends Model {
     'cq:panelTitle': string
 }
 

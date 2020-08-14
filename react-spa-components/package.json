@@ -1,5 +1,5 @@
 {
-  "name": "@adobe/aem-core-compaemonents-react-spa",
+  "name": "@adobe/aem-core-components-react-spa",
   "version": "1.0.3",
   "license": "Apache-2.0",
   "scripts": {
@@ -31,14 +31,14 @@
   "dependencies": {},
   "peerDependencies": {
     "react": "^16.13.1",
-    "@adobe/cq-react-editable-components": "file:/Users/raaijmak/workspace/spa-react-editable-components",
-    "@adobe/cq-spa-component-mapping": "file:/Users/raaijmak/workspace/spa-component-mapping",
-    "@adobe/cq-spa-page-model-manager": "file:/Users/raaijmak/workspace/spa-page-model-manager"
+    "@adobe/cq-react-editable-components": "file:../../spa-react-editable-components",
+    "@adobe/cq-spa-component-mapping": "file:../../spa-component-mapping",
+    "@adobe/cq-spa-page-model-manager": "file:../../spa-page-model-manager"
   },
   "devDependencies": {
-    "@adobe/cq-react-editable-components": "file:/Users/raaijmak/workspace/spa-react-editable-components",
-    "@adobe/cq-spa-component-mapping": "file:/Users/raaijmak/workspace/spa-component-mapping",
-    "@adobe/cq-spa-page-model-manager": "file:/Users/raaijmak/workspace/spa-page-model-manager",
+    "@adobe/cq-react-editable-components": "file:../../spa-react-editable-components",
+    "@adobe/cq-spa-component-mapping": "file:../../spa-component-mapping",
+    "@adobe/cq-spa-page-model-manager": "file:../../spa-page-model-manager",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "@babel/cli": "^7.7.7",
