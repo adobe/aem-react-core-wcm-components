@@ -55,7 +55,7 @@ class ButtonV1Impl extends React.Component<ButtonV1Model> {
     render(){
 
         const isLink =  (!!this.props.link);
-        let props = this.generateAttributes(isLink);
+        const props = this.generateAttributes(isLink);
 
         if(isLink){
             return <RoutedLink isRouted={this.props.routed} to={this.props.link} {...props} children={this.getContent()} />
@@ -65,7 +65,7 @@ class ButtonV1Impl extends React.Component<ButtonV1Model> {
     }
 
     generateAttributes(isLink: boolean) {
-        let props: any = {
+        const props: any = {
             className: this.props.baseCssClass,
             onClick: this.handleOnClick
         };
@@ -76,7 +76,7 @@ class ButtonV1Impl extends React.Component<ButtonV1Model> {
         }
         return props;
     }
-};
+}
 
 
 const ButtonV1 = (props:ButtonV1Model) => {
