@@ -3,13 +3,18 @@ import React, {Component} from "react";
 
 import {EditConfig, MappedComponentProperties, ComponentMapping, MapTo} from "@adobe/cq-react-editable-components";
 import {Model} from "@adobe/cq-spa-page-model-manager";
+import {CoreContainerItem} from "./src";
 
 
 export interface DummyProperties extends MappedComponentProperties{
     value: string;
 }
 
-export const dummyItems:{ [key: string]: Model } = {
+interface DummyItem extends Model,CoreContainerItem{
+    value:string;
+}
+
+export const dummyItems:{ [key: string]: DummyItem } = {
     "test": {
         ":type": "core/components/dummy",
         "cq:panelTitle": "Item1",
