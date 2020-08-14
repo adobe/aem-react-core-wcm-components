@@ -37,6 +37,7 @@ export interface CarouselV1Properties extends CoreContainerProperties{
     accessibilityLabel:string;
     accessibility: CarouselV1AccessibilityProperties;
     delay: number;
+    cqItems: { [key: string]: CoreContainerItem };
 }
 
 export interface CarouselV1AccessibilityProperties{
@@ -270,7 +271,7 @@ export default class CarouselV1<P extends CarouselV1Properties, S extends Carous
                                 onClick={()=>this.handleIndicatorClick(index)}
                                 className={cssClass}
                                 role="tab"
-                                aria-label={ariaLabelItem}>{item.title}</li>
+                                aria-label={ariaLabelItem}>{item["cq:panelTitle"]}</li>
                         )
                     })
                 }
