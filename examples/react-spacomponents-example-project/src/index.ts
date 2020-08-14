@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { ModelManager, ModelClient } from '@adobe/cq-spa-page-model-manager';
-
 import './mapping';
 
 import render from "./renderRoot";
