@@ -72,7 +72,7 @@ const validateComponentPresent = (wrapper:ReactWrapper, text:string) =>{
     const dummyComp = wrapper.find(".dummyCmp");
     expect(dummyComp).toHaveLength(1);
     expect(dummyComp.text()).toEqual(text);
-}
+};
 
 it('Renders a basic carousel properly and reacts on clicks', () => {
 
