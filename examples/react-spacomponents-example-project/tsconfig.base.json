@@ -1,0 +1,9 @@
+{
+    "baseUrl": ".",
+    "paths":{
+        "react": ["node_modules/react"],
+        "react-router": ["node_modules/react-router"],
+        "react-router-dom": ["node_modules/react-router-dom"],
+        "@adobe/*":  ["node_modules/@adobe/*"]
+    }
+}

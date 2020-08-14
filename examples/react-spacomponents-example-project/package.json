@@ -23,7 +23,9 @@
     "cross-env": "^7.0.2",
     "fs-extra": "^9.0.0",
     "node-sass": "^4.13.1",
-    "mini-css-extract-plugin": "latest"
+    "typescript": "3.9.7",
+    "mini-css-extract-plugin": "latest",
+    "@types/react-router-dom": "^5.1.5"
   },
   "scripts": {
     "build": "npm run clean && react-scripts build && move-cli build ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm/react/clientlibs/react-spacomponents/resources",
