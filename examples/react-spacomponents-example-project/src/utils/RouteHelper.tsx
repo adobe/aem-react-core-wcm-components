@@ -1,5 +1,6 @@
-import React, {Component} from 'react';
+import React, {Component, ComponentType} from 'react';
 import {Route} from 'react-router-dom';
+import { MappedComponentProperties } from '@adobe/cq-react-editable-components';
 
 /**
  * Helper that facilitate the use of the {@link Route} component
@@ -12,10 +13,9 @@ import {Route} from 'react-router-dom';
  * @param {string} [extension=html]             - extension used to identify a route amongst the tree of resource URLs
  * @returns {CompositeRoute}
  */
-const withRoute = (WrappedComponent, extension) => {
-    return class CompositeRoute extends Component {
+const withRoute = <P extends MappedComponentProperties>(WrappedComponent:ComponentType<P>, extension?:string) => {
+    return class CompositeRoute extends Component<P> {
         render() {
-              // @ts-ignore
             let routePath = this.props.cqPath;
             if (!routePath) {
                 return <WrappedComponent {...this.props}/>;
@@ -24,7 +24,7 @@ const withRoute = (WrappedComponent, extension) => {
             extension = extension || 'html';
 
             // Context path + route path + extension
-            return <Route key={ routePath } path={ '(.*)' + routePath + '.' + extension } render={ (routeProps) => {
+            return <Route key={ routePath } path={ '(.*)' + routePath + '.' + extension } render={ (routeProps:unknown) => {
                 return <WrappedComponent {...this.props} {...routeProps}/>;
             } } />
         }

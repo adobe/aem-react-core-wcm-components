@@ -1,19 +1,19 @@
-import React, {Component} from 'react';
+import React from 'react';
+import { MappedComponentProperties } from '@adobe/cq-react-editable-components';
 
 
-class Markup extends Component{
-
-    render(){
-
-        return (
-            <div>
-               {this.props.markup}
-             </div>
-
-        )
-
-    }
-
+export interface MarkupProperties extends MappedComponentProperties{
+    markup: string;
 }
+
+const Markup = (props:MarkupProperties) => {
+
+    return (
+        <div>
+            {props.markup}
+        </div>
+
+    )
+};
 
 export default Markup;

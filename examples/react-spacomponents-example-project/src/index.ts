@@ -8,7 +8,7 @@ import render from "./renderRoot";
 
 const modelClient = new ModelClient();
 
-const DOMReady = (f) => {/in/.test(document.readyState)?setTimeout( () => DOMReady(f),9):f()};
+const DOMReady = (f:Function) => {/in/.test(document.readyState)?setTimeout( () => DOMReady(f),9):f()};
 
 DOMReady( ()=> {
     ModelManager.initialize({modelClient: modelClient}).then(render);

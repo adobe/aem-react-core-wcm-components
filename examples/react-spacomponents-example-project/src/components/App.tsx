@@ -1,8 +1,8 @@
 import React from 'react';
-import { Page, withModel} from '@adobe/cq-react-editable-components';
+import { Page, withModel, PageProperties, ContainerState} from '@adobe/cq-react-editable-components';
 
 // This component is the application entry point
-class App extends Page {
+class App extends Page<PageProperties, ContainerState> {
 
     render() {
         return (
