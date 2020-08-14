@@ -4,7 +4,7 @@ import ContainerV1 , {ContainerV1Properties} from "./ContainerV1";
 import {mount} from "enzyme";
 import ReactDOM from 'react-dom';
 
-import ComponentMapping, {dummyItems} from "../../TestComponentMapping";
+import ComponentMapping, {dummyItems} from "../../../../TestComponentMapping";
 import {ModelManager} from "@adobe/cq-spa-page-model-manager"
 import {AllowedComponents, AllowedComponent} from "@adobe/cq-react-editable-components"
 

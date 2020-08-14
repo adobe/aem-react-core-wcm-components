@@ -3,7 +3,7 @@ import TabsV1, {TabsV1Properties} from "./TabsV1";
 import {mount, ReactWrapper} from "enzyme";
 import ReactDOM from 'react-dom';
 
-import ComponentMapping, {dummyItems} from "../../TestComponentMapping";
+import ComponentMapping, {dummyItems} from "../../../../TestComponentMapping";
 import {ModelManager} from "@adobe/cq-spa-page-model-manager"
 import {AllowedComponent, AllowedComponents} from "@adobe/cq-react-editable-components"
 
