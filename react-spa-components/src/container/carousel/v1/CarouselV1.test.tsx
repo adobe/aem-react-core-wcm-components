@@ -4,7 +4,7 @@ import CarouselV1 , {CarouselV1Properties} from "./CarouselV1";
 import {mount, ReactWrapper} from "enzyme";
 import ReactDOM from 'react-dom';
 
-import ComponentMapping, {dummyItems} from "../../TestComponentMapping";
+import ComponentMapping, {dummyItems} from "../../../../TestComponentMapping";
 import {ModelManager} from "@adobe/cq-spa-page-model-manager"
 import {AllowedComponents, AllowedComponent } from "@adobe/cq-react-editable-components"
 
@@ -72,7 +72,7 @@ const validateComponentPresent = (wrapper:ReactWrapper, text:string) =>{
     const dummyComp = wrapper.find(".dummyCmp");
     expect(dummyComp).toHaveLength(1);
     expect(dummyComp.text()).toEqual(text);
-}
+};
 
 it('Renders a basic carousel properly and reacts on clicks', () => {
 

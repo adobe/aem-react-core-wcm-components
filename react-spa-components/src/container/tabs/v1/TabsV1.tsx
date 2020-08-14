@@ -22,7 +22,7 @@ import {TabsV1IsEmptyFn} from "./TabsV1IsEmptyFn";
 export interface TabsV1Properties extends CoreContainerProperties{
     
     accessibilityLabel:string;
-    activeItem: string
+    activeItem?: string
 }
 
 
@@ -54,17 +54,17 @@ export default class TabsV1<P extends TabsV1Properties, S extends TabsV1Sstate> 
             //for editing capabilities to work properly, we always need to render each item.
             //we will hide the disabled items instead.
             return (
-                <div>
+                <>
                     {
                         this.childComponents.map((item, index) => {
                             const isVisible = (this.state.activeIndex === index);
                             const styles = { display: (!isVisible) ? 'none' : 'block'};
                             return (
-                                <div style={styles}>{this.childComponents[index]}</div>
+                                <div key={"tab-content-" + index} className={this.baseCssCls + '__author-tab-content'} style={styles}>{this.childComponents[index]}</div>
                             )
                         })
                     }
-                </div>
+                </>
             )
         }else{
             //when the editor is disabled, we can just show the active item only.
@@ -99,6 +99,7 @@ export default class TabsV1<P extends TabsV1Properties, S extends TabsV1Sstate> 
                             const isActive = (index === this.state.activeIndex);
                             return (
                                 <li role="tab"
+                                    key={"tab-" + index}
                                     onClick={() => this.handleTabNavClick(index)}
                                     className={this.baseCssCls + '__tab' + (isActive ? ' ' + this.baseCssCls + '__tab--active' : '')}
                                     tabIndex={isActive ? 0 : -1}
