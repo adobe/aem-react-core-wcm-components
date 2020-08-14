@@ -6,7 +6,7 @@
     "linter": "eslint --ext .ts,.tsx .",
     "linter:fix": "eslint --ext .ts,.tsx . --fix",
     "test": "jest --passWithNoTests",
-    "test:coverage": "jest --coverage",
+    "test:coverage": "jest --coverage --passWithNoTests",
     "test:debug": "jest --coverage --watchAll",
     "build": "webpack --config config/webpack.config.core.js  && webpack --config config/webpack.config.lib.js  &&   tsc -p src/tsconfig.types.json",
     "build:production": "cross-env NODE_ENV=production webpack  --config config/webpack.config.core.js --mode=production && webpack --config config/webpack.config.lib.js  --mode=production &&  tsc -p src/tsconfig.types.json",
