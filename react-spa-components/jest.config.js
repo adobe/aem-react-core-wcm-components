@@ -23,7 +23,7 @@ module.exports = {
     transform: {
         "^.+\\.jsx?$": "ts-jest"
     },
-    testMatch: ['<rootDir>/**/*.test.js','<rootDir>/**/*.test.jsx'],
+    testMatch: ['<rootDir>/**/*.test.js','<rootDir>/**/*.test.tsx'],
     testPathIgnorePatterns: ['node_modules','lib', 'dist', 'node'],
     collectCoverageFrom: [
         '**/*.{ts,tsx}'

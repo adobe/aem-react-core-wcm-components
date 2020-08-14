@@ -69,7 +69,7 @@ export default class AccordionV1<P extends AccordionV1Properties, S extends Acco
     }
 
     get accordionContainerProps(){
-        let attrs = this.containerProps;
+        const attrs = this.containerProps;
         attrs['className'] = attrs.className + ' ' + this.baseCssCls;
         attrs['data-cmp-is'] = 'accordion';
         return attrs;

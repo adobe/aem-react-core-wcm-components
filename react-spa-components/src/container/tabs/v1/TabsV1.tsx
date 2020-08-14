@@ -82,7 +82,7 @@ export default class TabsV1<P extends TabsV1Properties, S extends TabsV1Sstate> 
 
     tabNavigation(){
 
-        let childComponents:JSX.Element[] = [];
+        const childComponents:JSX.Element[] = [];
 
         if (!this.props.cqItems || !this.props.cqItemsOrder) {
             return childComponents;
@@ -116,7 +116,7 @@ export default class TabsV1<P extends TabsV1Properties, S extends TabsV1Sstate> 
     }
 
     get tabContainerProps(){
-        let attrs = this.containerProps;
+        const attrs = this.containerProps;
         attrs['className'] = attrs.className + ' ' + this.baseCssCls;
         attrs['data-cmp-is'] = 'tabs';
         return attrs;

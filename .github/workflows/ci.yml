@@ -1,0 +1,50 @@
+name: CI / CD
+on: [push, pull_request]
+
+jobs:
+  test-react-base-components:
+    name: test react-base-components
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: react-base-components
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+      - run: npm install
+      - run: npm run test:coverage
+      - uses: hallee/eslint-action@1.0.3
+        if: ${{ github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository }}
+        with:
+          repo-token: ${{secrets.GITHUB_TOKEN}}
+          source-root: react-base-components
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v2
+        with:
+          name: base-coverage
+          path: react-base-components/coverage
+  test-react-spa-components:
+    name: test react-spa-components
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: react-spa-components
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+      - run: npm install
+      - run: npm run test:coverage
+      - uses: hallee/eslint-action@1.0.3
+        if: ${{ github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository }}
+        with:
+          repo-token: ${{secrets.GITHUB_TOKEN}}
+          source-root: react-spa-components
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v2
+        with:
+          name: spa-coverage
+          path: react-spa-components/coverage

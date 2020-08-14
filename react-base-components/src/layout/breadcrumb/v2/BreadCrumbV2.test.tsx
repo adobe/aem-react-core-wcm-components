@@ -24,7 +24,7 @@ import {MemoryRouter} from 'react-router-dom';
 
 it('Renders without crashing', () => {
     const div = document.createElement('div');
-    let items:BreadCrumbV2ItemModel[] = [];
+    const items:BreadCrumbV2ItemModel[] = [];
     ReactDOM.render(
         <BreadCrumbV2 ariaLabelI18n="Label" items={items}/>,
         div
@@ -35,7 +35,7 @@ it('Renders without crashing', () => {
 
 
 it('Renders breadcrumb items if provided', () => {
-    let items:BreadCrumbV2ItemModel[] = [
+    const items:BreadCrumbV2ItemModel[] = [
         {active:false,url:'/content/some/url.html',title:'Item1'},
         {active:false,url:'/content/some/url.html',title:'Item2'},
         {active:true,url:'/content/some/url.html',title:'Item3'}
@@ -52,7 +52,7 @@ it('Renders breadcrumb items if provided', () => {
 
 
 it('Renders routed breadcrumb items if provided', () => {
-    let items:BreadCrumbV2ItemModel[] = [
+    const items:BreadCrumbV2ItemModel[] = [
         {active:false,url:'/content/some/url.html',title:'Item1', routed: true},
         {active:false,url:'/content/some/url.html',title:'Item2', routed: true},
         {active:true,url:'/content/some/url.html',title:'Item3', routed: true}

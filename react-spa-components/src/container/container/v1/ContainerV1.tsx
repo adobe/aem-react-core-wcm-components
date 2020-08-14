@@ -29,7 +29,7 @@ export interface ContainerV1Properties extends CoreContainerProperties,Responsiv
 export default class ContainerV1<P extends ContainerV1Properties, S extends CoreContainerState> extends ResponsiveGrid<P,S> {
 
     mainDiv:RefObject<HTMLDivElement>;
-    baseCssCls: string = 'cmp-container';
+    baseCssCls = 'cmp-container';
 
     constructor(props:P) {
         super(props);
