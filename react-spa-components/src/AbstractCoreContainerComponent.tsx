@@ -14,14 +14,27 @@
  *  limitations under the License.
  */
 
-import React from "react";
-import {Container} from '@adobe/cq-react-editable-components';
+import * as React from 'react';
 
-export class AbstractCoreContainerComponent extends Container {
+import {AllowedComponentsContainer,ContainerProperties, ContainerState, AllowedComponentsProperties} from '@adobe/cq-react-editable-components';
 
-    baseCssCls;
+export interface CoreContainerProperties extends AllowedComponentsProperties{
+    
+}
 
-    constructor(props, baseCssCls) {
+export interface CoreContainerItem {
+    'cq:panelTitle': string
+}
+
+export interface CoreContainerState extends ContainerState {
+
+}
+
+export abstract class AbstractCoreContainerComponent<P extends CoreContainerProperties, S extends CoreContainerState> extends AllowedComponentsContainer<P,S>{
+
+    baseCssCls:string;
+
+    protected constructor(props:P, baseCssCls:string) {
         super(props);
         this.baseCssCls = baseCssCls;
     }

@@ -14,79 +14,55 @@
  *  limitations under the License.
  */
 
-import React from "react";
+import * as React from 'react';
+import {ComponentType} from 'react';
+
 import {EditorPlaceHolder} from "./common/placeholder";
 
-export interface CoreComponentModel {
+export interface HasBaseCssClass {
     baseCssClass?: string
-    hidePlaceHolder: boolean
-    isInEditor:boolean
 }
 
-export interface CoreComponentState {}
+export interface CoreComponentModel extends HasBaseCssClass{
+    hidePlaceHolder?: boolean
+    isInEditor?:boolean
+}
 
+export interface CoreComponentState {
 
-/**
- * AbstractCoreComponent - provides abstraction and helper methods to show a placeholder if the component is empty and author mode is on.
- */
-export abstract class AbstractCoreComponent<Model extends CoreComponentModel, State extends CoreComponentState> extends React.Component<Model,State> {
+}
 
-    public static defaultProps = {
-        hidePlaceHolder: false,
-        isInEditor: false
-    };
+export const withConditionalPlaceHolder = <M extends CoreComponentModel>
+            (
+                Component:ComponentType<M>, 
+                isEmpty:(props:M) => boolean, 
+                defaultBaseCssClass:string,
+                componentTitle?:string, emptyText?:string
+            ):React.ComponentType<M>  => {
+    return (props:M) => {
 
-    baseCssCls: string;
-    emptyPlaceHolderText: string;
+        const baseCssClass = props.baseCssClass;
+        const toBeUsedCssClass = baseCssClass && baseCssClass.trim().length > 0 ? baseCssClass : defaultBaseCssClass;
 
-    /**
-     * Base Constructor
-     * @param props component properties
-     * @param baseCssCls the base BEM css class to be used for the component
-     * @param emptyPlaceHolderText empty placeholder label for when the component needs to be configured in author mode
-     */
-    protected constructor(props:Model,baseCssCls:string,emptyPlaceHolderText:string) {
-        super(props);
-        this.baseCssCls = props.baseCssClass || baseCssCls;
-        this.emptyPlaceHolderText = emptyPlaceHolderText;
-    }
+        const mergedProps: M= {
+            ...props,
+            baseCssClass: toBeUsedCssClass
+        };
 
-    /**
-     * Method that needs to be overloaded, to determine whether the component should be treated as 'empty'
-     */
-    protected abstract isEmpty():boolean;
-
-    /**
-     * Render method that get's called if the component is not considered empty
-     */
-    protected abstract renderComponent():JSX.Element;
-
-    private __hidePlaceHolder():boolean{
-        return this.props.hidePlaceHolder;
-    }
-
-    private __renderPlaceHolder(title?:string, emptyText?:string):JSX.Element{
-        return(
-            <EditorPlaceHolder
-                emptyTextAppend={emptyText}
-                componentTitle={title}
-            />
-        )
-    }
-
-    render(){
-        const isEmpty:boolean = this.isEmpty();
-
+        const isEmptyResult:boolean = isEmpty(mergedProps);
         return (
             <>
-                { !isEmpty &&
-                    this.renderComponent()
+                { !isEmptyResult &&
+                <Component {...mergedProps} />
                 }
                 {
-                    (isEmpty && this.props.isInEditor && !this.__hidePlaceHolder()) && this.__renderPlaceHolder(this.emptyPlaceHolderText)
+                    (isEmptyResult && props.isInEditor && !props.hidePlaceHolder) &&
+                    <EditorPlaceHolder
+                        emptyTextAppend={emptyText}
+                        componentTitle={componentTitle}
+                    />
                 }
             </>
-        )
+        );
     }
-
-}
+};

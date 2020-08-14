@@ -16,11 +16,11 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {shallow,mount} from 'enzyme';
+import {mount} from 'enzyme';
 
-import {dummyProps, dummyPropsWithRoutedItems, dummyPropsWithDefaultRouting} from "./ListV2TestMockItems";
-import ListV2, {ListV2Model} from "./ListV2";
-import { MemoryRouter } from 'react-router-dom';
+import {dummyProps, dummyPropsWithDefaultRouting, dummyPropsWithRoutedItems} from "./ListV2TestMockItems";
+import ListV2 from "./ListV2";
+import {MemoryRouter} from 'react-router-dom';
 
 
 it('Renders without crashing', () => {

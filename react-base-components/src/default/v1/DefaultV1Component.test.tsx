@@ -19,7 +19,7 @@ import ReactDOM from 'react-dom';
 import {mount} from 'enzyme';
 
 import DefaultV1Component, {DefaultV1Model} from "./DefaultV1Component";
-import {DefaultV1IsEmptyFn } from "./DefaultV1ComponentIsEmptyFn";
+import {DefaultV1IsEmptyFn} from "./DefaultV1ComponentIsEmptyFn";
 
 it('Renders without crashing', () => {
     const div = document.createElement('div');

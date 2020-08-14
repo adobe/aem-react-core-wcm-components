@@ -16,14 +16,26 @@
 
 import React from "react";
 import {ComponentMapping} from '@adobe/cq-react-editable-components';
-import {AbstractCoreContainerComponent} from "../../../AbstractCoreContainerComponent";
+import {AbstractCoreContainerComponent,CoreContainerProperties,CoreContainerState} from "../../../AbstractCoreContainerComponent";
 import {TabsV1IsEmptyFn} from "./TabsV1IsEmptyFn";
 
+export interface TabsV1Properties extends CoreContainerProperties{
+    
+    accessibilityLabel:string;
+    activeItem: string
+}
 
-export default class TabsV1 extends AbstractCoreContainerComponent {
 
-    constructor(props) {
+export interface TabsV1Sstate extends CoreContainerState{
+    activeIndex: number;
+}
+
+
+export default class TabsV1<P extends TabsV1Properties, S extends TabsV1Sstate> extends AbstractCoreContainerComponent<P,S> {
+
+    constructor(props:P) {
         super(props, 'cmp-tabs');
+        //@ts-ignore
         this.state = {
             activeIndex: (!!props.activeItem && props.activeItem.length > 0) ? this.props.cqItemsOrder.indexOf(props.activeItem) : 0,
             componentMapping: this.props.componentMapping || ComponentMapping
@@ -48,7 +60,7 @@ export default class TabsV1 extends AbstractCoreContainerComponent {
                             const isVisible = (this.state.activeIndex === index);
                             const styles = { display: (!isVisible) ? 'none' : 'block'};
                             return (
-                                <div style={styles} className={styles}>{this.childComponents[index]}</div>
+                                <div style={styles}>{this.childComponents[index]}</div>
                             )
                         })
                     }
@@ -60,7 +72,7 @@ export default class TabsV1 extends AbstractCoreContainerComponent {
         }
     }
 
-    handleTabNavClick(index){
+    handleTabNavClick(index:number){
         if(this.state.activeIndex !== index){
             this.setState({
                 activeIndex: index
@@ -70,7 +82,7 @@ export default class TabsV1 extends AbstractCoreContainerComponent {
 
     tabNavigation(){
 
-        let childComponents = [];
+        let childComponents:JSX.Element[] = [];
 
         if (!this.props.cqItems || !this.props.cqItemsOrder) {
             return childComponents;
@@ -89,7 +101,7 @@ export default class TabsV1 extends AbstractCoreContainerComponent {
                                 <li role="tab"
                                     onClick={() => this.handleTabNavClick(index)}
                                     className={this.baseCssCls + '__tab' + (isActive ? ' ' + this.baseCssCls + '__tab--active' : '')}
-                                    tabIndex={isActive ? '0' : '-1'}
+                                    tabIndex={isActive ? 0 : -1}
                                     data-cmp-hook-tabs="tab">
                                     {tab['cq:panelTitle']}
                                 </li>
@@ -107,6 +119,7 @@ export default class TabsV1 extends AbstractCoreContainerComponent {
         let attrs = this.containerProps;
         attrs['className'] = attrs.className + ' ' + this.baseCssCls;
         attrs['data-cmp-is'] = 'tabs';
+        return attrs;
     }
 
     render() {

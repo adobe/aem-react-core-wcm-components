@@ -16,18 +16,16 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {shallow} from 'enzyme';
+import {mount} from 'enzyme';
 
 
-import DownloadV1, { DownloadV1Model} from "./DownloadV1";
-
-
+import DownloadV1, {DownloadV1Model} from "./DownloadV1";
 
 
 it('Renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
-        <DownloadV1 title={"Download me"} />,
+        <DownloadV1 title="test" titleType="h2" displayFilename={true} displaySize={true} displayFormat={true} />,
         div
     );
     ReactDOM.unmountComponentAtNode(div);
@@ -58,7 +56,7 @@ it('Renders out properly', () => {
         url: "/content/core-components-examples/library/page-authoring/download/jcr:content/root/responsivegrid/demo_68071479/component/download/file.coredownload.jpeg/lava-into-ocean.jpg"
     };
 
-    const wrapper = shallow(<DownloadV1  {...props} />);
+    const wrapper = mount(<DownloadV1  {...props} />);
 
     const properties = wrapper.find('.cmp-download__property');
 

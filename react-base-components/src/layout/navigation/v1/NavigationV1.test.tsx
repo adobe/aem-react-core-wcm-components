@@ -16,17 +16,17 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {mount, shallow} from 'enzyme';
+import {mount} from 'enzyme';
 
 import {items} from "./NavigationV1TestMockItems";
-import NavigationV1, { NavigationV1Model} from "./NavigationV1";
-import { MemoryRouter } from 'react-router-dom';
+import NavigationV1, {NavigationV1Model} from "./NavigationV1";
+import {MemoryRouter} from 'react-router-dom';
 
 
 it('Renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
-        <NavigationV1 {...items} />,
+        <NavigationV1 items={items} {...items} />,
         div
     );
     ReactDOM.unmountComponentAtNode(div);
@@ -41,7 +41,7 @@ it('Renders a basic navigation properly', () => {
         isInEditor: false,
         items: items
     };
-    const wrapper = shallow(<NavigationV1  {...properties} />);
+    const wrapper = mount(<NavigationV1  {...properties} />);
     const nav = wrapper.find('nav');
 
     expect(nav).toHaveLength(1);

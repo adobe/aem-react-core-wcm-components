@@ -1,4 +1,3 @@
-
 import {ListV2Item, ListV2Model} from './ListV2';
 
 

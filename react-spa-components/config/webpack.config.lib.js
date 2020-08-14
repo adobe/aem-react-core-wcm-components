@@ -19,12 +19,12 @@ const config = require('./webpack.config.base');
 config.output.library = 'cqSpaCoreComponents';
 
 config.entry = {
-    'index': ['./src/index.js'],
-    'isEmptyFunctions': ['./src/isEmptyFunctions.js'],
-    'container/accordion/v1/AccordionV1': ['./src/container/accordion/v1/AccordionV1.jsx'],
-    'container/carousel/v1/CarouselV1': ['./src/container/carousel/v1/CarouselV1.jsx'],
-    'container/container/v1/ContainerV1': ['./src/container/container/v1/ContainerV1.jsx'],
-    'container/tabs/v1/TabsV1': ['./src/container/tabs/v1/TabsV1.jsx']
+    'index': ['./src/index.ts'],
+    'isEmptyFunctions': ['./src/isEmptyFunctions.ts'],
+    'container/accordion/v1/AccordionV1': ['./src/container/accordion/v1/AccordionV1.tsx'],
+    'container/carousel/v1/CarouselV1': ['./src/container/carousel/v1/CarouselV1.tsx'],
+    'container/container/v1/ContainerV1': ['./src/container/container/v1/ContainerV1.tsx'],
+    'container/tabs/v1/TabsV1': ['./src/container/tabs/v1/TabsV1.tsx']
 };
 
 module.exports = config;

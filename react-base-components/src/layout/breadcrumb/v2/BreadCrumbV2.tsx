@@ -14,8 +14,8 @@
  *  limitations under the License.
  */
 
-import React from 'react';
-import {AbstractCoreComponent, CoreComponentModel, CoreComponentState} from "../../../AbstractCoreComponent";
+import React, {Component} from 'react';
+import {withConditionalPlaceHolder} from "../../../AbstractCoreComponent";
 import {isItemRouted, RoutedCoreComponentModel, RoutedModel} from "../../../routing/RoutedCoreComponent";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {BreadCrumbV2IsEmptyFn} from "./BreadCrumbV2IsEmptyFn";
@@ -32,25 +32,15 @@ export interface BreadCrumbV2Model extends RoutedCoreComponentModel {
 }
 
 
-export default class BreadCrumbV2<Model extends BreadCrumbV2Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
+class BreadCrumbV2Impl extends Component<BreadCrumbV2Model> {
 
     public static defaultProps = {
-        isInEditor: false,
         ariaLabelI18n: "BreadCrumbV2",
-        hidePlaceHolder: false
     };
-
-    constructor(props:Model) {
-        super(props, "cmp-breadcrumb", 'BreadCrumbV2');
-    }
-
-    isEmpty(): boolean {
-        return BreadCrumbV2IsEmptyFn(this.props)
-    }
 
     renderBreadCrumbListItem(crumbItem:BreadCrumbV2ItemModel,index:number): JSX.Element{
 
-        const className = `${this.baseCssCls}__item` + (crumbItem.active ? ` ${this.baseCssCls}__item--active` : '');
+        const className = `${this.props.baseCssClass}__item` + (crumbItem.active ? ` ${this.props.baseCssClass}__item--active` : '');
         const contentIndex:string = index.toString(2);
 
         return (
@@ -73,7 +63,7 @@ export default class BreadCrumbV2<Model extends BreadCrumbV2Model, State extends
             <RoutedLink
                         to={crumbItem.url}
                         isRouted={isItemRouted(this.props,crumbItem)}
-                        className={`${this.baseCssCls}__item-link`}
+                        className={`${this.props.baseCssClass}__item-link`}
                         itemProp="item">
                 {this.renderBreadCrumbSpan(crumbItem, index)}
             </RoutedLink>
@@ -84,11 +74,11 @@ export default class BreadCrumbV2<Model extends BreadCrumbV2Model, State extends
         return <span itemProp="name">{crumbItem.title}</span>
     }
 
-    renderComponent(){
+    render(){
         return (
-            <nav className={this.baseCssCls}
+            <nav className={this.props.baseCssClass}
                  aria-label={this.props.ariaLabelI18n}>
-                <ol className={this.baseCssCls + '__list'}
+                <ol className={this.props.baseCssClass + '__list'}
                     itemScope itemType="http://schema.org/BreadcrumbList">
                     {this.props.items.map((item, index) => {
                         return this.renderBreadCrumbListItem(item, index)
@@ -99,3 +89,11 @@ export default class BreadCrumbV2<Model extends BreadCrumbV2Model, State extends
     }
 
 }
+
+
+const BreadCrumbV2 = (props:BreadCrumbV2Model) => {
+    const Wrapped = withConditionalPlaceHolder(BreadCrumbV2Impl, BreadCrumbV2IsEmptyFn, "cmp-breadcrumb", "Breadcrumb V2")
+    return <Wrapped {...props}/>
+};
+
+export default BreadCrumbV2;

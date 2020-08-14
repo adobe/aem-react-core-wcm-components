@@ -16,19 +16,17 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {mount, shallow} from 'enzyme';
+import {mount} from 'enzyme';
 
-import BreadCrumbV2, { BreadCrumbV2ItemModel} from './BreadCrumbV2';
-import { MemoryRouter } from 'react-router-dom';
-
-
+import BreadCrumbV2, {BreadCrumbV2ItemModel} from './BreadCrumbV2';
+import {MemoryRouter} from 'react-router-dom';
 
 
 it('Renders without crashing', () => {
     const div = document.createElement('div');
     const items:BreadCrumbV2ItemModel[] = [];
     ReactDOM.render(
-        <BreadCrumbV2 items={items}/>,
+        <BreadCrumbV2 ariaLabelI18n="Label" items={items}/>,
         div
     );
     ReactDOM.unmountComponentAtNode(div);
@@ -44,7 +42,7 @@ it('Renders breadcrumb items if provided', () => {
     ];
 
 
-    const wrapper = shallow(<BreadCrumbV2  hidePlaceHolder={false} items={items}/>);
+    const wrapper = mount(<BreadCrumbV2 ariaLabelI18n="Label"  hidePlaceHolder={false} items={items}/>);
     expect(wrapper.find("li")).toHaveLength(3);
 
     expect(wrapper.find(".cmp-breadcrumb__item--active").text()).toEqual("Item3");
@@ -61,7 +59,7 @@ it('Renders routed breadcrumb items if provided', () => {
     ];
 
 
-    const wrapper = mount(<MemoryRouter><BreadCrumbV2  hidePlaceHolder={false} items={items}/></MemoryRouter>);
+    const wrapper = mount(<MemoryRouter><BreadCrumbV2 ariaLabelI18n="Label"  hidePlaceHolder={false} items={items}/></MemoryRouter>);
     expect(wrapper.find("li")).toHaveLength(3);
 
     expect(wrapper.find(".cmp-breadcrumb__item--active").text()).toEqual("Item3");

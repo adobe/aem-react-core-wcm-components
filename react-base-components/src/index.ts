@@ -60,7 +60,6 @@ export { default as BreadCrumbV2 } from "./layout/breadcrumb/v2/BreadCrumbV2";
 
 export * from "./layout/navigation/v1/NavigationV1";
 export * from "./layout/navigation/v1/NavigationV1IsEmptyFn";
-export { default as NavigationV1 } from "./layout/navigation/v1/NavigationV1";
 
 export * from "./layout/language-navigation/v1/LanguageNavigationV1";
 export * from "./layout/language-navigation/v1/LanguageNavigationV1IsEmptyFn";
