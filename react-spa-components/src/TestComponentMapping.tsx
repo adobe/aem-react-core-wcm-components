@@ -3,7 +3,6 @@ import React, {Component} from "react";
 
 
 import {EditConfig, MappedComponentProperties, ComponentMapping, MapTo} from "@adobe/cq-react-editable-components";
-
 import {CoreContainerItem} from "./AbstractCoreContainerComponent";
 
 
@@ -17,7 +16,6 @@ export const dummyItems:{ [key: string]: CoreContainerItem } = {
         ":type": "core/components/dummy",
         "cq:panelTitle": "Item1",
         "value": "Component1",
-
     },
     "test2": {
         ":type": "core/components/dummy",
