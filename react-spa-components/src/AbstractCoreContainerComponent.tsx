@@ -50,22 +50,3 @@ export const withStandardBaseCssClass = <M extends CoreContainerProperties>
         return <Component {...mergedProps} />;
     }
 };
-
-export abstract class AbstractCoreContainerComponent<P extends CoreContainerProperties, S extends CoreContainerState> extends AllowedComponentsContainer<P,S>{
-
-    baseCssCls:string;
-
-    protected constructor(props:P, baseCssCls:string) {
-        super(props);
-        this.baseCssCls = baseCssCls;
-    }
-
-    get placeholderComponent() {
-
-        if(!this.props.cqItemsOrder || this.props.cqItemsOrder.length === 0){
-            return super.placeholderComponent;
-        }else{
-            return null;
-        }
-    }
-}

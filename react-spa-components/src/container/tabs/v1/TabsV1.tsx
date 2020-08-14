@@ -15,8 +15,8 @@
  */
 
 import React from "react";
-import {ComponentMapping} from '@adobe/cq-react-editable-components';
-import {AbstractCoreContainerComponent,CoreContainerProperties,CoreContainerState} from "../../../AbstractCoreContainerComponent";
+import {ComponentMapping, Container} from '@adobe/cq-react-editable-components';
+import {CoreContainerProperties, CoreContainerState, withStandardBaseCssClass} from "../../../AbstractCoreContainerComponent";
 import {TabsV1IsEmptyFn} from "./TabsV1IsEmptyFn";
 
 export interface TabsV1Properties extends CoreContainerProperties{
@@ -31,10 +31,10 @@ export interface TabsV1Sstate extends CoreContainerState{
 }
 
 
-export default class TabsV1<P extends TabsV1Properties, S extends TabsV1Sstate> extends AbstractCoreContainerComponent<P,S> {
+class TabsV1Impl extends Container<TabsV1Properties,TabsV1Sstate> {
 
-    constructor(props:P) {
-        super(props, 'cmp-tabs');
+    constructor(props:TabsV1Properties) {
+        super(props);
         //@ts-ignore
         this.state = {
             activeIndex: (!!props.activeItem && props.activeItem.length > 0) ? this.props.cqItemsOrder.indexOf(props.activeItem) : 0,
@@ -60,7 +60,7 @@ export default class TabsV1<P extends TabsV1Properties, S extends TabsV1Sstate> 
                             const isVisible = (this.state.activeIndex === index);
                             const styles = { display: (!isVisible) ? 'none' : 'block'};
                             return (
-                                <div key={"tab-content-" + index} className={this.baseCssCls + '__author-tab-content'} style={styles}>{this.childComponents[index]}</div>
+                                <div key={"tab-content-" + index} className={this.props.baseCssClass + '__author-tab-content'} style={styles}>{this.childComponents[index]}</div>
                             )
                         })
                     }
@@ -90,7 +90,7 @@ export default class TabsV1<P extends TabsV1Properties, S extends TabsV1Sstate> 
 
         return (
             <ol role="tablist"
-                className={this.baseCssCls + '__tablist'}
+                className={this.props.baseCssClass + '__tablist'}
                 aria-label={this.props.accessibilityLabel}
                 aria-multiselectable="false">
                     {
@@ -101,7 +101,7 @@ export default class TabsV1<P extends TabsV1Properties, S extends TabsV1Sstate> 
                                 <li role="tab"
                                     key={"tab-" + index}
                                     onClick={() => this.handleTabNavClick(index)}
-                                    className={this.baseCssCls + '__tab' + (isActive ? ' ' + this.baseCssCls + '__tab--active' : '')}
+                                    className={this.props.baseCssClass + '__tab' + (isActive ? ' ' + this.props.baseCssClass + '__tab--active' : '')}
                                     tabIndex={isActive ? 0 : -1}
                                     data-cmp-hook-tabs="tab">
                                     {tab['cq:panelTitle']}
@@ -118,7 +118,7 @@ export default class TabsV1<P extends TabsV1Properties, S extends TabsV1Sstate> 
 
     get tabContainerProps(){
         let attrs = this.containerProps;
-        attrs['className'] = attrs.className + ' ' + this.baseCssCls;
+        attrs['className'] = attrs.className + ' ' + this.props.baseCssClass;
         attrs['data-cmp-is'] = 'tabs';
         return attrs;
     }
@@ -137,3 +137,5 @@ export default class TabsV1<P extends TabsV1Properties, S extends TabsV1Sstate> 
     }
 
 }
+
+export default withStandardBaseCssClass(TabsV1Impl, "cmp-tabs");
