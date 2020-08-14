@@ -22,7 +22,7 @@ import { CoreContainerProperties, CoreContainerState } from '../../../AbstractCo
 export interface ContainerV1Properties extends CoreContainerProperties,ResponsiveGridProperties{
     backgroundStyle:string;
     id:string;
-    layout: string;
+    layout?: 'responsiveGrid' | 'simple';
 }
 
 
