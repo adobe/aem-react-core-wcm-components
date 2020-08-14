@@ -5,7 +5,7 @@
   "scripts": {
     "linter": "eslint --ext .ts,.tsx .",
     "linter:fix": "eslint --ext .ts,.tsx . --fix",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "test:coverage": "jest --coverage",
     "test:debug": "jest --coverage --watchAll",
     "build": "webpack --config config/webpack.config.core.js  && webpack --config config/webpack.config.lib.js  &&   tsc -p src/tsconfig.types.json",
@@ -51,6 +51,8 @@
     "@types/react": "16.9.44",
     "@types/react-dom": "^16.9.5",
     "@types/react-router-dom": "^5.1.5",
+    "@typescript-eslint/eslint-plugin": "^3.9.0",
+    "@typescript-eslint/parser": "^3.9.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-istanbul": "^5.2.0",
     "chai": "^4.2.0",
@@ -94,7 +96,8 @@
       "sourceType": "module"
     },
     "rules": {
-      "@typescript-eslint/no-empty-interface": 0
+      "@typescript-eslint/no-empty-interface": 0,
+      "@typescript-eslint/ban-ts-comment": 0
     }
   },
   "browserslist": {

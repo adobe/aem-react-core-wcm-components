@@ -23,9 +23,9 @@ import {CarouselV1IsEmptyFn} from "./CarouselV1IsEmptyFn";
 
 
 const formatFn = (value:string, args:string[]) => {
-    var content = value;
-    for (var i = 0; i < args.length; i++) {
-        var replacement = '{' + i + '}';
+    let content = value;
+    for (let i = 0; i < args.length; i++) {
+        const replacement = '{' + i + '}';
         content = content.replace(replacement, args[i]);
     }
     return content;
@@ -56,7 +56,7 @@ export interface CarouselV1State extends CoreContainerState{
 
 export default class CarouselV1<P extends CarouselV1Properties, S extends CarouselV1State> extends AbstractCoreContainerComponent<P,S> {
 
-    interval:number = 0;
+    interval = 0;
 
 
     static defaultProps = {
