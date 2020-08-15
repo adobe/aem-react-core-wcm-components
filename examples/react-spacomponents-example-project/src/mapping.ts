@@ -18,12 +18,13 @@ import { TextV2Model } from '@adobe/aem-core-components-react-base/dist/authorin
 import { BreadCrumbV2Model } from '@adobe/aem-core-components-react-base/dist/layout/breadcrumb/v2/BreadCrumbV2';
 import { ButtonV1Model } from '@adobe/aem-core-components-react-base/dist/authoring/button/v1/ButtonV1';
 import { TeaserV1Model } from '@adobe/aem-core-components-react-base/dist/authoring/teaser/v1/TeaserV1';
-import { TempImageComponentModel} from '@adobe/aem-core-components-react-base/dist/authoring/image/v2/ImageV2';
+import { ImageV2Model } from '@adobe/aem-core-components-react-base/dist/authoring/image/v2/ImageV2';
 import { TitleV2Model } from '@adobe/aem-core-components-react-base/dist/authoring/title/v2/TitleV2';
 import { TabsV1Properties } from '@adobe/aem-core-components-react-spa/dist/container/tabs/v1/TabsV1';
 import { AccordionV1Properties } from '@adobe/aem-core-components-react-spa/dist/container/accordion/v1/AccordionV1';
 import { CarouselV1Properties } from '@adobe/aem-core-components-react-spa/dist/container/carousel/v1/CarouselV1';
 import { ContainerV1Properties } from '@adobe/aem-core-components-react-spa/dist/container/container/v1/ContainerV1';
+
 
 
 const TitleV2 = withAsyncImport(() => import(/* webpackChunkName: "TitleV2" */ '@adobe/aem-core-components-react-base/dist/authoring/title/v2/TitleV2'));
@@ -52,7 +53,7 @@ MapTo<TextV2Model & p>('core-components-examples/wcm/react/components/text')(Tex
 MapTo<BreadCrumbV2Model & p>('core-components-examples/wcm/react/components/breadcrumb')(BreadCrumbV2, {isEmpty: BreadCrumbV2IsEmptyFn});
 MapTo<ButtonV1Model & p>('core-components-examples/wcm/react/components/button')(ButtonV1, {isEmpty: ButtonV1IsEmptyFn});
 MapTo<TeaserV1Model & p>('core-components-examples/wcm/react/components/teaser')(TeaserV1, {isEmpty: TeaserV1IsEmptyFn});
-MapTo<TempImageComponentModel & p>('core-components-examples/wcm/react/components/image')(ImageV2, {isEmpty: ImageV2IsEmptyFn});
+MapTo<ImageV2Model & p>('core-components-examples/wcm/react/components/image')(ImageV2, {isEmpty: ImageV2IsEmptyFn});
 MapTo<TitleV2Model & p>('core-components-examples/wcm/react/components/title')(TitleV2, {isEmpty: TitleV2IsEmptyFn});
 
 
@@ -60,10 +61,10 @@ MapTo<TitleV2Model & p>('core-components-examples/wcm/react/components/title')(T
 MapTo('core-components-examples/wcm/react/components/navigation')(NavigationV1);
 MapTo('core-components-examples/wcm/react/components/languagenavigation')(LanguageNavigationV1);
 
-MapTo<TabsV1Properties & p>('core-components-examples/wcm/react/components/tabs')(TabsV1, {isEmpty: TabsV1IsEmptyFn});
-MapTo<AccordionV1Properties & p>('core-components-examples/wcm/react/components/accordion')(AccordionV1, {isEmpty: AccordionV1IsEmptyFn});
-MapTo<CarouselV1Properties & p>('core-components-examples/wcm/react/components/carousel')(CarouselV1, {isEmpty: CarouselV1IsEmptyFn});
-MapTo<ContainerV1Properties & p>('core-components-examples/wcm/react/components/container')(ContainerV1, {isEmpty: ContainerV1IsEmptyFn});
+MapTo<TabsV1Properties>('core-components-examples/wcm/react/components/tabs')(TabsV1, {isEmpty: TabsV1IsEmptyFn});
+MapTo<AccordionV1Properties>('core-components-examples/wcm/react/components/accordion')(AccordionV1, {isEmpty: AccordionV1IsEmptyFn});
+MapTo<CarouselV1Properties>('core-components-examples/wcm/react/components/carousel')(CarouselV1, {isEmpty: CarouselV1IsEmptyFn});
+MapTo<ContainerV1Properties>('core-components-examples/wcm/react/components/container')(ContainerV1, {isEmpty: ContainerV1IsEmptyFn});
 
 MapTo<JsonProperties>('core-components-examples/components/demo/json')(Json);
 MapTo<PropertiesModel>('core-components-examples/components/demo/properties')(Properties);
