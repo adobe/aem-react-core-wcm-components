@@ -18,7 +18,7 @@ import { TextV2Model } from '@adobe/aem-core-components-react-base/dist/authorin
 import { BreadCrumbV2Model } from '@adobe/aem-core-components-react-base/dist/layout/breadcrumb/v2/BreadCrumbV2';
 import { ButtonV1Model } from '@adobe/aem-core-components-react-base/dist/authoring/button/v1/ButtonV1';
 import { TeaserV1Model } from '@adobe/aem-core-components-react-base/dist/authoring/teaser/v1/TeaserV1';
-import { TempImageComponentModel} from '@adobe/aem-core-components-react-base/dist/authoring/image/v2/ImageV2';
+import { ImageV2Model } from '@adobe/aem-core-components-react-base/dist/authoring/image/v2/ImageV2';
 import { TitleV2Model } from '@adobe/aem-core-components-react-base/dist/authoring/title/v2/TitleV2';
 import { TabsV1Properties } from '@adobe/aem-core-components-react-spa/dist/container/tabs/v1/TabsV1';
 import { AccordionV1Properties } from '@adobe/aem-core-components-react-spa/dist/container/accordion/v1/AccordionV1';
@@ -52,7 +52,7 @@ MapTo<TextV2Model & p>('core-components-examples/wcm/react/components/text')(Tex
 MapTo<BreadCrumbV2Model & p>('core-components-examples/wcm/react/components/breadcrumb')(BreadCrumbV2, {isEmpty: BreadCrumbV2IsEmptyFn});
 MapTo<ButtonV1Model & p>('core-components-examples/wcm/react/components/button')(ButtonV1, {isEmpty: ButtonV1IsEmptyFn});
 MapTo<TeaserV1Model & p>('core-components-examples/wcm/react/components/teaser')(TeaserV1, {isEmpty: TeaserV1IsEmptyFn});
-MapTo<TempImageComponentModel & p>('core-components-examples/wcm/react/components/image')(ImageV2, {isEmpty: ImageV2IsEmptyFn});
+MapTo<ImageV2Model & p>('core-components-examples/wcm/react/components/image')(ImageV2, {isEmpty: ImageV2IsEmptyFn});
 MapTo<TitleV2Model & p>('core-components-examples/wcm/react/components/title')(TitleV2, {isEmpty: TitleV2IsEmptyFn});
 
 

@@ -33,13 +33,13 @@
   "peerDependencies": {
     "react": "^16.13.1",
     "@adobe/cq-react-editable-components": "file:../../spa-react-editable-components",
-    "@adobe/cq-spa-component-mapping": "file:../../spa-component-mapping",
-    "@adobe/cq-spa-page-model-manager": "file:../../spa-page-model-manager"
+    "@adobe/cq-spa-component-mapping": "^1.1.0",
+    "@adobe/cq-spa-page-model-manager": "1.2.0"
   },
   "devDependencies": {
     "@adobe/cq-react-editable-components": "file:../../spa-react-editable-components",
-    "@adobe/cq-spa-component-mapping": "file:../../spa-component-mapping",
-    "@adobe/cq-spa-page-model-manager": "file:../../spa-page-model-manager",
+    "@adobe/cq-spa-component-mapping": "^1.1.0",
+    "@adobe/cq-spa-page-model-manager": "1.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "@babel/cli": "^7.7.7",
