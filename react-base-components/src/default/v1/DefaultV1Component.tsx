@@ -28,7 +28,7 @@ class DefaultV1ComponentImpl extends Component<DefaultV1Model> {
           return <div className={"cmp-default-wrapper"} dangerouslySetInnerHTML={{__html: this.props.html}}></div>
     }
 
-};
+}
 
 const DefaultV1Component = (props:DefaultV1Model) => {
     const Wrapped = withConditionalPlaceHolder(DefaultV1ComponentImpl, DefaultV1IsEmptyFn, "cmp-default", "Default SPA Component")

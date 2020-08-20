@@ -24,9 +24,9 @@ import {CarouselV1IsEmptyFn} from "./CarouselV1IsEmptyFn";
 
 
 const formatFn = (value:string, args:string[]) => {
-    var content = value;
-    for (var i = 0; i < args.length; i++) {
-        var replacement = '{' + i + '}';
+    let content = value;
+    for (let i = 0; i < args.length; i++) {
+        const replacement = '{' + i + '}';
         content = content.replace(replacement, args[i]);
     }
     return content;
@@ -60,7 +60,7 @@ export interface CarouselV1State extends CoreContainerState{
 
 class CarouselV1Impl extends Container<CarouselV1Properties,CarouselV1State> {
 
-    interval:number = 0;
+    interval = 0;
 
 
     static defaultProps = {
@@ -157,7 +157,7 @@ class CarouselV1Impl extends Container<CarouselV1Properties,CarouselV1State> {
         }
 
         this.nextSlide();
-    };
+    }
 
     clearAutoPlay = () => {
         window.clearInterval(this.interval);

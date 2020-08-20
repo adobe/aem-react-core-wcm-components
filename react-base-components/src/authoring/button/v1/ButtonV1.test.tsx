@@ -35,7 +35,7 @@ it('Renders without crashing', () => {
 
 it('Renders a proper button with link', () => {
 
-    let captured:boolean = false;
+    let captured = false;
 
     const properties:ButtonV1Model = {
         isInEditor: false,
@@ -72,7 +72,7 @@ it('Renders a proper button with link', () => {
 
 it('Renders a proper button with link', () => {
 
-    let captured:boolean = false;
+    let captured = false;
 
     const properties:ButtonV1Model = {
         isInEditor: false,

@@ -83,7 +83,7 @@ class TabsV1Impl extends Container<TabsV1Properties,TabsV1State> {
 
     tabNavigation(){
 
-        let childComponents:JSX.Element[] = [];
+        const childComponents:JSX.Element[] = [];
 
         if (!this.props.cqItems || !this.props.cqItemsOrder) {
             return childComponents;

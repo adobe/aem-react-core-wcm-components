@@ -61,9 +61,6 @@ module.exports = {
         }
     }) : ''],
     resolve: {
-        alias: {
-            'react-router-dom': path.resolve('./node_modules/react-router-dom')
-        },
         extensions: ['.ts', '.tsx']
     },
     plugins: [

@@ -77,7 +77,7 @@ it('Renders a responsive grid properly', () => {
 
 
     //@ts-ignore
-    let containerStyle = wrapper.find(".cmp-container").get(0).ref.current.getAttribute("style");
+    const containerStyle = wrapper.find(".cmp-container").get(0).ref.current.getAttribute("style");
 
     expect(containerStyle).toEqual("background-color:red");
 
@@ -104,7 +104,7 @@ it('Renders a basic container properly', () => {
 
 
     //@ts-ignore
-    let containerStyle = wrapper.find(".cmp-container").get(0).ref.current.getAttribute("style");
+    const containerStyle = wrapper.find(".cmp-container").get(0).ref.current.getAttribute("style");
 
     expect(containerStyle).toEqual("background-color:red");
 

@@ -2,7 +2,7 @@ import React, {Component} from "react";
 
 
 import {EditConfig, MappedComponentProperties, ComponentMapping, MapTo} from "@adobe/cq-react-editable-components";
-import {Model} from "@adobe/cq-spa-page-model-manager";
+
 import {CoreContainerItem} from "./AbstractCoreContainerComponent";
 
 
