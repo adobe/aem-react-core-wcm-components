@@ -47,4 +47,7 @@ module.exports = {
         "json",
         "node"
     ],
+    moduleNameMapper: {
+        "^@adobe/(.*)$": ["<rootDir>/node_modules/@adobe/$1"]
+    }
 };

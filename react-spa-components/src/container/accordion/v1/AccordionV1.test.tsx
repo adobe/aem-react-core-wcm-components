@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 
 import ComponentMapping, {dummyItems} from "../../../TestComponentMapping";
 import {ModelManager} from "@adobe/cq-spa-page-model-manager"
-import {AllowedComponents, AllowedComponent} from "@adobe/cq-react-editable-components"
+import {AllowedComponents, AllowedComponent, withModel} from "@adobe/cq-react-editable-components"
 
 const allowedComponent:AllowedComponent = {
     path: "/apps/core/components/dummy",
@@ -57,7 +57,6 @@ beforeEach(() => {
 
 it('Renders a basic accordion properly', () => {
 
-    // const Wrapped = withComponentMappingContext(AccordionV1);
     const wrapper = mount(<AccordionV1  {...defaultProps} componentMapping={ComponentMapping}/>);
     const accordionRoot = wrapper.find('.cmp-accordion');
 
@@ -71,7 +70,6 @@ it('Renders a basic accordion properly', () => {
 
 it('Renders out all items in author mode with hidden CSS', () => {
 
-    // const Wrapped = withComponentMappingContext(AccordionV1);
     const wrapper = mount(<AccordionV1  {...defaultProps} isInEditor={true}  componentMapping={ComponentMapping}/>);
     const accordionRoot = wrapper.find('.cmp-accordion');
 
