@@ -1,7 +1,7 @@
 
 import * as React from 'react';
 import AccordionV1, {AccordionV1Properties} from "./AccordionV1";
-import {mount} from "enzyme";
+import {mount, ReactWrapper} from "enzyme";
 import ReactDOM from 'react-dom';
 
 import ComponentMapping, {dummyItems} from "../../../TestComponentMapping";
@@ -44,6 +44,14 @@ it('Renders without crashing', () => {
 
 let AddListenerSpy,RemoveListener,GetDataSpy: jest.SpyInstance;
 
+const validateComponentPresent = (wrapper:ReactWrapper, text:string) =>{
+    wrapper.update();
+    const dummyComp = wrapper.find(".dummyCmp");
+    expect(dummyComp).toHaveLength(1);
+    expect(dummyComp.text()).toEqual(text);
+};
+
+
 beforeEach(() => {
     AddListenerSpy = jest.spyOn(ModelManager, 'addListener');
     RemoveListener = jest.spyOn(ModelManager, 'removeListener');
@@ -62,9 +70,7 @@ it('Renders a basic accordion properly', () => {
 
     expect(accordionRoot).toHaveLength(1);
 
-    const component = accordionRoot.find(".dummyCmp");
-    expect(component).toHaveLength(1);
-    expect(component.text()).toEqual("Component1")
+    validateComponentPresent(wrapper,"Component1");
 
 });
 
@@ -88,9 +94,7 @@ it('Changes item when you click - single expansion', () => {
 
     expect(accordionRoot).toHaveLength(1);
 
-    let component = wrapper.find(".dummyCmp");
-    expect(component).toHaveLength(1);
-    expect(component.text()).toEqual("Component1");
+    validateComponentPresent(wrapper,"Component1");
 
     const button2 = wrapper.find(".cmp-accordion__item:last-child .cmp-accordion__button");
 
@@ -101,13 +105,26 @@ it('Changes item when you click - single expansion', () => {
 
     expect(button2.html()).toEqual("<button class=\"cmp-accordion__button cmp-accordion__button--expanded\"><span class=\"cmp-accordion__title\">Item2</span><span class=\"cmp-accordion__icon\"></span></button>");
 
-    component = wrapper.find(".dummyCmp");
+    validateComponentPresent(wrapper,"Component2");
 
-    expect(component).toHaveLength(1);
-    expect(component.text()).toEqual("Component2");
 
 });
 
+it('Changes when you switch tab in author mode', () => {
+
+    const wrapper = mount(<AccordionV1  {...defaultProps} singleExpansion={true}  componentMapping={ComponentMapping}/>);
+    const accordionRoot = wrapper.find('.cmp-accordion');
+
+    expect(accordionRoot).toHaveLength(1);
+
+    //@ts-ignore
+    window.Granite.author.trigger("/content/accordion-path", 1);
+
+    validateComponentPresent(wrapper,"Component2");
+    //@ts-ignore
+    window.Granite.author.trigger("/content/accordion-path", 0);
+    validateComponentPresent(wrapper,"Component1");
+});
 
 it('Changes item when you click - multi expansion', () => {
 
@@ -117,9 +134,8 @@ it('Changes item when you click - multi expansion', () => {
 
     expect(accordionRoot).toHaveLength(1);
 
-    let component = wrapper.find(".dummyCmp");
-    expect(component).toHaveLength(1);
-    expect(component.text()).toEqual("Component1");
+    validateComponentPresent(wrapper,"Component1");
+
 
     const headingElement = wrapper.find(".cmp-accordion__item:last-child .cmp-accordion__header");
     expect(headingElement.is("h2")).toEqual(true);
@@ -133,7 +149,7 @@ it('Changes item when you click - multi expansion', () => {
 
     expect(button2.html()).toEqual("<button class=\"cmp-accordion__button cmp-accordion__button--expanded\"><span class=\"cmp-accordion__title\">Item2</span><span class=\"cmp-accordion__icon\"></span></button>");
 
-    component = wrapper.find(".dummyCmp");
+    const component = wrapper.find(".dummyCmp");
 
     expect(component).toHaveLength(2);
 

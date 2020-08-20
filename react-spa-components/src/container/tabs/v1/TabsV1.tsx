@@ -18,6 +18,7 @@ import React from "react";
 import {ComponentMapping, Container} from '@adobe/cq-react-editable-components';
 import {CoreContainerProperties, CoreContainerState, withStandardBaseCssClass, CoreContainerItem} from "../../../AbstractCoreContainerComponent";
 import {TabsV1IsEmptyFn} from "./TabsV1IsEmptyFn";
+import withAuthorPanelSwitch from "../../../withAuthorPanelSwitch";
 
 export interface TabsV1Properties extends CoreContainerProperties{
     
@@ -36,13 +37,19 @@ class TabsV1Impl extends Container<TabsV1Properties,TabsV1State> {
 
     constructor(props:TabsV1Properties) {
         super(props);
-        //@ts-ignore
+
         this.state = {
             activeIndex: (!!props.activeItem && props.activeItem.length > 0) ? this.props.cqItemsOrder.indexOf(props.activeItem) : 0,
             componentMapping: this.props.componentMapping || ComponentMapping
         };
 
         this.handleTabNavClick = this.handleTabNavClick.bind(this);
+    }
+
+    componentDidUpdate(prevProps: Readonly<TabsV1Properties>, prevState: Readonly<TabsV1State>, snapshot?: any): void {
+        if(this.props.activeIndexFromAuthorPanel !== undefined && prevProps.activeIndexFromAuthorPanel != this.props.activeIndexFromAuthorPanel){
+            this.setState({ activeIndex: this.props.activeIndexFromAuthorPanel } );
+        }
     }
 
       /**
@@ -139,4 +146,4 @@ class TabsV1Impl extends Container<TabsV1Properties,TabsV1State> {
 
 }
 
-export default withStandardBaseCssClass(TabsV1Impl, "cmp-tabs");
+export default withStandardBaseCssClass(withAuthorPanelSwitch(TabsV1Impl), "cmp-tabs");

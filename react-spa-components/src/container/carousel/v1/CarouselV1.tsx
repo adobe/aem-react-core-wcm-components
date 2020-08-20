@@ -21,6 +21,8 @@ import {CoreContainerProperties, CoreContainerState, withStandardBaseCssClass, C
 import {ComponentMapping, Container} from '@adobe/cq-react-editable-components';
 
 import {CarouselV1IsEmptyFn} from "./CarouselV1IsEmptyFn";
+import withAuthorPanelSwitch from "../../../withAuthorPanelSwitch";
+import {TabsV1Properties, TabsV1State} from "../../..";
 
 
 const formatFn = (value:string, args:string[]) => {
@@ -89,7 +91,7 @@ class CarouselV1Impl extends Container<CarouselV1Properties,CarouselV1State> {
         this.state = {
             activeIndex: 0,
             isMouseEntered: false,
-            autoPlay: this.props.autoplay,
+            autoPlay: this.props.autoplay && !this.props.isInEditor,
             componentMapping: this.props.componentMapping || ComponentMapping
         };
 
@@ -100,11 +102,16 @@ class CarouselV1Impl extends Container<CarouselV1Properties,CarouselV1State> {
         this.handleOnMouseLeave   = this.handleOnMouseLeave.bind(this);
 
     }
+
+    componentDidUpdate(prevProps: Readonly<TabsV1Properties>, prevState: Readonly<TabsV1State>, snapshot?: any): void {
+        if(this.props.activeIndexFromAuthorPanel !== undefined && prevProps.activeIndexFromAuthorPanel != this.props.activeIndexFromAuthorPanel){
+            this.setState({ activeIndex: this.props.activeIndexFromAuthorPanel } );
+            this.toggleAutoPlay(false);
+        }
+    }
     
     componentDidMount(){
-        if( this.props.autoplay && !this.props.isInEditor){
-            this.autoPlay();
-        }
+        this.autoPlay();
     }
 
     componentWillUnmount(){
@@ -326,4 +333,4 @@ class CarouselV1Impl extends Container<CarouselV1Properties,CarouselV1State> {
 
 }
 
-export default withStandardBaseCssClass(CarouselV1Impl, "cmp-carousel");
+export default withStandardBaseCssClass(withAuthorPanelSwitch(CarouselV1Impl), "cmp-carousel");

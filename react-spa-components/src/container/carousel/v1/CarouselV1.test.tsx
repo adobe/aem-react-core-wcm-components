@@ -7,6 +7,7 @@ import ReactDOM from 'react-dom';
 import ComponentMapping, {dummyItems} from "../../../TestComponentMapping";
 import {ModelManager} from "@adobe/cq-spa-page-model-manager"
 import {AllowedComponents, AllowedComponent } from "@adobe/cq-react-editable-components"
+import AccordionV1 from "../../accordion/v1/AccordionV1";
 
 const allowedComponent:AllowedComponent = {
     path: "/apps/core/components/dummy",
@@ -36,7 +37,7 @@ const defaultProps:CarouselV1Properties = {
     cqItemsOrder: ["test", "test2"],
     title: "Accordion",
     isInEditor: false,
-    cqPath: "/content/accordion-path",
+    cqPath: "/content/carousel-path",
     allowedComponents: allowedComponents,
     componentMapping: ComponentMapping
 };
@@ -123,6 +124,21 @@ it('Renders a basic carousel properly and reacts on clicks', () => {
 });
 
 
+it('Changes when you switch slide in author mode', () => {
+
+    const wrapper = mount(<CarouselV1  {...defaultProps}  componentMapping={ComponentMapping}/>);
+    const accordionRoot = wrapper.find('.cmp-carousel');
+
+    expect(accordionRoot).toHaveLength(1);
+
+    //@ts-ignore
+    window.Granite.author.trigger("/content/carousel-path", 1);
+
+    validateComponentPresent(wrapper,"Component2");
+    //@ts-ignore
+    window.Granite.author.trigger("/content/carousel-path", 0);
+    validateComponentPresent(wrapper,"Component1");
+});
 
 
 it('Automatically slides forward', (done) => {

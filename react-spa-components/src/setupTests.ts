@@ -17,5 +17,38 @@
 import {configure} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
+const callbacks: { (message: any): void; } [] = [];
+
+
+//@ts-ignore
+window.Granite = {
+    author: {
+        trigger: (path:string, index:number) => {
+            callbacks.forEach((callback) => callback({
+                data: {
+                    id: path,
+                    operation: 'navigate',
+                    index: index
+                }
+            }))
+        },
+
+        MessageChannel : function() {
+
+            return {
+                subscribeRequestMessage: (topic:string, callback:(message:any)=>void) => {
+                    callbacks.push(callback)
+                },
+                unsubscribeRequestMessage: (topic:string, callback:(message:any)=>void) => {
+                    const index:number = callbacks.indexOf(callback);
+                    callbacks.splice(index, 1);
+                }
+            }
+
+        }
+
+    }
+};
+
 configure({ adapter: new Adapter()});
 

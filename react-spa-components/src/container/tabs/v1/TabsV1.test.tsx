@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 import ComponentMapping, {dummyItems} from "../../../TestComponentMapping";
 import {ModelManager} from "@adobe/cq-spa-page-model-manager"
 import {AllowedComponent, AllowedComponents} from "@adobe/cq-react-editable-components"
+import CarouselV1 from "../../carousel/v1/CarouselV1";
 
 const allowedComponent:AllowedComponent = {
     path: "/apps/core/components/dummy",
@@ -25,12 +26,24 @@ const defaultProps:TabsV1Properties = {
     cqItems: dummyItems,
     cqItemsOrder: ["test", "test2"],
     isInEditor: false,
-    cqPath: "/content/accordion-path",
+    cqPath: "/content/tabs-path",
     allowedComponents: allowedComponents,
     componentMapping: ComponentMapping
 };
 
 
+let AddListenerSpy,RemoveListener,GetDataSpy: jest.SpyInstance;
+
+beforeEach(() => {
+    AddListenerSpy = jest.spyOn(ModelManager, 'addListener');
+    RemoveListener = jest.spyOn(ModelManager, 'removeListener');
+    GetDataSpy = jest.spyOn(ModelManager, 'getData');
+
+    AddListenerSpy.mockReturnValue();
+    RemoveListener.mockReturnValue();
+    GetDataSpy.mockResolvedValue({});
+
+});
 
 it('Renders without crashing', () => {
     const div = document.createElement('div');
@@ -48,20 +61,8 @@ const validateComponentPresent = (wrapper:ReactWrapper, text:string) =>{
     const dummyComp = wrapper.find(".dummyCmp");
     expect(dummyComp).toHaveLength(1);
     expect(dummyComp.text()).toEqual(text);
-}
+};
 
-let AddListenerSpy,RemoveListener,GetDataSpy: jest.SpyInstance;
-
-beforeEach(() => {
-    AddListenerSpy = jest.spyOn(ModelManager, 'addListener');
-    RemoveListener = jest.spyOn(ModelManager, 'removeListener');
-    GetDataSpy = jest.spyOn(ModelManager, 'getData');
-
-    AddListenerSpy.mockReturnValue();
-    RemoveListener.mockReturnValue();
-    GetDataSpy.mockResolvedValue({});
-
-});
 
 it('Renders tabs properly and changes on click events', () => {
 
@@ -92,6 +93,23 @@ it('Renders tabs properly and changes on click events', () => {
 
 
 });
+
+it('Changes when you switch tabs in author mode', () => {
+
+    const wrapper = mount(<TabsV1  {...defaultProps}  componentMapping={ComponentMapping}/>);
+    const accordionRoot = wrapper.find('.cmp-tabs');
+
+    expect(accordionRoot).toHaveLength(1);
+
+    //@ts-ignore
+    window.Granite.author.trigger("/content/tabs-path", 1);
+
+    validateComponentPresent(wrapper,"Component2");
+    //@ts-ignore
+    window.Granite.author.trigger("/content/tabs-path", 0);
+    validateComponentPresent(wrapper,"Component1");
+});
+
 
 const validateAuthorTabVisible = (wrapper:ReactWrapper, component : 'Component1' | 'Component2') =>{
 

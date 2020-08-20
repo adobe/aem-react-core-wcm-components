@@ -22,6 +22,7 @@ import { Model } from '@adobe/cq-spa-page-model-manager';
 
 export interface CoreContainerProperties extends AllowedComponentsProperties{
     baseCssClass?:string;
+    activeIndexFromAuthorPanel?:number
 }
 
 export interface CoreContainerItem extends Model {

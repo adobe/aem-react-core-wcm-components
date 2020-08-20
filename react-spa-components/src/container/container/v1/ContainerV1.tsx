@@ -18,6 +18,7 @@ import React, {RefObject} from "react";
 
 import {ComponentMapping, Container, ResponsiveGrid, ResponsiveGridProperties} from '@adobe/cq-react-editable-components';
 import {CoreContainerProperties, CoreContainerState, withStandardBaseCssClass} from '../../../AbstractCoreContainerComponent';
+import withAuthorPanelSwitch from "../../../withAuthorPanelSwitch";
 
 export interface ContainerV1Properties extends CoreContainerProperties,ResponsiveGridProperties{
     backgroundStyle:string;
@@ -102,4 +103,4 @@ class ContainerV1Impl extends Container<ContainerV1Properties,CoreContainerState
 
 }
 
-export default withStandardBaseCssClass(ContainerV1Impl, "cmp-container");
+export default withStandardBaseCssClass(withAuthorPanelSwitch(ContainerV1Impl), "cmp-container");

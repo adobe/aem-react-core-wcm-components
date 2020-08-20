@@ -19,6 +19,8 @@ import * as React from 'react';
 import {CoreContainerProperties, CoreContainerState, withStandardBaseCssClass} from "../../../AbstractCoreContainerComponent";
 import {ComponentMapping, Container} from '@adobe/cq-react-editable-components';
 import {AccordionV1IsEmptyFn} from "./AccordionV1IsEmptyFn";
+import withAuthorPanelSwitch from "../../../withAuthorPanelSwitch";
+import {TabsV1Properties, TabsV1State} from "../../..";
 
 export interface AccordionV1Properties extends CoreContainerProperties{
     singleExpansion: boolean;
@@ -41,6 +43,12 @@ class AccordionV1Impl extends Container<AccordionV1Properties,AccordionV1State> 
         };
 
         this.handleAccordionNavClick = this.handleAccordionNavClick.bind(this);
+    }
+
+    componentDidUpdate(prevProps: Readonly<AccordionV1Properties>, prevState: Readonly<AccordionV1State>): void {
+        if(this.props.activeIndexFromAuthorPanel !== undefined && prevProps.activeIndexFromAuthorPanel != this.props.activeIndexFromAuthorPanel){
+            this.setState({ expandedItems: [this.props.cqItemsOrder[this.props.activeIndexFromAuthorPanel]] } );
+        }
     }
 
     handleAccordionNavClick(itemKey:string){
@@ -146,4 +154,4 @@ class AccordionV1Impl extends Container<AccordionV1Properties,AccordionV1State> 
 
 }
 
-export default withStandardBaseCssClass(AccordionV1Impl, "cmp-accordion");
+export default withStandardBaseCssClass(withAuthorPanelSwitch(AccordionV1Impl), "cmp-accordion");

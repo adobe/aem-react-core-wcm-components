@@ -37,7 +37,10 @@ module.exports = {
         "/node_modules/",
         "/lib/",
         "/dist/",
-        "/node/"
+        "/node/",
+        "TestComponentMapping.tsx",
+        "TestComponentMapping.d.ts"
+
     ],
     moduleFileExtensions: [
         "ts",
