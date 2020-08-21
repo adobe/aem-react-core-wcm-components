@@ -16,22 +16,22 @@
 
 import React, {RefObject} from "react";
 
-import { AllowedComponents, ResponsiveGrid,ResponsiveGridProperties, ComponentMapping, Container} from '@adobe/cq-react-editable-components';
-import { CoreContainerProperties, CoreContainerState } from '../../../AbstractCoreContainerComponent';
+import {ComponentMapping, Container, ResponsiveGrid, ResponsiveGridProperties} from '@adobe/cq-react-editable-components';
+import {CoreContainerProperties, CoreContainerState, withStandardBaseCssClass} from '../../../AbstractCoreContainerComponent';
+import withAuthorPanelSwitch from "../../../withAuthorPanelSwitch";
 
 export interface ContainerV1Properties extends CoreContainerProperties,ResponsiveGridProperties{
     backgroundStyle:string;
     id:string;
-    layout: string;
+    layout?: 'responsiveGrid' | 'simple';
 }
 
 
-export default class ContainerV1<P extends ContainerV1Properties, S extends CoreContainerState> extends ResponsiveGrid<P,S> {
+class ContainerV1Impl extends Container<ContainerV1Properties,CoreContainerState> {
 
     mainDiv:RefObject<HTMLDivElement>;
-    baseCssCls = 'cmp-container';
 
-    constructor(props:P) {
+    constructor(props:ContainerV1Properties) {
         super(props);
 
         //@ts-ignore
@@ -78,7 +78,7 @@ export default class ContainerV1<P extends ContainerV1Properties, S extends Core
             <div {...this.coreContainerProps}>
                 <div ref={this.mainDiv}
                      id={this.props.id}
-                     className={this.baseCssCls}>
+                     className={this.props.baseCssClass}>
 
                     {(this.props.layout && this.props.layout === 'simple')  &&
                               <Container 
@@ -102,3 +102,5 @@ export default class ContainerV1<P extends ContainerV1Properties, S extends Core
     }
 
 }
+
+export default withStandardBaseCssClass(withAuthorPanelSwitch(ContainerV1Impl), "cmp-container");

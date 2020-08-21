@@ -1,8 +1,11 @@
 import React from 'react';
-import {Container} from '@adobe/cq-react-editable-components';
+import {Container,ContainerProperties,ContainerState} from '@adobe/cq-react-editable-components';
 
+export interface DemoContainerProperties extends ContainerProperties{
+    fullWidth: boolean
+}
 
-class Demo extends Container{
+class Demo extends Container<DemoContainerProperties,ContainerState> {
 
     /**
      * The properties that will be injected in the root element of the container
@@ -12,7 +15,7 @@ class Demo extends Container{
     get containerProps() {
         let attrs = super.containerProps;
 
-        const cssClass = 'cmp-react-examples-demo__component cmp-react-examples-demo__component--width' +  (this.props.fullWidth === true ? 'Full': 'Auto');
+        const cssClass = 'cmp-react-examples-demo__component cmp-react-examples-demo__component--width' +  (this.props.fullWidth ? 'Full': 'Auto');
         attrs['className'] = attrs['className'] + ' ' + cssClass;
 
         return attrs;

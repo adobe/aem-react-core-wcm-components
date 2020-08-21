@@ -18,21 +18,29 @@
 
 module.exports = {
     preset: "ts-jest",
-    //setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'],
+    setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'],
     testEnvironment: 'jsdom',
     transform: {
-        "^.+\\.jsx?$": "ts-jest"
+        "^.+\\.tsx?$": "ts-jest"
     },
-    testMatch: ['<rootDir>/**/*.test.js','<rootDir>/**/*.test.tsx'],
-    testPathIgnorePatterns: ['node_modules','lib', 'dist', 'node'],
+    testMatch: ['<rootDir>/**/*.test.ts','<rootDir>/**/*.test.tsx'],
+    testPathIgnorePatterns: [
+        'node_modules',
+        'lib',
+        'dist',
+        'node'
+    ],
     collectCoverageFrom: [
-        '**/*.{ts,tsx}'
+        'src/**/*.{ts,tsx}'
     ],
     coveragePathIgnorePatterns: [
         "/node_modules/",
         "/lib/",
         "/dist/",
-        "/node/"
+        "/node/",
+        "TestComponentMapping.tsx",
+        "TestComponentMapping.d.ts"
+
     ],
     moduleFileExtensions: [
         "ts",
@@ -42,4 +50,7 @@ module.exports = {
         "json",
         "node"
     ],
+    moduleNameMapper: {
+        "^@adobe/(.*)$": ["<rootDir>/node_modules/@adobe/$1"]
+    }
 };

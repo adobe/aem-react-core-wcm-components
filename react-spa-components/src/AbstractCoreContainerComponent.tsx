@@ -16,13 +16,16 @@
 
 import * as React from 'react';
 
-import {AllowedComponentsContainer,ContainerProperties, ContainerState, AllowedComponentsProperties} from '@adobe/cq-react-editable-components';
+import {ContainerState, AllowedComponentsProperties} from '@adobe/cq-react-editable-components';
+import {ComponentType} from "react";
+import { Model } from '@adobe/cq-spa-page-model-manager';
 
 export interface CoreContainerProperties extends AllowedComponentsProperties{
-    
+    baseCssClass?:string;
+    activeIndexFromAuthorPanel?:number
 }
 
-export interface CoreContainerItem {
+export interface CoreContainerItem extends Model {
     'cq:panelTitle': string
 }
 
@@ -30,21 +33,22 @@ export interface CoreContainerState extends ContainerState {
 
 }
 
-export abstract class AbstractCoreContainerComponent<P extends CoreContainerProperties, S extends CoreContainerState> extends AllowedComponentsContainer<P,S>{
 
-    baseCssCls:string;
+export const withStandardBaseCssClass = <M extends CoreContainerProperties>
+(
+    Component:ComponentType<M>,
+    defaultBaseCssClass:string
+):React.ComponentType<M>  => {
+    return (props:M) => {
 
-    protected constructor(props:P, baseCssCls:string) {
-        super(props);
-        this.baseCssCls = baseCssCls;
+        const baseCssClass = props.baseCssClass;
+        const toBeUsedCssClass = baseCssClass && baseCssClass.trim().length > 0 ? baseCssClass : defaultBaseCssClass;
+
+        const mergedProps: M= {
+            ...props,
+            baseCssClass: toBeUsedCssClass
+        };
+
+        return <Component {...mergedProps} />;
     }
-
-    get placeholderComponent() {
-
-        if(!this.props.cqItemsOrder || this.props.cqItemsOrder.length === 0){
-            return super.placeholderComponent;
-        }else{
-            return null;
-        }
-    }
-}
+};

@@ -15,33 +15,41 @@
  */
 
 import React from "react";
-import {ComponentMapping} from '@adobe/cq-react-editable-components';
-import {AbstractCoreContainerComponent,CoreContainerProperties,CoreContainerState} from "../../../AbstractCoreContainerComponent";
+import {ComponentMapping, Container} from '@adobe/cq-react-editable-components';
+import {CoreContainerProperties, CoreContainerState, withStandardBaseCssClass, CoreContainerItem} from "../../../AbstractCoreContainerComponent";
 import {TabsV1IsEmptyFn} from "./TabsV1IsEmptyFn";
+import withAuthorPanelSwitch from "../../../withAuthorPanelSwitch";
 
 export interface TabsV1Properties extends CoreContainerProperties{
     
     accessibilityLabel:string;
-    activeItem: string
+    activeItem?: string;
+    cqItems: { [key: string]: CoreContainerItem };
 }
 
 
-export interface TabsV1Sstate extends CoreContainerState{
+export interface TabsV1State extends CoreContainerState{
     activeIndex: number;
 }
 
 
-export default class TabsV1<P extends TabsV1Properties, S extends TabsV1Sstate> extends AbstractCoreContainerComponent<P,S> {
+class TabsV1Impl extends Container<TabsV1Properties,TabsV1State> {
 
-    constructor(props:P) {
-        super(props, 'cmp-tabs');
-        //@ts-ignore
+    constructor(props:TabsV1Properties) {
+        super(props);
+
         this.state = {
             activeIndex: (!!props.activeItem && props.activeItem.length > 0) ? this.props.cqItemsOrder.indexOf(props.activeItem) : 0,
             componentMapping: this.props.componentMapping || ComponentMapping
         };
 
         this.handleTabNavClick = this.handleTabNavClick.bind(this);
+    }
+
+    componentDidUpdate(prevProps: Readonly<TabsV1Properties>, prevState: Readonly<TabsV1State>, snapshot?: any): void {
+        if(this.props.activeIndexFromAuthorPanel !== undefined && prevProps.activeIndexFromAuthorPanel != this.props.activeIndexFromAuthorPanel){
+            this.setState({ activeIndex: this.props.activeIndexFromAuthorPanel } );
+        }
     }
 
       /**
@@ -54,17 +62,17 @@ export default class TabsV1<P extends TabsV1Properties, S extends TabsV1Sstate> 
             //for editing capabilities to work properly, we always need to render each item.
             //we will hide the disabled items instead.
             return (
-                <div>
+                <>
                     {
                         this.childComponents.map((item, index) => {
                             const isVisible = (this.state.activeIndex === index);
                             const styles = { display: (!isVisible) ? 'none' : 'block'};
                             return (
-                                <div style={styles}>{this.childComponents[index]}</div>
+                                <div key={"tab-content-" + index} className={this.props.baseCssClass + '__author-tab-content'} style={styles}>{this.childComponents[index]}</div>
                             )
                         })
                     }
-                </div>
+                </>
             )
         }else{
             //when the editor is disabled, we can just show the active item only.
@@ -90,7 +98,7 @@ export default class TabsV1<P extends TabsV1Properties, S extends TabsV1Sstate> 
 
         return (
             <ol role="tablist"
-                className={this.baseCssCls + '__tablist'}
+                className={this.props.baseCssClass + '__tablist'}
                 aria-label={this.props.accessibilityLabel}
                 aria-multiselectable="false">
                     {
@@ -99,8 +107,9 @@ export default class TabsV1<P extends TabsV1Properties, S extends TabsV1Sstate> 
                             const isActive = (index === this.state.activeIndex);
                             return (
                                 <li role="tab"
+                                    key={"tab-" + index}
                                     onClick={() => this.handleTabNavClick(index)}
-                                    className={this.baseCssCls + '__tab' + (isActive ? ' ' + this.baseCssCls + '__tab--active' : '')}
+                                    className={this.props.baseCssClass + '__tab' + (isActive ? ' ' + this.props.baseCssClass + '__tab--active' : '')}
                                     tabIndex={isActive ? 0 : -1}
                                     data-cmp-hook-tabs="tab">
                                     {tab['cq:panelTitle']}
@@ -117,7 +126,7 @@ export default class TabsV1<P extends TabsV1Properties, S extends TabsV1Sstate> 
 
     get tabContainerProps(){
         const attrs = this.containerProps;
-        attrs['className'] = attrs.className + ' ' + this.baseCssCls;
+        attrs['className'] = attrs.className + ' ' + this.props.baseCssClass;
         attrs['data-cmp-is'] = 'tabs';
         return attrs;
     }
@@ -136,3 +145,5 @@ export default class TabsV1<P extends TabsV1Properties, S extends TabsV1Sstate> 
     }
 
 }
+
+export default withStandardBaseCssClass(withAuthorPanelSwitch(TabsV1Impl), "cmp-tabs");
