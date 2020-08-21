@@ -125,7 +125,7 @@ class TabsV1Impl extends Container<TabsV1Properties,TabsV1State> {
     }
 
     get tabContainerProps(){
-        let attrs = this.containerProps;
+        const attrs = this.containerProps;
         attrs['className'] = attrs.className + ' ' + this.props.baseCssClass;
         attrs['data-cmp-is'] = 'tabs';
         return attrs;
