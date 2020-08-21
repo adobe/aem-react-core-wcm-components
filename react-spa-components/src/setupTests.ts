@@ -19,6 +19,7 @@ import Adapter from 'enzyme-adapter-react-16';
 
 const callbacks: { (message: any): void; } [] = [];
 
+jest.useFakeTimers();
 
 //@ts-ignore
 window.Granite = {

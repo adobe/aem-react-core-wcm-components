@@ -7,7 +7,6 @@ import ReactDOM from 'react-dom';
 import ComponentMapping, {dummyItems} from "../../../TestComponentMapping";
 import {ModelManager} from "@adobe/cq-spa-page-model-manager"
 import {AllowedComponents, AllowedComponent } from "@adobe/cq-react-editable-components"
-import AccordionV1 from "../../accordion/v1/AccordionV1";
 
 const allowedComponent:AllowedComponent = {
     path: "/apps/core/components/dummy",
@@ -140,7 +139,7 @@ it('Changes when you switch slide in author mode', () => {
 });
 
 
-it('Automatically slides forward', (done) => {
+it('Automatically slides forward', () => {
 
     // const Wrapped = withComponentMappingContext(AccordionV1);
     const wrapper = mount(<CarouselV1  {...defaultProps} componentMapping={ComponentMapping}/>);
@@ -149,14 +148,9 @@ it('Automatically slides forward', (done) => {
     expect(content).toHaveLength(1);
     validateComponentPresent(wrapper, "Component1");
 
-    setTimeout( ()=> {
-        wrapper.update();
-        setTimeout(()=> {
-            validateComponentPresent(wrapper, "Component2");
+    jest.advanceTimersByTime(150);
 
-            done();
-        },1000);
-    }, 200)
+    validateComponentPresent(wrapper, "Component2");
 
 });
 //
