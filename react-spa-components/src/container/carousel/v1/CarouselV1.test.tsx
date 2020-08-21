@@ -139,133 +139,128 @@ it('Changes when you switch slide in author mode', () => {
     validateComponentPresent(wrapper,"Component1");
 });
 
-//fails in CI
-// it('Automatically slides forward', (done) => {
-//
-//     // const Wrapped = withComponentMappingContext(AccordionV1);
-//     const wrapper = mount(<CarouselV1  {...defaultProps} componentMapping={ComponentMapping}/>);
-//     const content = wrapper.find('.cmp-carousel__content');
-//
-//     expect(content).toHaveLength(1);
-//     validateComponentPresent(wrapper, "Component1");
-//
-//     setTimeout(()=> {
-//         wrapper.update();
-//         validateComponentPresent(wrapper, "Component2");
-//
-//         done();
-//     },1000);
-//
-// });
-// //
-// it('Does NOT Automatically slide forward if we turn it off', (done) => {
-//
-//     // const Wrapped = withComponentMappingContext(AccordionV1);
-//     const wrapper = mount(<CarouselV1  {...defaultProps} autoplay={false} componentMapping={ComponentMapping}/>);
-//     const content = wrapper.find('.cmp-carousel__content');
-//
-//     expect(content).toHaveLength(1);
-//
-//     const pauseButton = wrapper.find(".cmp-carousel__action--pause");
-//
-//     expect(pauseButton).toHaveLength(0);
-//
-//     setTimeout(()=> {
-//         validateComponentPresent(wrapper, "Component1");
-//
-//         done();
-//     },1000);
-//
-// });
-//
-// it('Does NOT Automatically slide forward if we click pause, and resumes if we click resume', (done) => {
-//
-//     // const Wrapped = withComponentMappingContext(AccordionV1);
-//     const wrapper = mount(<CarouselV1  {...defaultProps} componentMapping={ComponentMapping}/>);
-//     const content = wrapper.find('.cmp-carousel__content');
-//
-//     expect(content).toHaveLength(1);
-//
-//     const pauseButton = wrapper.find(".cmp-carousel__action--pause");
-//
-//     pauseButton.simulate("click");
-//
-//     validateComponentPresent(wrapper, "Component1");
-//
-//     setTimeout(()=> {
-//         wrapper.update();
-//         validateComponentPresent(wrapper, "Component1");
-//
-//         const resumeButton = wrapper.find(".cmp-carousel__action--play");
-//
-//         resumeButton.simulate("click");
-//         setTimeout( ()=> {
-//             resumeButton.simulate("click");
-//             done();
-//         }, 500);
-//
-//
-//     },500);
-//
-// });
-//
-//
-// it('Temporary stops sliding if we hover over it, and resume once we hover out.', (done) => {
-//
-//     // const Wrapped = withComponentMappingContext(AccordionV1);
-//     const wrapper = mount(<CarouselV1  {...defaultProps} componentMapping={ComponentMapping}/>);
-//     const content = wrapper.find('.cmp-carousel__content');
-//
-//     expect(content).toHaveLength(1);
-//
-//     //trigger hover in
-//     content.simulate('mouseenter');
-//
-//     setTimeout(()=> {
-//         wrapper.update();
-//         validateComponentPresent(wrapper, "Component1");
-//
-//
-//         //trigger hover out
-//         content.simulate('mouseleave');
-//
-//         setTimeout(() => {
-//
-//             validateComponentPresent(wrapper, "Component2");
-//
-//             done();
-//         }, 1000);
-//
-//     },1000);
-//
-// });
-//
-//
-// it('Does not temporarily stop sliding if I hover over it, if we disabled autopause', (done) => {
-//
-//     // const Wrapped = withComponentMappingContext(AccordionV1);
-//     const wrapper = mount(<CarouselV1  {...defaultProps} autopauseDisabled={true}  componentMapping={ComponentMapping}/>);
-//     const content = wrapper.find('.cmp-carousel__content');
-//
-//     expect(content).toHaveLength(1);
-//
-//     //trigger hover in
-//     content.simulate('mouseenter');
-//
-//     validateComponentPresent(wrapper, "Component1");
-//
-//     setTimeout(()=> {
-//         wrapper.update();
-//         validateComponentPresent(wrapper, "Component2");
-//
-//
-//         done();
-//
-//     },1000);
-//
-// });
-//
-//
+
+it('Automatically slides forward', (done) => {
+
+    // const Wrapped = withComponentMappingContext(AccordionV1);
+    const wrapper = mount(<CarouselV1  {...defaultProps} componentMapping={ComponentMapping}/>);
+    const content = wrapper.find('.cmp-carousel__content');
+
+    expect(content).toHaveLength(1);
+    validateComponentPresent(wrapper, "Component1");
+
+    setTimeout(()=> {
+        validateComponentPresent(wrapper, "Component2");
+
+        done();
+    },1000);
+
+});
+
+it('Does NOT Automatically slide forward if we turn it off', (done) => {
+
+    // const Wrapped = withComponentMappingContext(AccordionV1);
+    const wrapper = mount(<CarouselV1  {...defaultProps} autoplay={false} componentMapping={ComponentMapping}/>);
+    const content = wrapper.find('.cmp-carousel__content');
+
+    expect(content).toHaveLength(1);
+
+    const pauseButton = wrapper.find(".cmp-carousel__action--pause");
+
+    expect(pauseButton).toHaveLength(0);
+
+    setTimeout(()=> {
+        validateComponentPresent(wrapper, "Component1");
+
+        done();
+    },1000);
+
+});
+
+it('Does NOT Automatically slide forward if we click pause, and resumes if we click resume', (done) => {
+
+    // const Wrapped = withComponentMappingContext(AccordionV1);
+    const wrapper = mount(<CarouselV1  {...defaultProps} componentMapping={ComponentMapping}/>);
+    const content = wrapper.find('.cmp-carousel__content');
+
+    expect(content).toHaveLength(1);
+
+    const pauseButton = wrapper.find(".cmp-carousel__action--pause");
+
+    pauseButton.simulate("click");
+
+    validateComponentPresent(wrapper, "Component1");
+
+    setTimeout(()=> {
+        validateComponentPresent(wrapper, "Component1");
+
+        const resumeButton = wrapper.find(".cmp-carousel__action--play");
+
+        resumeButton.simulate("click");
+        setTimeout( ()=> {
+            resumeButton.simulate("click");
+            done();
+        }, 500);
+
+
+    },500);
+
+});
+
+
+it('Temporary stops sliding if we hover over it, and resume once we hover out.', (done) => {
+
+    // const Wrapped = withComponentMappingContext(AccordionV1);
+    const wrapper = mount(<CarouselV1  {...defaultProps} componentMapping={ComponentMapping}/>);
+    const content = wrapper.find('.cmp-carousel__content');
+
+    expect(content).toHaveLength(1);
+
+    //trigger hover in
+    content.simulate('mouseenter');
+
+    setTimeout(()=> {
+        wrapper.update();
+        validateComponentPresent(wrapper, "Component1");
+
+
+        //trigger hover out
+        content.simulate('mouseleave');
+
+        setTimeout(() => {
+            validateComponentPresent(wrapper, "Component2");
+
+            done();
+        }, 1000);
+
+    },1000);
+
+});
+
+
+it('Does not temporarily stop sliding if I hover over it, if we disabled autopause', (done) => {
+
+    // const Wrapped = withComponentMappingContext(AccordionV1);
+    const wrapper = mount(<CarouselV1  {...defaultProps} autopauseDisabled={true}  componentMapping={ComponentMapping}/>);
+    const content = wrapper.find('.cmp-carousel__content');
+
+    expect(content).toHaveLength(1);
+
+    //trigger hover in
+    content.simulate('mouseenter');
+
+    validateComponentPresent(wrapper, "Component1");
+
+    setTimeout(()=> {
+        validateComponentPresent(wrapper, "Component2");
+
+
+        done();
+    },1000);
+
+});
+
+
 it('Renders a basic carousel without autoplay', () => {
 
     // const Wrapped = withComponentMappingContext(AccordionV1);
