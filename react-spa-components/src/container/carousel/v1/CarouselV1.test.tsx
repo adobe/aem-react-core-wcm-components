@@ -138,25 +138,25 @@ it('Changes when you switch slide in author mode', () => {
     window.Granite.author.trigger("/content/carousel-path", 0);
     validateComponentPresent(wrapper,"Component1");
 });
-//
-//
-// it('Automatically slides forward', (done) => {
-//
-//     // const Wrapped = withComponentMappingContext(AccordionV1);
-//     const wrapper = mount(<CarouselV1  {...defaultProps} componentMapping={ComponentMapping}/>);
-//     const content = wrapper.find('.cmp-carousel__content');
-//
-//     expect(content).toHaveLength(1);
-//     validateComponentPresent(wrapper, "Component1");
-//
-//     setTimeout(()=> {
-//         wrapper.update();
-//         validateComponentPresent(wrapper, "Component2");
-//
-//         done();
-//     },1000);
-//
-// });
+
+
+it('Automatically slides forward', (done) => {
+
+    // const Wrapped = withComponentMappingContext(AccordionV1);
+    const wrapper = mount(<CarouselV1  {...defaultProps} componentMapping={ComponentMapping}/>);
+    const content = wrapper.find('.cmp-carousel__content');
+
+    expect(content).toHaveLength(1);
+    validateComponentPresent(wrapper, "Component1");
+
+    setTimeout(()=> {
+        wrapper.update();
+        validateComponentPresent(wrapper, "Component2");
+
+        done();
+    },1000);
+
+});
 //
 // it('Does NOT Automatically slide forward if we turn it off', (done) => {
 //
