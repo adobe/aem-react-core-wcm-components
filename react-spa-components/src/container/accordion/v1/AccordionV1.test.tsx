@@ -63,6 +63,7 @@ beforeEach(() => {
 
 });
 
+/*
 it('Renders a basic accordion properly', () => {
 
     const wrapper = mount(<AccordionV1  {...defaultProps} componentMapping={ComponentMapping}/>);
@@ -154,3 +155,5 @@ it('Changes item when you click - multi expansion', () => {
     expect(component).toHaveLength(2);
 
 });
+
+*/
