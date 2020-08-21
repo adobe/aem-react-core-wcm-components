@@ -75,6 +75,7 @@ const validateComponentPresent = (wrapper:ReactWrapper, text:string) =>{
     expect(dummyComp.text()).toEqual(text);
 };
 
+/*
 it('Renders a basic carousel properly and reacts on clicks', () => {
 
     // const Wrapped = withComponentMappingContext(AccordionV1);
@@ -299,3 +300,4 @@ it('Renders out all slides in author mode with hidden CSS', () => {
     expect(dummyComp).toHaveLength(2);
 
 });
+*/
