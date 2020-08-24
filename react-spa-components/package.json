@@ -32,11 +32,13 @@
   "dependencies": {},
   "peerDependencies": {
     "react": "^16.13.1",
+    "@adobe/aem-core-components-react-base": "file:../react-base-components",
     "@adobe/cq-react-editable-components": "1.3.1",
     "@adobe/cq-spa-component-mapping": "^1.1.0",
     "@adobe/cq-spa-page-model-manager": "1.2.0"
   },
   "devDependencies": {
+    "@adobe/aem-core-components-react-base": "file:../react-base-components",
     "@adobe/cq-react-editable-components": "1.3.1",
     "@adobe/cq-spa-component-mapping": "^1.1.0",
     "@adobe/cq-spa-page-model-manager": "1.2.0",

@@ -32,23 +32,3 @@ export interface CoreContainerItem extends Model {
 export interface CoreContainerState extends ContainerState {
 
 }
-
-
-export const withStandardBaseCssClass = <M extends CoreContainerProperties>
-(
-    Component:ComponentType<M>,
-    defaultBaseCssClass:string
-):React.ComponentType<M>  => {
-    return (props:M) => {
-
-        const baseCssClass = props.baseCssClass;
-        const toBeUsedCssClass = baseCssClass && baseCssClass.trim().length > 0 ? baseCssClass : defaultBaseCssClass;
-
-        const mergedProps: M= {
-            ...props,
-            baseCssClass: toBeUsedCssClass
-        };
-
-        return <Component {...mergedProps} />;
-    }
-};

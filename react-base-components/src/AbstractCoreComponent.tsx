@@ -32,13 +32,11 @@ export interface CoreComponentState {
 
 }
 
-export const withConditionalPlaceHolder = <M extends CoreComponentModel>
-            (
-                Component:ComponentType<M>, 
-                isEmpty:(props:M) => boolean, 
-                defaultBaseCssClass:string,
-                componentTitle?:string, emptyText?:string
-            ):React.ComponentType<M>  => {
+export const withStandardBaseCssClass = <M extends CoreComponentModel>
+(
+    Component:ComponentType<M>,
+    defaultBaseCssClass:string
+):React.ComponentType<M>  => {
     return (props:M) => {
 
         const baseCssClass = props.baseCssClass;
@@ -49,11 +47,23 @@ export const withConditionalPlaceHolder = <M extends CoreComponentModel>
             baseCssClass: toBeUsedCssClass
         };
 
-        const isEmptyResult:boolean = isEmpty(mergedProps);
+        return <Component {...mergedProps} />;
+    }
+};
+
+export const withConditionalPlaceHolder = <M extends CoreComponentModel>
+            (
+                Component:ComponentType<M>, 
+                isEmpty:(props:M) => boolean,
+                componentTitle?:string, emptyText?:string
+            ):React.ComponentType<M>  => {
+    return (props:M) => {
+
+        const isEmptyResult:boolean = isEmpty(props);
         return (
             <>
                 { !isEmptyResult &&
-                <Component {...mergedProps} />
+                <Component {...props} />
                 }
                 {
                     (isEmptyResult && props.isInEditor && !props.hidePlaceHolder) &&

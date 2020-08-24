@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 import React, {MouseEvent} from 'react';
-import {CoreComponentModel, withConditionalPlaceHolder} from "../../../AbstractCoreComponent";
+import {CoreComponentModel, withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
 import {DownloadV1IsEmptyFn} from "./DownloadV1IsEmptyFn";
 
 
@@ -148,7 +148,7 @@ class DownloadV1Impl extends React.Component<DownloadV1Model> {
 
 const DownloadV1 = (props:DownloadV1Model) => {
 
-    const Wrapped = withConditionalPlaceHolder(DownloadV1Impl, DownloadV1IsEmptyFn, "cmp-download", "Download V1");
+    const Wrapped = withConditionalPlaceHolder(withStandardBaseCssClass(DownloadV1Impl, "cmp-download"), DownloadV1IsEmptyFn, "Download V1");
     return <Wrapped {...props}/>
 };
 

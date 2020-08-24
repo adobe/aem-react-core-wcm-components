@@ -16,7 +16,7 @@
 
 
 import React, {Component} from "react";
-import {withConditionalPlaceHolder} from "../../../AbstractCoreComponent";
+import {withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
 import ImageV2 from "../../../authoring/image/v2/ImageV2";
 import TitleV2 from "../../../authoring/title/v2/TitleV2";
 import {RoutedLink} from "../../../routing/RoutedLink";
@@ -114,7 +114,7 @@ class TeaserV1Impl extends Component<TeaserV1Model>{
 
 
 const TeaserV1 = (props:TeaserV1Model) => {
-    const Wrapped = withConditionalPlaceHolder(TeaserV1Impl, TeaserV1IsEmptyFn, "cmp-teaser", "Teaser V1")
+    const Wrapped = withConditionalPlaceHolder(withStandardBaseCssClass(TeaserV1Impl, "cmp-teaser"), TeaserV1IsEmptyFn, "Teaser V1")
     return <Wrapped {...props}/>
 };
 
