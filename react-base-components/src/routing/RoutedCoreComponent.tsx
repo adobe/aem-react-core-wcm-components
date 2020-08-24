@@ -25,6 +25,6 @@ export interface RoutedCoreComponentModel extends CoreComponentModel, RoutedMode
 
 }
 
-export function isItemRouted(selfProps:RoutedModel, item:RoutedModel){
+export function setItemRoutedProp(selfProps:RoutedModel, item:RoutedModel):boolean{
     return ((selfProps.routed === true && item.routed !== false) || item.routed === true);
 }

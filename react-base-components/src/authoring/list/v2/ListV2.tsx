@@ -14,19 +14,22 @@
  *  limitations under the License.
  */
 
-import React, {Component} from 'react';
-import {withConditionalPlaceHolder} from "../../../AbstractCoreComponent";
-import {isItemRouted, RoutedCoreComponentModel, RoutedModel} from "../../../routing/RoutedCoreComponent";
+import React from 'react';
+import {HasBaseCssClass, withConditionalPlaceHolder} from "../../../AbstractCoreComponent";
+import { RoutedCoreComponentModel, RoutedModel, setItemRoutedProp} from "../../../routing/RoutedCoreComponent";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {ListV2IsEmptyFn} from "./ListV2IsEmptyFn";
 
-export interface ListV2Item extends RoutedModel{
+
+export interface ListV2Item extends RoutedModel,HasBaseCssClass{
+    index?: number
     url?:string
     lastModified?:number
     lastModifiedFormatted?:string
     description?:string
     path:string
-    title:string
+    title:string,
+    showModificationDate?: boolean
 }
 
 
@@ -38,67 +41,60 @@ export interface ListV2Model extends RoutedCoreComponentModel{
     linkItems: boolean
 }
 
-class ListV2Impl extends Component<ListV2Model> {
+export const ListV2ItemModificationDate = (item:ListV2Item) => {
+    const dateStringToDisplay = item.lastModifiedFormatted ? item.lastModifiedFormatted : "";
+    return (
+        <span className={item.baseCssClass + '__item-date'}>{dateStringToDisplay}</span>
+    )
+};
 
-    renderListItemContent(item:ListV2Item, index:number){
+export const ListV2ItemContent = (item:ListV2Item) => {
+    return (
+        <>
+            <span className={item.baseCssClass + '__item-title'}>{item.title}</span>
+            {item.showModificationDate && <ListV2ItemModificationDate {...item }/>}
+        </>
+    )
+};
 
+export const ListV2Anchor = (item:ListV2Item) => {
+
+    return (
+        <RoutedLink isRouted={item.routed} className={item.baseCssClass + '__item-link'} to={item.url}>
+            <ListV2ItemContent {...item}/>
+        </RoutedLink>
+    )
+};
+
+export const ListV2ItemDescription = (item: ListV2Item) => {
+    return (
+        <span className={item.baseCssClass + '__item-description'}>${item.description}</span>
+    )
+};
+
+export const ListV2Impl = (props:ListV2Model) => {
+
+    const ListV2Item = (item:ListV2Item) => {
         return (
-            <>
-                <span className={this.props.baseCssClass + '__item-title'}>{item.title}</span>
-                {this.props.showModificationDate && this.renderItemModificationDate(item,index)}
-            </>
-        )
-    }
-
-    renderItemModificationDate(item:ListV2Item, index:number){
-
-        const dateStringToDisplay = item.lastModifiedFormatted ? item.lastModifiedFormatted : "";
-        return (
-            <span className={this.props.baseCssClass + '__item-date'}>{dateStringToDisplay}</span>
-        )
-    }
-
-    renderListAnchor(item:ListV2Item, index:number){
-
-        return (
-            <RoutedLink isRouted={isItemRouted(this.props, item)} className={this.props.baseCssClass + '__item-link'} to={item.url}>
-                {this.renderListItemContent(item,index)}
-            </RoutedLink>
-        )
-    }
-
-    renderListItemDescription(item: ListV2Item, index: number) {
-        return (
-            <span className={this.props.baseCssClass + '__item-description'}>${item.description}</span>
-        )
-    }
-
-    renderListItem(item:ListV2Item, index:number){
-        return (
-            <li className={this.props.baseCssClass + '__item'} key={"cmp-list-" + index}>
+            <li className={props.baseCssClass + '__item'} >
                 <article>
-                    {this.props.linkItems && !!item.url && this.renderListAnchor(item,index)}
-                    {!this.props.linkItems && this.renderListItemContent(item,index)}
-                    {this.props.showDescription && this.renderListItemDescription(item,index)}
+                    {props.linkItems && !!item.url && <ListV2Anchor {...item}/>}
+                    {!props.linkItems && <ListV2ItemContent {...item} index={item.index} />}
+                    {props.showDescription && <ListV2ItemDescription {...item}/>}
                 </article>
             </li>
         )
-    }
+    };
 
-    render(){
-
-        return (
-            <ul className={this.props.baseCssClass}>
-                {this.props.items.map((item, index) => this.renderListItem(item, index))}
-            </ul>
-        )
-    }
+    return (
+        <ul className={props.baseCssClass}>
+            {props.items.map((item, index) => <ListV2Item {...item} key={"cmp-list-" + index} baseCssClass={props.baseCssClass} routed={setItemRoutedProp(props,item)} index={index}  />)}
+        </ul>
+    )
+};
 
 
-}
-
-
-const ListV2 = (props:ListV2Model) => {
+export const ListV2 = (props:ListV2Model) => {
     const Wrapped = withConditionalPlaceHolder(ListV2Impl, ListV2IsEmptyFn, "cmp-list", "List V2")
     return <Wrapped {...props}/>
 };
