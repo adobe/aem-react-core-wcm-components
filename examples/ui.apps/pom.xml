@@ -126,7 +126,7 @@
         <!-- AEM Core Components Bundle -->
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>core.wcm.components.react.bundle</artifactId>
+            <artifactId>core.wcm.components.examples.react.bundle</artifactId>
             <version>${project.version}</version>
             <scope>provided</scope>
         </dependency>
