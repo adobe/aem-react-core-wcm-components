@@ -18,7 +18,8 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import {mount} from 'enzyme';
 
-import {CoreComponentModel, withConditionalPlaceHolder} from './AbstractCoreComponent';
+
+import {CoreComponentModel,withStandardBaseCssClass, withConditionalPlaceHolder} from './AbstractCoreComponent';
 
 interface TestType extends CoreComponentModel{
     forceEmptyFlag:boolean
@@ -32,7 +33,7 @@ class ImplementingClass extends Component<TestType>{
 
 }
 
-const WrappedClass = withConditionalPlaceHolder(ImplementingClass, (props) => props.forceEmptyFlag, "base-class", "AwesomeComponent");
+const WrappedClass = withConditionalPlaceHolder(withStandardBaseCssClass(ImplementingClass,"base-class"), (props) => props.forceEmptyFlag, "AwesomeComponent");
 
 it('Renders without crashing', () => {
     const div = document.createElement('div');
@@ -56,7 +57,7 @@ it('Should not show anything if wcmmode is disabled and component is empty', () 
 
 it('Should show the proper placeholder with a custom text if wcmmode is edit and component is empty', () => {
 
-    const WrappedOverride = withConditionalPlaceHolder(ImplementingClass, (props) => props.forceEmptyFlag, "base-class", "AwesomeComponent", "Custom Configure Text");
+    const WrappedOverride = withConditionalPlaceHolder(ImplementingClass, (props) => props.forceEmptyFlag,  "AwesomeComponent", "Custom Configure Text");
 
     const wrapper = mount(<WrappedOverride  hidePlaceHolder={false} isInEditor={true} forceEmptyFlag={true}/>);
     expect(wrapper.html()).toEqual("<div class=\"cq-placeholder\">AwesomeComponent - Custom Configure Text</div>");

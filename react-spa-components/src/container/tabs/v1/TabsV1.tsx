@@ -16,9 +16,8 @@
 
 import React from "react";
 import {ComponentMapping, Container} from '@adobe/cq-react-editable-components';
-import {CoreContainerProperties, CoreContainerState, withStandardBaseCssClass, CoreContainerItem} from "../../../AbstractCoreContainerComponent";
+import {CoreContainerProperties, CoreContainerState, withAuthorPanelSwitch, withStandardBaseCssClass, CoreContainerItem} from "../../../AbstractCoreContainerComponent";
 import {TabsV1IsEmptyFn} from "./TabsV1IsEmptyFn";
-import withAuthorPanelSwitch from "../../../withAuthorPanelSwitch";
 
 export interface TabsV1Properties extends CoreContainerProperties{
     

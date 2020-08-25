@@ -16,11 +16,10 @@
 
 import * as React from 'react';
 
-import {CoreContainerProperties, CoreContainerState, withStandardBaseCssClass} from "../../../AbstractCoreContainerComponent";
+
+import {CoreContainerProperties, CoreContainerState, withAuthorPanelSwitch, withStandardBaseCssClass} from "../../../AbstractCoreContainerComponent";
 import {ComponentMapping, Container} from '@adobe/cq-react-editable-components';
 import {AccordionV1IsEmptyFn} from "./AccordionV1IsEmptyFn";
-import withAuthorPanelSwitch from "../../../withAuthorPanelSwitch";
-import {TabsV1Properties, TabsV1State} from "../../..";
 
 export interface AccordionV1Properties extends CoreContainerProperties{
     singleExpansion: boolean;

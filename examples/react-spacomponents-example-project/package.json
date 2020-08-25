@@ -19,25 +19,26 @@
   "devDependencies": {
     "aempack": "^1.1.9",
     "del-cli": "^3.0.0",
+    "@craco/craco": "^5.6.4",
+    "craco-alias": "^2.1.1",
     "move-cli": "^1.2.1",
     "cross-env": "^7.0.2",
     "fs-extra": "^9.0.0",
     "node-sass": "^4.13.1",
-    "typescript": "3.9.7",
+    "typescript": "4.0.2",
     "@types/react-router-dom": "^5.1.5",
     "mini-css-extract-plugin": "latest"
   },
   "scripts": {
-    "build": "npm run clean && react-scripts build && move-cli build ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm/react/clientlibs/react-spacomponents/resources",
-    "build-prod": "npm run clean && cross-env GENERATE_SOURCEMAP=false react-scripts build && move-cli build ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm/react/clientlibs/react-spacomponents/resources",
+    "build": "npm run clean && craco build && move-cli build ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm/react/clientlibs/react-spacomponents/resources",
+    "build-prod": "npm run clean && cross-env GENERATE_SOURCEMAP=false craco build && move-cli build ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm/react/clientlibs/react-spacomponents/resources",
     "aempack": "cross-env NODE_ENV=development node scripts/aempack.js",
-    "start": "react-scripts start",
+    "start": "craco start",
     "install:link-deps": "npm install && npm run link-deps",
     "link-deps": "npm link @adobe/cq-spa-page-model-manager && npm link @adobe/cq-spa-component-mapping && npm link @adobe/cq-react-editable-components",
-    "clean": "del ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm/react/clientlibs/react-spacomponents/resources --force",
+    "clean": "del ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm/react/clientlibs/react-spacomponents/resources --force && rm -rf coverage/ dist/ src/tsconfig.types.tsbuildinfo",
     "mv": "move-cli build ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm/react/clientlibs/react-spacomponents/resources",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "craco test"
   },
   "eslintConfig": {
     "extends": "react-app"

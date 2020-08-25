@@ -3,6 +3,7 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const webpackConfig = require('react-scripts/config/webpack.config.js')('development');
 const paths = require('../config/paths');
 const path = require('path');
+const aliases = require('../config/aliases');
 
 webpackConfig.optimization = {
     splitChunks: {
@@ -53,15 +54,13 @@ webpackConfig.plugins.forEach(plugin => {
         plugin.options.chunkFilename = 'static/css/[name].[contenthash:8].chunk.css';
     }
 });
-webpackConfig.resolve.alias = {
-    "react": path.resolve("./node_modules/react"),
-    "react-router": path.resolve("./node_modules/react-router"),
-    "react-router-dom": path.resolve("./node_modules/react-router-dom"),
-    "@adobe/cq-react-editable-components":  path.resolve("./node_modules/@adobe/cq-react-editable-components"),
-    "@adobe/cq-spa-component-mapping":  path.resolve("./node_modules/@adobe/cq-spa-component-mapping"),
-    "@adobe/cq-spa-page-model-manager":  path.resolve("./node_modules/@adobe/cq-spa-page-model-manager"),
-    "@adobe/aem-core-components-react-base":  path.resolve("./node_modules/@adobe/aem-core-components-react-base"),
-    "@adobe/aem-core-components-react-spa":  path.resolve("./node_modules/@adobe/aem-core-components-react-spa")
-};
+
+const mappedAliases = {};
+Object.keys(aliases).map((key) => {
+    const alias = aliases[key];
+    mappedAliases[key] = path.resolve(alias);
+});
+
+webpackConfig.resolve.alias = mappedAliases;
 
 module.exports = webpackConfig;

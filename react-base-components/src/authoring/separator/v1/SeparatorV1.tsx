@@ -15,7 +15,7 @@
  */
 
 import React, {Component} from "react";
-import {CoreComponentModel, withConditionalPlaceHolder} from "../../../AbstractCoreComponent";
+import {CoreComponentModel, withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
 import {SeparatorV1IsEmptyFn} from "./SeparatorV1IsEmptyFn";
 
 const SeparatorV1Impl = (props:CoreComponentModel) => {
@@ -29,7 +29,7 @@ const SeparatorV1Impl = (props:CoreComponentModel) => {
 };
 
 const SeparatorV1 = (props:CoreComponentModel) => {
-    const Wrapped = withConditionalPlaceHolder(SeparatorV1Impl, SeparatorV1IsEmptyFn, "cmp-separator", "Separator V1")
+    const Wrapped = withConditionalPlaceHolder(withStandardBaseCssClass(SeparatorV1Impl, "cmp-separator"), SeparatorV1IsEmptyFn, "Separator V1")
     return <Wrapped {...props}/>
 };
 

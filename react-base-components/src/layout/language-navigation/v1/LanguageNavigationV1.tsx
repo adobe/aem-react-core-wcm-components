@@ -15,7 +15,7 @@
  */
 
 import React from 'react';
-import {withConditionalPlaceHolder} from "../../../AbstractCoreComponent";
+import {withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
 import {determineIsActive, NavigationV1Group, NavigationV1Item, NavigationV1Model} from "../../navigation/v1/NavigationV1";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {isItemRouted} from "../../../routing/RoutedCoreComponent";
@@ -115,7 +115,7 @@ const LanguageNavigationV1Impl = (props:LanguageNavigationV1Model) => {
 }
 
 const LanguageNavigation = (props:LanguageNavigationV1Model) => {
-    const Wrapped = withConditionalPlaceHolder(LanguageNavigationV1Impl, LanguageNavigationV1IsEmptyFn, "cmp-languagenavigation", "LanguageNavigation V1")
+    const Wrapped = withConditionalPlaceHolder(withStandardBaseCssClass(LanguageNavigationV1Impl, "cmp-languagenavigation"), LanguageNavigationV1IsEmptyFn, "LanguageNavigation V1")
     return <Wrapped {...props}/>
 };
 

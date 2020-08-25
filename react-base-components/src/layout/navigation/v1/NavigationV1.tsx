@@ -15,7 +15,7 @@
  */
 
 import React from 'react';
-import {HasBaseCssClass, withConditionalPlaceHolder} from "../../../AbstractCoreComponent";
+import {HasBaseCssClass, withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
 import {isItemRouted, RoutedCoreComponentModel, RoutedModel} from "../../../routing/RoutedCoreComponent";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {NavigationV1IsEmptyFn} from "./NavigationV1IsEmptyFn";
@@ -72,7 +72,7 @@ export const NavigationV1Item = (item:NavigationV1Item) => {
         </li>
     )
 
-}
+};
 
 export const NavigationV1Impl = (props:NavigationV1Model) => {
 
@@ -100,7 +100,7 @@ export const NavigationV1Impl = (props:NavigationV1Model) => {
 
 
 export const NavigationV1 = (props:NavigationV1Model) => {
-    const Wrapped = withConditionalPlaceHolder(NavigationV1Impl, NavigationV1IsEmptyFn, "cmp-navigation", "Navigation V1")
+    const Wrapped = withConditionalPlaceHolder(withStandardBaseCssClass(NavigationV1Impl, "cmp-navigation"), NavigationV1IsEmptyFn, "Navigation V1")
     return <Wrapped {...props}/>
 };
 
