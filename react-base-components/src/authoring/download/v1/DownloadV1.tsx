@@ -34,115 +34,100 @@ export interface DownloadV1Model extends CoreComponentModel{
     handleOnClick?(event: MouseEvent): void
 }
 
+export const getDownloadV1Href = (props:DownloadV1Model) => (!!props.url && props.url.length > 0) ? props.url : '#';
 
-class DownloadV1Impl extends React.Component<DownloadV1Model> {
+export const DownloadV1HeadingContent = (props:DownloadV1Model) => {
 
-    displayFileName:boolean;
-    displaySize: boolean;
-    displayFormat: boolean;
-
-    public static defaultProps = {
-        titleType: 'h3',
-        displaySize: false,
-        displayFormat: false,
-        displayFilename: false
+    const handleOnClick = (event:MouseEvent) => {
+        props.handleOnClick && props.handleOnClick(event);
     };
 
-    constructor(props:DownloadV1Model) {
-        super(props);
-        this.handleOnClick = this.handleOnClick.bind(this);
-        this.displayFileName = props.displayFilename && !!props.filename;
-        this.displaySize = props.displaySize && !!props.size;
-        this.displayFormat = props.displayFormat && !!props.format;
-        this.handleOnClick = this.handleOnClick.bind(this);
-    }
+    return (
+        <>
+            {!!props.url || !!props.handleOnClick && (
+                <a onClick={handleOnClick}
+                   className={props.baseCssClass + '__title-link'}
+                   href={getDownloadV1Href(props)}>
+                    {props.title}
+                </a>
+            )}
+            {!props.url && ( <> {props.title} </>)}
+        </>
+    )
+};
 
-    handleOnClick(event:MouseEvent){
-        if(this.props.handleOnClick){
-            this.props.handleOnClick(event);
-        }
-    }
 
-
-    renderHeadingContent(){
-        return (
-            <>
-                {!!this.props.url || !!this.props.handleOnClick && (
-                    <a onClick={this.handleOnClick}
-                       className={this.props.baseCssClass + '__title-link'}
-                       href={this.getHref()}>
-                        {this.props.title}
-                    </a>
-                )}
-                {!this.props.url && ( <> {this.props.title} </>)}
-            </>
+export const DownloadV1HeadingElement = (props:DownloadV1Model) => {
+    
+    const {titleType = 'h3'} = props;
+    
+    return (
+        React.createElement(
+            `${titleType}`,
+            {
+                className: props.baseCssClass + '__title"',
+            },
+            <DownloadV1HeadingContent {...props}/>
         )
-    }
+    )
+};
 
-    renderHeading(){
-        return (
-            React.createElement(
-                `${this.props.titleType}`,
-                {
-                    className: this.props.baseCssClass + '__title"',
-                },
-                this.renderHeadingContent()
-            )
-        )
-    }
+export const renderProperty = ( label: string, content: string|undefined, cssClassModifier: string,baseCssClass?: string) => {
+    const cssClass = `${baseCssClass}__property ${baseCssClass}__property--' + ${cssClassModifier}`;
+    return (
+        <div className={cssClass}>
+            <dt className={baseCssClass + '__property-label'}>{label}</dt>
+            <dd className={baseCssClass + '__property-content'}>{content}</dd>
+        </div>
+    );
+};
 
-    renderDetails(){
-        return (
-            <dl className={this.props.baseCssClass + '__properties'}>
-                {this.displayFileName && this.renderProperty('Filename', this.props.filename, 'filename')}
-                {this.displaySize     && this.renderProperty('Size',     this.props.size,     'size')}
-                {this.displayFormat   && this.renderProperty('Format',   this.props.format,   'format')}
-            </dl>
-        )
-    }
-    render(){
+export const DownloadV1Details = (props:DownloadV1Model) => {
+    const { displayFilename = false,displaySize = false,  displayFormat = false} = props;
 
-        const cssClass = this.props.baseCssClass + ( this.props.isInEditor  ? ' cq-dd-file' : '');
-        return (
-            <div className={cssClass}>
-                {!!this.props.title && this.renderHeading()}
-                {!!this.props.description && this.renderDescription()}
-                {(this.displayFileName || this.displaySize || this.displayFormat) && this.renderDetails()}
-                {this.renderDownloadLink()}
+    return (
+        <dl className={props.baseCssClass + '__properties'}>
+            {displayFilename && renderProperty('Filename', props.filename, 'filename',props.baseCssClass)}
+            {displaySize     && renderProperty('Size',     props.size,     'size',props.baseCssClass)}
+            {displayFormat   && renderProperty('Format',   props.format,   'format',props.baseCssClass)}
+        </dl>
+    )
+};
 
-            </div>
-        )
-    }
+export const DownloadV1Description = (props:DownloadV1Model) => {
+    const html:string = String(props.description) || '';
+    return <div className={props.baseCssClass + '__description'} dangerouslySetInnerHTML={{__html: html}}></div>
+};
 
-    renderDescription() {
-        const html:string = String(this.props.description) || '';
-        return (
-            <div className={this.props.baseCssClass + '__description'} dangerouslySetInnerHTML={{__html: html}}></div>
-        )
-    }
+export const DownloadV1Link = (props:DownloadV1Model) => {
 
-    renderDownloadLink() {
-        return (
-            <a onClick={this.handleOnClick} className={this.props.baseCssClass + '__action'} href={this.getHref()}>
-                <span className={this.props.baseCssClass + '__action-text'}>{this.props.actionText}</span>
-            </a>
-        )
-    }
+    const handleOnClick = (event:MouseEvent) => {
+        props.handleOnClick && props.handleOnClick(event);
+    };
 
-    renderProperty(label: string, content: string|undefined, cssClassModifier: string) {
-        const cssClass = `${this.props.baseCssClass}__property ${this.props.baseCssClass}__property--' + ${cssClassModifier}`;
-        return (
-            <div className={cssClass}>
-                <dt className={this.props.baseCssClass + '__property-label'}>{label}</dt>
-                <dd className={this.props.baseCssClass + '__property-content'}>{content}</dd>
-            </div>
-        );
-    }
+    return (
+        <a onClick={handleOnClick} className={props.baseCssClass + '__action'} href={getDownloadV1Href(props)}>
+            <span className={props.baseCssClass + '__action-text'}>{props.actionText}</span>
+        </a>
+    )
+};
 
-    getHref(){
-        return (!!this.props.url && this.props.url.length > 0) ? this.props.url : '#';
-    }
-}
+export const DownloadV1Impl = (props:DownloadV1Model) => {
+
+    const { displayFilename = false ,displaySize = false,  displayFormat = false} = props;
+    
+    const cssClass = props.baseCssClass + ( props.isInEditor  ? ' cq-dd-file' : '');
+    const displayDownloadDetails = displayFilename || displaySize || displayFormat;
+    return (
+        <div className={cssClass}>
+            {!!props.title && <DownloadV1HeadingElement {...props}/>}
+            {!!props.description && <DownloadV1Description {...props}/>}
+            {displayDownloadDetails && <DownloadV1Details {...props}/>}
+            <DownloadV1Link {...props}/>
+        </div>
+    );
+
+};
 
 
 
