@@ -22,13 +22,7 @@ export interface DefaultV1Model extends CoreComponentModel{
     html: string
 }
 
-class DefaultV1ComponentImpl extends Component<DefaultV1Model> {
-
-    render(){
-          return <div className={"cmp-default-wrapper"} dangerouslySetInnerHTML={{__html: this.props.html}}></div>
-    }
-
-}
+const DefaultV1ComponentImpl = (props:DefaultV1Model) => <div className={"cmp-default-wrapper"} dangerouslySetInnerHTML={{__html: props.html}}></div>;
 
 const DefaultV1Component = (props:DefaultV1Model) => {
     const Wrapped = withConditionalPlaceHolder(DefaultV1ComponentImpl, DefaultV1IsEmptyFn, "cmp-default", "Default SPA Component")
