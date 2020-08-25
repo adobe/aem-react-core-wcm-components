@@ -15,7 +15,7 @@
  */
 
 import React, {Component} from 'react';
-import {withConditionalPlaceHolder} from "../../../AbstractCoreComponent";
+import {withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
 import {RoutedCoreComponentModel} from "../../../routing/RoutedCoreComponent";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {TitleV2IsEmptyFn} from "./TitleV2IsEmptyFn";
@@ -79,7 +79,7 @@ class TitleV2Impl extends Component<TitleV2Model> {
 
 
 const TitleV2 = (props:TitleV2Model) => {
-    const Wrapped = withConditionalPlaceHolder(TitleV2Impl, TitleV2IsEmptyFn, "cmp-title", "TitleV2")
+    const Wrapped = withConditionalPlaceHolder(withStandardBaseCssClass(TitleV2Impl, "cmp-title"), TitleV2IsEmptyFn, "TitleV2")
     return <Wrapped {...props}/>
 };
 

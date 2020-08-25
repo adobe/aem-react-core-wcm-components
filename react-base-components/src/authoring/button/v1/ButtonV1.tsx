@@ -15,7 +15,7 @@
  */
 
 import React, {MouseEvent} from 'react';
-import {withConditionalPlaceHolder} from "../../../AbstractCoreComponent";
+import {withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
 import {RoutedCoreComponentModel} from "../../../routing/RoutedCoreComponent";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {ButtonV1IsEmptyFn} from "./ButtonV1IsEmptyFn";
@@ -80,7 +80,7 @@ class ButtonV1Impl extends React.Component<ButtonV1Model> {
 
 
 const ButtonV1 = (props:ButtonV1Model) => {
-    const Wrapped = withConditionalPlaceHolder(ButtonV1Impl, ButtonV1IsEmptyFn, "cmp-button", "Button V1")
+    const Wrapped = withConditionalPlaceHolder(withStandardBaseCssClass(ButtonV1Impl,"cmp-button"), ButtonV1IsEmptyFn, "Button V1");
     return <Wrapped {...props}/>
 };
 
