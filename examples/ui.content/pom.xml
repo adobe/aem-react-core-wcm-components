@@ -209,7 +209,7 @@
     <dependencies>
         <dependency>
             <groupId>com.adobe.cq</groupId>
-            <artifactId>core.wcm.components.react.ui.apps</artifactId>
+            <artifactId>core.wcm.components.examples.react.bundle</artifactId>
             <version>${project.version}</version>
             <type>zip</type>
             <scope>provided</scope>
