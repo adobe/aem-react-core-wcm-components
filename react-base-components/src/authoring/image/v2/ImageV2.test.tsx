@@ -25,18 +25,14 @@ it('Has a proper isEmpty function', () => {
 
     const props1:ImageV2Model = {
         src: "/content/dam/image.jpg",
-        alt: "Some Image",
-        hidePlaceHolder: false,
-        isInEditor: false
+        alt: "Some Image"
     };
 
     expect(ImageV2IsEmptyFn(props1)).toEqual(false);
 
     const props2:ImageV2Model = {
         src: " ",
-        alt: "Some Image",
-        hidePlaceHolder: false,
-        isInEditor: false
+        alt: "Some Image"
     };
 
     expect(ImageV2IsEmptyFn(props2)).toEqual(true);
@@ -54,15 +50,29 @@ it('Renders without crashing', () => {
     expect(1).toBe(1);
 });
 
+it('Renders with a cq-dd-image in edit mode', () => {
+
+    //let captured = false;
+    const props:ImageV2Model = {
+        src: "/content/dam/image.jpg",
+        alt: "Some Image",
+        isInEditor: true
+    };
+
+    const image = mount(<ImageV2 {...props}/>);
+
+    expect(image.find(".cq-dd-image")).toHaveLength(1);
+
+    expect(image).toBeDefined();
+});
+
 
 it('Renders without link', () => {
 
     //let captured = false;
     const props:ImageV2Model = {
         src: "/content/dam/image.jpg",
-        alt: "Some Image",
-        hidePlaceHolder: false,
-        isInEditor: false
+        alt: "Some Image"
     };
 
     const image = mount(<ImageV2 {...props}/>);
@@ -92,9 +102,7 @@ it('Renders with title', () => {
     const props:ImageV2Model = {
         src: "/content/dam/image.jpg",
         alt: "Some Image",
-        title: "Awesome Title!",
-        hidePlaceHolder: false,
-        isInEditor: false
+        title: "Awesome Title!"
     };
 
     const image = mount(<ImageV2 {...props}/>);

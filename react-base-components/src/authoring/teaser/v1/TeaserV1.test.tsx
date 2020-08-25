@@ -6,8 +6,6 @@ import {mount} from "enzyme";
 
 const defaultProps:TeaserV1Model = {
     imageAlt: "snowy mountains",
-    isInEditor: false,
-    hidePlaceHolder: false,
     imagePath: "/some/image.png",
     description: '<p>Paragraph</p>',
     actions: [

@@ -18,7 +18,6 @@ import React from 'react';
 import {withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
 import {determineIsActive, NavigationV1Group, NavigationV1Item, NavigationV1Model} from "../../navigation/v1/NavigationV1";
 import {RoutedLink} from "../../../routing/RoutedLink";
-import {isItemRouted} from "../../../routing/RoutedCoreComponent";
 import {LanguageNavigationV1IsEmptyFn} from "./LanguageNavigationV1IsEmptyFn";
 
 export interface LanguageNavigationV1Item extends NavigationV1Item {
@@ -39,11 +38,12 @@ export interface LanguageNavigationV1Model extends NavigationV1Model{
     items:LanguageNavigationV1Item[]
     accessibilityLabel?: string
 }
+
 export const LanguageNavigationV1Link = (props:LanguageNavigationV1Item) => {
     if(props.level > 0){
         return (
             <RoutedLink
-                isRouted={isItemRouted(props, props)}
+                isRouted={props.routed}
                 className={props.baseCssClass + '__item-link'}
                 to={props.url}
                 hrefLang={props.language}
@@ -56,7 +56,7 @@ export const LanguageNavigationV1Link = (props:LanguageNavigationV1Item) => {
             <span className={ props.baseCssClass + '__item-title'} lang={props.language}>{props.title}</span>
         )
     }
-}
+};
 
 export const LanguageNavigationV1Group = (item:LanguageNavigationV1Item) => {
     return (
@@ -70,7 +70,7 @@ export const LanguageNavigationV1Group = (item:LanguageNavigationV1Item) => {
             )}
         </>
     )
-}
+};
 
 export const LanguageNavigationV1Item = (item:LanguageNavigationV1Item) => {
 
@@ -88,7 +88,7 @@ export const LanguageNavigationV1Item = (item:LanguageNavigationV1Item) => {
         </li>
     )
 
-}
+};
 
 const LanguageNavigationV1Impl = (props:LanguageNavigationV1Model) => {
     const selfClone:LanguageNavigationV1Item = {
@@ -112,7 +112,7 @@ const LanguageNavigationV1Impl = (props:LanguageNavigationV1Model) => {
             <LanguageNavigationV1Group {...selfClone}/>
         </nav>
     )
-}
+};
 
 const LanguageNavigation = (props:LanguageNavigationV1Model) => {
     const Wrapped = withConditionalPlaceHolder(withStandardBaseCssClass(LanguageNavigationV1Impl, "cmp-languagenavigation"), LanguageNavigationV1IsEmptyFn, "LanguageNavigation V1")

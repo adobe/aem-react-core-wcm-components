@@ -23,34 +23,19 @@ export interface TextV2Model extends CoreComponentModel{
     richText?: boolean
 }
 
+export const TextV2RichText = (props:TextV2Model) => {
+    const text:string = props.text as string;
+    return  <div className={props.baseCssClass} dangerouslySetInnerHTML={{__html: text}}></div>
+};
 
-class TextV2Impl extends Component<TextV2Model> {
+export const TextV2PlainText = (props:TextV2Model) => {
+    return  <div className={props.baseCssClass}><p className="cmp-text__paragraph">{props.text}</p></div>
+};
 
-    public static defaultProps = {
-        richText: false
-    };
-
-    renderRichText(){
-        const text:string = this.props.text as string;
-        return (
-            <div className={this.props.baseCssClass} dangerouslySetInnerHTML={{__html: text}}></div>
-        )
-    }
-
-    renderPlainText(){
-        return (
-            <div className={this.props.baseCssClass}>
-                <p className="cmp-text__paragraph">{this.props.text}</p>
-            </div>
-        )
-    }
-    render(): JSX.Element {
-        return (this.props.richText) ? this.renderRichText() : this.renderPlainText();
-    }
-
-}
-
-
+const TextV2Impl = (props:TextV2Model) => {
+    const {richText = false} = props;
+    return (richText) ? <TextV2RichText {...props}/> : <TextV2PlainText {...props}/>;
+};
 
 const TextV2 = (props:TextV2Model) => {
     const Wrapped = withConditionalPlaceHolder(withStandardBaseCssClass(TextV2Impl, "cmp-text"), TextV2IsEmptyFn, "Text V2")

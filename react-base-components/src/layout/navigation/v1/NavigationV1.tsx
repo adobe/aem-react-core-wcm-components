@@ -16,7 +16,7 @@
 
 import React from 'react';
 import {HasBaseCssClass, withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
-import {isItemRouted, RoutedCoreComponentModel, RoutedModel} from "../../../routing/RoutedCoreComponent";
+import {RoutedCoreComponentModel, RoutedModel} from "../../../routing/RoutedCoreComponent";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {NavigationV1IsEmptyFn} from "./NavigationV1IsEmptyFn";
 
@@ -39,7 +39,7 @@ export interface NavigationV1Model extends RoutedCoreComponentModel{
 
 export const determineIsActive = (item:NavigationV1Item) => {
     return item.active;
-}
+};
 
 export const NavigationV1Group = (item:NavigationV1Item) => {
     return (
@@ -53,7 +53,7 @@ export const NavigationV1Group = (item:NavigationV1Item) => {
             )}
         </>
     )
-}
+};
 
 export const NavigationV1Item = (item:NavigationV1Item) => {
 
@@ -63,7 +63,7 @@ export const NavigationV1Item = (item:NavigationV1Item) => {
                      + (isActive ? ' ' + item.baseCssClass + '__item--active' : '');
     return (
         <li className={cssClass}>
-                <RoutedLink isRouted={isItemRouted(item,item)} to={item.url} title={item.title} aria-current={isActive && 'page'}
+                <RoutedLink isRouted={item.routed} to={item.url} title={item.title} aria-current={isActive && 'page'}
                     className={item.baseCssClass + '__item-link'}>{item.title
                }</RoutedLink>
                 {

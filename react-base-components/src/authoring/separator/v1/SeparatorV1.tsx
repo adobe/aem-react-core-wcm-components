@@ -18,20 +18,15 @@ import React, {Component} from "react";
 import {CoreComponentModel, withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
 import {SeparatorV1IsEmptyFn} from "./SeparatorV1IsEmptyFn";
 
+const SeparatorV1Impl = (props:CoreComponentModel) => {
 
-class SeparatorV1Impl extends Component<CoreComponentModel> {
+    return (
+        <div className={props.baseCssClass}>
+            <hr className={props.baseCssClass + '__horizontal-rule'}/>
+        </div>
+    )
 
-    render(): JSX.Element {
-        return (
-            <div className={this.props.baseCssClass}>
-                <hr className={this.props.baseCssClass + '__horizontal-rule'}/>
-            </div>
-        )
-    }
-
-
-}
-
+};
 
 const SeparatorV1 = (props:CoreComponentModel) => {
     const Wrapped = withConditionalPlaceHolder(withStandardBaseCssClass(SeparatorV1Impl, "cmp-separator"), SeparatorV1IsEmptyFn, "Separator V1")

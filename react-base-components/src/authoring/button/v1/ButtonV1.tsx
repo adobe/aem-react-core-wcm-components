@@ -29,55 +29,45 @@ export interface ButtonV1Model extends RoutedCoreComponentModel{
     handleOnClick?(event: MouseEvent): void
 }
 
+export const ButtonV1Content = (props:ButtonV1Model) => {
+    return (
+        <>
+            { props.icon && <span className={`${props.baseCssClass}__icon ${props.baseCssClass}__icon--${props.icon}`}></span>  }
+            <span className={props.baseCssClass + '__text'}>{props.text}</span>
+        </>
+    );
+};
 
+const ButtonV1Impl = (props:ButtonV1Model) => {
 
-class ButtonV1Impl extends React.Component<ButtonV1Model> {
-
-    constructor(props:ButtonV1Model) {
-        super(props);
-        this.handleOnClick = this.handleOnClick.bind(this);
-    }
-
-    handleOnClick(event:MouseEvent){
-        if(this.props.handleOnClick){
-            this.props.handleOnClick(event);
+    const handleOnClick = (event:MouseEvent) =>{
+        if(props.handleOnClick){
+            props.handleOnClick(event);
         }
-    }
-    getContent(){
-        return (
-            <>
-                { this.props.icon && <span className={`${this.props.baseCssClass}__icon ${this.props.baseCssClass}__icon--${this.props.icon}`}></span>  }
-                <span className={this.props.baseCssClass + '__text'}>{this.props.text}</span>
-            </>
-        );
-    }
+    };
 
-    render(){
-
-        const isLink =  (!!this.props.link);
-        const props = this.generateAttributes(isLink);
-
-        if(isLink){
-            return <RoutedLink isRouted={this.props.routed} to={this.props.link} {...props} children={this.getContent()} />
-        }else{
-            return <button {...props}>{this.getContent()}</button>
-        }
-    }
-
-    generateAttributes(isLink: boolean) {
-        const props: any = {
-            className: this.props.baseCssClass,
-            onClick: this.handleOnClick
+    const generateAttributes = (isLink: boolean) => {
+        const computedAttrs: any = {
+            className: props.baseCssClass,
+            onClick: handleOnClick
         };
 
         if (isLink) {
-            props['aria-label'] = this.props.ariaLabel;
-            props['href'] = this.props.link;
+            computedAttrs['aria-label'] = props.ariaLabel;
+            computedAttrs['href'] = props.link;
         }
-        return props;
-    }
-}
+        return computedAttrs;
+    };
 
+    const isLink =  (!!props.link);
+    const attrs = generateAttributes(isLink);
+
+    if(isLink){
+        return <RoutedLink isRouted={attrs.routed} to={attrs.link} {...attrs}><ButtonV1Content {...props}/></RoutedLink>
+    }else{
+        return <button {...attrs}><ButtonV1Content {...props}/></button>
+    }
+};
 
 const ButtonV1 = (props:ButtonV1Model) => {
     const Wrapped = withConditionalPlaceHolder(withStandardBaseCssClass(ButtonV1Impl,"cmp-button"), ButtonV1IsEmptyFn, "Button V1");

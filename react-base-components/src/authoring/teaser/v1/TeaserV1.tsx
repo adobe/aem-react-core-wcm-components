@@ -17,10 +17,10 @@
 
 import React, {Component} from "react";
 import {withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
-import ImageV2 from "../../../authoring/image/v2/ImageV2";
-import TitleV2 from "../../../authoring/title/v2/TitleV2";
+import ImageV1 from "../../../authoring/image/v2/ImageV2";
+import TitleV1 from "../../../authoring/title/v2/TitleV2";
 import {RoutedLink} from "../../../routing/RoutedLink";
-import {isItemRouted, RoutedCoreComponentModel, RoutedModel} from "../../../routing/RoutedCoreComponent";
+import {RoutedCoreComponentModel, RoutedModel} from "../../../routing/RoutedCoreComponent";
 import {TeaserV1IsEmptyFn} from "./TeaserV1IsEmptyFn";
 
 export interface TeaserV1Action extends RoutedModel{
@@ -42,75 +42,62 @@ export interface TeaserV1Model extends RoutedCoreComponentModel{
     imagePath: string
 }
 
-class TeaserV1Impl extends Component<TeaserV1Model>{
-
-    get image(){
-        return this.props.imagePath && (
-            <div className={this.props.baseCssClass + '__image'}>
-                <ImageV2 isInEditor={this.props.isInEditor} src={this.props.imagePath} alt={this.props.imageAlt}/>
-            </div>
-        );
-    }
-
-    get pretitle(){
-        return this.props.pretitle && <div className={this.props.baseCssClass + '__pretitle'}>{this.props.pretitle}</div>
-
-    }
-
-    get title(){
-        return this.props.title && (
-            <TitleV2 baseCssClass={this.props.baseCssClass + '__title'}
-                     nested={true}
-                     type={this.props.titleType}
-                     isInEditor={this.props.isInEditor}
-                     linkDisabled={false}
-                     text={this.props.title}
-                     linkURL={this.props.linkURL}/>
-            )
-    }
-
-    get description(){
-        const text:string = this.props.description as string;
-        return this.props.description && (
-           <div className={this.props.baseCssClass + '__description'} dangerouslySetInnerHTML={{__html: text}}></div>
-        )
-    }
-
-    generateLink(action:TeaserV1Action, index:number){
-        return <RoutedLink key={"link-" + index} isRouted={isItemRouted(this.props, action)} className={this.props.baseCssClass + '__action-link'} to={action.URL}>${action.title}</RoutedLink>
-    }
-
-    get actions(){
-        const hasActions:boolean = this.props.actions.length > 0;
-        return this.props.actionsEnabled && hasActions && (
-            <div className={this.props.baseCssClass + '__action-container'}>
-                {
-                    this.props.actions.map((action, index) => {
-                        return this.generateLink(action,index)
-                    })
-                }
-            </div>
-        )
-    }
-
-    render(): JSX.Element {
-
-        const cssClass = this.props.baseCssClass || '' + (this.props.isInEditor) ? ' cq-dd-image' : '';
-        return (
-            <div className={cssClass}>
-                {this.image}
-                <div className={this.props.baseCssClass + '__content'}>
-                    {this.pretitle}
-                    {this.title}
-                    {this.description}
-                    {this.actions}
-                </div>
-            </div>
-        )
-    }
-
+const generateLink = (props:TeaserV1Model, action:TeaserV1Action, index:number) => {
+    return <RoutedLink key={"link-" + index} isRouted={props.routed} className={props.baseCssClass + '__action-link'} to={action.URL}>${action.title}</RoutedLink>
 }
 
+const TeaserV1Image = (props:TeaserV1Model) => {
+    return (
+        <div className={props.baseCssClass + '__image'}>
+            <ImageV1 isInEditor={props.isInEditor} src={props.imagePath} alt={props.imageAlt}/>
+        </div>
+    );
+};
+
+const TeaserV1PreTitle = (props:TeaserV1Model) => <div className={props.baseCssClass + '__pretitle'}>{props.pretitle}</div>;
+
+const TeaserV1Title = (props:TeaserV1Model) => 
+        <TitleV1 baseCssClass={props.baseCssClass + '__title'}
+                 nested={true}
+                 type={props.titleType}
+                 isInEditor={props.isInEditor}
+                 linkDisabled={false}
+                 text={props.title}
+                 linkURL={props.linkURL}/>;
+
+
+const TeaserV1Description = (props:TeaserV1Model) => {
+    const text:string = props.description as string;
+    return <div className={props.baseCssClass + '__description'} dangerouslySetInnerHTML={{__html: text}}></div>;
+};
+
+const TeaserV1Actions = (props:TeaserV1Model) => {
+    return (
+        <div className={props.baseCssClass + '__action-container'}>
+            {
+                props.actions.map((action, index) => {
+                    return generateLink(props,action,index)
+                })
+            }
+        </div>
+    )
+};
+
+const TeaserV1Impl = (props:TeaserV1Model) => {
+    const cssClass = props.baseCssClass || '' + (props.isInEditor) ? ' cq-dd-image' : '';
+    const showActions:boolean = ( props.actions.length > 0 ) && props.actionsEnabled;
+    return (
+        <div className={cssClass}>
+            {props.imagePath && <TeaserV1Image {...props}/>}
+            <div className={props.baseCssClass + '__content'}>
+                {props.pretitle && <TeaserV1PreTitle {...props}/>}
+                {props.title && <TeaserV1Title {...props}/>}
+                {props.description && <TeaserV1Description {...props}/>}
+                {showActions && <TeaserV1Actions {...props}/>}
+            </div>
+        </div>
+    )
+};
 
 
 const TeaserV1 = (props:TeaserV1Model) => {

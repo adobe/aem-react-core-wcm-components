@@ -22,6 +22,21 @@ import {dummyProps, dummyPropsWithDefaultRouting, dummyPropsWithRoutedItems} fro
 import ListV2 from "./ListV2";
 import {MemoryRouter} from 'react-router-dom';
 
+import fs from 'fs';
+import path from 'path';
+
+const loadFormattedHtml = (relativePath:string) => {
+    const expectedRoutedList = fs.readFileSync(path.resolve(__dirname, relativePath), 'utf8');
+    return expectedRoutedList.replace(/(\r\n|\n|\r)/gm,"").replace(/>\s+|\s+</g, function(m) {
+        return m.trim();
+    });
+
+}
+
+const expectedRoutedList = loadFormattedHtml('expected-routed-list.html');
+const expectedList = loadFormattedHtml('expected-list.html');
+
+
 
 it('Renders without crashing', () => {
     const div = document.createElement('div');
@@ -37,17 +52,7 @@ it('Renders without crashing', () => {
 it('Renders a basic list properly', () => {
 
     const wrapper = mount(<ListV2  {...dummyProps} />);
-    const ul = wrapper.find('ul');
-    expect(ul).toHaveLength(1);
-    const li = wrapper.find('li');
-    expect(li).toHaveLength(13);
-
-    const date = ul.find('li:first-child .cmp-list__item-date');
-    expect(date).toHaveLength(1);
-
-    const a = ul.find("a");
-    expect(a).toHaveLength(13);
-
+    expect(wrapper.html()).toEqual(expectedList);
 
 });
 
@@ -56,34 +61,6 @@ it('Renders a basic list properly', () => {
 it('Renders with routing from the items', () => {
 
     const wrapper = mount(<MemoryRouter><ListV2  {...dummyPropsWithRoutedItems} /></MemoryRouter>);
-    const ul = wrapper.find('ul');
-    expect(ul).toHaveLength(1);
-    const li = wrapper.find('li');
-    expect(li).toHaveLength(13);
-
-    const date = ul.find('li:first-child .cmp-list__item-date');
-    expect(date).toHaveLength(1);
-
-    const a = ul.find("a");
-    expect(a).toHaveLength(13);
-
-
-});
-
-
-it('Renders with routing enabled on default', () => {
-
-    const wrapper = mount(<MemoryRouter><ListV2  {...dummyPropsWithDefaultRouting} /></MemoryRouter>);
-    const ul = wrapper.find('ul');
-    expect(ul).toHaveLength(1);
-    const li = wrapper.find('li');
-    expect(li).toHaveLength(13);
-
-    const date = ul.find('li:first-child .cmp-list__item-date');
-    expect(date).toHaveLength(1);
-
-    const a = ul.find("a");
-    expect(a).toHaveLength(13);
-
+    expect(wrapper.html()).toEqual(expectedRoutedList);
 
 });
