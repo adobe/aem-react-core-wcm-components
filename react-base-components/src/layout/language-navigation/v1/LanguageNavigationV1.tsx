@@ -18,7 +18,6 @@ import React from 'react';
 import {withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
 import {determineIsActive, NavigationV1Group, NavigationV1Item, NavigationV1Model} from "../../navigation/v1/NavigationV1";
 import {RoutedLink} from "../../../routing/RoutedLink";
-import {isItemRouted} from "../../../routing/RoutedCoreComponent";
 import {LanguageNavigationV1IsEmptyFn} from "./LanguageNavigationV1IsEmptyFn";
 
 export interface LanguageNavigationV1Item extends NavigationV1Item {
@@ -43,7 +42,7 @@ export const LanguageNavigationV1Link = (props:LanguageNavigationV1Item) => {
     if(props.level > 0){
         return (
             <RoutedLink
-                isRouted={isItemRouted(props, props)}
+                isRouted={props.routed}
                 className={props.baseCssClass + '__item-link'}
                 to={props.url}
                 hrefLang={props.language}

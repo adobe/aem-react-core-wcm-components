@@ -14,15 +14,10 @@
  *  limitations under the License.
  */
 
-<<<<<<< HEAD
+
 import React from 'react';
-import {HasBaseCssClass, withConditionalPlaceHolder} from "../../../AbstractCoreComponent";
-import { RoutedCoreComponentModel, RoutedModel, setItemRoutedProp} from "../../../routing/RoutedCoreComponent";
-=======
-import React, {Component} from 'react';
-import {withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
-import {isItemRouted, RoutedCoreComponentModel, RoutedModel} from "../../../routing/RoutedCoreComponent";
->>>>>>> 5a354c7974f1f769c9023a149c278b70fa10a79f
+import {HasBaseCssClass, withConditionalPlaceHolder,withStandardBaseCssClass} from "../../../AbstractCoreComponent";
+import { RoutedCoreComponentModel, RoutedModel} from "../../../routing/RoutedCoreComponent";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {ListV2IsEmptyFn} from "./ListV2IsEmptyFn";
 
@@ -94,19 +89,14 @@ export const ListV2Impl = (props:ListV2Model) => {
 
     return (
         <ul className={props.baseCssClass}>
-            {props.items.map((item, index) => <ListV2Item {...item} key={"cmp-list-" + index} baseCssClass={props.baseCssClass} routed={setItemRoutedProp(props,item)} index={index}  />)}
+            {props.items.map((item, index) => <ListV2Item {...item} key={"cmp-list-" + index} baseCssClass={props.baseCssClass} routed={item.routed} index={index}  />)}
         </ul>
     )
 };
 
 
-<<<<<<< HEAD
-export const ListV2 = (props:ListV2Model) => {
-    const Wrapped = withConditionalPlaceHolder(ListV2Impl, ListV2IsEmptyFn, "cmp-list", "List V2")
-=======
 const ListV2 = (props:ListV2Model) => {
     const Wrapped = withConditionalPlaceHolder(withStandardBaseCssClass(ListV2Impl, "cmp-list"), ListV2IsEmptyFn, "List V2")
->>>>>>> 5a354c7974f1f769c9023a149c278b70fa10a79f
     return <Wrapped {...props}/>
 };
 

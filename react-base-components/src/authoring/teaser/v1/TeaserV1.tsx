@@ -20,7 +20,7 @@ import {withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../Abs
 import ImageV2 from "../../../authoring/image/v2/ImageV2";
 import TitleV2 from "../../../authoring/title/v2/TitleV2";
 import {RoutedLink} from "../../../routing/RoutedLink";
-import {isItemRouted, RoutedCoreComponentModel, RoutedModel} from "../../../routing/RoutedCoreComponent";
+import {RoutedCoreComponentModel, RoutedModel} from "../../../routing/RoutedCoreComponent";
 import {TeaserV1IsEmptyFn} from "./TeaserV1IsEmptyFn";
 
 export interface TeaserV1Action extends RoutedModel{
@@ -77,7 +77,7 @@ class TeaserV1Impl extends Component<TeaserV1Model>{
     }
 
     generateLink(action:TeaserV1Action, index:number){
-        return <RoutedLink key={"link-" + index} isRouted={isItemRouted(this.props, action)} className={this.props.baseCssClass + '__action-link'} to={action.URL}>${action.title}</RoutedLink>
+        return <RoutedLink key={"link-" + index} isRouted={this.props.routed} className={this.props.baseCssClass + '__action-link'} to={action.URL}>${action.title}</RoutedLink>
     }
 
     get actions(){

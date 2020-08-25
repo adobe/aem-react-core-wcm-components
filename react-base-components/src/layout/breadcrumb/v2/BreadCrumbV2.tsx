@@ -16,7 +16,7 @@
 
 import React, {Component} from 'react';
 import {withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
-import {isItemRouted, RoutedCoreComponentModel, RoutedModel} from "../../../routing/RoutedCoreComponent";
+import {RoutedCoreComponentModel, RoutedModel} from "../../../routing/RoutedCoreComponent";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {BreadCrumbV2IsEmptyFn} from "./BreadCrumbV2IsEmptyFn";
 
@@ -62,7 +62,7 @@ class BreadCrumbV2Impl extends Component<BreadCrumbV2Model> {
         return (
             <RoutedLink
                         to={crumbItem.url}
-                        isRouted={isItemRouted(this.props,crumbItem)}
+                        isRouted={crumbItem.routed}
                         className={`${this.props.baseCssClass}__item-link`}
                         itemProp="item">
                 {this.renderBreadCrumbSpan(crumbItem, index)}

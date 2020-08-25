@@ -64,12 +64,3 @@ it('Renders with routing from the items', () => {
     expect(wrapper.html()).toEqual(expectedRoutedList);
 
 });
-
-
-it('Renders with routing enabled on default', () => {
-
-    const wrapper = mount(<MemoryRouter><ListV2  {...dummyPropsWithDefaultRouting} /></MemoryRouter>);
-    expect(wrapper.html()).toEqual(expectedRoutedList);
-
-
-});
