@@ -20,28 +20,18 @@ export interface PlaceHolderModel {
     classAppend?: string
     emptyTextAppend?: string
 }
+const DEFAULT_EMPTY_TEXT_LABEL = 'Please configure the component';
 
-export class EditorPlaceHolder extends Component<PlaceHolderModel, any>{
+export const EditorPlaceHolder = (props:PlaceHolderModel) => {
 
-    static DEFAULT_EMPTY_TEXT_LABEL = 'Please configure the component';
+    const part1: string = (props.componentTitle != null && props.componentTitle.length > 0) ?  props.componentTitle +  ' - ' : '';
+    const part2: string = (props.emptyTextAppend != null) ?  props.emptyTextAppend : DEFAULT_EMPTY_TEXT_LABEL;
+    const emptyText = part1 + part2;
 
-    render() {
-        const part1: string = (this.props.componentTitle != null && this.props.componentTitle.length > 0) ?  this.props.componentTitle +  ' - ' : '';
-        const part2: string = (this.props.emptyTextAppend != null) ?  this.props.emptyTextAppend : EditorPlaceHolder.DEFAULT_EMPTY_TEXT_LABEL;
-        const emptyText = part1 + part2;
-
-        return (
-            this.renderPlaceHolder(emptyText)
-        )
-    }
-
-
-    renderPlaceHolder(emptyText: string) {
-        return <div
-            className={'cq-placeholder' + (this.props.classAppend != null? ' ' + this.props.classAppend : '')}>
+    return (
+        <div
+            className={'cq-placeholder' + (props.classAppend != null? ' ' + props.classAppend : '')}>
             {emptyText}
-        </div>;
-    }
-
-
-}
+        </div>
+    )
+};
