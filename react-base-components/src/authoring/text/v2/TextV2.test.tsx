@@ -24,8 +24,6 @@ import {TextV2IsEmptyFn} from "./TextV2IsEmptyFn";
 it('Has a proper isEmpty function', () => {
 
     const props:TextV2Model = {
-        isInEditor: false,
-        hidePlaceHolder: false,
         text: 'test',
         richText: true
     };
@@ -33,8 +31,6 @@ it('Has a proper isEmpty function', () => {
     expect(TextV2IsEmptyFn(props)).toBe(false);
 
     const propsEmpty:TextV2Model = {
-        isInEditor: false,
-        hidePlaceHolder: false,
         richText: true,
         text: ''
     };
