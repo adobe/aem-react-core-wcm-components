@@ -32,3 +32,81 @@ export interface CoreContainerItem extends Model {
 export interface CoreContainerState extends ContainerState {
 
 }
+
+export interface AuthorPanelSwitchState {
+    activeIndexFromAuthorPanel?: number
+}
+
+
+export const withStandardBaseCssClass = <M extends CoreContainerProperties>
+(
+    Component:ComponentType<M>,
+    defaultBaseCssClass:string
+):React.ComponentType<M>  => {
+    return (props:M) => {
+
+        const baseCssClass = props.baseCssClass;
+        const toBeUsedCssClass = baseCssClass && baseCssClass.trim().length > 0 ? baseCssClass : defaultBaseCssClass;
+
+        const mergedProps: M= {
+            ...props,
+            baseCssClass: toBeUsedCssClass
+        };
+
+        return <Component {...mergedProps} />;
+    }
+};
+
+
+
+export const withAuthorPanelSwitch = <M extends CoreContainerProperties>(
+    Component:ComponentType<M>
+):React.ComponentType<M> => {
+
+    return class extends React.Component<M, AuthorPanelSwitchState> {
+
+        //@ts-ignore
+        messageChannel;
+
+        constructor(props:M) {
+            super(props);
+            this.state = {}
+
+            //@ts-ignore
+            if (window && window.Granite && window.Granite.author && window.Granite.author.MessageChannel) {
+                //@ts-ignore
+                this.messageChannel = new window.Granite.author.MessageChannel("cqauthor", window);
+                this.callback = this.callback.bind(this);
+            }
+        }
+
+        callback(message:any){
+            if (message.data && message.data.id === this.props.cqPath) {
+                if (message.data.operation === "navigate") {
+                    const index = message.data.index as number;
+                    this.setState({
+                        activeIndexFromAuthorPanel: index
+                    })
+                }
+            }
+        }
+
+        componentDidMount(): void {
+            if(this.messageChannel){
+                this.messageChannel.subscribeRequestMessage("cmp.panelcontainer", this.callback);
+            }
+        }
+
+        componentWillUnmount(): void {
+            if(this.messageChannel){
+                this.messageChannel.unsubscribeRequestMessage("cmp.panelcontainer", this.callback);
+            }
+        }
+
+
+        render(){
+            return <Component {...this.props} activeIndexFromAuthorPanel={this.state.activeIndexFromAuthorPanel} />;
+        }
+    }
+
+};

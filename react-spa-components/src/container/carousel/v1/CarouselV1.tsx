@@ -17,11 +17,10 @@
 import React from 'react';
 
 
-import {CoreContainerProperties, CoreContainerState, withStandardBaseCssClass, CoreContainerItem} from "../../../AbstractCoreContainerComponent";
+import {CoreContainerProperties, CoreContainerState, withAuthorPanelSwitch, withStandardBaseCssClass, CoreContainerItem} from "../../../AbstractCoreContainerComponent";
 import {ComponentMapping, Container} from '@adobe/cq-react-editable-components';
 
 import {CarouselV1IsEmptyFn} from "./CarouselV1IsEmptyFn";
-import withAuthorPanelSwitch from "../../../withAuthorPanelSwitch";
 import {TabsV1Properties, TabsV1State} from "../../..";
 
 
