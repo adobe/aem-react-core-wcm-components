@@ -38,6 +38,7 @@ export interface LanguageNavigationV1Model extends NavigationV1Model{
     items:LanguageNavigationV1Item[]
     accessibilityLabel?: string
 }
+
 export const LanguageNavigationV1Link = (props:LanguageNavigationV1Item) => {
     if(props.level > 0){
         return (
@@ -55,7 +56,7 @@ export const LanguageNavigationV1Link = (props:LanguageNavigationV1Item) => {
             <span className={ props.baseCssClass + '__item-title'} lang={props.language}>{props.title}</span>
         )
     }
-}
+};
 
 export const LanguageNavigationV1Group = (item:LanguageNavigationV1Item) => {
     return (
@@ -69,7 +70,7 @@ export const LanguageNavigationV1Group = (item:LanguageNavigationV1Item) => {
             )}
         </>
     )
-}
+};
 
 export const LanguageNavigationV1Item = (item:LanguageNavigationV1Item) => {
 
@@ -87,7 +88,7 @@ export const LanguageNavigationV1Item = (item:LanguageNavigationV1Item) => {
         </li>
     )
 
-}
+};
 
 const LanguageNavigationV1Impl = (props:LanguageNavigationV1Model) => {
     const selfClone:LanguageNavigationV1Item = {
@@ -111,7 +112,7 @@ const LanguageNavigationV1Impl = (props:LanguageNavigationV1Model) => {
             <LanguageNavigationV1Group {...selfClone}/>
         </nav>
     )
-}
+};
 
 const LanguageNavigation = (props:LanguageNavigationV1Model) => {
     const Wrapped = withConditionalPlaceHolder(withStandardBaseCssClass(LanguageNavigationV1Impl, "cmp-languagenavigation"), LanguageNavigationV1IsEmptyFn, "LanguageNavigation V1")

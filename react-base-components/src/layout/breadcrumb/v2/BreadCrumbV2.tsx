@@ -15,15 +15,16 @@
  */
 
 import React, {Component} from 'react';
-import {withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
+import {HasBaseCssClass, withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
 import {RoutedCoreComponentModel, RoutedModel} from "../../../routing/RoutedCoreComponent";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {BreadCrumbV2IsEmptyFn} from "./BreadCrumbV2IsEmptyFn";
 
-export interface BreadCrumbV2ItemModel extends RoutedModel{
+export interface BreadCrumbV2ItemModel extends RoutedModel, HasBaseCssClass{
     active: boolean
     url: string
     title: string
+    index?: number
 }
 
 export interface BreadCrumbV2Model extends RoutedCoreComponentModel {
@@ -31,68 +32,62 @@ export interface BreadCrumbV2Model extends RoutedCoreComponentModel {
     ariaLabelI18n: string
 }
 
+export const BreadCrumbV2SSpan = (crumbItem:BreadCrumbV2ItemModel) => {
+    return (
+        <span itemProp="name">{crumbItem.title}</span>
+    )
+};
 
-class BreadCrumbV2Impl extends Component<BreadCrumbV2Model> {
+export const BreadCrumbV2Link = (crumbItem:BreadCrumbV2ItemModel) => {
+    return (
+        <RoutedLink
+            to={crumbItem.url}
+            isRouted={crumbItem.routed}
+            className={`${crumbItem.baseCssClass}__item-link`}
+            itemProp="item">
+            <BreadCrumbV2SSpan {...crumbItem}/>
+        </RoutedLink>
+    )
+};
 
-    public static defaultProps = {
-        ariaLabelI18n: "BreadCrumbV2",
-    };
+export const BreadCrumbV2ListItem = (crumbItem:BreadCrumbV2ItemModel) => {
 
-    renderBreadCrumbListItem(crumbItem:BreadCrumbV2ItemModel,index:number): JSX.Element{
+    const className = `${crumbItem.baseCssClass}__item` + (crumbItem.active ? ` ${crumbItem.baseCssClass}__item--active` : '');
+    const contentIndex:string = (crumbItem.index) ? crumbItem.index.toString(2) : 'noindex';
 
-        const className = `${this.props.baseCssClass}__item` + (crumbItem.active ? ` ${this.props.baseCssClass}__item--active` : '');
-        const contentIndex:string = index.toString(2);
+    return (
+        <li className={className}
+            itemProp="itemListElement" itemScope itemType="http://schema.org/ListItem">
+            {
+                !crumbItem.active && <BreadCrumbV2Link {...crumbItem}/>
+            }
+            {
+                crumbItem.active && <BreadCrumbV2SSpan {...crumbItem}/>
+            }
+            <meta itemProp="position" content={contentIndex}/>
+        </li>
+    );
+};
 
-        return (
-            <li className={className}
-                key={'crumbitem-' + index}
-                itemProp="itemListElement" itemScope itemType="http://schema.org/ListItem">
-                {
-                    !crumbItem.active && this.renderBreadCrumbLink(crumbItem,index)
-                }
-                {
-                    crumbItem.active && this.renderBreadCrumbSpan(crumbItem,index)
-                }
-                <meta itemProp="position" content={contentIndex}/>
-            </li>
-        );
-    }
+const BreadCrumbV2Impl = (props:BreadCrumbV2Model) => {
+    
+    const {ariaLabelI18n = 'BreadCrumbV2'} = props;
+    
+    return (
+        <nav className={props.baseCssClass}
+             aria-label={ariaLabelI18n}>
+            <ol className={props.baseCssClass + '__list'}
+                itemScope itemType="http://schema.org/BreadcrumbList">
+                {props.items.map((item, index) => <BreadCrumbV2ListItem {...item} index={index} baseCssClass={props.baseCssClass}   key={'crumbitem-' + index}/> )}
+            </ol>
+        </nav>
+    );
 
-    renderBreadCrumbLink(crumbItem:BreadCrumbV2ItemModel,index:number){
-        return (
-            <RoutedLink
-                        to={crumbItem.url}
-                        isRouted={crumbItem.routed}
-                        className={`${this.props.baseCssClass}__item-link`}
-                        itemProp="item">
-                {this.renderBreadCrumbSpan(crumbItem, index)}
-            </RoutedLink>
-        )
-    }
-
-    renderBreadCrumbSpan(crumbItem:BreadCrumbV2ItemModel,index:number){
-        return <span itemProp="name">{crumbItem.title}</span>
-    }
-
-    render(){
-        return (
-            <nav className={this.props.baseCssClass}
-                 aria-label={this.props.ariaLabelI18n}>
-                <ol className={this.props.baseCssClass + '__list'}
-                    itemScope itemType="http://schema.org/BreadcrumbList">
-                    {this.props.items.map((item, index) => {
-                        return this.renderBreadCrumbListItem(item, index)
-                    })}
-                </ol>
-            </nav>
-        )
-    }
-
-}
+};
 
 
 const BreadCrumbV2 = (props:BreadCrumbV2Model) => {
-    const Wrapped = withConditionalPlaceHolder(withStandardBaseCssClass(BreadCrumbV2Impl, "cmp-breadcrumb"), BreadCrumbV2IsEmptyFn, "Breadcrumb V2")
+    const Wrapped = withConditionalPlaceHolder(withStandardBaseCssClass(BreadCrumbV2Impl, "cmp-breadcrumb"), BreadCrumbV2IsEmptyFn, "Breadcrumb V2");
     return <Wrapped {...props}/>
 };
 
