@@ -28,55 +28,40 @@ export interface TitleV2Model extends RoutedCoreComponentModel{
     nested?: boolean
 }
 
+const bemModifierPrefix = (props:TitleV2Model) => props.nested ? '-' : '__';
 
+export const TitleV2Link = (props:TitleV2Model) => {
+    return (
+        <RoutedLink className={props.baseCssClass + bemModifierPrefix(props) +  'link'} isRouted={props.routed} to={props.linkURL}>
+            {props.text}
+        </RoutedLink>
+    );
+};
 
-class TitleV2Impl extends Component<TitleV2Model> {
-
-    private get bemModifierPrefix(): string{
-        return this.props.nested ? '-' : '__';
+export const TitleV2Contents = (props:TitleV2Model) => {
+    if( !props.linkDisabled){
+        return <TitleV2Link {...props}/>
     }
 
-    generateLink(){
-        return (
-            <RoutedLink className={this.props.baseCssClass + this.bemModifierPrefix +  'link'} isRouted={this.props.routed} to={this.props.linkURL}>
-                {this.props.text}
-            </RoutedLink>
-        )
-    }
+    return <>{props.text}</>
+};
 
-    getContents(){
+const TitleV2Impl = (props:TitleV2Model) => {
+    const elementType:string = (!!props.type) ? props.type.toString() : 'h3';
+    return (
+        <div className={props.baseCssClass}>
+            {
+                React.createElement(elementType,
+                    {
+                        className: props.baseCssClass + bemModifierPrefix(props) + 'text',
+                    },
+                    <TitleV2Contents {...props}/>
+                )
+            }
 
-        if( !this.props.linkDisabled){
-            return this.generateLink();
-        }
-
-        return (
-            <>
-                {this.props.text}
-            </>
-        )
-    }
-
-    render(){
-
-        const elementType:string = (!!this.props.type) ? this.props.type.toString() : 'h3';
-        return (
-            <div className={this.props.baseCssClass}>
-                {
-                    React.createElement(elementType,
-                        {
-                            className: this.props.baseCssClass + this.bemModifierPrefix + 'text',
-                        },
-                        this.getContents()
-                    )
-                }
-
-            </div>
-        )
-    }
-}
-
-
+        </div>
+    )
+};
 
 const TitleV2 = (props:TitleV2Model) => {
     const Wrapped = withConditionalPlaceHolder(withStandardBaseCssClass(TitleV2Impl, "cmp-title"), TitleV2IsEmptyFn, "TitleV2")
