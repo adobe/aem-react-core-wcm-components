@@ -360,11 +360,11 @@
         <profile>
             <id>skipRat</id>
             <activation>
-                <activeByDefault>false</activeByDefault>
+                <activeByDefault>true</activeByDefault>
             </activation>
-            <properties>
-                <rat.skip>true</rat.skip>
-            </properties>
+<!--            <properties>-->
+<!--                <rat.skip>true</rat.skip>-->
+<!--            </properties>-->
         </profile>
         
         <profile>
