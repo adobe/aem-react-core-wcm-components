@@ -41,6 +41,22 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.rat</groupId>
+                <artifactId>apache-rat-plugin</artifactId>
+                <configuration>
+                    <excludes combine.children="append">
+                        <!-- Ignore files -->
+                        <exclude>**/*.tsbuildinfo</exclude>
+                        <exclude>.npmignore</exclude>
+                        <exclude>**/*.d.ts</exclude>
+                        <exclude>**/*.ts.map</exclude>
+                        <exclude>**/*.html</exclude>
+                        <exclude>**/vendor/**/*</exclude>
+                        <exclude>**/renditions/*</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.3.2</version>
