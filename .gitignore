@@ -23,5 +23,7 @@ node_modules
 dist
 coverage
 
+react-app-env.d.ts
+*.tsbuildinfo
 examples/ui.apps/src/content/jcr_root/apps/core-components-examples/wcm/react/clientlibs/react-spacomponents/resources
 examples/ui.apps/src/content/jcr_root/apps/core-components-examples/wcm/react/clientlibs/react-webcomponents/resources

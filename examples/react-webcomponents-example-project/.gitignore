@@ -20,5 +20,6 @@ atlassian-ide-plugin.xml
 node
 node_modules
 
+react-app-env.d.ts
 dist
 build
