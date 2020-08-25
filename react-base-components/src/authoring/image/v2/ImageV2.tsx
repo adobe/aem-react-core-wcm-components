@@ -29,56 +29,45 @@ export interface ImageV2Model extends RoutedCoreComponentModel{
     link?: string
 }
 
+const ImageV2InnerContents = (props:ImageV2Model) => {
+    return (
+        <>
+            <img src={props.src}
+                 className={props.baseCssClass + '__image'}
+                 alt={props.alt}/>
+            {
+                !!(props.title) && <span className={props.baseCssClass + '__title'} itemProp="caption">{props.title}</span>
+            }
+            {
+                props.displayPopupTitle && (!!props.title) && <meta itemProp="caption" content={props.title}/>
+            }
+        </>
+    );
+};
 
-class ImageV2Impl extends Component<ImageV2Model> {
-
-    public static defaultProps = {
-        hidePlaceHolder: false,
-        isInEditor: false
-    };
-
-    generateLink(){
+const ImageV2Contents = (props:ImageV2Model) => {
+    if( props.link && props.link.trim().length > 0){
         return (
-            <RoutedLink className={this.props.baseCssClass + '__link'} isRouted={this.props.routed} to={this.props.link}>
-                {this.getInnerContents()}
+            <RoutedLink className={props.baseCssClass + '__link'} isRouted={props.routed} to={props.link}>
+                <ImageV2InnerContents {...props}/>
             </RoutedLink>
         )
     }
+    return <ImageV2InnerContents {...props}/>
+};
 
-    getInnerContents(){
-        return (
-            <>
-                <img src={this.props.src}
-                     className={this.props.baseCssClass + '__image'}
-                     alt={this.props.alt}/>
-                {
-                    !!(this.props.title) && <span className={this.props.baseCssClass + '__title'} itemProp="caption">{this.props.title}</span>
-                }
-                {
-                    this.props.displayPopupTitle && (!!this.props.title) && <meta itemProp="caption" content={this.props.title}/>
-                }
-            </>
-        );
-    }
+const ImageV2Impl = (props:ImageV2Model) => {
 
-    getContents(){
-        if( this.props.link && this.props.link.trim().length > 0){
-            return this.generateLink();
-        }
-        return this.getInnerContents();
-    }
+    const {isInEditor = false} = props;
+    const cssClassName = (isInEditor) ? props.baseCssClass + ' cq-dd-image' : props.baseCssClass;
 
-    render(): JSX.Element {
-        const cssClassName = (this.props.isInEditor) ? this.props.baseCssClass + ' cq-dd-image' : this.props.baseCssClass;
+     return (
+         <div className={cssClassName}>
+             <ImageV2Contents {...props}/>
+         </div>
+     )
 
-        return (
-            <div className={cssClassName}>
-                {this.getContents()}
-            </div>
-        )
-    }
-
-}
+};
 
 const ImageV2 = (props:ImageV2Model) => {
 

@@ -60,13 +60,15 @@ export const withConditionalPlaceHolder = <M extends CoreComponentModel>
     return (props:M) => {
 
         const isEmptyResult:boolean = isEmpty(props);
+        const {hidePlaceHolder = false, isInEditor = false} = props;
+
         return (
             <>
                 { !isEmptyResult &&
                 <Component {...props} />
                 }
                 {
-                    (isEmptyResult && props.isInEditor && !props.hidePlaceHolder) &&
+                    (isEmptyResult && isInEditor && !hidePlaceHolder) &&
                     <EditorPlaceHolder
                         emptyTextAppend={emptyText}
                         componentTitle={componentTitle}
