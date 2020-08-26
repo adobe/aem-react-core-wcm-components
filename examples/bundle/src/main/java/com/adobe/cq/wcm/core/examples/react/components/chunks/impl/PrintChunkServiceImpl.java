@@ -79,6 +79,14 @@ public class PrintChunkServiceImpl implements PrintChunkService {
             final SSRResponsePayload payload = ssrResponse.getPayload();
         
             if (response != null) {
+                for(String chunkName:payload.getChunkNames()){
+                    if(manifest.containsKey(chunkName + ".js")){
+                        entryPoints.add(manifest.get(chunkName + ".js"));
+                    }
+                    if(manifest.containsKey(chunkName + ".css")){
+                        entryPoints.add(manifest.get(chunkName + ".css"));
+                    }
+                }
                 entryPoints.addAll(Arrays.asList(payload.getChunkNames()));
             }
         }

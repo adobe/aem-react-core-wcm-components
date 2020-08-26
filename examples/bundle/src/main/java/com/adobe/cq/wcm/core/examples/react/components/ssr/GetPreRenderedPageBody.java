@@ -32,7 +32,7 @@ import java.io.IOException;
 @Component(
         service = {Servlet.class},
         property = {
-                "sling.servlet.resourceTypes=cq/spa/ssr",
+                "sling.servlet.resourceTypes=core-components-react-examples/spa/ssr",
                 "sling.servlet.methods=GET"
         }
 )
