@@ -38,7 +38,8 @@
     "link-deps": "npm link @adobe/cq-spa-page-model-manager && npm link @adobe/cq-spa-component-mapping && npm link @adobe/cq-react-editable-components",
     "clean": "del ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm/react/clientlibs/react-spacomponents/resources --force && rm -rf coverage/ dist/ src/tsconfig.types.tsbuildinfo",
     "mv": "move-cli build ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm/react/clientlibs/react-spacomponents/resources",
-    "test": "craco test"
+    "test": "craco test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
