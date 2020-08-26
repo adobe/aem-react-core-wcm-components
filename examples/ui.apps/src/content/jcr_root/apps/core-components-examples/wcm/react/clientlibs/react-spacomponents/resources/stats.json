@@ -1,14 +1,14 @@
 {
   "assetsByChunkName": {
-    "bootstrap": "js/bootstrap.540f70ed.js",
+    "bootstrap": "js/bootstrap.3fb90868.js",
     "main": [
       "static/css/main.chunk.css",
-      "js/main.540f70ed.js"
+      "js/main.3fb90868.js"
     ]
   },
   "assets": [
     {
-      "name": "js/bootstrap.540f70ed.js",
+      "name": "js/bootstrap.3fb90868.js",
       "size": 15062,
       "chunks": [
         "bootstrap"
@@ -22,8 +22,8 @@
       "emitted": false
     },
     {
-      "name": "js/main.540f70ed.js",
-      "size": 4781646,
+      "name": "js/main.3fb90868.js",
+      "size": 4780711,
       "chunks": [
         "main"
       ],
@@ -48,7 +48,7 @@
       "emitted": false
     }
   ],
-  "hash": "540f70ed40012c8c8edd",
+  "hash": "3fb90868a8f38fbcb3bb",
   "publicPath": "/etc.clientlibs/core-components-examples/wcm/react/clientlibs/react-spacomponents/resources/",
   "namedChunkGroups": {
     "main": {
@@ -57,9 +57,9 @@
         "main"
       ],
       "assets": [
-        "js/bootstrap.540f70ed.js",
+        "js/bootstrap.3fb90868.js",
         "static/css/main.chunk.css",
-        "js/main.540f70ed.js"
+        "js/main.3fb90868.js"
       ],
       "children": {},
       "childAssets": {}

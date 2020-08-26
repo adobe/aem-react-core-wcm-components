@@ -19,6 +19,9 @@ package com.adobe.cq.wcm.core.examples.react.components.chunks.impl;
 
 import com.adobe.cq.wcm.core.examples.react.components.chunks.AssetManifestService;
 import com.adobe.cq.wcm.core.examples.react.components.chunks.PrintChunkService;
+import com.adobe.cq.wcm.core.examples.react.components.ssr.SpaPageBindingsProvider;
+import com.adobe.cq.wcm.core.examples.react.components.ssr.model.SSRResponse;
+import com.adobe.cq.wcm.core.examples.react.components.ssr.model.SSRResponsePayload;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
@@ -30,6 +33,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -46,6 +50,10 @@ public class PrintChunkServiceImpl implements PrintChunkService {
     @Reference
     private AssetManifestService assetManifestService;
     
+    @Reference
+    private SpaPageBindingsProvider bindingsProvider;
+    
+    
     @Override
     public void printJsChunkToResponse(SlingHttpServletRequest request, SlingHttpServletResponse response) {
         print(request, response, SCRIPT_TAG, "js");
@@ -57,20 +65,30 @@ public class PrintChunkServiceImpl implements PrintChunkService {
     }
     
     
-    private List<String> getEntryPoints(Map<String,String> manifest) {
+    private List<String> getEntryPoints(SlingHttpServletRequest request, SlingHttpServletResponse response) throws IOException, LoginException {
         
+        Map<String,String> manifest = assetManifestService.getManifest(request);
         List<String> entryPoints = new ArrayList<>();
         
         entryPoints.add(manifest.get(  "bootstrap.js"));
         entryPoints.add(manifest.get(  "main.js"));
         entryPoints.add(manifest.get(  "main.css"));
+    
+        if(bindingsProvider.isServerSideRenderingActiveForRequest()){
+            final SSRResponse ssrResponse = bindingsProvider.getServerSideRenderedRequestResult();
+            final SSRResponsePayload payload = ssrResponse.getPayload();
+        
+            if (response != null) {
+                entryPoints.addAll(Arrays.asList(payload.getChunkNames()));
+            }
+        }
         
         return entryPoints;
     }
     
     private void print(SlingHttpServletRequest request, SlingHttpServletResponse response, String format, String extension){
         try {
-            List<String> entryPoints = getEntryPoints(assetManifestService.getManifest(request));
+            List<String> entryPoints = getEntryPoints(request,response);
         
             for(String entryPoint : entryPoints){
             

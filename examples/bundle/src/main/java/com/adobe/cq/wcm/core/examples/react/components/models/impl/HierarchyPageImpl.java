@@ -27,6 +27,7 @@ import com.day.cq.wcm.api.TemplatedResource;
 import com.day.cq.wcm.api.components.ComponentContext;
 import com.day.cq.wcm.api.designer.Style;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -54,6 +55,7 @@ import java.util.regex.Pattern;
 
 @Model(adaptables = SlingHttpServletRequest.class, adapters = {HierarchyPage.class, ContainerExporter.class}, resourceType = HierarchyPageImpl.RESOURCE_TYPE)
 @Exporter(name = ExporterConstants.SLING_MODEL_EXPORTER_NAME, extensions = ExporterConstants.SLING_MODEL_EXTENSION)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class HierarchyPageImpl implements HierarchyPage {
 
     /**
@@ -126,9 +128,11 @@ public class HierarchyPageImpl implements HierarchyPage {
     protected ResourceResolver resolver;
 
     @ScriptVariable
+    @JsonIgnore
     protected com.day.cq.wcm.api.Page currentPage;
 
     @ScriptVariable
+    @JsonIgnore
     protected Style currentStyle;
 
     @Nullable
@@ -235,14 +239,14 @@ public class HierarchyPageImpl implements HierarchyPage {
         // If the value is set to a negative value all the child pages will be exposed (full traversal tree - aka infinity)
         // Child pages do not expose their respective child pages
         if (page == null || depth == 0 || Boolean.TRUE.equals(slingRequest.getAttribute(IS_CHILD_PAGE_ATTR))) {
-            return Collections.emptyList();
+            return new ArrayList<>();
         }
 
         List<Page> pages = new ArrayList<>();
         Iterator<Page> childPagesIterator = page.listChildren();
 
         if (childPagesIterator == null || !childPagesIterator.hasNext()) {
-            return Collections.emptyList();
+            return new ArrayList<>();
         }
 
         // we are about to explore one lower level down the tree
@@ -510,5 +514,7 @@ public class HierarchyPageImpl implements HierarchyPage {
 
         return currentPage.getPageTitle();
     }
+    
+    
 
 }

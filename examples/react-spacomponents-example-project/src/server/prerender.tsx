@@ -81,9 +81,7 @@ const renderModelToHTMLString = (payload:ServerPayLoadModel) => {
     let stateStr = JSON.stringify(state);
 
     const rendered = `${html}
-        <script type="application/json" id="__INITIAL_STATE__">
-            window.__AEM_STATE__=${stateStr};\\
-        </script>`;
+        <script id="__INITIAL_STATE__" type="application/json">${stateStr}</script>`;
 
     const chunkNames = Array.from(new Set(rawChunkNames.map((chunk) => String(chunk).replace(/-/g, '/'))
         .filter((chunkName) => webpackExistingChunks.has(chunkName))));
@@ -98,14 +96,14 @@ const preRender = (payload:ServerPayLoadModel) => {
 
     const {
         parameters : {
-            rootPagePath
+            modelRootUrl
         } = {},
         model
     } = payload;
 
     return new Promise((resolve, reject) => {
         return ModelManager.initialize({
-            path: rootPagePath,
+            path: modelRootUrl,
             model,
             modelClient: new ModelClient()
         }).then((resolvedModel) => {

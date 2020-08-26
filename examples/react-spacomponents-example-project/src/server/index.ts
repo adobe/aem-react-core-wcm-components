@@ -28,8 +28,9 @@ const exapp = express();
 exapp.use(bodyParser.urlencoded({ extended: false }));
 
 exapp.use(express.static("dist"));
-exapp.use(bodyParser.json({limit: '50mb'}));
-exapp.use(bodyParser.urlencoded({limit: '50mb'}));
+//@ts-ignore
+exapp.use(bodyParser.json({limit: '50mb', extended: true}));
+exapp.use(bodyParser.urlencoded({limit: '50mb',extended: true}));
 
 exapp.post('/prerender', (req, res, next) => {
 

@@ -57,4 +57,6 @@ public class TempImageComponent implements  TempImageExporter {
     public String getExportedType() {
         return RESOURCE_TYPE;
     }
+    
+    
 }
