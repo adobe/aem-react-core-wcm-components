@@ -17,27 +17,28 @@ package com.adobe.cq.wcm.core.examples.react.components.chunks;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.collect.ImmutableMap;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Manifest {
+public class Manifest extends HashMap<String,String> {
+
+    @JsonInclude
+    public List<String> getEntryPoints() {
+     
+        List<String> entryPoints = new ArrayList<>();
     
-    @JsonProperty("files")
-    private Map<String,String> files;
+        entryPoints.add(get(  "bootstrap.js"));
+        entryPoints.add(get(  "main.js"));
+        entryPoints.add(get(  "main.css"));
     
-    @JsonProperty("entrypoints")
-    private String[] entryPoints;
-    
-    public Map<String, String> getFiles() {
-        return ImmutableMap.copyOf(files);
-    }
-    
-    public String[] getEntryPoints() {
-        String[] copy = Arrays.copyOf(entryPoints, entryPoints.length);
-        return copy;
+        return entryPoints;
     }
 }

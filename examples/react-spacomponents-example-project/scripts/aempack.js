@@ -17,11 +17,11 @@
 process.env.BABEL_ENV = 'development';
 process.env.NODE_ENV = 'development';
 
-const paths = require('../config2/paths');
+const paths = require('../config/paths');
 const aemPack = require('aempack');
 
 const developWithSSR = process.env.DEVELOPSSR || false;
-const webpackConfig = require('./webpackConfig');
+const webpackConfig = require('../config/webpack.config.dev');
 
 const user = process.env.AEMUSER  || 'admin';
 const password = process.env.AEMPW || 'admin';

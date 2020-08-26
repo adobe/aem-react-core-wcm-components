@@ -17,6 +17,7 @@ package com.adobe.cq.wcm.core.examples.react.components.chunks.impl;
 
 import com.adobe.cq.wcm.core.examples.react.components.chunks.AssetManifestService;
 import com.adobe.cq.wcm.core.examples.react.components.chunks.Manifest;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
@@ -25,6 +26,7 @@ import org.osgi.service.component.annotations.Component;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Map;
 
 
 @Component(service = AssetManifestService.class)
@@ -35,7 +37,7 @@ public class AssetManifestServiceImpl implements AssetManifestService {
     private static final String PATH_TO_SPA_MANIFEST          = "/apps/core-components-examples/wcm/react/clientlibs/react-spacomponents/resources/asset-manifest.json";
     
     @Override
-    public Manifest getManifest(SlingHttpServletRequest request) throws IOException {
+    public Map<String,String> getManifest(SlingHttpServletRequest request) throws IOException {
     
         final Resource assetManifestResource = getManifestResource(request);
     
@@ -43,7 +45,7 @@ public class AssetManifestServiceImpl implements AssetManifestService {
             InputStream file = assetManifestResource.adaptTo(InputStream.class);
             String fileString = IOUtils.toString(file);
             ObjectMapper objectMapper = new ObjectMapper();
-            return objectMapper.readValue(fileString, Manifest.class);
+            return objectMapper.readValue(fileString, new TypeReference<Map<String, String>>() {});
         }else{
             throw new IOException("Could not load manifest file!");
         }
