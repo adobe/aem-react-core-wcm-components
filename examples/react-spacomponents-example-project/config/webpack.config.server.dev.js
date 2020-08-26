@@ -13,7 +13,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const publicPath = '/';
 const publicUrl = publicPath.slice(0, -1);
 const env = getClientEnvironment(publicUrl);
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 // Inject mode into stringified environment
 Object.assign(env.stringified['process.env'], {

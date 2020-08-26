@@ -50,7 +50,7 @@ const renderModelToHTMLString = (payload:ServerPayLoadModel) => {
         } = {}
     } = payload;
 
-    const model:PageModel = payload.model;
+    const model:PageModel = payload.model as PageModel;
 
     const isInEditor = wcmMode && wcmMode === 'EDIT' || wcmMode === 'PREVIEW';
    

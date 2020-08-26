@@ -139,6 +139,44 @@ module.exports = {
                 include: paths.appSrc,
             },
             {
+                test: /\.ts$|\.tsx$/,
+                exclude: /(node_modules|dist)/,
+                loader:  require.resolve('ts-loader'),
+                enforce: 'post',
+            },
+            {
+                test: /\.(ts|tsx|js|mjs|jsx)$/,
+                include: paths.appSrc,
+                loader: require.resolve('babel-loader'),
+                options: {
+                    customize: require.resolve(
+                        'babel-preset-react-app/webpack-overrides'
+                    ),
+
+                    presets: [
+                        require.resolve("@babel/preset-typescript")
+                    ],
+                    plugins: [
+                        ['@babel/plugin-proposal-class-properties'],
+                        ['@babel/plugin-proposal-object-rest-spread'],
+                        [
+                            require.resolve('babel-plugin-named-asset-import'),
+                            {
+                                loaderMap: {
+                                    svg: {
+                                        ReactComponent: '@svgr/webpack?-prettier,-svgo![path]',
+                                    },
+                                },
+                            }
+                        ],
+                        ['universal-import'],
+                    ],
+
+                    cacheDirectory: true,
+                    cacheCompression: false,
+                },
+            },
+            {
                 // "oneOf" will traverse all following loaders until one will
                 // match the requirements. When no loader matches it will fall
                 // back to the "file" loader at the end of the loader list.
@@ -164,44 +202,7 @@ module.exports = {
                     // Process application JS with Babel.
                     // The preset includes JSX, Flow, and some ESnext features.
 
-                    {
-                        test: /\.ts$|\.tsx$/,
-                        exclude: /(node_modules|dist)/,
-                        loader:  require.resolve('ts-loader'),
-                        enforce: 'post',
-                    },
-                    {
-                        test: /\.(js|mjs|jsx)$/,
-                        include: paths.appSrc,
-                        loader: require.resolve('babel-loader'),
-                        options: {
-                            customize: require.resolve(
-                                'babel-preset-react-app/webpack-overrides'
-                            ),
 
-                            presets: [
-                                require.resolve("@babel/preset-typescript")
-                            ],
-                            plugins: [
-                                ['@babel/plugin-proposal-class-properties'],
-                                ['@babel/plugin-proposal-object-rest-spread'],
-                                [
-                                    require.resolve('babel-plugin-named-asset-import'),
-                                    {
-                                        loaderMap: {
-                                            svg: {
-                                                ReactComponent: '@svgr/webpack?-prettier,-svgo![path]',
-                                            },
-                                        },
-                                    }
-                                ],
-                                ['universal-import'],
-                            ],
-
-                            cacheDirectory: true,
-                            cacheCompression: false,
-                        },
-                    },
                     // Process any JS outside of the app with Babel.
                     // Unlike the application JS, we only compile the standard ES features.
                     {

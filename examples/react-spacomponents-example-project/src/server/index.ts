@@ -16,7 +16,6 @@
 // Expose XMLHttpRequest globally so ModelManager can use it
 
 import React from "react";
-import "./global";
 import express from "express";
 import bodyParser from "body-parser";
 
