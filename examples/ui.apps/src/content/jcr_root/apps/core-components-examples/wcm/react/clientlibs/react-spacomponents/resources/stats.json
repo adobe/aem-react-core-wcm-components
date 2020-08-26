@@ -1,1 +1,68 @@
-{}
+{
+  "assetsByChunkName": {
+    "bootstrap": "js/bootstrap.540f70ed.js",
+    "main": [
+      "static/css/main.chunk.css",
+      "js/main.540f70ed.js"
+    ]
+  },
+  "assets": [
+    {
+      "name": "js/bootstrap.540f70ed.js",
+      "size": 15062,
+      "chunks": [
+        "bootstrap"
+      ],
+      "chunkNames": [
+        "bootstrap"
+      ],
+      "info": {
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "js/main.540f70ed.js",
+      "size": 4781646,
+      "chunks": [
+        "main"
+      ],
+      "chunkNames": [
+        "main"
+      ],
+      "info": {
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "static/css/main.chunk.css",
+      "size": 2226,
+      "chunks": [
+        "main"
+      ],
+      "chunkNames": [
+        "main"
+      ],
+      "info": {},
+      "emitted": false
+    }
+  ],
+  "hash": "540f70ed40012c8c8edd",
+  "publicPath": "/etc.clientlibs/core-components-examples/wcm/react/clientlibs/react-spacomponents/resources/",
+  "namedChunkGroups": {
+    "main": {
+      "chunks": [
+        "bootstrap",
+        "main"
+      ],
+      "assets": [
+        "js/bootstrap.540f70ed.js",
+        "static/css/main.chunk.css",
+        "js/main.540f70ed.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  }
+}

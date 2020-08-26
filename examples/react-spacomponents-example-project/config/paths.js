@@ -83,6 +83,7 @@ module.exports = {
     appPackageJson: resolveApp('package.json'),
     appSrc: resolveApp('src'),
     appNodeModules: resolveApp('node_modules'),
+    tsConfigServer: resolveApp('tsconfig.server.json'),
     publicUrl: getPublicUrl(resolveApp('package.json')),
     publicPath: '/etc.clientlibs/' + clientLibTarget + '/',
     clientLibRelativePath: clientLibRelativePath,

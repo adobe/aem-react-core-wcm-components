@@ -13,7 +13,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
-    "react-universal-component": "^4.0.1"
+    "react-universal-component": "^4.0.1",
+    "cross-fetch": "^3.0.5"
   },
   "devDependencies": {
     "aempack": "^1.1.9",
@@ -91,6 +92,7 @@
     "semver": "6.3.0",
     "style-loader": "0.23.1",
     "terser-webpack-plugin": "2.3.5",
+    "tsconfig-paths-webpack-plugin": "^3.3.0",
     "ts-pnp": "1.1.6",
     "url-loader": "2.3.0",
     "webpack": "4.44.1",
@@ -103,12 +105,18 @@
     "build:production": "cross-env NODE_ENV=production npm-run-all build-css build-js",
     "build-js": "webpack --config config/webpack.config.dev.js && webpack --config config/webpack.config.server.dev.js",
     "build-css": "node-sass-chokidar --source-map-embed --include-path ./src --include-path ./node_modules src/ -o src/ --output-style compressed",
-    "aempack": "cross-env NODE_ENV=development node scripts/aempack.js",
-    "start": "craco start",
+    "watch-css": "node-sass-chokidar --source-map-embed --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive --output-style expanded",
+    "start-css": "npm-run-all -s build-css watch-css",
+    "server": "node dist/server/server.js",
     "install:link-deps": "npm install && npm run link-deps",
     "link-deps": "npm link @adobe/cq-spa-page-model-manager && npm link @adobe/cq-spa-component-mapping && npm link @adobe/cq-react-editable-components",
     "clean": "del ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm/react/clientlibs/react-spacomponents/resources --force && rm -rf coverage/ dist/ src/tsconfig.types.tsbuildinfo",
-    "mv": "move-cli build ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm/react/clientlibs/react-spacomponents/resources"
+    "mv": "move-cli build ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm/react/clientlibs/react-spacomponents/resources",
+    "start-aempack": "node scripts/aempack.js",
+    "aempack": "cross-env PROXYHOST=local.aemcomponents.dev NODE_ENV=development npm-run-all -p watch-css start-aempack",
+    "aempack-ssr": "cross-env DEVELOPSSR=true  NODE_ENV=development npm-run-all -p watch-css start-aempack",
+    "aempack-pub": "cross-env PROXYHOST=local.aemcomponents.dev AEMPORT=4503 cross-env NODE_ENV=development npm-run-all -p watch-css start-aempack",
+    "aempack-pub-ssr": "cross-env DEVELOPSSR=true npm-run-all -p aempack-pub"
   },
   "eslintConfig": {
     "extends": "react-app"
