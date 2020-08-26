@@ -32,7 +32,7 @@
   "scripts": {
     "build": "npm run clean && craco build && move-cli build ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm/react/clientlibs/react-spacomponents/resources",
     "build-prod": "npm run clean && cross-env GENERATE_SOURCEMAP=false craco build && move-cli build ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm/react/clientlibs/react-spacomponents/resources",
-    "aempack": "cross-env NODE_ENV=development node scripts/aempack.js",
+    "aempack": "cross-env NODE_ENV=development node scripts2/aempack.js",
     "start": "craco start",
     "install:link-deps": "npm install && npm run link-deps",
     "link-deps": "npm link @adobe/cq-spa-page-model-manager && npm link @adobe/cq-spa-component-mapping && npm link @adobe/cq-react-editable-components",

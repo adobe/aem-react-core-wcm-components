@@ -17,9 +17,9 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const webpackConfig = require('react-scripts/config/webpack.config.js')('development');
-const paths = require('../config/paths');
+const paths = require('../config2/paths');
 const path = require('path');
-const aliases = require('../config/aliases');
+const aliases = require('../config2/aliases');
 
 webpackConfig.optimization = {
     splitChunks: {

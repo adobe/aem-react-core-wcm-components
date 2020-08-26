@@ -17,7 +17,7 @@
 process.env.BABEL_ENV = 'development';
 process.env.NODE_ENV = 'development';
 
-const paths = require('../config/paths');
+const paths = require('../config2/paths');
 const aemPack = require('aempack');
 
 const developWithSSR = process.env.DEVELOPSSR || false;

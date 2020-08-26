@@ -15,7 +15,7 @@
  */
 
 const CracoAlias = require("craco-alias");
-const aliases = require("./config/aliases");
+const aliases = require("./config2/aliases");
 module.exports = {
     plugins: [
         {
