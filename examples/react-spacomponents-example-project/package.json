@@ -4,7 +4,7 @@
   "dependencies": {
     "@adobe/aem-core-components-react-base": "file:../../react-base-components",
     "@adobe/aem-core-components-react-spa": "file:../../react-spa-components",
-    "@adobe/aem-react-editable-components": "^1.0.0",
+    "@adobe/aem-react-editable-components": "^1.0.2",
     "@adobe/aem-spa-component-mapping": "^1.0.0",
     "@adobe/aem-spa-page-model-manager": "^1.0.0",
     "@testing-library/jest-dom": "^4.2.4",
