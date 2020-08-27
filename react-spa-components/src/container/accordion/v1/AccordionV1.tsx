@@ -18,7 +18,7 @@ import * as React from 'react';
 
 
 import {CoreContainerProperties, CoreContainerState, withAuthorPanelSwitch, withStandardBaseCssClass} from "../../../AbstractCoreContainerComponent";
-import {ComponentMapping, Container} from '@adobe/cq-react-editable-components';
+import {ComponentMapping, Container} from '@adobe/aem-react-editable-components';
 import {AccordionV1IsEmptyFn} from "./AccordionV1IsEmptyFn";
 
 export interface AccordionV1Properties extends CoreContainerProperties{

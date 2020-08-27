@@ -19,7 +19,7 @@ import  {AccordionV1Properties} from "./AccordionV1";
 
 import ComponentMapping, {dummyItems} from "../../../TestComponentMapping";
 import {AccordionV1IsEmptyFn} from "./AccordionV1IsEmptyFn";
-import { AllowedComponents, AllowedComponent } from '@adobe/cq-react-editable-components';
+import { AllowedComponents, AllowedComponent } from '@adobe/aem-react-editable-components';
 
 const allowedComponent:AllowedComponent = {
     path: "/apps/core/components/dummy",

@@ -16,9 +16,9 @@
 
 import * as React from 'react';
 
-import {ContainerState, AllowedComponentsProperties} from '@adobe/cq-react-editable-components';
+import {ContainerState, AllowedComponentsProperties} from '@adobe/aem-react-editable-components';
 import {ComponentType} from "react";
-import { Model } from '@adobe/cq-spa-page-model-manager';
+import { Model } from '@adobe/aem-spa-page-model-manager';
 
 export interface CoreContainerProperties extends AllowedComponentsProperties{
     baseCssClass?:string;

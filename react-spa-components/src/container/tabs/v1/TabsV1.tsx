@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import {ComponentMapping, Container} from '@adobe/cq-react-editable-components';
+import {ComponentMapping, Container} from '@adobe/aem-react-editable-components';
 import {CoreContainerProperties, CoreContainerState, withAuthorPanelSwitch, withStandardBaseCssClass, CoreContainerItem} from "../../../AbstractCoreContainerComponent";
 import {TabsV1IsEmptyFn} from "./TabsV1IsEmptyFn";
 

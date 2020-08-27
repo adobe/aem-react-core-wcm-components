@@ -17,7 +17,7 @@
 import React, {Component} from "react";
 
 
-import {EditConfig, MappedComponentProperties, ComponentMapping, MapTo} from "@adobe/cq-react-editable-components";
+import {EditConfig, MappedComponentProperties, ComponentMapping, MapTo} from "@adobe/aem-react-editable-components";
 
 import {CoreContainerItem} from "./AbstractCoreContainerComponent";
 

@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 
-import {MapTo, Container, MappedComponentProperties, ContainerProperties, PageProperties} from '@adobe/cq-react-editable-components';
+import {MapTo, Container, MappedComponentProperties, ContainerProperties, PageProperties} from '@adobe/aem-react-editable-components';
 
 import {TitleV2IsEmptyFn, ListV2IsEmptyFn, BreadCrumbV2IsEmptyFn, TextV2IsEmptyFn, ButtonV1IsEmptyFn, ImageV2IsEmptyFn, TeaserV1IsEmptyFn, DownloadV1IsEmptyFn, SeparatorV1IsEmptyFn} from "@adobe/aem-core-components-react-base/dist/isEmptyFunctions";
 import {AccordionV1IsEmptyFn, CarouselV1IsEmptyFn, ContainerV1IsEmptyFn, TabsV1IsEmptyFn} from "@adobe/aem-core-components-react-spa/dist/isEmptyFunctions";

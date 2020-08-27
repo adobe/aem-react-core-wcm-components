@@ -19,7 +19,7 @@ import React from "react";
 
 import ReactDOM from "react-dom";
 import {BrowserRouter} from 'react-router-dom';
-import {Model, ModelManager, Constants} from '@adobe/cq-spa-page-model-manager';
+import {Model, ModelManager, Constants} from '@adobe/aem-spa-page-model-manager';
 
 import App from './components/App';
 

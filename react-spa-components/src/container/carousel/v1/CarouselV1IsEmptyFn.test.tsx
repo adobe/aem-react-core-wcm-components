@@ -19,7 +19,7 @@ import  {CarouselV1Properties} from "./CarouselV1";
 
 import ComponentMapping, {dummyItems} from "../../../TestComponentMapping";
 import {CarouselV1IsEmptyFn} from "./CarouselV1IsEmptyFn";
-import { AllowedComponents, AllowedComponent } from '@adobe/cq-react-editable-components';
+import { AllowedComponents, AllowedComponent } from '@adobe/aem-react-editable-components';
 
 const allowedComponent:AllowedComponent = {
     path: "/apps/core/components/dummy",

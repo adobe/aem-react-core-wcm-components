@@ -16,7 +16,7 @@
 
 import React, {Component, ComponentType} from 'react';
 import {Route} from 'react-router-dom';
-import { MappedComponentProperties } from '@adobe/cq-react-editable-components';
+import { MappedComponentProperties } from '@adobe/aem-react-editable-components';
 
 /**
  * Helper that facilitate the use of the {@link Route} component
