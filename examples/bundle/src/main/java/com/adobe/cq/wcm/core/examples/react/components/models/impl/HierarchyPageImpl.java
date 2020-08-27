@@ -29,6 +29,7 @@ import com.day.cq.wcm.api.designer.Style;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
@@ -55,7 +56,7 @@ import java.util.regex.Pattern;
 
 @Model(adaptables = SlingHttpServletRequest.class, adapters = {HierarchyPage.class, ContainerExporter.class}, resourceType = HierarchyPageImpl.RESOURCE_TYPE)
 @Exporter(name = ExporterConstants.SLING_MODEL_EXPORTER_NAME, extensions = ExporterConstants.SLING_MODEL_EXTENSION)
-@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonSerialize(as = HierarchyPage.class)
 public class HierarchyPageImpl implements HierarchyPage {
 
     /**
@@ -103,24 +104,26 @@ public class HierarchyPageImpl implements HierarchyPage {
      */
     private static final String URL_MODEL_EXTENSION = ".model.json";
 
-    @Self
+    @Self @JsonIgnore
     private SlingHttpServletRequest request;
 
-    @Inject
+    @Inject @JsonIgnore
     private ModelFactory modelFactory;
 
-    @Inject
+    @Inject @JsonIgnore
     private PageManager pageManager;
 
     @ScriptVariable
     @JsonIgnore
     private Resource resource;
 
-    @Inject
+    @Inject @JsonIgnore
     private SlingModelFilter slingModelFilter;
-
+    
+    @JsonIgnore
     private Map<String, ? extends HierarchyPage> childPages = null;
-
+    
+    @JsonIgnore
     private Map<String, ComponentExporter> childModels = null;
 
     @ScriptVariable
@@ -469,6 +472,7 @@ public class HierarchyPageImpl implements HierarchyPage {
     /**
      * @return Returns the root (app) page the current page is part of
      */
+    @JsonIgnore
     private Page getRootPage() {
         Page page = currentPage;
         boolean isRootModel;

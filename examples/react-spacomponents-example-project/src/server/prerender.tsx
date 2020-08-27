@@ -76,7 +76,6 @@ const renderModelToHTMLString = (payload:ServerPayLoadModel) => {
     let state = {
         rootModel: model,
         rootModelUrl: ModelManager.rootPath,
-        pagePath
     };
     let stateStr = JSON.stringify(state);
 
@@ -96,14 +95,14 @@ const preRender = (payload:ServerPayLoadModel) => {
 
     const {
         parameters : {
-            modelRootUrl
+            rootPagePath
         } = {},
         model
     } = payload;
 
     return new Promise((resolve, reject) => {
         return ModelManager.initialize({
-            path: modelRootUrl,
+            path: rootPagePath,
             model,
             modelClient: new ModelClient()
         }).then((resolvedModel) => {

@@ -14,17 +14,18 @@
  *  limitations under the License.
  */
 
-const CracoAlias = require("craco-alias");
-const aliases = require("./config2/aliases");
-module.exports = {
-    plugins: [
-        {
-            plugin: CracoAlias,
-            options: {
-                source: "options",
-                baseUrl: "./",
-                aliases: aliases
-            }
-        }
-    ]
-};
+process.env.BABEL_ENV = process.env.NODE_ENV;
+
+const webpack = require('webpack');
+
+const config = require('../config/webpack.config.adobeio.js');
+
+console.log("building adobeio bundle..")
+webpack(config, (err)=> {
+    console.log('completed building adobeio bundle.');
+
+    if(err != null){
+        console.log("Error building adobeio bundle!");
+        throw err;
+    }
+});

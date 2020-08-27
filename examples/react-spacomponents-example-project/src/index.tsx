@@ -40,7 +40,9 @@ DOMReady( ()=> {
 
     const isServerSideRendered = (initialModel !== undefined);
 
-    modelElement.remove();
+    if(isServerSideRendered){
+        modelElement.remove();
+    }
 
     const modelClient = new ModelClient();
 

@@ -1,32 +1,32 @@
 {
   "assetsByChunkName": {
-    "AccordionV1": "js/AccordionV1.5c87bf05.js",
-    "BreadCrumbV2": "js/BreadCrumbV2.5c87bf05.js",
-    "ButtonV1": "js/ButtonV1.5c87bf05.js",
-    "CarouselV1": "js/CarouselV1.5c87bf05.js",
-    "ContainerV1": "js/ContainerV1.5c87bf05.js",
-    "DownloadV1": "js/DownloadV1.5c87bf05.js",
-    "ImageV2": "js/ImageV2.5c87bf05.js",
-    "LanguageNavigationV1": "js/LanguageNavigationV1.5c87bf05.js",
-    "ListV2": "js/ListV2.5c87bf05.js",
-    "NavigationV1": "js/NavigationV1.5c87bf05.js",
-    "SeparatorV1": "js/SeparatorV1.5c87bf05.js",
-    "TabsV1": "js/TabsV1.5c87bf05.js",
-    "TeaserV1": "js/TeaserV1.5c87bf05.js",
-    "TextV2": "js/TextV2.5c87bf05.js",
-    "TitleV2": "js/TitleV2.5c87bf05.js",
-    "bootstrap": "js/bootstrap.5c87bf05.js",
+    "AccordionV1": "js/AccordionV1.3cdaa223.js",
+    "BreadCrumbV2": "js/BreadCrumbV2.3cdaa223.js",
+    "ButtonV1": "js/ButtonV1.3cdaa223.js",
+    "CarouselV1": "js/CarouselV1.3cdaa223.js",
+    "ContainerV1": "js/ContainerV1.3cdaa223.js",
+    "DownloadV1": "js/DownloadV1.3cdaa223.js",
+    "ImageV2": "js/ImageV2.3cdaa223.js",
+    "LanguageNavigationV1": "js/LanguageNavigationV1.3cdaa223.js",
+    "ListV2": "js/ListV2.3cdaa223.js",
+    "NavigationV1": "js/NavigationV1.3cdaa223.js",
+    "SeparatorV1": "js/SeparatorV1.3cdaa223.js",
+    "TabsV1": "js/TabsV1.3cdaa223.js",
+    "TeaserV1": "js/TeaserV1.3cdaa223.js",
+    "TextV2": "js/TextV2.3cdaa223.js",
+    "TitleV2": "js/TitleV2.3cdaa223.js",
+    "bootstrap": "js/bootstrap.3cdaa223.js",
     "main": [
       "static/css/main.chunk.css",
-      "js/main.5c87bf05.js"
+      "js/main.3cdaa223.js"
     ]
   },
   "assets": [
     {
-      "name": "js/AccordionV1.5c87bf05.js",
-      "size": 51276,
+      "name": "js/AccordionV1.3cdaa223.js",
+      "size": 5958,
       "chunks": [
-        "AccordionV1"
+        0
       ],
       "chunkNames": [
         "AccordionV1"
@@ -37,195 +37,329 @@
       "emitted": false
     },
     {
-      "name": "js/BreadCrumbV2.5c87bf05.js",
-      "size": 56311,
+      "name": "js/AccordionV1.3cdaa223.js.LICENSE.txt",
+      "size": 2516,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "js/BreadCrumbV2.3cdaa223.js",
+      "size": 4796,
       "chunks": [
+        1
+      ],
+      "chunkNames": [
         "BreadCrumbV2"
       ],
-      "chunkNames": [
-        "BreadCrumbV2"
-      ],
       "info": {
         "immutable": true
       },
       "emitted": false
     },
     {
-      "name": "js/ButtonV1.5c87bf05.js",
-      "size": 53395,
+      "name": "js/BreadCrumbV2.3cdaa223.js.LICENSE.txt",
+      "size": 2492,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "js/ButtonV1.3cdaa223.js",
+      "size": 4228,
       "chunks": [
+        2
+      ],
+      "chunkNames": [
         "ButtonV1"
       ],
-      "chunkNames": [
-        "ButtonV1"
-      ],
       "info": {
         "immutable": true
       },
       "emitted": false
     },
     {
-      "name": "js/CarouselV1.5c87bf05.js",
-      "size": 65049,
+      "name": "js/ButtonV1.3cdaa223.js.LICENSE.txt",
+      "size": 2377,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "js/CarouselV1.3cdaa223.js",
+      "size": 9857,
       "chunks": [
+        3
+      ],
+      "chunkNames": [
         "CarouselV1"
       ],
-      "chunkNames": [
-        "CarouselV1"
-      ],
       "info": {
         "immutable": true
       },
       "emitted": false
     },
     {
-      "name": "js/ContainerV1.5c87bf05.js",
-      "size": 41978,
+      "name": "js/CarouselV1.3cdaa223.js.LICENSE.txt",
+      "size": 2488,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "js/ContainerV1.3cdaa223.js",
+      "size": 4714,
       "chunks": [
+        4
+      ],
+      "chunkNames": [
         "ContainerV1"
       ],
-      "chunkNames": [
-        "ContainerV1"
-      ],
       "info": {
         "immutable": true
       },
       "emitted": false
     },
     {
-      "name": "js/DownloadV1.5c87bf05.js",
-      "size": 55187,
+      "name": "js/ContainerV1.3cdaa223.js.LICENSE.txt",
+      "size": 2334,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "js/DownloadV1.3cdaa223.js",
+      "size": 5344,
       "chunks": [
+        5
+      ],
+      "chunkNames": [
         "DownloadV1"
       ],
-      "chunkNames": [
-        "DownloadV1"
-      ],
       "info": {
         "immutable": true
       },
       "emitted": false
     },
     {
-      "name": "js/ImageV2.5c87bf05.js",
-      "size": 52853,
+      "name": "js/DownloadV1.3cdaa223.js.LICENSE.txt",
+      "size": 2100,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "js/ImageV2.3cdaa223.js",
+      "size": 4241,
       "chunks": [
+        6
+      ],
+      "chunkNames": [
         "ImageV2"
       ],
-      "chunkNames": [
-        "ImageV2"
-      ],
       "info": {
         "immutable": true
       },
       "emitted": false
     },
     {
-      "name": "js/LanguageNavigationV1.5c87bf05.js",
-      "size": 76914,
+      "name": "js/ImageV2.3cdaa223.js.LICENSE.txt",
+      "size": 2332,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "js/LanguageNavigationV1.3cdaa223.js",
+      "size": 7210,
       "chunks": [
+        7
+      ],
+      "chunkNames": [
         "LanguageNavigationV1"
       ],
-      "chunkNames": [
-        "LanguageNavigationV1"
-      ],
       "info": {
         "immutable": true
       },
       "emitted": false
     },
     {
-      "name": "js/ListV2.5c87bf05.js",
-      "size": 57299,
+      "name": "js/LanguageNavigationV1.3cdaa223.js.LICENSE.txt",
+      "size": 3382,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "js/ListV2.3cdaa223.js",
+      "size": 4894,
       "chunks": [
+        8
+      ],
+      "chunkNames": [
         "ListV2"
       ],
-      "chunkNames": [
-        "ListV2"
-      ],
       "info": {
         "immutable": true
       },
       "emitted": false
     },
     {
-      "name": "js/NavigationV1.5c87bf05.js",
-      "size": 56854,
+      "name": "js/ListV2.3cdaa223.js.LICENSE.txt",
+      "size": 2400,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "js/NavigationV1.3cdaa223.js",
+      "size": 4824,
       "chunks": [
+        9
+      ],
+      "chunkNames": [
         "NavigationV1"
       ],
-      "chunkNames": [
-        "NavigationV1"
-      ],
       "info": {
         "immutable": true
       },
       "emitted": false
     },
     {
-      "name": "js/SeparatorV1.5c87bf05.js",
-      "size": 40774,
+      "name": "js/NavigationV1.3cdaa223.js.LICENSE.txt",
+      "size": 2521,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "js/SeparatorV1.3cdaa223.js",
+      "size": 3122,
       "chunks": [
+        10
+      ],
+      "chunkNames": [
         "SeparatorV1"
       ],
-      "chunkNames": [
-        "SeparatorV1"
-      ],
       "info": {
         "immutable": true
       },
       "emitted": false
     },
     {
-      "name": "js/TabsV1.5c87bf05.js",
-      "size": 49862,
+      "name": "js/SeparatorV1.3cdaa223.js.LICENSE.txt",
+      "size": 1967,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "js/TabsV1.3cdaa223.js",
+      "size": 5401,
       "chunks": [
+        11
+      ],
+      "chunkNames": [
         "TabsV1"
       ],
-      "chunkNames": [
-        "TabsV1"
-      ],
       "info": {
         "immutable": true
       },
       "emitted": false
     },
     {
-      "name": "js/TeaserV1.5c87bf05.js",
-      "size": 85802,
+      "name": "js/TabsV1.3cdaa223.js.LICENSE.txt",
+      "size": 2376,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "js/TeaserV1.3cdaa223.js",
+      "size": 7554,
       "chunks": [
+        12
+      ],
+      "chunkNames": [
         "TeaserV1"
       ],
-      "chunkNames": [
-        "TeaserV1"
-      ],
       "info": {
         "immutable": true
       },
       "emitted": false
     },
     {
-      "name": "js/TextV2.5c87bf05.js",
-      "size": 42980,
+      "name": "js/TeaserV1.3cdaa223.js.LICENSE.txt",
+      "size": 3348,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "js/TextV2.3cdaa223.js",
+      "size": 3432,
       "chunks": [
+        13
+      ],
+      "chunkNames": [
         "TextV2"
       ],
-      "chunkNames": [
-        "TextV2"
-      ],
       "info": {
         "immutable": true
       },
       "emitted": false
     },
     {
-      "name": "js/TitleV2.5c87bf05.js",
-      "size": 52425,
+      "name": "js/TextV2.3cdaa223.js.LICENSE.txt",
+      "size": 1860,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "js/TitleV2.3cdaa223.js",
+      "size": 4095,
       "chunks": [
+        14
+      ],
+      "chunkNames": [
         "TitleV2"
       ],
+      "info": {
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "js/TitleV2.3cdaa223.js.LICENSE.txt",
+      "size": 2362,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "js/bootstrap.3cdaa223.js",
+      "size": 2586,
+      "chunks": [
+        15
+      ],
       "chunkNames": [
-        "TitleV2"
+        "bootstrap"
       ],
       "info": {
         "immutable": true
@@ -233,13 +367,13 @@
       "emitted": false
     },
     {
-      "name": "js/bootstrap.5c87bf05.js",
-      "size": 22998,
+      "name": "js/main.3cdaa223.js",
+      "size": 288604,
       "chunks": [
-        "bootstrap"
+        16
       ],
       "chunkNames": [
-        "bootstrap"
+        "main"
       ],
       "info": {
         "immutable": true
@@ -247,24 +381,18 @@
       "emitted": false
     },
     {
-      "name": "js/main.5c87bf05.js",
-      "size": 4050754,
-      "chunks": [
-        "main"
-      ],
-      "chunkNames": [
-        "main"
-      ],
-      "info": {
-        "immutable": true
-      },
+      "name": "js/main.3cdaa223.js.LICENSE.txt",
+      "size": 42237,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
       "emitted": false
     },
     {
       "name": "static/css/main.chunk.css",
-      "size": 2226,
+      "size": 47,
       "chunks": [
-        "main"
+        16
       ],
       "chunkNames": [
         "main"
@@ -273,168 +401,168 @@
       "emitted": false
     }
   ],
-  "hash": "5c87bf058ff6f9c0f340",
+  "hash": "3cdaa22366463f8e992c",
   "publicPath": "/etc.clientlibs/core-components-examples/wcm/react/clientlibs/react-spacomponents/resources/",
   "namedChunkGroups": {
     "main": {
       "chunks": [
-        "bootstrap",
-        "main"
+        15,
+        16
       ],
       "assets": [
-        "js/bootstrap.5c87bf05.js",
+        "js/bootstrap.3cdaa223.js",
         "static/css/main.chunk.css",
-        "js/main.5c87bf05.js"
+        "js/main.3cdaa223.js"
       ],
       "children": {},
       "childAssets": {}
     },
     "TitleV2": {
       "chunks": [
-        "TitleV2"
+        14
       ],
       "assets": [
-        "js/TitleV2.5c87bf05.js"
+        "js/TitleV2.3cdaa223.js"
       ],
       "children": {},
       "childAssets": {}
     },
     "BreadCrumbV2": {
       "chunks": [
-        "BreadCrumbV2"
+        1
       ],
       "assets": [
-        "js/BreadCrumbV2.5c87bf05.js"
+        "js/BreadCrumbV2.3cdaa223.js"
       ],
       "children": {},
       "childAssets": {}
     },
     "TextV2": {
       "chunks": [
-        "TextV2"
+        13
       ],
       "assets": [
-        "js/TextV2.5c87bf05.js"
+        "js/TextV2.3cdaa223.js"
       ],
       "children": {},
       "childAssets": {}
     },
     "NavigationV1": {
       "chunks": [
-        "NavigationV1"
+        9
       ],
       "assets": [
-        "js/NavigationV1.5c87bf05.js"
+        "js/NavigationV1.3cdaa223.js"
       ],
       "children": {},
       "childAssets": {}
     },
     "ButtonV1": {
       "chunks": [
-        "ButtonV1"
+        2
       ],
       "assets": [
-        "js/ButtonV1.5c87bf05.js"
+        "js/ButtonV1.3cdaa223.js"
       ],
       "children": {},
       "childAssets": {}
     },
     "ImageV2": {
       "chunks": [
-        "ImageV2"
+        6
       ],
       "assets": [
-        "js/ImageV2.5c87bf05.js"
+        "js/ImageV2.3cdaa223.js"
       ],
       "children": {},
       "childAssets": {}
     },
     "LanguageNavigationV1": {
       "chunks": [
-        "LanguageNavigationV1"
+        7
       ],
       "assets": [
-        "js/LanguageNavigationV1.5c87bf05.js"
+        "js/LanguageNavigationV1.3cdaa223.js"
       ],
       "children": {},
       "childAssets": {}
     },
     "TeaserV1": {
       "chunks": [
-        "TeaserV1"
+        12
       ],
       "assets": [
-        "js/TeaserV1.5c87bf05.js"
+        "js/TeaserV1.3cdaa223.js"
       ],
       "children": {},
       "childAssets": {}
     },
     "DownloadV1": {
       "chunks": [
-        "DownloadV1"
+        5
       ],
       "assets": [
-        "js/DownloadV1.5c87bf05.js"
+        "js/DownloadV1.3cdaa223.js"
       ],
       "children": {},
       "childAssets": {}
     },
     "SeparatorV1": {
       "chunks": [
-        "SeparatorV1"
+        10
       ],
       "assets": [
-        "js/SeparatorV1.5c87bf05.js"
+        "js/SeparatorV1.3cdaa223.js"
       ],
       "children": {},
       "childAssets": {}
     },
     "ListV2": {
       "chunks": [
-        "ListV2"
+        8
       ],
       "assets": [
-        "js/ListV2.5c87bf05.js"
+        "js/ListV2.3cdaa223.js"
       ],
       "children": {},
       "childAssets": {}
     },
     "ContainerV1": {
       "chunks": [
-        "ContainerV1"
+        4
       ],
       "assets": [
-        "js/ContainerV1.5c87bf05.js"
+        "js/ContainerV1.3cdaa223.js"
       ],
       "children": {},
       "childAssets": {}
     },
     "TabsV1": {
       "chunks": [
-        "TabsV1"
+        11
       ],
       "assets": [
-        "js/TabsV1.5c87bf05.js"
+        "js/TabsV1.3cdaa223.js"
       ],
       "children": {},
       "childAssets": {}
     },
     "CarouselV1": {
       "chunks": [
-        "CarouselV1"
+        3
       ],
       "assets": [
-        "js/CarouselV1.5c87bf05.js"
+        "js/CarouselV1.3cdaa223.js"
       ],
       "children": {},
       "childAssets": {}
     },
     "AccordionV1": {
       "chunks": [
-        "AccordionV1"
+        0
       ],
       "assets": [
-        "js/AccordionV1.5c87bf05.js"
+        "js/AccordionV1.3cdaa223.js"
       ],
       "children": {},
       "childAssets": {}
