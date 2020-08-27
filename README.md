@@ -102,5 +102,10 @@ The hostname and port of the instance can be changed with the following user def
 * `aem.host` and `aem.port` for the author instance.
 * `aem.publish.host` and `aem.publish.port` for the publish instance.
 
-* **Contributions** are welcome, read our [contributing guide](CONTRIBUTING.md) for more information.
-* **Licensed** under [Apache 2.0](LICENSE)
+### Contributing
+
+Contributions are welcomed! Read the [Contributing Guide](CONTRIBUTING.md) for more information.
+
+### Licensing
+
+This project is licensed under the Apache V2 License. See [LICENSE](LICENSE) for more information.
