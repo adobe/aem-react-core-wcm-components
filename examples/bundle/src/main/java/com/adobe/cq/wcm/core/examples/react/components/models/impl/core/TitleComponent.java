@@ -20,10 +20,17 @@ import com.adobe.cq.export.json.ExporterConstants;
 import com.adobe.cq.wcm.core.components.models.List;
 import com.adobe.cq.wcm.core.components.models.Title;
 import com.adobe.cq.wcm.core.components.models.datalayer.ComponentData;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import lombok.experimental.Delegate;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.Via;
+import org.apache.sling.models.annotations.injectorspecific.Self;
+import org.apache.sling.models.annotations.via.ResourceSuperType;
+
 @Model(
         adaptables = SlingHttpServletRequest.class, adapters = {Title.class, ComponentExporter.class},
         resourceType = TitleComponent.RESOURCE_TYPE
@@ -34,38 +41,41 @@ public class TitleComponent implements Title {
     
     public static final String RESOURCE_TYPE = "core-components-examples/wcm/react/components/title";
     
+    @Self @Via(type = ResourceSuperType.class)
+    private Title delegate;
+    
     @Override
     public String getText() {
-        return null;
+        return delegate.getText();
     }
     
     @Override
     public String getType() {
-        return null;
+        return delegate.getType();
     }
     
     @Override
     public String getLinkURL() {
-        return null;
+        return delegate.getLinkURL();
     }
     
     @Override
     public boolean isLinkDisabled() {
-        return false;
+        return delegate.isLinkDisabled();
     }
     
     @Override
     public String getExportedType() {
-        return null;
-    }
+        return RESOURCE_TYPE;
+    };
     
     @Override
     public String getId() {
-        return null;
+        return delegate.getId();
     }
     
-    @Override
+    @Override @JsonIgnore
     public  ComponentData getData() {
-        return null;
+        return delegate.getData();
     }
 }

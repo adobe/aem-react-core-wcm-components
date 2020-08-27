@@ -21,11 +21,15 @@ import {TextV2IsEmptyFn} from "./TextV2IsEmptyFn";
 export interface TextV2Model extends CoreComponentModel{
     text?: string;
     richText?: boolean
+    cqPath?:string
+    id?: string
 }
 
 export const TextV2RichText = (props:TextV2Model) => {
     const text:string = props.text as string;
-    return  <div className={props.baseCssClass} dangerouslySetInnerHTML={{__html: text}}></div>
+    const id = (props.id) ? props.id : (props.cqPath ? props.cqPath.substr(props.cqPath.lastIndexOf('/') + 1) : "");
+
+    return  <div className={props.baseCssClass}  id={id} data-rte-editelement dangerouslySetInnerHTML={{__html: text}}/>
 };
 
 export const TextV2PlainText = (props:TextV2Model) => {
