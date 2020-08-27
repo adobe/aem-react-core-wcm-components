@@ -15,7 +15,7 @@
  */
 
 import React from 'react';
-import {Page, withComponentMappingContext, PageProperties, ContainerState } from "@adobe/cq-react-editable-components";
+import {Page, withComponentMappingContext, PageProperties, ContainerState } from "@adobe/aem-react-editable-components";
 import withRoute from '../utils/RouteHelper';
 
 import './Page.css';

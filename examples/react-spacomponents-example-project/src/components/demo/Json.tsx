@@ -15,7 +15,7 @@
  */
 
 import React from 'react';
-import {MappedComponentProperties} from '@adobe/cq-react-editable-components';
+import {MappedComponentProperties} from '@adobe/aem-react-editable-components';
 
 export interface JsonProperties extends MappedComponentProperties{
     json: string;

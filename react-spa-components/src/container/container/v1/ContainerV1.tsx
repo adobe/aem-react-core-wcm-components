@@ -16,7 +16,7 @@
 
 import React, {RefObject} from "react";
 
-import {ComponentMapping, Container, ResponsiveGrid, ResponsiveGridProperties} from '@adobe/cq-react-editable-components';
+import {ComponentMapping, Container, ResponsiveGrid, ResponsiveGridProperties} from '@adobe/aem-react-editable-components';
 import {CoreContainerProperties, CoreContainerState, withStandardBaseCssClass} from '../../../AbstractCoreContainerComponent';
 
 export interface ContainerV1Properties extends CoreContainerProperties,ResponsiveGridProperties{
