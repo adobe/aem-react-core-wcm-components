@@ -19,7 +19,7 @@ import {ButtonV1Model} from "@adobe/aem-core-components-react-base/dist/authorin
 // @ts-ignore
 import { createCustomElement, DOMModel, byChildContentVal, byAttrVal, registerEvent } from "@adobe/react-webcomponent";
 import MetaUtils from '../../utils/MetaUtils';
-import withAsyncImport from "../../utils/withAsyncImport";
+import ButtonV1 from '@adobe/aem-core-components-react-base/dist/authoring/button/v1/ButtonV1';
 
 
 
@@ -38,8 +38,6 @@ class ReactButton extends Component<ButtonModel> {
     }
 
     render() {
-        const ButtonV1 = withAsyncImport(() => import(/* webpackChunkName: "ButtonV1" */ '@adobe/aem-core-components-react-base/dist/authoring/button/v1/ButtonV1'));
-
         return (
 
             <ButtonV1 {...this.props}

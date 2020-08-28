@@ -55,6 +55,7 @@
                         <exclude>**/*.html</exclude>
                         <exclude>**/vendor/**/*</exclude>
                         <exclude>**/renditions/*</exclude>
+                        <exclude>**/serverBuild/*</exclude>
                     </excludes>
                 </configuration>
             </plugin>

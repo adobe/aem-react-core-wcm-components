@@ -33,14 +33,14 @@
   "dependencies": {},
   "peerDependencies": {
     "react": "^16.13.1",
-    "@adobe/aem-react-editable-components": "^1.0.2",
-    "@adobe/aem-spa-component-mapping": "^1.0.0",
-    "@adobe/aem-spa-page-model-manager": "^1.0.0"
+    "@adobe/aem-react-editable-components": "^1.0.3",
+    "@adobe/aem-spa-component-mapping": "^1.0.1",
+    "@adobe/aem-spa-page-model-manager": "^1.0.1"
   },
   "devDependencies": {
-    "@adobe/aem-react-editable-components": "^1.0.2",
-    "@adobe/aem-spa-component-mapping": "^1.0.0",
-    "@adobe/aem-spa-page-model-manager": "^1.0.0",
+    "@adobe/aem-react-editable-components": "^1.0.3",
+    "@adobe/aem-spa-component-mapping": "^1.0.1",
+    "@adobe/aem-spa-page-model-manager": "^1.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "@babel/cli": "^7.7.7",

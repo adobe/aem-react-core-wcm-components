@@ -21,7 +21,8 @@ const paths = require('../config/paths');
 const aemPack = require('aempack');
 
 const developWithSSR = process.env.DEVELOPSSR || false;
-const webpackConfig = require('./webpackConfig');
+const webpackConfig = require('../config/webpack.config.dev');
+const serverWebpackConfig = require('../config/webpack.config.server.dev');
 
 const user = process.env.AEMUSER  || 'admin';
 const password = process.env.AEMPW || 'admin';
@@ -53,7 +54,7 @@ aemPack({
     },
     isInClientLibRoot: false,
     webpackConfig: webpackConfig,
-    // webpackServerConfig: serverWebpackConfig,
+    webpackServerConfig: serverWebpackConfig,
     disableServerSideRendering: !developWithSSR,
 
     aemProtocol: 'http',

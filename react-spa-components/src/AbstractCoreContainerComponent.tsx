@@ -37,6 +37,14 @@ export interface AuthorPanelSwitchState {
     activeIndexFromAuthorPanel?: number
 }
 
+const isBrowser = (() => {
+    try{
+        return typeof window !== 'undefined';
+    }catch(err){
+        return false;
+    }
+})();
+
 
 export const withStandardBaseCssClass = <M extends CoreContainerProperties>
 (
@@ -73,7 +81,7 @@ export const withAuthorPanelSwitch = <M extends CoreContainerProperties>(
             this.state = {}
 
             //@ts-ignore
-            if (window && window.Granite && window.Granite.author && window.Granite.author.MessageChannel) {
+            if (isBrowser && window.Granite && window.Granite.author && window.Granite.author.MessageChannel) {
                 //@ts-ignore
                 this.messageChannel = new window.Granite.author.MessageChannel("cqauthor", window);
                 this.callback = this.callback.bind(this);

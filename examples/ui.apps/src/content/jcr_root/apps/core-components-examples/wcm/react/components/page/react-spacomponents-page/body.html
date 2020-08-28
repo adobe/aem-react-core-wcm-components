@@ -19,4 +19,6 @@
 Includes the HTML element that will be targeted by the Angular SPA as specified in: 
 - angular-app/src/app/app.component.ts
 */-->
-<div id="root" class="root responsivegrid cmp-react-examples-structure"></div>
+<div id="root" class="root responsivegrid cmp-react-examples-structure">
+    <sly data-sly-resource="${resource @ resourceType='core-components-react-examples/spa/ssr'}"/>
+</div>

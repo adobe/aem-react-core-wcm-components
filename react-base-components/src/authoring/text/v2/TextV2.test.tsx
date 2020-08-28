@@ -62,8 +62,8 @@ it('Renders plain text', () => {
 it('Renders rich text', () => {
 
     const richText = '<div class="myclass">richtext</div>';
-    const expectedHtml = '<div class="cmp-text"><div class="myclass">richtext</div></div>';
-    const element = mount(<TextV2 richText={true} text={richText}/>);
+    const expectedHtml = '<div class="cmp-text" id="testId" data-rte-editelement="true"><div class="myclass">richtext</div></div>';
+    const element = mount(<TextV2 richText={true} id={"testId"} text={richText}/>);
 
     const actualHtml = element.html();
     expect(actualHtml).toEqual(expectedHtml);

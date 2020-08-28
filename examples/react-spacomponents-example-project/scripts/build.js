@@ -14,17 +14,21 @@
  *  limitations under the License.
  */
 
-import React from 'react';
+process.env.BABEL_ENV = process.env.NODE_ENV;
 
-import { ModelManager, ModelClient } from '@adobe/aem-spa-page-model-manager';
-import './mapping';
+const webpack = require('webpack');
 
-import render from "./renderRoot";
+const isDevelopment = process.env.NODE_ENV === 'development';
 
-const modelClient = new ModelClient();
+const config = isDevelopment?  require('../config/webpack.config.dev') : require('../config/webpack.config.prod');
 
-const DOMReady = (f:Function) => {/in/.test(document.readyState)?setTimeout( () => DOMReady(f),9):f()};
+const identifier = isDevelopment ? '(development)' : '(production)';
 
-DOMReady( ()=> {
-    ModelManager.initialize({modelClient: modelClient}).then(render);
+console.log("building bundle "+ identifier + "..")
+webpack(config, (err)=> {
+    console.log("completed building bundle."+ identifier + "");
+    if(err != null){
+        console.log("Error building bundle"+ identifier + "!");
+        throw err;
+    }
 });
