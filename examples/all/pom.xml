@@ -124,6 +124,59 @@
                 </plugins>
             </build>
         </profile>
+        <profile>
+            <id>classic</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.jackrabbit</groupId>
+                        <artifactId>filevault-package-maven-plugin</artifactId>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <group>com.adobe.cq</group>
+                            <name>core.wcm.components.react.examples.all</name>
+                            <properties>
+                                <cloudManagerTarget>none</cloudManagerTarget>
+                            </properties>
+                            <embeddeds>
+                                <embedded>
+                                    <groupId>${project.groupId}</groupId>
+                                    <artifactId>core.wcm.components.examples.react.bundle</artifactId>
+                                    <target>/apps/core-components-examples/wcm/install</target>
+                                </embedded>
+                                <!-- Embed Core Component dependency 6.x -->
+                                <embedded>
+                                    <groupId>com.adobe.cq</groupId>
+                                    <artifactId>core.wcm.components.core</artifactId>
+                                    <target>/apps/core-components-examples/wcm/install</target>
+                                </embedded>
+                            </embeddeds>
+                            <subPackages>
+                                <subPackage>
+                                    <groupId>${project.groupId}</groupId>
+                                    <artifactId>core.wcm.components.examples.react.ui.apps</artifactId>
+                                    <filter>true</filter>
+                                </subPackage>
+                            </subPackages>
+                            <dependencies>
+                                <dependency>
+                                    <groupId>com.adobe.cq</groupId>
+                                    <artifactId>core.wcm.components.content</artifactId>
+                                </dependency>
+                                <dependency>
+                                    <groupId>com.adobe.cq</groupId>
+                                    <artifactId>core.wcm.components.config</artifactId>
+                                </dependency>
+                            </dependencies>
+                            <packageType>container</packageType>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
     </profiles>
 
     <!-- ====================================================================== -->
@@ -142,6 +195,20 @@
             <version>${project.version}</version>
             <type>zip</type>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.adobe.cq</groupId>
+            <artifactId>core.wcm.components.content</artifactId>
+            <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>com.adobe.cq</groupId>
+            <artifactId>core.wcm.components.config</artifactId>
+            <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>com.adobe.cq</groupId>
+            <artifactId>core.wcm.components.core</artifactId>
         </dependency>
     </dependencies>
 </project>
