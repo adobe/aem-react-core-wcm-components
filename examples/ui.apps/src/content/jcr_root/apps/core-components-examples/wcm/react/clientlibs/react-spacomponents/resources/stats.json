@@ -1,30 +1,30 @@
 {
   "assetsByChunkName": {
-    "AccordionV1": "js/AccordionV1.8d075482.js",
-    "BreadCrumbV2": "js/BreadCrumbV2.8d075482.js",
-    "ButtonV1": "js/ButtonV1.8d075482.js",
-    "CarouselV1": "js/CarouselV1.8d075482.js",
-    "ContainerV1": "js/ContainerV1.8d075482.js",
-    "DownloadV1": "js/DownloadV1.8d075482.js",
-    "ImageV2": "js/ImageV2.8d075482.js",
-    "LanguageNavigationV1": "js/LanguageNavigationV1.8d075482.js",
-    "ListV2": "js/ListV2.8d075482.js",
-    "NavigationV1": "js/NavigationV1.8d075482.js",
-    "SeparatorV1": "js/SeparatorV1.8d075482.js",
-    "TabsV1": "js/TabsV1.8d075482.js",
-    "TeaserV1": "js/TeaserV1.8d075482.js",
-    "TextV2": "js/TextV2.8d075482.js",
-    "TitleV2": "js/TitleV2.8d075482.js",
-    "bootstrap": "js/bootstrap.8d075482.js",
+    "AccordionV1": "js/AccordionV1.b3d046d3.js",
+    "BreadCrumbV2": "js/BreadCrumbV2.b3d046d3.js",
+    "ButtonV1": "js/ButtonV1.b3d046d3.js",
+    "CarouselV1": "js/CarouselV1.b3d046d3.js",
+    "ContainerV1": "js/ContainerV1.b3d046d3.js",
+    "DownloadV1": "js/DownloadV1.b3d046d3.js",
+    "ImageV2": "js/ImageV2.b3d046d3.js",
+    "LanguageNavigationV1": "js/LanguageNavigationV1.b3d046d3.js",
+    "ListV2": "js/ListV2.b3d046d3.js",
+    "NavigationV1": "js/NavigationV1.b3d046d3.js",
+    "SeparatorV1": "js/SeparatorV1.b3d046d3.js",
+    "TabsV1": "js/TabsV1.b3d046d3.js",
+    "TeaserV1": "js/TeaserV1.b3d046d3.js",
+    "TextV2": "js/TextV2.b3d046d3.js",
+    "TitleV2": "js/TitleV2.b3d046d3.js",
+    "bootstrap": "js/bootstrap.b3d046d3.js",
     "main": [
       "static/css/main.chunk.css",
-      "js/main.8d075482.js"
+      "js/main.b3d046d3.js"
     ]
   },
   "assets": [
     {
-      "name": "js/AccordionV1.8d075482.js",
-      "size": 51775,
+      "name": "js/AccordionV1.b3d046d3.js",
+      "size": 51805,
       "chunks": [
         "AccordionV1"
       ],
@@ -37,7 +37,7 @@
       "emitted": false
     },
     {
-      "name": "js/BreadCrumbV2.8d075482.js",
+      "name": "js/BreadCrumbV2.b3d046d3.js",
       "size": 56311,
       "chunks": [
         "BreadCrumbV2"
@@ -51,7 +51,7 @@
       "emitted": false
     },
     {
-      "name": "js/ButtonV1.8d075482.js",
+      "name": "js/ButtonV1.b3d046d3.js",
       "size": 53395,
       "chunks": [
         "ButtonV1"
@@ -65,8 +65,8 @@
       "emitted": false
     },
     {
-      "name": "js/CarouselV1.8d075482.js",
-      "size": 65548,
+      "name": "js/CarouselV1.b3d046d3.js",
+      "size": 65578,
       "chunks": [
         "CarouselV1"
       ],
@@ -79,8 +79,8 @@
       "emitted": false
     },
     {
-      "name": "js/ContainerV1.8d075482.js",
-      "size": 42477,
+      "name": "js/ContainerV1.b3d046d3.js",
+      "size": 42513,
       "chunks": [
         "ContainerV1"
       ],
@@ -93,7 +93,7 @@
       "emitted": false
     },
     {
-      "name": "js/DownloadV1.8d075482.js",
+      "name": "js/DownloadV1.b3d046d3.js",
       "size": 55187,
       "chunks": [
         "DownloadV1"
@@ -107,7 +107,7 @@
       "emitted": false
     },
     {
-      "name": "js/ImageV2.8d075482.js",
+      "name": "js/ImageV2.b3d046d3.js",
       "size": 52853,
       "chunks": [
         "ImageV2"
@@ -121,7 +121,7 @@
       "emitted": false
     },
     {
-      "name": "js/LanguageNavigationV1.8d075482.js",
+      "name": "js/LanguageNavigationV1.b3d046d3.js",
       "size": 76914,
       "chunks": [
         "LanguageNavigationV1"
@@ -135,7 +135,7 @@
       "emitted": false
     },
     {
-      "name": "js/ListV2.8d075482.js",
+      "name": "js/ListV2.b3d046d3.js",
       "size": 57299,
       "chunks": [
         "ListV2"
@@ -149,7 +149,7 @@
       "emitted": false
     },
     {
-      "name": "js/NavigationV1.8d075482.js",
+      "name": "js/NavigationV1.b3d046d3.js",
       "size": 56854,
       "chunks": [
         "NavigationV1"
@@ -163,7 +163,7 @@
       "emitted": false
     },
     {
-      "name": "js/SeparatorV1.8d075482.js",
+      "name": "js/SeparatorV1.b3d046d3.js",
       "size": 40774,
       "chunks": [
         "SeparatorV1"
@@ -177,8 +177,8 @@
       "emitted": false
     },
     {
-      "name": "js/TabsV1.8d075482.js",
-      "size": 50361,
+      "name": "js/TabsV1.b3d046d3.js",
+      "size": 50391,
       "chunks": [
         "TabsV1"
       ],
@@ -191,7 +191,7 @@
       "emitted": false
     },
     {
-      "name": "js/TeaserV1.8d075482.js",
+      "name": "js/TeaserV1.b3d046d3.js",
       "size": 85802,
       "chunks": [
         "TeaserV1"
@@ -205,8 +205,8 @@
       "emitted": false
     },
     {
-      "name": "js/TextV2.8d075482.js",
-      "size": 43407,
+      "name": "js/TextV2.b3d046d3.js",
+      "size": 43433,
       "chunks": [
         "TextV2"
       ],
@@ -219,7 +219,7 @@
       "emitted": false
     },
     {
-      "name": "js/TitleV2.8d075482.js",
+      "name": "js/TitleV2.b3d046d3.js",
       "size": 52425,
       "chunks": [
         "TitleV2"
@@ -233,7 +233,7 @@
       "emitted": false
     },
     {
-      "name": "js/bootstrap.8d075482.js",
+      "name": "js/bootstrap.b3d046d3.js",
       "size": 22998,
       "chunks": [
         "bootstrap"
@@ -247,8 +247,8 @@
       "emitted": false
     },
     {
-      "name": "js/main.8d075482.js",
-      "size": 4212400,
+      "name": "js/main.b3d046d3.js",
+      "size": 3805404,
       "chunks": [
         "main"
       ],
@@ -273,7 +273,7 @@
       "emitted": false
     }
   ],
-  "hash": "8d075482b2ea1b88d017",
+  "hash": "b3d046d30d6cc3d43be1",
   "publicPath": "/etc.clientlibs/core-components-examples/wcm/react/clientlibs/react-spacomponents/resources/",
   "namedChunkGroups": {
     "main": {
@@ -282,9 +282,9 @@
         "main"
       ],
       "assets": [
-        "js/bootstrap.8d075482.js",
+        "js/bootstrap.b3d046d3.js",
         "static/css/main.chunk.css",
-        "js/main.8d075482.js"
+        "js/main.b3d046d3.js"
       ],
       "children": {},
       "childAssets": {}
@@ -294,7 +294,7 @@
         "TitleV2"
       ],
       "assets": [
-        "js/TitleV2.8d075482.js"
+        "js/TitleV2.b3d046d3.js"
       ],
       "children": {},
       "childAssets": {}
@@ -304,7 +304,7 @@
         "BreadCrumbV2"
       ],
       "assets": [
-        "js/BreadCrumbV2.8d075482.js"
+        "js/BreadCrumbV2.b3d046d3.js"
       ],
       "children": {},
       "childAssets": {}
@@ -314,7 +314,7 @@
         "TextV2"
       ],
       "assets": [
-        "js/TextV2.8d075482.js"
+        "js/TextV2.b3d046d3.js"
       ],
       "children": {},
       "childAssets": {}
@@ -324,7 +324,7 @@
         "NavigationV1"
       ],
       "assets": [
-        "js/NavigationV1.8d075482.js"
+        "js/NavigationV1.b3d046d3.js"
       ],
       "children": {},
       "childAssets": {}
@@ -334,7 +334,7 @@
         "ButtonV1"
       ],
       "assets": [
-        "js/ButtonV1.8d075482.js"
+        "js/ButtonV1.b3d046d3.js"
       ],
       "children": {},
       "childAssets": {}
@@ -344,7 +344,7 @@
         "ImageV2"
       ],
       "assets": [
-        "js/ImageV2.8d075482.js"
+        "js/ImageV2.b3d046d3.js"
       ],
       "children": {},
       "childAssets": {}
@@ -354,7 +354,7 @@
         "LanguageNavigationV1"
       ],
       "assets": [
-        "js/LanguageNavigationV1.8d075482.js"
+        "js/LanguageNavigationV1.b3d046d3.js"
       ],
       "children": {},
       "childAssets": {}
@@ -364,7 +364,7 @@
         "TeaserV1"
       ],
       "assets": [
-        "js/TeaserV1.8d075482.js"
+        "js/TeaserV1.b3d046d3.js"
       ],
       "children": {},
       "childAssets": {}
@@ -374,7 +374,7 @@
         "DownloadV1"
       ],
       "assets": [
-        "js/DownloadV1.8d075482.js"
+        "js/DownloadV1.b3d046d3.js"
       ],
       "children": {},
       "childAssets": {}
@@ -384,7 +384,7 @@
         "SeparatorV1"
       ],
       "assets": [
-        "js/SeparatorV1.8d075482.js"
+        "js/SeparatorV1.b3d046d3.js"
       ],
       "children": {},
       "childAssets": {}
@@ -394,7 +394,7 @@
         "ListV2"
       ],
       "assets": [
-        "js/ListV2.8d075482.js"
+        "js/ListV2.b3d046d3.js"
       ],
       "children": {},
       "childAssets": {}
@@ -404,7 +404,7 @@
         "ContainerV1"
       ],
       "assets": [
-        "js/ContainerV1.8d075482.js"
+        "js/ContainerV1.b3d046d3.js"
       ],
       "children": {},
       "childAssets": {}
@@ -414,7 +414,7 @@
         "TabsV1"
       ],
       "assets": [
-        "js/TabsV1.8d075482.js"
+        "js/TabsV1.b3d046d3.js"
       ],
       "children": {},
       "childAssets": {}
@@ -424,7 +424,7 @@
         "CarouselV1"
       ],
       "assets": [
-        "js/CarouselV1.8d075482.js"
+        "js/CarouselV1.b3d046d3.js"
       ],
       "children": {},
       "childAssets": {}
@@ -434,7 +434,7 @@
         "AccordionV1"
       ],
       "assets": [
-        "js/AccordionV1.8d075482.js"
+        "js/AccordionV1.b3d046d3.js"
       ],
       "children": {},
       "childAssets": {}
