@@ -39,7 +39,7 @@ import java.io.IOException;
 @Exporter(name = ExporterConstants.SLING_MODEL_EXPORTER_NAME, extensions = ExporterConstants.SLING_MODEL_EXTENSION)
 public class DemoJsonExporterImpl extends AbstractDemoComponent {
     
-    static final String RESOURCE_TYPE = "core-components-examples/components/demo/json";
+    static final String RESOURCE_TYPE = "core-components-examples/wcm/react/components/demo/json";
     
     @SlingObject
     private SlingHttpServletResponse response;

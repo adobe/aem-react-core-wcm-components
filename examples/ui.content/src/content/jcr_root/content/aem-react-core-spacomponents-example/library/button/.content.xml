@@ -103,10 +103,10 @@
                     jcr:lastModified="{Date}2018-12-07T13:36:02.946+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="core-components-examples/components/demo">
+                    sling:resourceType="core-components-examples/wcm/react/components/demo">
                     <component
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="core-components-examples/components/demo/component">
+                        sling:resourceType="core-components-examples/wcm/react/components/demo/component">
                         <button
                             jcr:created="{Date}2018-12-07T13:36:34.343+01:00"
                             jcr:createdBy="admin"
@@ -122,13 +122,13 @@
                         <properties
                             cq:panelTitle="Properties"
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="core-components-examples/components/demo/properties"
+                            sling:resourceType="core-components-examples/wcm/react/components/demo/properties"
                             reference="../../component"/>
                     
                         <json
                             cq:panelTitle="JSON"
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="core-components-examples/components/demo/json"
+                            sling:resourceType="core-components-examples/wcm/react/components/demo/json"
                             reference="../../component"/>
                     </info>
                 </demo>
@@ -157,10 +157,10 @@
                     jcr:lastModified="{Date}2018-12-07T13:36:07.808+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="core-components-examples/components/demo">
+                    sling:resourceType="core-components-examples/wcm/react/components/demo">
                     <component
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="core-components-examples/components/demo/component">
+                        sling:resourceType="core-components-examples/wcm/react/components/demo/component">
                         <button
                             jcr:created="{Date}2018-12-07T13:36:37.955+01:00"
                             jcr:createdBy="admin"
@@ -177,13 +177,13 @@
                         <properties
                             cq:panelTitle="Properties"
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="core-components-examples/components/demo/properties"
+                            sling:resourceType="core-components-examples/wcm/react/components/demo/properties"
                             reference="../../component"/>
                       
                         <json
                             cq:panelTitle="JSON"
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="core-components-examples/components/demo/json"
+                            sling:resourceType="core-components-examples/wcm/react/components/demo/json"
                             reference="../../component"/>
                     </info>
                 </demo_1160408466>
@@ -212,10 +212,10 @@
                     jcr:lastModified="{Date}2018-12-07T13:36:07.808+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="core-components-examples/components/demo">
+                    sling:resourceType="core-components-examples/wcm/react/components/demo">
                     <component
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="core-components-examples/components/demo/component">
+                        sling:resourceType="core-components-examples/wcm/react/components/demo/component">
                         <button
                             jcr:created="{Date}2018-12-07T13:36:37.955+01:00"
                             jcr:createdBy="admin"
@@ -232,13 +232,13 @@
                         <properties
                             cq:panelTitle="Properties"
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="core-components-examples/components/demo/properties"
+                            sling:resourceType="core-components-examples/wcm/react/components/demo/properties"
                             reference="../../component"/>
                      
                         <json
                             cq:panelTitle="JSON"
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="core-components-examples/components/demo/json"
+                            sling:resourceType="core-components-examples/wcm/react/components/demo/json"
                             reference="../../component"/>
                     </info>
                 </demo_1160408467>

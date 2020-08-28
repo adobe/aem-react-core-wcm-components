@@ -103,10 +103,10 @@
                     jcr:lastModified="{Date}2018-12-07T12:55:03.496+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="core-components-examples/components/demo">
+                    sling:resourceType="core-components-examples/wcm/react/components/demo">
                     <component
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="core-components-examples/components/demo/component">
+                        sling:resourceType="core-components-examples/wcm/react/components/demo/component">
                         <list
                             jcr:created="{Date}2018-12-07T12:55:48.270+01:00"
                             jcr:createdBy="admin"
@@ -148,10 +148,10 @@
                     jcr:lastModified="{Date}2018-12-07T12:55:08.992+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="core-components-examples/components/demo">
+                    sling:resourceType="core-components-examples/wcm/react/components/demo">
                     <component
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="core-components-examples/components/demo/component">
+                        sling:resourceType="core-components-examples/wcm/react/components/demo/component">
                         <list
                             jcr:created="{Date}2018-12-07T12:55:45.708+01:00"
                             jcr:createdBy="admin"
@@ -194,10 +194,10 @@
                     jcr:lastModified="{Date}2018-12-07T12:55:12.178+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="core-components-examples/components/demo">
+                    sling:resourceType="core-components-examples/wcm/react/components/demo">
                     <component
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="core-components-examples/components/demo/component">
+                        sling:resourceType="core-components-examples/wcm/react/components/demo/component">
                         <list
                             jcr:created="{Date}2018-12-07T12:55:42.230+01:00"
                             jcr:createdBy="admin"
@@ -241,10 +241,10 @@
                     jcr:lastModified="{Date}2018-12-07T12:55:16.267+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="core-components-examples/components/demo">
+                    sling:resourceType="core-components-examples/wcm/react/components/demo">
                     <component
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="core-components-examples/components/demo/component">
+                        sling:resourceType="core-components-examples/wcm/react/components/demo/component">
                         <list
                             jcr:created="{Date}2018-12-07T12:55:39.480+01:00"
                             jcr:createdBy="admin"
@@ -288,10 +288,10 @@
                     jcr:lastModified="{Date}2018-12-07T12:55:20.262+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="core-components-examples/components/demo">
+                    sling:resourceType="core-components-examples/wcm/react/components/demo">
                     <component
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="core-components-examples/components/demo/component">
+                        sling:resourceType="core-components-examples/wcm/react/components/demo/component">
                         <list
                             jcr:created="{Date}2018-12-07T12:55:37.303+01:00"
                             jcr:createdBy="admin"
@@ -334,10 +334,10 @@
                     jcr:lastModified="{Date}2018-12-07T12:55:23.309+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="core-components-examples/components/demo">
+                    sling:resourceType="core-components-examples/wcm/react/components/demo">
                     <component
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="core-components-examples/components/demo/component">
+                        sling:resourceType="core-components-examples/wcm/react/components/demo/component">
                         <list
                             jcr:created="{Date}2018-12-07T12:55:34.586+01:00"
                             jcr:createdBy="admin"
@@ -380,10 +380,10 @@
                     jcr:lastModified="{Date}2018-12-07T12:55:26.503+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="core-components-examples/components/demo">
+                    sling:resourceType="core-components-examples/wcm/react/components/demo">
                     <component
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="core-components-examples/components/demo/component">
+                        sling:resourceType="core-components-examples/wcm/react/components/demo/component">
                         <list
                             jcr:created="{Date}2018-12-07T12:55:31.266+01:00"
                             jcr:createdBy="admin"

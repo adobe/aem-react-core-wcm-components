@@ -38,7 +38,7 @@ import javax.annotation.Nonnull;
 @JsonSerialize(as = DemoContainerExporter.class)
 public class DemoContainer extends ResponsiveGrid implements DemoContainerExporter {
     
-    static final String RESOURCE_TYPE = "core-components-examples/components/demo";
+    static final String RESOURCE_TYPE = "core-components-examples/wcm/react/components/demo";
     
     @ValueMapValue @Optional @Default(booleanValues = true)
     private boolean fullWidth;
