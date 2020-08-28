@@ -40,13 +40,13 @@ TBD
 10. [List](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/list/v2/list)
 11. [Separator](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/separator/v1/separator)
 12. [Progress Bar](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/progressbar/v1/progressbar)
-
+13. [Experience Fragment (demo)](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/experiencefragment/v1/experiencefragment)
 ### Container Components
 
-13. [Container](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/container/v1/container)
-14. [Carousel](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/carousel/v1/carousel)
-15. [Tabs](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/tabs/v1/tabs)
-16. [Accordion](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/accordion/v1/accordion)
+14. [Container](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/container/v1/container)
+15. [Carousel](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/carousel/v1/carousel)
+16. [Tabs](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/tabs/v1/tabs)
+17. [Accordion](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/accordion/v1/accordion)
 
 ### Form Components
 
@@ -66,7 +66,7 @@ For existing projects, take example from the [AEM Project Archetype](https://git
 
 Core Components | AEM as a Cloud Service | AEM 6.5 | AEM 6.4 | Java SE | Maven
 ----------------|------------------------|---------|---------|---------|---------
-[2.11.0](https://github.com/adobe/aem-core-wcm-components/releases/tag/core.wcm.components.reactor-2.11.0) | Continual | 6.5.5.0+ | 6.4.8.1+ | 8, 11 | 3.3.9+
+[2.11.1](https://github.com/adobe/aem-core-wcm-components/releases/tag/core.wcm.components.reactor-2.11.1) | Continual | 6.5.5.0+ | 6.4.8.1+ | 8, 11 | 3.3.9+
 
 For the requirements from previous Core Component releases, see [Historical System Requirements](VERSIONS.md).
 
