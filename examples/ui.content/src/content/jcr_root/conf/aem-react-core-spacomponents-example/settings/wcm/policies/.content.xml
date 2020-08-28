@@ -13,7 +13,7 @@
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Core Components Examples - Root"
                         sling:resourceType="wcm/core/components/policy/policy"
-                        components="[/libs/wcm/foundation/components/responsivegrid,group:Core Components Examples,group:Contribution Examples,group:.core-wcm,group:.core-wcm-form]">
+                        components="[/libs/wcm/foundation/components/responsivegrid,group:Core Components Examples,group:Core Components - React Examples]">
                         <cq:authoring jcr:primaryType="nt:unstructured">
                             <assetToComponentMapping jcr:primaryType="nt:unstructured">
                                 <mapping_1544531934044

@@ -62,6 +62,9 @@ const AccordionV1 = withAsyncImport(() => import(/* webpackChunkName: "Accordion
 
 type p = MappedComponentProperties;
 
+
+
+MapTo<ContainerProperties & p>('core-components-examples/wcm/react/components/experience-fragment')(Container, {isEmpty: ( props ) => props.cqItemsOrder && props.cqItemsOrder.length > 0});
 MapTo<DownloadV1Model & p>('core-components-examples/wcm/react/components/download')(DownloadV1, {isEmpty: DownloadV1IsEmptyFn});
 MapTo<ListV2Model & p>('core-components-examples/wcm/react/components/list')(ListV2, {isEmpty: ListV2IsEmptyFn});
 MapTo<CoreComponentModel & p>('core-components-examples/wcm/react/components/separator')(SeparatorV1, {isEmpty: SeparatorV1IsEmptyFn});
@@ -71,6 +74,7 @@ MapTo<ButtonV1Model & p>('core-components-examples/wcm/react/components/button')
 MapTo<TeaserV1Model & p>('core-components-examples/wcm/react/components/teaser')(TeaserV1, {isEmpty: TeaserV1IsEmptyFn});
 MapTo<ImageV2Model & p>('core-components-examples/wcm/react/components/image')(ImageV2, {isEmpty: ImageV2IsEmptyFn});
 MapTo<TitleV2Model & p>('core-components-examples/wcm/react/components/title')(TitleV2, {isEmpty: TitleV2IsEmptyFn});
+
 
 
 

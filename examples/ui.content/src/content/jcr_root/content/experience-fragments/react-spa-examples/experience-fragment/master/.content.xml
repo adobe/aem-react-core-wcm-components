@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2020-08-28T14:17:14.284+02:00"
+        cq:lastModifiedBy="admin"
+        cq:tags="[]"
+        cq:template="/conf/aem-react-core-spacomponents-example/settings/wcm/templates/contrib-xf-page"
+        cq:xfMasterVariation="{Boolean}true"
+        cq:xfShowInEditor="{Boolean}true"
+        cq:xfVariantType="web"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Experience Fragment"
+        sling:resourceType="core-components-examples/wcm/react/components/page/react-spacomponents-page/xf-page"
+        isExperienceFragmentPage="{Boolean}true">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <responsivegrid
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid">
+                <text
+                    jcr:created="{Date}2020-08-28T14:16:36.405+02:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2020-08-28T14:16:46.950+02:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="core-components-examples/wcm/react/components/text"
+                    text="&lt;p>This comes from an experience fragment!&lt;/p>&#xd;&#xa;"
+                    textIsRich="true"/>
+                <image
+                    jcr:created="{Date}2020-08-28T14:17:05.917+02:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2020-08-28T14:17:14.247+02:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="core-components-examples/wcm/react/components/image"
+                    fileReference="/content/dam/core-components-examples/library/sample-assets/mountain-range.jpg"/>
+            </responsivegrid>
+        </root>
+    </jcr:content>
+</jcr:root>
