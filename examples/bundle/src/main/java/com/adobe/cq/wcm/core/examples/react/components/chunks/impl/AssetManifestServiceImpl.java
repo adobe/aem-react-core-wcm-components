@@ -38,7 +38,7 @@ public class AssetManifestServiceImpl implements AssetManifestService {
     private static final String PATH_TO_SPA_MANIFEST          = "/apps/core-components-examples/wcm/react/clientlibs/react-spacomponents/resources/asset-manifest.json";
     
     @Override
-    public Map<String,String> getManifest(SlingHttpServletRequest request) throws IOException {
+    public Manifest getManifest(SlingHttpServletRequest request) throws IOException {
     
         final Resource assetManifestResource = getManifestResource(request);
     
@@ -46,12 +46,12 @@ public class AssetManifestServiceImpl implements AssetManifestService {
             InputStream file = assetManifestResource.adaptTo(InputStream.class);
             String fileString = IOUtils.toString(file);
             ObjectMapper objectMapper = new ObjectMapper();
-            Map<String,Object> objectMap =objectMapper.readValue(fileString, new TypeReference<Map<String, Object>>() {});
             
-            Map<String,Object> targetMap = objectMap.containsKey("files") ? (Map<String,Object>) objectMap.get("files") : objectMap;
-            Map<String,String> resultMap = new HashMap<>();
-            targetMap.entrySet().forEach((entry) -> resultMap.put(entry.getKey(), entry.getValue().toString()));
-            return resultMap;
+            if(isWebcomponent(request)){
+                return objectMapper.readValue(fileString, WebManifest.class);
+            }else{
+                return objectMapper.readValue(fileString, SpaManifest.class);
+            }
         }else{
             throw new IOException("Could not load manifest file!");
         }
@@ -60,12 +60,16 @@ public class AssetManifestServiceImpl implements AssetManifestService {
     
     private Resource getManifestResource(SlingHttpServletRequest request) {
         
-        if(request.getResource().getPath().contains("webcomponent")){
+        if(isWebcomponent(request)){
             return request.getResourceResolver().getResource(PATH_TO_WEBCOMPONENT_MANIFEST);
         }else{
             return request.getResourceResolver().getResource(PATH_TO_SPA_MANIFEST);
         }
        
+    }
+    
+    private boolean isWebcomponent(SlingHttpServletRequest request) {
+        return request.getResource().getPath().contains("webcomponent");
     }
     
     

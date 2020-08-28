@@ -27,6 +27,6 @@ import java.util.Map;
  */
 public interface AssetManifestService {
     
-    Map<String,String> getManifest(SlingHttpServletRequest request) throws IOException, LoginException;
+    Manifest getManifest(SlingHttpServletRequest request) throws IOException, LoginException;
     
 }

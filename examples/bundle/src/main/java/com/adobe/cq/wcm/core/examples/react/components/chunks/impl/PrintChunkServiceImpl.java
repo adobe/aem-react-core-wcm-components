@@ -18,6 +18,7 @@ package com.adobe.cq.wcm.core.examples.react.components.chunks.impl;
 
 
 import com.adobe.cq.wcm.core.examples.react.components.chunks.AssetManifestService;
+import com.adobe.cq.wcm.core.examples.react.components.chunks.Manifest;
 import com.adobe.cq.wcm.core.examples.react.components.chunks.PrintChunkService;
 import com.adobe.cq.wcm.core.examples.react.components.ssr.SpaPageBindingsProvider;
 import com.adobe.cq.wcm.core.examples.react.components.ssr.model.SSRResponse;
@@ -67,24 +68,8 @@ public class PrintChunkServiceImpl implements PrintChunkService {
     
     private List<String> getEntryPoints(SlingHttpServletRequest request, SlingHttpServletResponse response) throws IOException, LoginException {
         
-        Map<String,String> manifest = assetManifestService.getManifest(request);
-        List<String> entryPoints = new ArrayList<>();
-        
-        if(manifest.containsKey("runtime-main.js")){
-            entryPoints.add(manifest.get("runtime-main.js"));
-        }
-    
-        if(manifest.containsKey("bootstrap.js")){
-            entryPoints.add(manifest.get("bootstrap.js"));
-        }
-    
-        if(manifest.containsKey("main.js")){
-            entryPoints.add(manifest.get("main.js"));
-        }
-    
-        if(manifest.containsKey("main.css")){
-            entryPoints.add(manifest.get("main.css"));
-        }
+        Manifest manifest = assetManifestService.getManifest(request);
+        List<String> entryPoints = manifest.getEntryPoints();
     
         if(bindingsProvider.isServerSideRenderingActiveForRequest()){
             final SSRResponse ssrResponse = bindingsProvider.getServerSideRenderedRequestResult();
@@ -113,7 +98,7 @@ public class PrintChunkServiceImpl implements PrintChunkService {
             for(String entryPoint : entryPoints){
             
                 if(entryPoint.endsWith(extension)){
-                    String tag = getTag(format, entryPoint);
+                    String tag = getTag(format, getPrefix(request) + entryPoint);
                     response.getWriter().println(tag);
                 }
             
@@ -124,7 +109,11 @@ public class PrintChunkServiceImpl implements PrintChunkService {
         }
     }
     
- 
+    private String getPrefix(SlingHttpServletRequest request){
+        if(request.getResource().getPath().contains("webcomponent")){
+            return PATH_TO_WEBCOMPONENT_CLIENTLIB;
+        }else return "";
+    }
     
 
     private String getTag(String format, String entryPoint){

@@ -13,18 +13,35 @@
  ~ See the License for the specific language governing permissions and
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-package com.adobe.cq.wcm.core.examples.react.components.chunks;
+package com.adobe.cq.wcm.core.examples.react.components.chunks.impl;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
+import com.adobe.cq.wcm.core.examples.react.components.chunks.Manifest;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
+import java.util.Map;
 
-
-public interface Manifest {
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class WebManifest implements Manifest {
     
-    List<String> getEntryPoints();
+    @JsonProperty("files")
+    private Map<String,String> files;
+    @JsonProperty("entrypoints")
+    private List<String> entrypoints;
     
-    String get(Object chunk);
+    @Override
+    public List<String> getEntryPoints() {
+        return entrypoints;
+    }
     
-    boolean containsKey(Object key);
+    @Override
+    public String get(Object chunk) {
+        return files.get(chunk);
+    }
+    
+    @Override
+    public boolean containsKey(Object key) {
+        return files.containsKey(key);
+    }
 }
