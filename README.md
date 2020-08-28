@@ -25,28 +25,28 @@ TBD
 
 ### Template Components
 
-1. [Navigation](content/src/content/jcr_root/apps/core/wcm/components/navigation/v1/navigation)
-2. [Language Navigation](content/src/content/jcr_root/apps/core/wcm/components/languagenavigation/v1/languagenavigation)
-3. [Breadcrumb](content/src/content/jcr_root/apps/core/wcm/components/breadcrumb/v2/breadcrumb)
+1. [Navigation](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/navigation/v1/navigation)
+2. [Language Navigation](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/languagenavigation/v1/languagenavigation)
+3. [Breadcrumb](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/breadcrumb/v2/breadcrumb)
 
 ### Page Authoring Components
 
-4. [Title](content/src/content/jcr_root/apps/core/wcm/components/title/v2/title)
-5. [Text](content/src/content/jcr_root/apps/core/wcm/components/text/v2/text)
-6. [Image](content/src/content/jcr_root/apps/core/wcm/components/image/v2/image)
-7. [Button](content/src/content/jcr_root/apps/core/wcm/components/button/v1/button)
-8. [Teaser](content/src/content/jcr_root/apps/core/wcm/components/teaser/v1/teaser)
-9. [Download](content/src/content/jcr_root/apps/core/wcm/components/download/v1/download)
-10. [List](content/src/content/jcr_root/apps/core/wcm/components/list/v2/list)
-11. [Separator](content/src/content/jcr_root/apps/core/wcm/components/separator/v1/separator)
-12. [Progress Bar](content/src/content/jcr_root/apps/core/wcm/components/progressbar/v1/progressbar)
+4. [Title](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/title/v2/title)
+5. [Text](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/text/v2/text)
+6. [Image](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/image/v2/image)
+7. [Button](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/button/v1/button)
+8. [Teaser](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/teaser/v1/teaser)
+9. [Download](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/download/v1/download)
+10. [List](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/list/v2/list)
+11. [Separator](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/separator/v1/separator)
+12. [Progress Bar](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/progressbar/v1/progressbar)
 
 ### Container Components
 
-13. [Container](content/src/content/jcr_root/apps/core/wcm/components/container/v1/container)
-14. [Carousel](content/src/content/jcr_root/apps/core/wcm/components/carousel/v1/carousel)
-15. [Tabs](content/src/content/jcr_root/apps/core/wcm/components/tabs/v1/tabs)
-16. [Accordion](content/src/content/jcr_root/apps/core/wcm/components/accordion/v1/accordion)
+13. [Container](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/container/v1/container)
+14. [Carousel](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/carousel/v1/carousel)
+15. [Tabs](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/tabs/v1/tabs)
+16. [Accordion](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/accordion/v1/accordion)
 
 ### Form Components
 
