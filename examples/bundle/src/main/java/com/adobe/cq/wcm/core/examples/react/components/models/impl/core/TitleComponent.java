@@ -19,7 +19,6 @@ import com.adobe.cq.export.json.ComponentExporter;
 import com.adobe.cq.export.json.ExporterConstants;
 import com.adobe.cq.wcm.core.components.models.List;
 import com.adobe.cq.wcm.core.components.models.Title;
-import com.adobe.cq.wcm.core.components.models.datalayer.ComponentData;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
@@ -68,14 +67,4 @@ public class TitleComponent implements Title {
     public String getExportedType() {
         return RESOURCE_TYPE;
     };
-    
-    @Override
-    public String getId() {
-        return delegate.getId();
-    }
-    
-    @Override @JsonIgnore
-    public  ComponentData getData() {
-        return delegate.getData();
-    }
 }

@@ -26,6 +26,7 @@ import org.osgi.service.component.annotations.Component;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.Map;
 
 
@@ -45,7 +46,12 @@ public class AssetManifestServiceImpl implements AssetManifestService {
             InputStream file = assetManifestResource.adaptTo(InputStream.class);
             String fileString = IOUtils.toString(file);
             ObjectMapper objectMapper = new ObjectMapper();
-            return objectMapper.readValue(fileString, new TypeReference<Map<String, String>>() {});
+            Map<String,Object> objectMap =objectMapper.readValue(fileString, new TypeReference<Map<String, Object>>() {});
+            
+            Map<String,Object> targetMap = objectMap.containsKey("files") ? (Map<String,Object>) objectMap.get("files") : objectMap;
+            Map<String,String> resultMap = new HashMap<>();
+            targetMap.entrySet().forEach((entry) -> resultMap.put(entry.getKey(), entry.getValue().toString()));
+            return resultMap;
         }else{
             throw new IOException("Could not load manifest file!");
         }

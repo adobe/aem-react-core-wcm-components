@@ -17,7 +17,7 @@
 import React from 'react';
 import ReactDOM from "react-dom";
 
-import {ModelManager, ModelClient, Model, Constants} from '@adobe/cq-spa-page-model-manager';
+import {ModelManager, ModelClient, Model, Constants} from '@adobe/aem-spa-page-model-manager';
 import './mapping';
 
 import {BrowserRouter} from "react-router-dom";
