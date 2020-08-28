@@ -17,4 +17,5 @@
 <workspaceFilter version="1.0">
     <filter root="/apps/core-components-examples/wcm/react/clientlibs"/>
     <filter root="/apps/core-components-examples/wcm/react/components"/>
+    <filter root="/apps/core-components-examples/wcm/react/install"/>
 </workspaceFilter>

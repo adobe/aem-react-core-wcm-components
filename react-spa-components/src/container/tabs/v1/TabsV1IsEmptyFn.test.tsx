@@ -19,7 +19,7 @@ import  {TabsV1Properties} from "./TabsV1";
 
 import ComponentMapping, {dummyItems} from "../../../TestComponentMapping";
 import {TabsV1IsEmptyFn} from "./TabsV1IsEmptyFn";
-import { AllowedComponents, AllowedComponent } from '@adobe/cq-react-editable-components';
+import { AllowedComponents, AllowedComponent } from '@adobe/aem-react-editable-components';
 
 const GRID_CLASS_NAMES = 'grid-class-names';
 const COLUMN_1_CLASS_NAMES = 'column-class-names-1';

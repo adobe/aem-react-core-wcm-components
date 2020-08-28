@@ -18,7 +18,7 @@ import React from 'react';
 
 
 import {CoreContainerProperties, CoreContainerState, withAuthorPanelSwitch, withStandardBaseCssClass, CoreContainerItem} from "../../../AbstractCoreContainerComponent";
-import {ComponentMapping, Container} from '@adobe/cq-react-editable-components';
+import {ComponentMapping, Container} from '@adobe/aem-react-editable-components';
 
 import {CarouselV1IsEmptyFn} from "./CarouselV1IsEmptyFn";
 import {TabsV1Properties, TabsV1State} from "../../..";

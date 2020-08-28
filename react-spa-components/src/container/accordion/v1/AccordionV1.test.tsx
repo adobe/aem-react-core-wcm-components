@@ -20,8 +20,8 @@ import {mount, ReactWrapper} from "enzyme";
 import ReactDOM from 'react-dom';
 
 import ComponentMapping, {dummyItems} from "../../../TestComponentMapping";
-import {ModelManager} from "@adobe/cq-spa-page-model-manager"
-import {AllowedComponents, AllowedComponent, withModel} from "@adobe/cq-react-editable-components"
+import {ModelManager} from "@adobe/aem-spa-page-model-manager"
+import {AllowedComponents, AllowedComponent, withModel} from "@adobe/aem-react-editable-components"
 
 const allowedComponent:AllowedComponent = {
     path: "/apps/core/components/dummy",

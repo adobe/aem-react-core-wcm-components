@@ -25,28 +25,28 @@ TBD
 
 ### Template Components
 
-1. [Navigation](content/src/content/jcr_root/apps/core/wcm/components/navigation/v1/navigation)
-2. [Language Navigation](content/src/content/jcr_root/apps/core/wcm/components/languagenavigation/v1/languagenavigation)
-3. [Breadcrumb](content/src/content/jcr_root/apps/core/wcm/components/breadcrumb/v2/breadcrumb)
+1. [Navigation](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/navigation/v1/navigation)
+2. [Language Navigation](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/languagenavigation/v1/languagenavigation)
+3. [Breadcrumb](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/breadcrumb/v2/breadcrumb)
 
 ### Page Authoring Components
 
-4. [Title](content/src/content/jcr_root/apps/core/wcm/components/title/v2/title)
-5. [Text](content/src/content/jcr_root/apps/core/wcm/components/text/v2/text)
-6. [Image](content/src/content/jcr_root/apps/core/wcm/components/image/v2/image)
-7. [Button](content/src/content/jcr_root/apps/core/wcm/components/button/v1/button)
-8. [Teaser](content/src/content/jcr_root/apps/core/wcm/components/teaser/v1/teaser)
-9. [Download](content/src/content/jcr_root/apps/core/wcm/components/download/v1/download)
-10. [List](content/src/content/jcr_root/apps/core/wcm/components/list/v2/list)
-11. [Separator](content/src/content/jcr_root/apps/core/wcm/components/separator/v1/separator)
-12. [Progress Bar](content/src/content/jcr_root/apps/core/wcm/components/progressbar/v1/progressbar)
+4. [Title](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/title/v2/title)
+5. [Text](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/text/v2/text)
+6. [Image](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/image/v2/image)
+7. [Button](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/button/v1/button)
+8. [Teaser](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/teaser/v1/teaser)
+9. [Download](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/download/v1/download)
+10. [List](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/list/v2/list)
+11. [Separator](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/separator/v1/separator)
+12. [Progress Bar](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/progressbar/v1/progressbar)
 
 ### Container Components
 
-13. [Container](content/src/content/jcr_root/apps/core/wcm/components/container/v1/container)
-14. [Carousel](content/src/content/jcr_root/apps/core/wcm/components/carousel/v1/carousel)
-15. [Tabs](content/src/content/jcr_root/apps/core/wcm/components/tabs/v1/tabs)
-16. [Accordion](content/src/content/jcr_root/apps/core/wcm/components/accordion/v1/accordion)
+13. [Container](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/container/v1/container)
+14. [Carousel](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/carousel/v1/carousel)
+15. [Tabs](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/tabs/v1/tabs)
+16. [Accordion](https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/accordion/v1/accordion)
 
 ### Form Components
 
@@ -66,7 +66,7 @@ For existing projects, take example from the [AEM Project Archetype](https://git
 
 Core Components | AEM as a Cloud Service | AEM 6.5 | AEM 6.4 | Java SE | Maven
 ----------------|------------------------|---------|---------|---------|---------
-[2.10.0](https://github.com/adobe/aem-core-wcm-components/releases/tag/core.wcm.components.reactor-2.10.0) | Continual | 6.5.5.0+ | 6.4.8.1+ | 8, 11 | 3.3.9+
+[2.8.0](https://github.com/adobe/aem-core-wcm-components/releases/tag/core.wcm.components.reactor-2.8.0) | Continual | 6.5.5.0+ | 6.4.8.1+ | 8, 11 | 3.3.9+
 
 For the requirements from previous Core Component releases, see [Historical System Requirements](VERSIONS.md).
 
@@ -78,7 +78,13 @@ Setup your local development environment for [AEM as a Cloud Service SDK](https:
 
 To compile your own version of the React Core Components, you can build and install everything on your running AEM instance by issuing the following command in the top level folder of the project:
 
-    mvn clean install -PautoInstallSinglePackage -PskipRat
+Cloud:
+
+    mvn clean install -PautoInstallPackage -PautoInstallSinglePackage
+    
+6.5.5+:
+
+    mvn clean install -PautoInstallPackage -PautoInstallSinglePackage -Pclassic
     
 Important: It is known that the core components examples package removes the examples installed in this package due to their package filter.
 This needs to be addressed later.
@@ -101,3 +107,11 @@ For convenience, the following deployment profiles are provided when running the
 The hostname and port of the instance can be changed with the following user defined properties:
 * `aem.host` and `aem.port` for the author instance.
 * `aem.publish.host` and `aem.publish.port` for the publish instance.
+
+### Contributing
+
+Contributions are welcomed! Read the [Contributing Guide](CONTRIBUTING.md) for more information.
+
+### Licensing
+
+This project is licensed under the Apache V2 License. See [LICENSE](LICENSE) for more information.

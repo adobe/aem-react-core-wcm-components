@@ -4,12 +4,12 @@
         "noEmit": false,
         "baseUrl": ".",
         "paths": {
-            "@adobe/cq-react-editable-components":  ["node_modules/@adobe/cq-react-editable-components"],
-            "@adobe/cq-react-editable-components/*":  ["node_modules/@adobe/cq-react-editable-components/*"],
-            "@adobe/cq-spa-component-mapping":  ["node_modules/@adobe/cq-spa-component-mapping"],
-            "@adobe/cq-spa-component-mapping/*":  ["node_modules/@adobe/cq-spa-component-mapping/*"],
-            "@adobe/cq-spa-page-model-manager":  ["node_modules/@adobe/cq-spa-page-model-manager"],
-            "@adobe/cq-spa-page-model-manager/*":  ["node_modules/@adobe/cq-spa-page-model-manager/*"]
+            "@adobe/aem-react-editable-components":  ["node_modules/@adobe/aem-react-editable-components"],
+            "@adobe/aem-react-editable-components/*":  ["node_modules/@adobe/aem-react-editable-components/*"],
+            "@adobe/aem-spa-component-mapping":  ["node_modules/@adobe/aem-spa-component-mapping"],
+            "@adobe/aem-spa-component-mapping/*":  ["node_modules/@adobe/aem-spa-component-mapping/*"],
+            "@adobe/aem-spa-page-model-manager":  ["node_modules/@adobe/aem-spa-page-model-manager"],
+            "@adobe/aem-spa-page-model-manager/*":  ["node_modules/@adobe/aem-spa-page-model-manager/*"]
         }
     }
 }

@@ -19,7 +19,7 @@ import  {ContainerV1Properties} from "./ContainerV1";
 
 import ComponentMapping, {dummyItems} from "../../../TestComponentMapping";
 import {ContainerV1IsEmptyFn} from "./ContainerV1IsEmptyFn";
-import { AllowedComponents, AllowedComponent } from '@adobe/cq-react-editable-components';
+import { AllowedComponents, AllowedComponent } from '@adobe/aem-react-editable-components';
 
 const GRID_CLASS_NAMES = 'grid-class-names';
 const COLUMN_1_CLASS_NAMES = 'column-class-names-1';

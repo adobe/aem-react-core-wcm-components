@@ -38,7 +38,7 @@ import java.util.Map;
 @Exporter(name = ExporterConstants.SLING_MODEL_EXPORTER_NAME, extensions = ExporterConstants.SLING_MODEL_EXTENSION)
 public class DemoPropertyExporterImpl extends AbstractDemoComponent {
     
-    static final String RESOURCE_TYPE = "core-components-examples/components/demo/properties";
+    static final String RESOURCE_TYPE = "core-components-examples/wcm/react/components/demo/properties";
     
     @SlingObject
     private SlingHttpServletResponse response;

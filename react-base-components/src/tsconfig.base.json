@@ -4,8 +4,8 @@
         "noEmit": false,
         "baseUrl": ".",
         "paths": {
-            "@adobe/cq-react-editable-components": ["./"],
-            "@adobe/cq-react-editable-components/*": ["./*"]
+            "@adobe/aem-react-editable-components": ["./"],
+            "@adobe/aem-react-editable-components/*": ["./*"]
         }
     }
 }

@@ -15,6 +15,7 @@ jobs:
           node-version: '12'
       - run: npm install
       - run: npm run test:coverage
+      - run: npm run build  
       - uses: hallee/eslint-action@1.0.3
         if: ${{ github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository }}
         with:
@@ -38,6 +39,7 @@ jobs:
           node-version: '12'
       - run: npm install
       - run: npm run test:coverage
+      - run: npm run build 
       - uses: hallee/eslint-action@1.0.3
         if: ${{ github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository }}
         with:

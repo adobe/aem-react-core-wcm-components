@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 
-import {MapTo, Container, MappedComponentProperties, ContainerProperties, PageProperties} from '@adobe/cq-react-editable-components';
+import {MapTo, Container, MappedComponentProperties, ContainerProperties, PageProperties} from '@adobe/aem-react-editable-components';
 
 import {TitleV2IsEmptyFn, ListV2IsEmptyFn, BreadCrumbV2IsEmptyFn, TextV2IsEmptyFn, ButtonV1IsEmptyFn, ImageV2IsEmptyFn, TeaserV1IsEmptyFn, DownloadV1IsEmptyFn, SeparatorV1IsEmptyFn} from "@adobe/aem-core-components-react-base/dist/isEmptyFunctions";
 import {AccordionV1IsEmptyFn, CarouselV1IsEmptyFn, ContainerV1IsEmptyFn, TabsV1IsEmptyFn} from "@adobe/aem-core-components-react-spa/dist/isEmptyFunctions";
@@ -82,10 +82,10 @@ MapTo<AccordionV1Properties>('core-components-examples/wcm/react/components/acco
 MapTo<CarouselV1Properties>('core-components-examples/wcm/react/components/carousel')(CarouselV1, {isEmpty: CarouselV1IsEmptyFn});
 MapTo<ContainerV1Properties>('core-components-examples/wcm/react/components/container')(ContainerV1, {isEmpty: ContainerV1IsEmptyFn});
 
-MapTo<JsonProperties>('core-components-examples/components/demo/json')(Json);
-MapTo<PropertiesModel>('core-components-examples/components/demo/properties')(Properties);
-MapTo<MarkupProperties>('core-components-examples/components/demo/markup')(Markup);
-MapTo<DemoContainerProperties>('core-components-examples/components/demo')(Demo);
-MapTo<ContainerProperties>('core-components-examples/components/demo/component')(Container);
+MapTo<JsonProperties>('core-components-examples/wcm/react/components/demo/json')(Json);
+MapTo<PropertiesModel>('core-components-examples/wcm/react/components/demo/properties')(Properties);
+MapTo<MarkupProperties>('core-components-examples/wcm/react/components/demo/markup')(Markup);
+MapTo<DemoContainerProperties>('core-components-examples/wcm/react/components/demo')(Demo);
+MapTo<ContainerProperties>('core-components-examples/wcm/react/components/demo/component')(Container);
 MapTo<PageProperties>('core-components-examples/wcm/react/components/page/react-spacomponents-page')(withRoute(ContribPage));
 

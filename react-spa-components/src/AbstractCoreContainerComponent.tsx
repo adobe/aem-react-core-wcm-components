@@ -16,9 +16,9 @@
 
 import * as React from 'react';
 
-import {ContainerState, AllowedComponentsProperties, Utils} from '@adobe/cq-react-editable-components';
+import {ContainerState, AllowedComponentsProperties} from '@adobe/aem-react-editable-components';
 import {ComponentType} from "react";
-import { Model } from '@adobe/cq-spa-page-model-manager';
+import { Model } from '@adobe/aem-spa-page-model-manager';
 
 export interface CoreContainerProperties extends AllowedComponentsProperties{
     baseCssClass?:string;
@@ -36,15 +36,6 @@ export interface CoreContainerState extends ContainerState {
 export interface AuthorPanelSwitchState {
     activeIndexFromAuthorPanel?: number
 }
-
-const isBrowser = (() => {
-    try{
-        return typeof window !== 'undefined';
-    }catch(err){
-        return false;
-    }
-})();
-
 
 
 export const withStandardBaseCssClass = <M extends CoreContainerProperties>
@@ -82,7 +73,7 @@ export const withAuthorPanelSwitch = <M extends CoreContainerProperties>(
             this.state = {}
 
             //@ts-ignore
-            if (isBrowser && window.Granite && window.Granite.author && window.Granite.author.MessageChannel) {
+            if (window && window.Granite && window.Granite.author && window.Granite.author.MessageChannel) {
                 //@ts-ignore
                 this.messageChannel = new window.Granite.author.MessageChannel("cqauthor", window);
                 this.callback = this.callback.bind(this);

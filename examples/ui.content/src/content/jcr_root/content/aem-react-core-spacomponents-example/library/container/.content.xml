@@ -76,10 +76,10 @@
                     textIsRich="true"/>
                 <demo_975671813
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="core-components-examples/components/demo">
+                    sling:resourceType="core-components-examples/wcm/react/components/demo">
                     <component
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="core-components-examples/components/demo/component">
+                        sling:resourceType="core-components-examples/wcm/react/components/demo/component">
                         <container
                             jcr:lastModified="{Date}2019-06-11T18:23:04.466+02:00"
                             jcr:lastModifiedBy="admin"
@@ -120,10 +120,10 @@
                     textIsRich="true"/>
                 <demo_975671829
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="core-components-examples/components/demo">
+                    sling:resourceType="core-components-examples/wcm/react/components/demo">
                     <component
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="core-components-examples/components/demo/component">
+                        sling:resourceType="core-components-examples/wcm/react/components/demo/component">
                         <container
                             jcr:lastModified="{Date}2019-06-11T18:23:04.466+02:00"
                             jcr:lastModifiedBy="admin"
@@ -177,10 +177,10 @@
                     textIsRich="true"/>
                 <demo
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="core-components-examples/components/demo">
+                    sling:resourceType="core-components-examples/wcm/react/components/demo">
                     <component
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="core-components-examples/components/demo/component">
+                        sling:resourceType="core-components-examples/wcm/react/components/demo/component">
                         <container
                             jcr:lastModified="{Date}2019-06-11T18:23:04.466+02:00"
                             jcr:lastModifiedBy="admin"
@@ -220,10 +220,10 @@
                     textIsRich="true"/>
                 <demo_295699411
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="core-components-examples/components/demo">
+                    sling:resourceType="core-components-examples/wcm/react/components/demo">
                     <component
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="core-components-examples/components/demo/component">
+                        sling:resourceType="core-components-examples/wcm/react/components/demo/component">
                         <container
                             jcr:lastModified="{Date}2019-06-11T19:50:48.781+02:00"
                             jcr:lastModifiedBy="admin"
@@ -263,10 +263,10 @@
                     textIsRich="true"/>
                 <demo_2146960736
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="core-components-examples/components/demo">
+                    sling:resourceType="core-components-examples/wcm/react/components/demo">
                     <component
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="core-components-examples/components/demo/component">
+                        sling:resourceType="core-components-examples/wcm/react/components/demo/component">
                         <container
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="core-components-examples/wcm/react/components/container"

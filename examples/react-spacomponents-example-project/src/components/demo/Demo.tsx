@@ -15,7 +15,7 @@
  */
 
 import React from 'react';
-import {Container,ContainerProperties,ContainerState} from '@adobe/cq-react-editable-components';
+import {Container,ContainerProperties,ContainerState} from '@adobe/aem-react-editable-components';
 
 export interface DemoContainerProperties extends ContainerProperties{
     fullWidth: boolean
