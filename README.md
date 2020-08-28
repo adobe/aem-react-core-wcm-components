@@ -108,6 +108,20 @@ The hostname and port of the instance can be changed with the following user def
 * `aem.host` and `aem.port` for the author instance.
 * `aem.publish.host` and `aem.publish.port` for the publish instance.
 
+### Server Side Rendering demo
+
+To enable server side rendering demo on the SPA demo site, simply:
+
+* Make sure you executed the full build at least 1 time
+* Go to the module react-spacomponents-example-project-directory in your CMD
+* Make sure port 4200 is free.
+* Execute either "npm run server" (simple server start) "npm run aemsync-ssr" (code sync to AEM with SSR restart)
+* Your react pages should now render with server side rendering.
+
+
+You can deploy the files from dist/serverBuild to your nodeJS, adobeIO or AWS lambda instance and change your rendering endpoint in OSGI to render from the cloud.
+See: com.adobe.cq.wcm.core.examples.react.components.ssr.impl.SSRRenderingServiceImpl.Configuration
+
 ### Contributing
 
 Contributions are welcomed! Read the [Contributing Guide](CONTRIBUTING.md) for more information.
