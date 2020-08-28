@@ -56,4 +56,8 @@ public class RoutedNavigationItem implements NavigationItem, RoutedModel {
         return delegate.getPage();
     }
     
+    @Override @JsonIgnore
+    public String getExportedType() {
+        return delegate.getExportedType();
+    }
 }

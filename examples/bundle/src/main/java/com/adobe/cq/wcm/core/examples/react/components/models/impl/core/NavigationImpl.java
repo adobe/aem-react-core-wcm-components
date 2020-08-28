@@ -83,4 +83,5 @@ public class NavigationImpl implements Navigation {
         return RESOURCE_TYPE;
     }
     
+    
 }
