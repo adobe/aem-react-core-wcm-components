@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  ~ Copyright 2020 Adobe
+  ~ Copyright 2018 Adobe
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
   ~ limitations under the License.
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <workspaceFilter version="1.0">
-    <filter root="/apps/core-components-examples/wcm/react/clientlibs"/>
-    <filter root="/apps/core-components-examples/wcm/react/components"/>
-    <filter root="/apps/core-components-examples/wcm/react/install"/>
+    <filter root="/apps/core-components-examples/wcm/install">
+        <exclude pattern="/apps/core-components-examples/wcm/install/core\.wcm\.components\.extension\..*" />
+    </filter>
 </workspaceFilter>
