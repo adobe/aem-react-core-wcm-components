@@ -64,7 +64,7 @@ const sassModuleRegex = /\.module\.(scss|sass)$/;
 // It is focused on developer experience and fast rebuilds.
 // The production configuration is different and lives in a separate file.
 module.exports = {
-    mode: 'production',
+    mode: 'development',
     bail: true,
     entry: [
         paths.appIndexJs,
@@ -79,7 +79,10 @@ module.exports = {
         devtoolModuleFilenameTemplate: info =>
             path.resolve(info.absoluteResourcePath).replace(/\\/g, '/'),
     },
+
+
     optimization: {
+        minimize: true,
         minimizer: [
             new TerserPlugin({
                 terserOptions: {
@@ -88,7 +91,7 @@ module.exports = {
                     },
                     compress: {
                         ecma: 5,
-                        warnings: false,
+                        warnings: true,
                         comparisons: false,
 
                         inline: 2,
@@ -105,7 +108,7 @@ module.exports = {
                 },
                 parallel: true,
 
-                cache: true
+                cache: false
             }),
             new OptimizeCSSAssetsPlugin({
                 cssProcessorOptions: {
@@ -198,10 +201,9 @@ module.exports = {
             {
                 test: /\.(ts|tsx|js|mjs|jsx)$/,
                 include: paths.appSrc,
-                loader: require.resolve('babel-loader'),
                 enforce: 'post',
+                loader: require.resolve('babel-loader'),
                 options: {
-
                     customize: require.resolve(
                         'babel-preset-react-app/webpack-overrides'
                     ),

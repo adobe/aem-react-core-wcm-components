@@ -20,6 +20,9 @@ const getClientEnvironment = require('./env');
 const paths = require('./paths');
 
 const ManifestPlugin = require('webpack-manifest-plugin');
+const safePostCssParser = require('postcss-safe-parser');
+const TerserPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const publicPath = paths.publicPath;
@@ -40,7 +43,44 @@ module.exports = Object.assign({}, devConfig, {
         filename: 'server.js',
         libraryTarget: 'commonjs2',
     },
-    optimization: {},
+
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new TerserPlugin({
+                terserOptions: {
+                    parse: {
+                        ecma: 8,
+                    },
+                    compress: {
+                        ecma: 5,
+                        warnings: true,
+                        comparisons: false,
+
+                        inline: 2,
+                    },
+                    mangle: {
+                        safari10: true,
+                    },
+                    output: {
+                        ecma: 5,
+                        comments: false,
+
+                        ascii_only: true,
+                    },
+                },
+                parallel: true,
+
+                cache: false
+            }),
+            new OptimizeCSSAssetsPlugin({
+                cssProcessorOptions: {
+                    parser: safePostCssParser
+                },
+            }),
+        ]
+    },
+
     externals: {
         express: true,
         os: true,
