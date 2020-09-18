@@ -13,6 +13,6 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+<sly data-sly-use.clientLib="${'/apps/aem-webpack-clientlib/template/clientlib.html'}"></sly>
 
-<sly data-sly-resource="${resource @ resourceType='core-components-examples/wcm/react/chunks/static-js'}"/>
-
+<sly data-sly-call="${clientLib.js @ categories=['react-webcomponents']}"></sly>

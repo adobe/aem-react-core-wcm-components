@@ -5,4 +5,8 @@
         jcr:primaryType="rep:GrantACE"
         rep:principalName="anonymous"
         rep:privileges="{Name}[jcr:read]"/>
+    <allow0
+            jcr:primaryType="rep:GrantACE"
+            rep:principalName="aem-webpack-clientlib-manifest-service"
+            rep:privileges="{Name}[jcr:read]"/>
 </jcr:root>

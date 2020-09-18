@@ -19,5 +19,5 @@
 <sly data-sly-test="${wcmmode.edit || wcmmode.preview}"
      data-sly-call="${clientLib.js @ categories=['cq.authoring.pagemodel.messaging', 'core.wcm.components.accordion.v1.editor']}"></sly>
 
-<sly data-sly-resource="${resource @ resourceType='core-components-examples/wcm/react/chunks/static-js'}"/>
-
+<sly data-sly-use.clientLib="${'/apps/aem-webpack-clientlib/template/clientlib.html'}"></sly>
+<sly data-sly-call="${clientLib.js @ categories=['react-spacomponents']}"></sly>
