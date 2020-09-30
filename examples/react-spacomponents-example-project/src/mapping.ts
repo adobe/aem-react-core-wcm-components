@@ -17,30 +17,34 @@
 import {MapTo, Container, MappedComponentProperties, ContainerProperties, PageProperties} from '@adobe/aem-react-editable-components';
 
 import {TitleV2IsEmptyFn, ListV2IsEmptyFn, BreadCrumbV2IsEmptyFn, TextV2IsEmptyFn, ButtonV1IsEmptyFn, ImageV2IsEmptyFn, TeaserV1IsEmptyFn, DownloadV1IsEmptyFn, SeparatorV1IsEmptyFn} from "@adobe/aem-core-components-react-base/dist/isEmptyFunctions";
-import {AccordionV1IsEmptyFn, CarouselV1IsEmptyFn, ContainerV1IsEmptyFn, TabsV1IsEmptyFn} from "@adobe/aem-core-components-react-spa/dist/isEmptyFunctions";
+import {
+    AccordionV1IsEmptyFn,
+    CarouselV1IsEmptyFn,
+    ContainerV1IsEmptyFn,
+    TabsV1IsEmptyFn
+} from "@adobe/aem-core-components-react-spa/dist/isEmptyFunctions";
 
 import withAsyncImport from "./utils/withAsyncImport";
 
 import withRoute from './utils/RouteHelper';
 import ContribPage from './components/Page';
-import Demo, { DemoContainerProperties } from './components/demo/Demo';
-import Json, { JsonProperties } from './components/demo/Json';
-import Markup, { MarkupProperties } from "./components/demo/Markup";
-import Properties, { PropertiesModel } from "./components/demo/Properties";
-import { DownloadV1Model } from '@adobe/aem-core-components-react-base/dist/authoring/download/v1/DownloadV1';
-import { ListV2Model } from '@adobe/aem-core-components-react-base/dist/authoring/list/v2/ListV2';
-import { CoreComponentModel } from '@adobe/aem-core-components-react-base/dist/AbstractCoreComponent';
-import { TextV2Model } from '@adobe/aem-core-components-react-base/dist/authoring/text/v2/TextV2';
-import { BreadCrumbV2Model } from '@adobe/aem-core-components-react-base/dist/layout/breadcrumb/v2/BreadCrumbV2';
-import { ButtonV1Model } from '@adobe/aem-core-components-react-base/dist/authoring/button/v1/ButtonV1';
-import { TeaserV1Model } from '@adobe/aem-core-components-react-base/dist/authoring/teaser/v1/TeaserV1';
-import { ImageV2Model } from '@adobe/aem-core-components-react-base/dist/authoring/image/v2/ImageV2';
-import { TitleV2Model } from '@adobe/aem-core-components-react-base/dist/authoring/title/v2/TitleV2';
-import { TabsV1Properties } from '@adobe/aem-core-components-react-spa/dist/container/tabs/v1/TabsV1';
-import { AccordionV1Properties } from '@adobe/aem-core-components-react-spa/dist/container/accordion/v1/AccordionV1';
-import { CarouselV1Properties } from '@adobe/aem-core-components-react-spa/dist/container/carousel/v1/CarouselV1';
-import { ContainerV1Properties } from '@adobe/aem-core-components-react-spa/dist/container/container/v1/ContainerV1';
+import Demo, {DemoContainerProperties} from './components/demo/Demo';
+import Json, {JsonProperties} from './components/demo/Json';
+import Markup, {MarkupProperties} from "./components/demo/Markup";
+import Properties, {PropertiesModel} from "./components/demo/Properties";
+import {
+    DownloadV1Model,
+    ListV2Model,
+    CoreComponentModel,
+    TextV2Model,
+    BreadCrumbV2Model,
+    ButtonV1Model,
+    TeaserV1Model,
+    ImageV2Model,
+    TitleV2Model
+} from '@adobe/aem-core-components-react-base';
 
+import {TabsV1Properties, AccordionV1Properties, CarouselV1Properties, ContainerV1Properties} from '@adobe/aem-core-components-react-spa';
 
 
 const TitleV2 = withAsyncImport(() => import(/* webpackChunkName: "TitleV2" */ '@adobe/aem-core-components-react-base/dist/authoring/title/v2/TitleV2'));
