@@ -1,4 +1,4 @@
-import { PageModel } from "@adobe/aem-react-editable-components";
+import { PageModel } from "@adobe/cq-react-editable-components";
 
 export interface ServerParameters {
     wcmMode: string
