@@ -7,7 +7,6 @@
       "esnext"
     ],
     "inlineSourceMap": true,
-    "inlineSources": true,
     "experimentalDecorators": true,
     "allowJs": true,
     "skipLibCheck": true,
