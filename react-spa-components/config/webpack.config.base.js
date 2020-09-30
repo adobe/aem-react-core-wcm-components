@@ -26,11 +26,12 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 
 module.exports = {
     mode: mode,
-    devtool: 'source-map',
+    devtool: 'inline-source-map',
     output: {
         globalObject: `typeof self !== 'undefined' ? self : this`,
         path: path.resolve(__dirname, '../dist'),
         filename: '[name].js',
+        library: 'cqSpaCoreComponents',
         libraryTarget: 'umd'
     },
     module: {

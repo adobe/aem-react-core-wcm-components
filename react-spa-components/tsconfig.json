@@ -6,7 +6,6 @@
       "dom.iterable",
       "esnext"
     ],
-    "inlineSources": true,
     "inlineSourceMap": true,
     "experimentalDecorators": true,
     "allowJs": true,
