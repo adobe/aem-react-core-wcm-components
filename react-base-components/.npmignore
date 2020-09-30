@@ -7,4 +7,3 @@ node_modules
 jest.config.js
 pom.xml
 tsconfig.json
-src
