@@ -63,7 +63,7 @@ const sassModuleRegex = /\.module\.(scss|sass)$/;
 module.exports = {
     mode: 'development',
     bail: true,
-    devtool: 'source-map',
+    devtool: 'inline-source-map',
 
     entry: [
         paths.appIndexJs,
@@ -137,11 +137,16 @@ module.exports = {
             // Disable require.ensure as it's not a standard language feature.
             { parser: { requireEnsure: false } },
 
+            {
+                test: /\.(js|mjs|jsx|ts|tsx)$/,
+                use: ['source-map-loader'],
+                enforce: 'pre',
+            },
             // First, run the linter.
             // It's important to do this before Babel processes the JS.
             {
                 test: /\.(js|mjs|jsx)$/,
-                enforce: 'pre',
+                enforce: 'post',
                 use: [
                     {
                         options: {
@@ -205,7 +210,7 @@ module.exports = {
                             ],
                             cacheDirectory: true,
                             cacheCompression: false,
-                            sourceMaps: false,
+                            sourceMaps: true,
                         },
                     },
 

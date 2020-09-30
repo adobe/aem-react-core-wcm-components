@@ -16,7 +16,7 @@
 
 const config = require('./webpack.config.base');
 
-config.output.library = 'cqSpaCoreComponents';
+config.output.library = '@adobe/aem-core-components-react-spa';
 
 config.entry = {
     'index': ['./src/index.ts'],

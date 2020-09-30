@@ -19,6 +19,7 @@
   "devDependencies": {
     "aempack": "^1.1.9",
     "del-cli": "^3.0.0",
+    "source-map-loader": "^1.1.0",
     "move-cli": "^1.2.1",
     "cross-env": "^7.0.2",
     "node-sass": "^4.13.1",

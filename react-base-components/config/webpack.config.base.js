@@ -24,7 +24,7 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 module.exports = {
     entry: {},
     mode: mode,
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
     output: {
         globalObject: `typeof self !== 'undefined' ? self : this`,
         path: path.resolve(__dirname, '../dist'),
@@ -33,6 +33,11 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.(js|mjs|jsx|ts|tsx)$/,
+                use: ['source-map-loader'],
+                enforce: 'pre',
+            },
             {
                 test: /\.ts$|\.tsx$/,
                 exclude: /(node_modules|dist)/,
