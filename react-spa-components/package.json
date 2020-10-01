@@ -1,6 +1,6 @@
 {
   "name": "@adobe/aem-core-components-react-spa",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "license": "Apache-2.0",
   "scripts": {
     "clean": "rm -rf coverage/ dist/ src/tsconfig.types.tsbuildinfo",
@@ -51,6 +51,7 @@
     "@typescript-eslint/eslint-plugin": "^4.0.0-alpha.14",
     "@typescript-eslint/parser": "^4.0.0-alpha.14",
     "@typescript-eslint/typescript-estree": "^4.0.0-alpha.14",
+    "source-map-loader": "^1.1.0",
     "babel-loader": "^8.0.6",
     "babel-eslint": "^10.1.0",
     "babel-plugin-istanbul": "^5.2.0",
