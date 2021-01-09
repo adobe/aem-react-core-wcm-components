@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 import React, {MouseEvent} from 'react';
-import {CoreComponentModel, withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
+import {CoreComponentModel, generateContainerAttributes, withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
 import {DownloadV1IsEmptyFn} from "./DownloadV1IsEmptyFn";
 
 
@@ -115,11 +115,11 @@ export const DownloadV1Link = (props:DownloadV1Model) => {
 export const DownloadV1Impl = (props:DownloadV1Model) => {
 
     const { displayFilename = false ,displaySize = false,  displayFormat = false} = props;
-    
+
     const cssClass = props.baseCssClass + ( props.isInEditor  ? ' cq-dd-file' : '');
     const displayDownloadDetails = displayFilename || displaySize || displayFormat;
     return (
-        <div className={cssClass}>
+        <div {...generateContainerAttributes(props, {className: cssClass})} >
             {!!props.title && <DownloadV1HeadingElement {...props}/>}
             {!!props.description && <DownloadV1Description {...props}/>}
             {displayDownloadDetails && <DownloadV1Details {...props}/>}

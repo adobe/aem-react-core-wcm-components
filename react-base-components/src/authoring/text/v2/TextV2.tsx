@@ -15,7 +15,7 @@
  */
 
 import React, {Component} from 'react';
-import {CoreComponentModel, withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
+import {CoreComponentModel, generateContainerAttributes, withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
 import {TextV2IsEmptyFn} from "./TextV2IsEmptyFn";
 
 export interface TextV2Model extends CoreComponentModel{
@@ -27,13 +27,11 @@ export interface TextV2Model extends CoreComponentModel{
 
 export const TextV2RichText = (props:TextV2Model) => {
     const text:string = props.text as string;
-    const id = (props.id) ? props.id : (props.cqPath ? props.cqPath.substr(props.cqPath.lastIndexOf('/') + 1) : "");
-
-    return  <div className={props.baseCssClass}  id={id} data-rte-editelement dangerouslySetInnerHTML={{__html: text}}/>
+    return  <div {...generateContainerAttributes(props)} data-rte-editelement dangerouslySetInnerHTML={{__html: text}}/>
 };
 
 export const TextV2PlainText = (props:TextV2Model) => {
-    return  <div className={props.baseCssClass}><p className="cmp-text__paragraph">{props.text}</p></div>
+    return  <div {...generateContainerAttributes(props)}><p className="cmp-text__paragraph">{props.text}</p></div>
 };
 
 const TextV2Impl = (props:TextV2Model) => {

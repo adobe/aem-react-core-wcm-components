@@ -37,6 +37,13 @@ it('Renders out properly', () => {
 
     let captured = false;
     const props:DownloadV1Model = {
+        id: "download-someId",
+        dataLayer: {
+            "someData": {
+                "test1": "test",
+                "test2": "more"
+            }
+        },
         actionText: "Download now!!!",
         description: "<p>Asset uploaded directly from a local file system</p>\\r\\n",
         displayFilename: true,
@@ -57,6 +64,11 @@ it('Renders out properly', () => {
     };
 
     const wrapper = mount(<DownloadV1  {...props} />);
+
+    const element = wrapper.find('div#download-someId');
+    expect(element.prop('id')).toEqual('download-someId');
+    expect(JSON.parse(element.prop('data-cmp-data-layer'))).toHaveProperty('someData');
+
 
     const properties = wrapper.find('.cmp-download__property');
 

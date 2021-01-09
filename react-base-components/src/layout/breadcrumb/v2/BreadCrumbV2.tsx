@@ -15,7 +15,7 @@
  */
 
 import React, {Component} from 'react';
-import {HasBaseCssClass, withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
+import {generateContainerAttributes, HasBaseCssClass, withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
 import {RoutedCoreComponentModel, RoutedModel} from "../../../routing/RoutedCoreComponent";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {BreadCrumbV2IsEmptyFn} from "./BreadCrumbV2IsEmptyFn";
@@ -74,7 +74,7 @@ const BreadCrumbV2Impl = (props:BreadCrumbV2Model) => {
     const {ariaLabelI18n = 'BreadCrumbV2'} = props;
     
     return (
-        <nav className={props.baseCssClass}
+        <nav {...generateContainerAttributes(props)}
              aria-label={ariaLabelI18n}>
             <ol className={props.baseCssClass + '__list'}
                 itemScope itemType="http://schema.org/BreadcrumbList">

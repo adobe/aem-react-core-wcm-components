@@ -62,10 +62,26 @@ it('Renders plain text', () => {
 it('Renders rich text', () => {
 
     const richText = '<div class="myclass">richtext</div>';
-    const expectedHtml = '<div class="cmp-text" id="testId" data-rte-editelement="true"><div class="myclass">richtext</div></div>';
-    const element = mount(<TextV2 richText={true} id={"testId"} text={richText}/>);
+    const expectedHtml = '<div class="cmp-text" id="testId" data-cmp-data-layer="{&quot;someData&quot;:{&quot;test1&quot;:&quot;test&quot;,&quot;test2&quot;:&quot;more&quot;}}" data-rte-editelement="true"><div class="myclass">richtext</div></div>';
+    const data:any = {
+        "someData": {
+            "test1": "test",
+            "test2": "more"
+        }
+    };
+
+    const element = mount(<TextV2 richText={true} id={"testId"} dataLayer={data} text={richText}/>);
 
     const actualHtml = element.html();
+
+    const dataLayerAttribute:string|null = element.getDOMNode().getAttribute("data-cmp-data-layer");
+
+    if(dataLayerAttribute){
+        expect(JSON.parse(dataLayerAttribute.valueOf())).toHaveProperty("someData");
+    }else{
+        fail("no data layer property set");
+    }
+
     expect(actualHtml).toEqual(expectedHtml);
 
 });

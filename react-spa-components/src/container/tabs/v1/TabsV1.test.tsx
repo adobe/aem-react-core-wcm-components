@@ -43,7 +43,14 @@ const defaultProps:TabsV1Properties = {
     isInEditor: false,
     cqPath: "/content/tabs-path",
     allowedComponents: allowedComponents,
-    componentMapping: ComponentMapping
+    componentMapping: ComponentMapping,
+    id: "tabs-id",
+    dataLayer: {
+        "someData": {
+            "test1": "test",
+            "test2": "more"
+        }
+    }
 };
 
 
@@ -85,7 +92,8 @@ it('Renders tabs properly and changes on click events', () => {
     const wrapper = mount(<TabsV1  {...defaultProps} componentMapping={ComponentMapping}/>);
 
 
-    const container = wrapper.find(".cmp-tabs");
+    const container = wrapper.find("#tabs-id.cmp-tabs");
+    expect(JSON.parse(container.prop("data-cmp-data-layer"))).toHaveProperty("someData");
 
     expect(container).toHaveLength(1);
 

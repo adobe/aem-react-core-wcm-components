@@ -26,11 +26,29 @@ export interface HasBaseCssClass {
 export interface CoreComponentModel extends HasBaseCssClass{
     hidePlaceHolder?: boolean
     isInEditor?:boolean
+    dataLayer?: {[key: string]: {[key: string]: string}}
+    id?: string
 }
 
 export interface CoreComponentState {
 
 }
+
+export const generateContainerAttributes =  <M extends CoreComponentModel> (props:M, attributes = {}):any => {
+    return {
+        className: props.baseCssClass,
+        id: props.id,
+        "data-cmp-data-layer": generateDataLayerAttribute(props),
+        ...attributes
+    };
+};
+
+export const generateDataLayerAttribute = <M extends CoreComponentModel> (props:M):string|null => {
+    if(!!props.dataLayer){
+        return JSON.stringify(props.dataLayer);
+    }
+    return null;
+};
 
 export const withStandardBaseCssClass = <M extends CoreComponentModel>
 (

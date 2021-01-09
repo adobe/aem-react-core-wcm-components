@@ -56,9 +56,17 @@ it('Renders some proper HTML', () => {
     const props1:DefaultV1Model = {
         html:"<h1>some content</h1>",
         isInEditor: false,
-        hidePlaceHolder: false
+        hidePlaceHolder: false,
+        baseCssClass: "cmp-default",
+        id: "default-someId",
+        dataLayer: {
+            "someData": {
+                "test1": "test",
+                "test2": "more"
+            }
+        },
     };
     const element = mount(<DefaultV1Component {...props1} />);
-    expect(element.html()).toEqual("<div class=\"cmp-default-wrapper\"><h1>some content</h1></div>");
+    expect(element.html()).toEqual("<div class=\"cmp-default\" id=\"default-someId\" data-cmp-data-layer=\"{&quot;someData&quot;:{&quot;test1&quot;:&quot;test&quot;,&quot;test2&quot;:&quot;more&quot;}}\"><h1>some content</h1></div>");
 
 });

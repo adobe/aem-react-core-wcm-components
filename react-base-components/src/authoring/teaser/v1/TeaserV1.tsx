@@ -16,7 +16,7 @@
 
 
 import React, {Component} from "react";
-import {withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
+import {generateContainerAttributes, withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
 import ImageV1 from "../../../authoring/image/v2/ImageV2";
 import TitleV1 from "../../../authoring/title/v2/TitleV2";
 import {RoutedLink} from "../../../routing/RoutedLink";
@@ -87,7 +87,7 @@ const TeaserV1Impl = (props:TeaserV1Model) => {
     const cssClass = props.baseCssClass || '' + (props.isInEditor) ? ' cq-dd-image' : '';
     const showActions:boolean = ( props.actions.length > 0 ) && props.actionsEnabled;
     return (
-        <div className={cssClass}>
+        <div {...generateContainerAttributes(props, {className: cssClass})}>
             {props.imagePath && <TeaserV1Image {...props}/>}
             <div className={props.baseCssClass + '__content'}>
                 {props.pretitle && <TeaserV1PreTitle {...props}/>}

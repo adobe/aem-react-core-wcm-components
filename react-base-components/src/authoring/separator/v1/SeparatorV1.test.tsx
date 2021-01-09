@@ -31,8 +31,15 @@ it('Renders without crashing', () => {
 });
 
 it('Renders as expected', ()=> {
-    const element = mount(<SeparatorV1/>);
 
-    const html = "<div class=\"cmp-separator\"><hr class=\"cmp-separator__horizontal-rule\"></div>";
+    const data:any = {
+        "someData": {
+            "test1": "test",
+            "test2": "more"
+        }
+    };
+    const element = mount(<SeparatorV1 id={"separator-someId" } dataLayer={data}/>);
+
+    const html = "<div class=\"cmp-separator\" id=\"separator-someId\" data-cmp-data-layer=\"{&quot;someData&quot;:{&quot;test1&quot;:&quot;test&quot;,&quot;test2&quot;:&quot;more&quot;}}\"><hr class=\"cmp-separator__horizontal-rule\"></div>";
     expect(element.html()).toEqual(html);
-})
+});

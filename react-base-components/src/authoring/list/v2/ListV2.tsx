@@ -16,7 +16,7 @@
 
 
 import React from 'react';
-import {HasBaseCssClass, withConditionalPlaceHolder,withStandardBaseCssClass} from "../../../AbstractCoreComponent";
+import {generateContainerAttributes, HasBaseCssClass, withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
 import { RoutedCoreComponentModel, RoutedModel} from "../../../routing/RoutedCoreComponent";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {ListV2IsEmptyFn} from "./ListV2IsEmptyFn";
@@ -88,7 +88,7 @@ export const ListV2Impl = (props:ListV2Model) => {
     };
 
     return (
-        <ul className={props.baseCssClass}>
+        <ul {...generateContainerAttributes(props)}>
             {props.items.map((item, index) => <ListV2Item {...item} key={"cmp-list-" + index} baseCssClass={props.baseCssClass} routed={item.routed} index={index}  />)}
         </ul>
     )

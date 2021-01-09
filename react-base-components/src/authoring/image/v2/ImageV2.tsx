@@ -15,7 +15,7 @@
  */
 
 import React, {Component} from 'react';
-import {withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
+import {generateContainerAttributes, withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
 import {RoutedCoreComponentModel} from "../../../routing/RoutedCoreComponent";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {ImageV2IsEmptyFn} from "./ImageV2IsEmptyFn";
@@ -62,7 +62,7 @@ const ImageV2Impl = (props:ImageV2Model) => {
     const cssClassName = (isInEditor) ? props.baseCssClass + ' cq-dd-image' : props.baseCssClass;
 
      return (
-         <div className={cssClassName}>
+         <div {...generateContainerAttributes(props, {className:cssClassName})}>
              <ImageV2Contents {...props}/>
          </div>
      )

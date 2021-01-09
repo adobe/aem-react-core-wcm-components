@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 
-import {CoreComponentModel, withConditionalPlaceHolder} from "../../AbstractCoreComponent";
+import {CoreComponentModel, generateContainerAttributes, withConditionalPlaceHolder} from "../../AbstractCoreComponent";
 import React, {Component} from "react";
 import {DefaultV1IsEmptyFn} from "./DefaultV1ComponentIsEmptyFn";
 
@@ -22,7 +22,7 @@ export interface DefaultV1Model extends CoreComponentModel{
     html: string
 }
 
-const DefaultV1ComponentImpl = (props:DefaultV1Model) => <div className={"cmp-default-wrapper"} dangerouslySetInnerHTML={{__html: props.html}}></div>;
+const DefaultV1ComponentImpl = (props:DefaultV1Model) => <div {...generateContainerAttributes(props)} dangerouslySetInnerHTML={{__html: props.html}}></div>;
 
 const DefaultV1Component = (props:DefaultV1Model) => {
     const Wrapped = withConditionalPlaceHolder(DefaultV1ComponentImpl, DefaultV1IsEmptyFn, "cmp-default", "Default SPA Component")

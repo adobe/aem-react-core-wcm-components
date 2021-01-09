@@ -15,7 +15,12 @@
  */
 
 import React, {MouseEvent} from 'react';
-import {withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
+import {
+    generateContainerAttributes,
+    generateDataLayerAttribute,
+    withConditionalPlaceHolder,
+    withStandardBaseCssClass
+} from "../../../AbstractCoreComponent";
 import {RoutedCoreComponentModel} from "../../../routing/RoutedCoreComponent";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {ButtonV1IsEmptyFn} from "./ButtonV1IsEmptyFn";
@@ -47,10 +52,9 @@ const ButtonV1Impl = (props:ButtonV1Model) => {
     };
 
     const generateAttributes = (isLink: boolean) => {
-        const computedAttrs: any = {
-            className: props.baseCssClass,
-            onClick: handleOnClick
-        };
+        const computedAttrs: any = generateContainerAttributes(props, {
+            onClick: handleOnClick,
+        });
 
         if (isLink) {
             computedAttrs['aria-label'] = props.ariaLabel;

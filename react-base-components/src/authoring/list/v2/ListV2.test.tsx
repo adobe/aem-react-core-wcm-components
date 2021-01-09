@@ -31,7 +31,7 @@ const loadFormattedHtml = (relativePath:string) => {
         return m.trim();
     });
 
-}
+};
 
 const expectedRoutedList = loadFormattedHtml('expected-routed-list.html');
 const expectedList = loadFormattedHtml('expected-list.html');
@@ -54,6 +54,7 @@ it('Renders a basic list properly', () => {
     const wrapper = mount(<ListV2  {...dummyProps} />);
     expect(wrapper.html()).toEqual(expectedList);
 
+    expect(JSON.parse(wrapper.find('ul').prop('data-cmp-data-layer'))).toHaveProperty("someData");
 });
 
 

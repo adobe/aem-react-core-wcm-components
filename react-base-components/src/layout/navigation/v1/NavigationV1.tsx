@@ -15,7 +15,7 @@
  */
 
 import React from 'react';
-import {HasBaseCssClass, withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
+import {generateContainerAttributes, HasBaseCssClass, withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
 import {RoutedCoreComponentModel, RoutedModel} from "../../../routing/RoutedCoreComponent";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {NavigationV1IsEmptyFn} from "./NavigationV1IsEmptyFn";
@@ -87,7 +87,7 @@ export const NavigationV1Impl = (props:NavigationV1Model) => {
     };
 
     return (
-        <nav className={props.baseCssClass}
+        <nav {...generateContainerAttributes(props)}
              role="navigation"
              itemScope itemType="http://schema.org/SiteNavigationElement"
              aria-label={props.accessibilityLabel}>

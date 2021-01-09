@@ -17,6 +17,8 @@
       data-sly-use.page="com.adobe.cq.wcm.core.examples.react.components.models.HierarchyPage"
       content="${page.rootUrl}"/>
 
+<sly data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}"></sly>
+
 <base href="/"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta property="cq:datatype" data-sly-test="${wcmmode.edit || wcmmode.preview}" content="JSON"/>
@@ -25,9 +27,8 @@
 <meta property="cq:wcmmode" data-sly-test="${wcmmode.disabled}" content="disabled"/>
 
 <sly data-sly-use.coralui3="/libs/granite/sightly/templates/clientlib.html"
-     data-sly-call="${ coralui3.css @ categories='coralui3'}"/>
+     data-sly-call="${ clientLib.all @ categories='coralui3'}"/>
 
-<sly data-sly-use.coralui3="/libs/granite/sightly/templates/clientlib.html"
-     data-sly-call="${ coralui3.js @ categories='coralui3'}"/>
+<sly data-sly-call="${clientlib.css @ categories=['cmp-react-examples.base', 'core.wcm.components.accordion.v1', 'core.wcm.components.accordion.v1.amp']}"></sly>
 
 <sly data-sly-resource="${resource @ resourceType='core-components-examples/wcm/react/chunks/static-css'}"/>

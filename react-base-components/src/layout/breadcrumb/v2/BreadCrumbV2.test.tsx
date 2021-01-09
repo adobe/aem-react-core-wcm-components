@@ -41,8 +41,16 @@ it('Renders breadcrumb items if provided', () => {
         {active:true,url:'/content/some/url.html',title:'Item3'}
     ];
 
+    const data:any = {
+        "someData": {
+            "test1": "test",
+                "test2": "more"
+        }
+    };
+    const wrapper = mount(<BreadCrumbV2 id={"breadcrumbid"} dataLayer={data} ariaLabelI18n="Label"  hidePlaceHolder={false} items={items}/>);
+    const nav = wrapper.find('nav');
+    expect(JSON.parse(nav.prop('data-cmp-data-layer'))).toHaveProperty("someData");
 
-    const wrapper = mount(<BreadCrumbV2 ariaLabelI18n="Label"  hidePlaceHolder={false} items={items}/>);
     expect(wrapper.find("li")).toHaveLength(3);
 
     expect(wrapper.find(".cmp-breadcrumb__item--active").text()).toEqual("Item3");

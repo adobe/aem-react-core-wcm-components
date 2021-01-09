@@ -42,6 +42,13 @@ it('Renders a proper button with link', () => {
         icon: "iconCSSCls",
         link: "/content/some/link.html",
         text: "SomeText",
+        id: "button-someId",
+        dataLayer: {
+            "someData": {
+                "test1": "test",
+                "test2": "more"
+            }
+        },
         routed:true,
         handleOnClick(event): void {
             captured = true;
@@ -51,6 +58,10 @@ it('Renders a proper button with link', () => {
     const wrapper = mount(<MemoryRouter><ButtonV1  {...properties} /></MemoryRouter>);
 
     const button = wrapper.find('a.cmp-button');
+
+    expect(button.prop("id")).toEqual("button-someId");
+    expect(JSON.parse(button.prop("data-cmp-data-layer"))).toHaveProperty("someData");
+
     expect(button).toHaveLength(1);
     button.simulate('click');
     expect(captured).toEqual(true);

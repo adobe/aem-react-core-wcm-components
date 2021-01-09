@@ -39,10 +39,19 @@ it('Renders a basic navigation properly', () => {
     const properties:NavigationV1Model = {
         hidePlaceHolder: false,
         isInEditor: false,
-        items: items
+        items: items,
+        id: "navigation-someId",
+        dataLayer: {
+            "someData": {
+                "test1": "test",
+                "test2": "more"
+            }
+        },
     };
     const wrapper = mount(<NavigationV1  {...properties} />);
-    const nav = wrapper.find('nav');
+    const nav = wrapper.find('nav#navigation-someId');
+
+    expect(JSON.parse(nav.prop('data-cmp-data-layer'))).toHaveProperty("someData");
 
     expect(nav).toHaveLength(1);
 });

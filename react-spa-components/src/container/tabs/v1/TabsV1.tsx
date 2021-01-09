@@ -86,7 +86,7 @@ class TabsV1Impl extends Container<TabsV1Properties,TabsV1State> {
             });
         }
     }
-
+    
     tabNavigation(){
 
         const childComponents:JSX.Element[] = [];
@@ -127,6 +127,13 @@ class TabsV1Impl extends Container<TabsV1Properties,TabsV1State> {
         const attrs = this.containerProps;
         attrs['className'] = attrs.className + ' ' + this.props.baseCssClass;
         attrs['data-cmp-is'] = 'tabs';
+
+        if(this.props.id){
+            attrs['id'] = this.props.id;
+        }
+        if(this.props.dataLayer){
+            attrs['data-cmp-data-layer'] = JSON.stringify(this.props.dataLayer);
+        }
         return attrs;
     }
 
