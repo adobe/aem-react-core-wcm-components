@@ -1,17 +1,13 @@
 /*
- *  Copyright 2020 Adobe
+ * Copyright 2020 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
  *
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License.
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
  */
 const path = require('path');
 
@@ -35,15 +31,15 @@ module.exports = {
         rules: [
             {
                 test: /\.(js|mjs|jsx|ts|tsx)$/,
-                use: ['source-map-loader'],
-                enforce: 'pre',
+                use: [ 'source-map-loader' ],
+                enforce: 'pre'
             },
             {
                 test: /\.ts$|\.tsx$/,
                 exclude: /(node_modules|dist)/,
                 use: 'ts-loader',
-                enforce: 'post',
-            }].concat(isEnvironmentTest ?
+                enforce: 'post'
+            } ].concat(isEnvironmentTest ?
             {
                 test: /\.ts$|\.tsx$/,
                 include: path.resolve(__dirname, 'src'),
@@ -51,19 +47,19 @@ module.exports = {
                     loader: 'istanbul-instrumenter-loader',
                     options: {
                         esModules: true,
-                        presets: ["env", "react", "stage-2"]
+                        presets: [ 'env', 'react', 'stage-2' ]
                     }
                 },
                 enforce: 'post'
             } : [])
     },
-    externals: [!isEnvironmentTest ? nodeExternals({
+    externals: [ !isEnvironmentTest ? nodeExternals({
         modulesFromFile: {
-            exclude: ['dependencies']
+            exclude: [ 'dependencies' ]
         }
-    }) : ''],
+    }) : '' ],
     resolve: {
-        extensions: ['.ts', '.tsx']
+        extensions: [ '.ts', '.tsx' ]
     },
     plugins: [
 

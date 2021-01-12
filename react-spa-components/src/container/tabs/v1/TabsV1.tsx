@@ -1,38 +1,32 @@
 /*
- *  Copyright 2020 Adobe
+ * Copyright 2020 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
  *
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License.
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
  */
 
-import React from "react";
-import {ComponentMapping, Container} from '@adobe/aem-react-editable-components';
-import {CoreContainerProperties, CoreContainerState, withAuthorPanelSwitch, withStandardBaseCssClass, CoreContainerItem} from "../../../AbstractCoreContainerComponent";
-import {TabsV1IsEmptyFn} from "./TabsV1IsEmptyFn";
+import React from 'react';
+import { ComponentMapping, Container } from '@adobe/aem-react-editable-components';
+import { CoreContainerProperties, CoreContainerState, withAuthorPanelSwitch, withStandardBaseCssClass, CoreContainerItem } from '../../../AbstractCoreContainerComponent';
+import { TabsV1IsEmptyFn } from './TabsV1IsEmptyFn';
 
 export interface TabsV1Properties extends CoreContainerProperties{
-    
+
     accessibilityLabel:string;
     activeItem?: string;
     cqItems: { [key: string]: CoreContainerItem };
 }
 
-
 export interface TabsV1State extends CoreContainerState{
     activeIndex: number;
 }
 
-
-class TabsV1Impl extends Container<TabsV1Properties,TabsV1State> {
+class TabsV1Impl extends Container<TabsV1Properties, TabsV1State> {
 
     constructor(props:TabsV1Properties) {
         super(props);
@@ -46,8 +40,8 @@ class TabsV1Impl extends Container<TabsV1Properties,TabsV1State> {
     }
 
     componentDidUpdate(prevProps: Readonly<TabsV1Properties>, prevState: Readonly<TabsV1State>, snapshot?: any): void {
-        if(this.props.activeIndexFromAuthorPanel !== undefined && prevProps.activeIndexFromAuthorPanel != this.props.activeIndexFromAuthorPanel){
-            this.setState({ activeIndex: this.props.activeIndexFromAuthorPanel } );
+        if (this.props.activeIndexFromAuthorPanel !== undefined && prevProps.activeIndexFromAuthorPanel != this.props.activeIndexFromAuthorPanel) {
+            this.setState({ activeIndex: this.props.activeIndexFromAuthorPanel });
         }
     }
 
@@ -57,37 +51,38 @@ class TabsV1Impl extends Container<TabsV1Properties,TabsV1State> {
      */
     tabbedChildComponents() {
 
-        if(this.props.isInEditor === true){
+        if (this.props.isInEditor === true) {
             //for editing capabilities to work properly, we always need to render each item.
             //we will hide the disabled items instead.
             return (
-                <>
-                    {
+              <>
+                {
                         this.childComponents.map((item, index) => {
                             const isVisible = (this.state.activeIndex === index);
-                            const styles = { display: (!isVisible) ? 'none' : 'block'};
+                            const styles = { display: (!isVisible) ? 'none' : 'block' };
+
                             return (
-                                <div key={"tab-content-" + index} className={this.props.baseCssClass + '__author-tab-content'} style={styles}>{this.childComponents[index]}</div>
-                            )
+                              <div key={'tab-content-' + index} className={this.props.baseCssClass + '__author-tab-content'} style={styles}>{this.childComponents[index]}</div>
+                            );
                         })
                     }
-                </>
-            )
-        }else{
+              </>
+            );
+        } else {
             //when the editor is disabled, we can just show the active item only.
             return this.childComponents[this.state.activeIndex];
         }
     }
 
-    handleTabNavClick(index:number){
-        if(this.state.activeIndex !== index){
+    handleTabNavClick(index:number) {
+        if (this.state.activeIndex !== index) {
             this.setState({
                 activeIndex: index
             });
         }
     }
 
-    tabNavigation(){
+    tabNavigation() {
 
         const childComponents:JSX.Element[] = [];
 
@@ -96,37 +91,40 @@ class TabsV1Impl extends Container<TabsV1Properties,TabsV1State> {
         }
 
         return (
-            <ol role="tablist"
+          <ol role="tablist"
                 className={this.props.baseCssClass + '__tablist'}
                 aria-label={this.props.accessibilityLabel}
                 aria-multiselectable="false">
-                    {
+            {
                         this.props.cqItemsOrder.map((item, index) => {
                             const tab = this.props.cqItems[item];
                             const isActive = (index === this.state.activeIndex);
+
                             return (
-                                <li role="tab"
-                                    key={"tab-" + index}
+                              <li role="tab"
+                                    key={'tab-' + index}
                                     onClick={() => this.handleTabNavClick(index)}
                                     className={this.props.baseCssClass + '__tab' + (isActive ? ' ' + this.props.baseCssClass + '__tab--active' : '')}
                                     tabIndex={isActive ? 0 : -1}
                                     data-cmp-hook-tabs="tab">
-                                    {tab['cq:panelTitle']}
-                                </li>
-                            )
-                            
+                                {tab['cq:panelTitle']}
+                              </li>
+                            );
+
                         })
                     }
-                
-            </ol>
-        )
+
+          </ol>
+        );
 
     }
 
-    get tabContainerProps(){
+    get tabContainerProps() {
         const attrs = this.containerProps;
+
         attrs['className'] = attrs.className + ' ' + this.props.baseCssClass;
         attrs['data-cmp-is'] = 'tabs';
+
         return attrs;
     }
 
@@ -135,14 +133,14 @@ class TabsV1Impl extends Container<TabsV1Properties,TabsV1State> {
         const isEmpty = TabsV1IsEmptyFn(this.props);
 
         return (
-            <div {...this.tabContainerProps}>
-                { !isEmpty && this.tabNavigation() }
-                { !isEmpty && this.tabbedChildComponents() }
-                { this.placeholderComponent }
-            </div>
-        )
+          <div {...this.tabContainerProps}>
+            { !isEmpty && this.tabNavigation() }
+            { !isEmpty && this.tabbedChildComponents() }
+            { this.placeholderComponent }
+          </div>
+        );
     }
 
 }
 
-export default withStandardBaseCssClass(withAuthorPanelSwitch(TabsV1Impl), "cmp-tabs");
+export default withStandardBaseCssClass(withAuthorPanelSwitch(TabsV1Impl), 'cmp-tabs');

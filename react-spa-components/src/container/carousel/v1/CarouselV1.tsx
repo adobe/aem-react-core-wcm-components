@@ -1,39 +1,34 @@
 /*
- *  Copyright 2020 Adobe
+ * Copyright 2020 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
  *
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License.
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
  */
 
 import React from 'react';
 
+import { CoreContainerProperties, CoreContainerState, withAuthorPanelSwitch, withStandardBaseCssClass, CoreContainerItem } from '../../../AbstractCoreContainerComponent';
+import { ComponentMapping, Container } from '@adobe/aem-react-editable-components';
 
-import {CoreContainerProperties, CoreContainerState, withAuthorPanelSwitch, withStandardBaseCssClass, CoreContainerItem} from "../../../AbstractCoreContainerComponent";
-import {ComponentMapping, Container} from '@adobe/aem-react-editable-components';
-
-import {CarouselV1IsEmptyFn} from "./CarouselV1IsEmptyFn";
-import {TabsV1Properties, TabsV1State} from "../../..";
-
+import { CarouselV1IsEmptyFn } from './CarouselV1IsEmptyFn';
+import { TabsV1Properties, TabsV1State } from '../../..';
 
 const formatFn = (value:string, args:string[]) => {
     let content = value;
+
     for (let i = 0; i < args.length; i++) {
         const replacement = '{' + i + '}';
+
         content = content.replace(replacement, args[i]);
     }
+
     return content;
 };
-
-
 
 export interface CarouselV1Properties extends CoreContainerProperties{
     autoplay: boolean;
@@ -59,10 +54,9 @@ export interface CarouselV1State extends CoreContainerState{
     autoPlay: boolean,
 }
 
-class CarouselV1Impl extends Container<CarouselV1Properties,CarouselV1State> {
+class CarouselV1Impl extends Container<CarouselV1Properties, CarouselV1State> {
 
     interval = 0;
-
 
     static defaultProps = {
         _allowedComponentPlaceholderListEmptyLabel: 'CarouselV1',
@@ -95,54 +89,53 @@ class CarouselV1Impl extends Container<CarouselV1Properties,CarouselV1State> {
         };
 
         this.handleIndicatorClick = this.handleIndicatorClick.bind(this);
-        this.handleOnButtonPrev   = this.handleOnButtonPrev.bind(this);
-        this.handleOnButtonNext   = this.handleOnButtonNext.bind(this);
-        this.handleOnMouseEnter   = this.handleOnMouseEnter.bind(this);
-        this.handleOnMouseLeave   = this.handleOnMouseLeave.bind(this);
+        this.handleOnButtonPrev = this.handleOnButtonPrev.bind(this);
+        this.handleOnButtonNext = this.handleOnButtonNext.bind(this);
+        this.handleOnMouseEnter = this.handleOnMouseEnter.bind(this);
+        this.handleOnMouseLeave = this.handleOnMouseLeave.bind(this);
 
     }
 
     componentDidUpdate(prevProps: Readonly<TabsV1Properties>, prevState: Readonly<TabsV1State>, snapshot?: any): void {
-        if(this.props.activeIndexFromAuthorPanel !== undefined && prevProps.activeIndexFromAuthorPanel != this.props.activeIndexFromAuthorPanel){
-            this.setState({ activeIndex: this.props.activeIndexFromAuthorPanel } );
+        if (this.props.activeIndexFromAuthorPanel !== undefined && prevProps.activeIndexFromAuthorPanel != this.props.activeIndexFromAuthorPanel) {
+            this.setState({ activeIndex: this.props.activeIndexFromAuthorPanel });
             this.toggleAutoPlay(false);
         }
     }
-    
-    componentDidMount(){
+
+    componentDidMount() {
         this.autoPlay();
     }
 
-    componentWillUnmount(){
-        if(this.interval){
+    componentWillUnmount() {
+        if (this.interval) {
             this.clearAutoPlay();
         }
     }
 
-    handleOnMouseEnter(){
-        if(!this.props.autopauseDisabled && this.props.autoplay){
+    handleOnMouseEnter() {
+        if (!this.props.autopauseDisabled && this.props.autoplay) {
             this.clearAutoPlay();
         }
     }
 
-    handleOnMouseLeave(){
-        if(!this.props.autopauseDisabled && this.props.autoplay){
+    handleOnMouseLeave() {
+        if (!this.props.autopauseDisabled && this.props.autoplay) {
             this.autoPlay();
         }
     }
 
-    handleOnButtonPrev(){
+    handleOnButtonPrev() {
         this.prevSlide();
     }
 
-    handleOnButtonNext(){
+    handleOnButtonNext() {
         this.nextSlide();
     }
 
+    handleIndicatorClick(index:number) {
 
-    handleIndicatorClick(index:number){
-
-        if(this.state.activeIndex !== index){
+        if (this.state.activeIndex !== index) {
 
             this.setState({
                 activeIndex: index
@@ -150,7 +143,7 @@ class CarouselV1Impl extends Container<CarouselV1Properties,CarouselV1State> {
         }
     }
 
-    autoPlay(){
+    autoPlay() {
         this.interval = window.setInterval(() => {
             this.autoPlayTick();
         }, this.props.delay);
@@ -169,167 +162,168 @@ class CarouselV1Impl extends Container<CarouselV1Properties,CarouselV1State> {
         window.clearInterval(this.interval);
     };
 
-    toggleAutoPlay(toggle:boolean){
+    toggleAutoPlay(toggle:boolean) {
         this.setState({
             autoPlay: toggle
-        })
+        });
     }
 
-    nextSlide(){
+    nextSlide() {
 
         const activeIndex = this.__getActiveIndex();
 
-        if(activeIndex=== (this.props.cqItemsOrder.length-1)){
+        if (activeIndex === (this.props.cqItemsOrder.length - 1)) {
 
             this.__setSlide(0);
-        }else{
+        } else {
             this.__setSlide(activeIndex + 1);
         }
     }
 
-    prevSlide(){
+    prevSlide() {
         const activeIndex = this.__getActiveIndex();
-        if(activeIndex === 0){
+
+        if (activeIndex === 0) {
 
             this.__setSlide(this.props.cqItemsOrder.length - 1);
-        }else{
+        } else {
             this.__setSlide(activeIndex - 1);
         }
     }
 
-    __getActiveIndex(){
+    __getActiveIndex() {
 
         return this.state.activeIndex;
     }
 
-    __setSlide(index:number){
+    __setSlide(index:number) {
 
         this.setState({
             activeIndex: index
         });
     }
 
-
-
     render() {
 
         const isEmpty = CarouselV1IsEmptyFn(this.props);
+
         return (
-            <div className={this.props.baseCssClass}
+          <div className={this.props.baseCssClass}
                  role="group"
                  aria-label={this.props.accessibilityLabel}
                  aria-roledescription="carousel">
-                {
+            {
                     !isEmpty && this.renderCarousel()
                 }
-                { this.placeholderComponent }
-            </div>
-        )
+            { this.placeholderComponent }
+          </div>
+        );
 
     }
 
-    displayItem(item:JSX.Element, index:number){
+    displayItem(item:JSX.Element, index:number) {
 
         const isActive = index === this.state.activeIndex;
         //we display the item if active is true, or if we are in the author mode. we need to always display the item for the author mode to work properly.
         const display = !!(isActive || this.props.isInEditor);
 
         const cssClass = isActive ? `${this.props.baseCssClass}__item ${this.props.baseCssClass}__item--active` : `${this.props.baseCssClass}__item`;
-        const ariaLabel = formatFn(this.props.accessibility.slide, [(index + 1).toString(), this.props.cqItemsOrder.length.toString()]);
+        const ariaLabel = formatFn(this.props.accessibility.slide, [ (index + 1).toString(), this.props.cqItemsOrder.length.toString() ]);
 
         return (
-            <div key={'item-' + index}
+          <div key={'item-' + index}
                        className={cssClass}
                        role="tabpanel"
                        aria-label={ariaLabel}
                        data-cmp-hook-carousel="item">
-                {display && item}
-            </div>
-        )
+            {display && item}
+          </div>
+        );
     }
 
-    renderCarousel(){
+    renderCarousel() {
         return (
 
-            <div className={this.props.baseCssClass + '__content'} onMouseEnter={()=>this.handleOnMouseEnter()} onMouseLeave={()=>this.handleOnMouseLeave()} >
-                {
-                    this.childComponents.map((childComponent, index) => this.displayItem(childComponent,index))
+          <div className={this.props.baseCssClass + '__content'} onMouseEnter={() => this.handleOnMouseEnter()} onMouseLeave={() => this.handleOnMouseLeave()} >
+            {
+                    this.childComponents.map((childComponent, index) => this.displayItem(childComponent, index))
                 }
-                {this.renderCarouselActions()}
-                {this.renderCarouselIndicators()}
-            </div>
-        )
+            {this.renderCarouselActions()}
+            {this.renderCarouselIndicators()}
+          </div>
+        );
     }
 
-    renderCarouselIndicators(){
+    renderCarouselIndicators() {
         return (
-            <ol className={this.props.baseCssClass + '__indicators'}
+          <ol className={this.props.baseCssClass + '__indicators'}
                 role="tablist"
                 aria-label={this.props.accessibility.indicators}>
-                {
+            {
 
                     this.props.cqItemsOrder.map((key, index) => {
 
                         const item:CoreContainerItem = this.props.cqItems[key];
 
                         const cssClass = (index === this.state.activeIndex) ? `${this.props.baseCssClass}__indicator ${this.props.baseCssClass}__indicator--active` : `${this.props.baseCssClass}__indicator`;
-                        const ariaLabelItem = formatFn(this.props.accessibility.indicator, [(index + 1).toString()]);
+                        const ariaLabelItem = formatFn(this.props.accessibility.indicator, [ (index + 1).toString() ]);
+
                         return (
-                            <li
+                          <li
                                 key={'item-' + index}
-                                onClick={()=>this.handleIndicatorClick(index)}
+                                onClick={() => this.handleIndicatorClick(index)}
                                 className={cssClass}
                                 role="tab"
-                                aria-label={ariaLabelItem}>{item["cq:panelTitle"]}</li>
-                        )
+                                aria-label={ariaLabelItem}>{item['cq:panelTitle']}</li>
+                        );
                     })
                 }
 
-            </ol>
+          </ol>
         );
     }
-    renderCarouselActions(){
+    renderCarouselActions() {
         return (
-            <div className={this.props.baseCssClass + '__actions'}>
-                <button onClick={()=>this.handleOnButtonPrev()}
+          <div className={this.props.baseCssClass + '__actions'}>
+            <button onClick={() => this.handleOnButtonPrev()}
                         className={`${this.props.baseCssClass}__action ${this.props.baseCssClass}__action--previous`}
                         type="button"
                         aria-label={this.props.accessibility.previous}>
-                    <span className={this.props.baseCssClass + '__action-icon'}></span>
-                    <span className={this.props.baseCssClass + '__action-text'}>{this.props.accessibility.previous}</span>
-                </button>
-                <button onClick={()=>this.handleOnButtonNext()}
+              <span className={this.props.baseCssClass + '__action-icon'}></span>
+              <span className={this.props.baseCssClass + '__action-text'}>{this.props.accessibility.previous}</span>
+            </button>
+            <button onClick={() => this.handleOnButtonNext()}
                         className={`${this.props.baseCssClass}__action ${this.props.baseCssClass}__action--next`}
                         type="button"
                         aria-label={this.props.accessibility.next}>
-                    <span className={this.props.baseCssClass + '__action-icon'}></span>
-                    <span className={this.props.baseCssClass + '__action-text'}>{this.props.accessibility.next}</span>
-                </button>
-                {
+              <span className={this.props.baseCssClass + '__action-icon'}></span>
+              <span className={this.props.baseCssClass + '__action-text'}>{this.props.accessibility.next}</span>
+            </button>
+            {
                     this.props.autoplay &&
                     <>
-                        <button className={`${this.props.baseCssClass}__action ${this.props.baseCssClass}__action--pause ` + (!this.state.autoPlay ? this.props.baseCssClass + '__action--disabled' : '')}
+                      <button className={`${this.props.baseCssClass}__action ${this.props.baseCssClass}__action--pause ` + (!this.state.autoPlay ? this.props.baseCssClass + '__action--disabled' : '')}
                                 type="button"
                                 aria-label={this.props.accessibility.pause}
-                                onClick={()=>this.toggleAutoPlay(false)}>
-                            <span className={this.props.baseCssClass + '__action-icon'}></span>
-                            <span className={this.props.baseCssClass + '__action-text'}>{this.props.accessibility.pause}</span>
-                        </button>
-                        <button className={`${this.props.baseCssClass}__action ${this.props.baseCssClass}__action--play ` + (this.state.autoPlay ? this.props.baseCssClass + '__action--disabled' : '')}
+                                onClick={() => this.toggleAutoPlay(false)}>
+                        <span className={this.props.baseCssClass + '__action-icon'}></span>
+                        <span className={this.props.baseCssClass + '__action-text'}>{this.props.accessibility.pause}</span>
+                      </button>
+                      <button className={`${this.props.baseCssClass}__action ${this.props.baseCssClass}__action--play ` + (this.state.autoPlay ? this.props.baseCssClass + '__action--disabled' : '')}
                                 type="button"
                                 aria-label={this.props.accessibility.play}
-                                onClick={()=>this.toggleAutoPlay(true)}
+                                onClick={() => this.toggleAutoPlay(true)}
                         >
-                            <span className={this.props.baseCssClass + '__action-icon'}></span>
-                            <span className={this.props.baseCssClass + '__action-text'}>{this.props.accessibility.play}</span>
-                        </button>
+                        <span className={this.props.baseCssClass + '__action-icon'}></span>
+                        <span className={this.props.baseCssClass + '__action-text'}>{this.props.accessibility.play}</span>
+                      </button>
                     </>
                 }
 
-            </div>
-        )
+          </div>
+        );
     }
 
 }
 
-export default withStandardBaseCssClass(withAuthorPanelSwitch(CarouselV1Impl), "cmp-carousel");
+export default withStandardBaseCssClass(withAuthorPanelSwitch(CarouselV1Impl), 'cmp-carousel');
