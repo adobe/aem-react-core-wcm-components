@@ -1,30 +1,27 @@
 /*
- *  Copyright 2020 Adobe
+ * Copyright 2020 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
  *
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License.
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
  */
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {mount} from 'enzyme';
+import { mount } from 'enzyme';
 
-import DefaultV1Component, {DefaultV1Model} from "./DefaultV1Component";
-import {DefaultV1IsEmptyFn} from "./DefaultV1ComponentIsEmptyFn";
+import DefaultV1Component, { DefaultV1Model } from './DefaultV1Component';
+import { DefaultV1IsEmptyFn } from './DefaultV1ComponentIsEmptyFn';
 
 it('Renders without crashing', () => {
     const div = document.createElement('div');
+
     ReactDOM.render(
-        <DefaultV1Component html={"<h1>test</h1>"} />,
+      <DefaultV1Component html={'<h1>test</h1>'}/>,
         div
     );
     ReactDOM.unmountComponentAtNode(div);
@@ -33,16 +30,16 @@ it('Renders without crashing', () => {
 
 it('Has a proper isEmpty function', () => {
 
-    const props1:DefaultV1Model = {
-        html:"<h1>some content</h1>",
+    const props1: DefaultV1Model = {
+        html: '<h1>some content</h1>',
         isInEditor: false,
         hidePlaceHolder: false
     };
 
     expect(DefaultV1IsEmptyFn(props1)).toEqual(false);
 
-    const props2:DefaultV1Model = {
-        html:" ",
+    const props2: DefaultV1Model = {
+        html: ' ',
         isInEditor: false,
         hidePlaceHolder: false
     };
@@ -53,12 +50,13 @@ it('Has a proper isEmpty function', () => {
 
 it('Renders some proper HTML', () => {
 
-    const props1:DefaultV1Model = {
-        html:"<h1>some content</h1>",
+    const props1: DefaultV1Model = {
+        html: '<h1>some content</h1>',
         isInEditor: false,
         hidePlaceHolder: false
     };
     const element = mount(<DefaultV1Component {...props1} />);
-    expect(element.html()).toEqual("<div class=\"cmp-default-wrapper\"><h1>some content</h1></div>");
+
+    expect(element.html()).toEqual('<div class="cmp-default-wrapper"><h1>some content</h1></div>');
 
 });
