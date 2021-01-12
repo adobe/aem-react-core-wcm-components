@@ -67,17 +67,4 @@ jobs:
           name: spa-coverage.zip
           path: react-spa-components/coverage
       - name: Upload code coverage report to codecov.io and comment in pull request
-          uses: codecov/codecov-action@v1
-  sonar:
-    - name: Upload Sonar report to sonarcloud.io and comment in pull request
-      uses: sonarsource/sonarcloud-github-action@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      with:
-        args: >
-          -Dsonar.organization=adobeinc
-          -Dsonar.projectKey=adobe_aem-react-core-wcm-components
-          -Dsonar.sources=react-base-components/src, react-spa-components/src
-          -Dsonar.javascript.lcov.reportPaths=react-base-components/coverage/lcov.info, react-spa-components/coverage/lcov.info
-          -Dsonar.coverage.exclusions=**/*.test.tsx
+        uses: codecov/codecov-action@v1
