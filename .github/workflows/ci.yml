@@ -55,7 +55,7 @@ jobs:
       - name: Run tests and do code coverage check
         run: npm run test:coverage
       - name: Run code linter
-      - uses: hallee/eslint-action@1.0.3
+        uses: mooyoul/tslint-actions@v1.1.1
         if: ${{ github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository }}
         with:
           repo-token: ${{secrets.GITHUB_TOKEN}}
