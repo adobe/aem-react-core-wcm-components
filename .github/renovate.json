@@ -1,5 +1,6 @@
 {
   "timezone": "Europe/Zurich",
+  "masterIssue": true,
   "packageRules": [
     {
       "groupName": "@adobe fixes",
