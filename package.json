@@ -1,0 +1,26 @@
+{
+  "name": "aem-react-core-wcm-components",
+  "version": "1.1.3",
+  "description": "The React implementation for [AEM core components](https://github.com/adobe/aem-core-wcm-components).  Provides either ready to use / extend components, or if you choose to write your own, a good reference to get started.",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adobe/aem-react-core-wcm-components.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adobe/aem-react-core-wcm-components/issues"
+  },
+  "homepage": "https://github.com/adobe/aem-react-core-wcm-components#readme",
+  "workspaces": [
+    "react-spa-components",
+    "react-base-components"
+  ]
+}
