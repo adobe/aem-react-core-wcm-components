@@ -1,7 +1,7 @@
 name: Release core.wcm.components.react.base
+on: workflow_dispatch
 defaults:
   run:
-    on: workflow_dispatch
     working-directory: ./react-base-components
 jobs:
   release:
