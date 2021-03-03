@@ -36,7 +36,7 @@
     "docs": "jsdoc -c ./jsdoc_conf.json && doxdox \"src/**/*.+(js|jsx)\" --layout templates/DOCUMENTATION.hbs --output DOCUMENTATION.md",
     "readme": "node node_modules/markdown-include/bin/cli.js markdown-include.config.json",
     "docs-readme": "npm run docs && npm run readme",
-    "semantic-release": "semantic-release"
+    "semantic-release": "npm run docs-readme && git add DOCUMENTATION.md README.md package.json && semantic-release"
   },
   "dependencies": {},
   "peerDependencies": {
