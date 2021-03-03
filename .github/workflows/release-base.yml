@@ -1,0 +1,25 @@
+name: Release core.wcm.components.react.base
+on: workflow_dispatch
+defaults:
+  run:
+    working-directory: ./react-base-components
+jobs:
+  release:
+    name: Release and publish module
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 12
+      - name: Install dependencies
+        run: npm ci
+      - name: Release module and publish it in github.com and npmjs.com
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.ADOBE_BOT_NPM_TOKEN }}
+        run: npm run semantic-release
