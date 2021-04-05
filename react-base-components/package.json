@@ -76,7 +76,7 @@
     "jest": "^26.4.2",
     "jest-environment-jsdom-fourteen": "1.0.1",
     "jest-resolve": "26.6.2",
-    "jest-watch-typeahead": "0.6.1",
+    "jest-watch-typeahead": "0.6.2",
     "jsdoc": "^3.6.5",
     "markdown-include": "^0.4.3",
     "prop-types": "^15.7.2",

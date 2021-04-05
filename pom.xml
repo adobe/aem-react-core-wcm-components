@@ -463,7 +463,7 @@
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
-                <version>1.18.18</version>
+                <version>1.18.20</version>
                 <scope>provided</scope>
             </dependency>
             
@@ -507,7 +507,7 @@
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok-maven-plugin</artifactId>
-                <version>1.18.18.0</version>
+                <version>1.18.20.0</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
