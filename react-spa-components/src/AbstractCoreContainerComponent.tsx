@@ -22,7 +22,9 @@ import { Model } from '@adobe/aem-spa-page-model-manager';
 
 export interface CoreContainerProperties extends AllowedComponentsProperties{
     baseCssClass?:string;
-    activeIndexFromAuthorPanel?:number
+    activeIndexFromAuthorPanel?:number,
+    dataLayer?: {[key: string]: {[key: string]: string}}
+    id?: string
 }
 
 export interface CoreContainerItem extends Model {

@@ -82,10 +82,19 @@ it('Renders a custom type with a link', () => {
         linkDisabled: false,
         type: 'h2',
         text: 'My awesome title',
-        linkURL: '/content/some/page.html'
+        linkURL: '/content/some/page.html',
+        id: "text-someId",
+        dataLayer: {
+            "someData": {
+                "test1": "test",
+                "test2": "more"
+            }
+        },
     };
 
     const element = mount(<TitleV2 {...props}/>);
+
+    expect(JSON.parse(element.find('div#text-someId').prop('data-cmp-data-layer'))).toHaveProperty("someData");
 
     const heading = element.find("h2");
 

@@ -79,6 +79,12 @@ class AccordionV1Impl extends Container<AccordionV1Properties,AccordionV1State> 
         const attrs = this.containerProps;
         attrs['className'] = attrs.className + ' ' + this.props.baseCssClass;
         attrs['data-cmp-is'] = 'accordion';
+        if(this.props.id){
+            attrs['id'] = this.props.id;
+        }
+        if(this.props.dataLayer){
+            attrs['data-cmp-data-layer'] = JSON.stringify(this.props.dataLayer);
+        }
         return attrs;
     }
 

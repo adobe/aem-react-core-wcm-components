@@ -210,7 +210,14 @@ export const dummyProps:ListV2Model = {
     showDescription: true,
     showModificationDate: true,
     linkItems: true,
-    items: mockItems
+    items: mockItems,
+    id: "list-someId",
+    dataLayer: {
+        "someData": {
+            "test1": "test",
+            "test2": "more"
+        }
+    },
 };
 
 export const dummyPropsWithDefaultRouting:ListV2Model = {

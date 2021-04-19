@@ -72,10 +72,20 @@ it('Renders without link', () => {
     //let captured = false;
     const props:ImageV2Model = {
         src: "/content/dam/image.jpg",
-        alt: "Some Image"
+        alt: "Some Image",
+        id: "image-someId",
+        dataLayer: {
+            "someData": {
+                "test1": "test",
+                "test2": "more"
+            }
+        },
     };
 
     const image = mount(<ImageV2 {...props}/>);
+
+    expect(image.prop("id")).toEqual("image-someId");
+    expect(JSON.parse(image.find('div#image-someId').prop('data-cmp-data-layer'))).toHaveProperty("someData");
 
     expect(image).toBeDefined();
 

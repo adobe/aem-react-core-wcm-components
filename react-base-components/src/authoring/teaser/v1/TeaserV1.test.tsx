@@ -23,6 +23,13 @@ import {mount} from "enzyme";
 const defaultProps:TeaserV1Model = {
     imageAlt: "snowy mountains",
     imagePath: "/some/image.png",
+    id: "teaser-someId",
+    dataLayer: {
+        "someData": {
+            "test1": "test",
+            "test2": "more"
+        }
+    },
     description: '<p>Paragraph</p>',
     actions: [
         {
@@ -57,6 +64,7 @@ it('Renders without crashing', () => {
 
 it('Renders as expected', ()=> {
     const element = mount(<TeaserV1 {...defaultProps}/>);
+    expect(JSON.parse(element.find('div#teaser-someId').prop('data-cmp-data-layer'))).toHaveProperty("someData");
 
     const content = element.find(".cmp-teaser__content");
     expect(content).toHaveLength(1);

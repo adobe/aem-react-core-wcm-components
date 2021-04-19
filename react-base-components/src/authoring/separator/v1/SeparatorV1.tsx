@@ -15,13 +15,13 @@
  */
 
 import React, {Component} from "react";
-import {CoreComponentModel, withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
+import {CoreComponentModel, generateContainerAttributes, withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
 import {SeparatorV1IsEmptyFn} from "./SeparatorV1IsEmptyFn";
 
 const SeparatorV1Impl = (props:CoreComponentModel) => {
 
     return (
-        <div className={props.baseCssClass}>
+        <div {...generateContainerAttributes(props)}>
             <hr className={props.baseCssClass + '__horizontal-rule'}/>
         </div>
     )

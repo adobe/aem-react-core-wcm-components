@@ -40,6 +40,13 @@ const defaultProps:AccordionV1Properties = {
     cqItemsOrder: ["test", "test2"],
     title: "Accordion",
     isInEditor: false,
+    id: "accordion-id",
+    dataLayer: {
+        "someData": {
+            "test1": "test",
+            "test2": "more"
+        }
+    },
     cqPath: "/content/accordion-path",
     allowedComponents: allowedComponents,
     componentMapping: ComponentMapping
@@ -92,7 +99,8 @@ it('Renders a basic accordion properly', () => {
 it('Renders out all items in author mode with hidden CSS', () => {
 
     const wrapper = mount(<AccordionV1  {...defaultProps} isInEditor={true}  componentMapping={ComponentMapping}/>);
-    const accordionRoot = wrapper.find('.cmp-accordion');
+    const accordionRoot = wrapper.find('#accordion-id.cmp-accordion');
+    expect(JSON.parse(accordionRoot.prop("data-cmp-data-layer"))).toHaveProperty("someData");
 
     expect(accordionRoot).toHaveLength(1);
 

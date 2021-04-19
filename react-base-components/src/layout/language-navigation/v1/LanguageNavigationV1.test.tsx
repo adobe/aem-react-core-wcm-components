@@ -35,15 +35,26 @@ it('Renders without crashing', () => {
 
 
 it('Renders a basic navigation properly', () => {
-
+    const data:any = {
+        "someData": {
+            "test1": "test",
+            "test2": "more"
+        }
+    };
     const properties:LanguageNavigationV1Model = {
         hidePlaceHolder: false,
         isInEditor: false,
-        items: items
+        items: items,
+        id: "language-nav-id",
+        dataLayer: data
     };
     const wrapper = mount(<LanguageNavigationV1  {...properties} />);
+
     const nav = wrapper.find('nav');
 
+    expect(JSON.parse(nav.prop('data-cmp-data-layer'))).toHaveProperty("someData");
+
+    expect(nav.prop("id")).toEqual('language-nav-id');
     expect(nav).toHaveLength(1);
 });
 

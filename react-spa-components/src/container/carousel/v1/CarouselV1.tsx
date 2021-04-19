@@ -102,6 +102,8 @@ class CarouselV1Impl extends Container<CarouselV1Properties,CarouselV1State> {
 
     }
 
+
+
     componentDidUpdate(prevProps: Readonly<TabsV1Properties>, prevState: Readonly<TabsV1State>, snapshot?: any): void {
         if(this.props.activeIndexFromAuthorPanel !== undefined && prevProps.activeIndexFromAuthorPanel != this.props.activeIndexFromAuthorPanel){
             this.setState({ activeIndex: this.props.activeIndexFromAuthorPanel } );
@@ -209,16 +211,30 @@ class CarouselV1Impl extends Container<CarouselV1Properties,CarouselV1State> {
         });
     }
 
+    get accordionContainerProps(): { [p: string]: string } {
+        let attrs = this.containerProps;
 
+        attrs['className'] = attrs.className + ' ' + this.props.baseCssClass;
+        attrs['data-cmp-is'] = 'accordion';
+        attrs['role'] = 'group';
+        attrs['aria-roledescription'] = 'carousel';
+        attrs['aria-label'] = this.props.accessibilityLabel;
+
+        if(this.props.id){
+            attrs['id'] = this.props.id;
+        }
+        if(this.props.dataLayer){
+            attrs['data-cmp-data-layer'] = JSON.stringify(this.props.dataLayer);
+        }
+
+        return attrs;
+    }
 
     render() {
 
         const isEmpty = CarouselV1IsEmptyFn(this.props);
         return (
-            <div className={this.props.baseCssClass}
-                 role="group"
-                 aria-label={this.props.accessibilityLabel}
-                 aria-roledescription="carousel">
+            <div {...this.accordionContainerProps}>
                 {
                     !isEmpty && this.renderCarousel()
                 }

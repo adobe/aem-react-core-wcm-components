@@ -15,7 +15,7 @@
  */
 
 import React, {Component} from 'react';
-import {withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
+import {generateContainerAttributes, withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
 import {RoutedCoreComponentModel} from "../../../routing/RoutedCoreComponent";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {TitleV2IsEmptyFn} from "./TitleV2IsEmptyFn";
@@ -49,7 +49,7 @@ export const TitleV2Contents = (props:TitleV2Model) => {
 const TitleV2Impl = (props:TitleV2Model) => {
     const elementType:string = (!!props.type) ? props.type.toString() : 'h3';
     return (
-        <div className={props.baseCssClass}>
+        <div {...generateContainerAttributes(props)}>
             {
                 React.createElement(elementType,
                     {

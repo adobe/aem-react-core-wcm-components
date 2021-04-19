@@ -19,7 +19,7 @@ import ReactDOM from 'react-dom';
 import {mount} from 'enzyme';
 
 
-import {CoreComponentModel,withStandardBaseCssClass, withConditionalPlaceHolder} from './AbstractCoreComponent';
+import {CoreComponentModel, withStandardBaseCssClass, withConditionalPlaceHolder, generateContainerAttributes} from './AbstractCoreComponent';
 
 interface TestType extends CoreComponentModel{
     forceEmptyFlag:boolean
@@ -28,7 +28,7 @@ interface TestType extends CoreComponentModel{
 class ImplementingClass extends Component<TestType>{
     
     render(): JSX.Element {
-        return <div className={this.props.baseCssClass}>My awesome component</div>;
+        return <div {...generateContainerAttributes(this.props)}>My awesome component</div>;
     }
 
 }

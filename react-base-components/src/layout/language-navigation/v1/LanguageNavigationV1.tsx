@@ -15,7 +15,7 @@
  */
 
 import React from 'react';
-import {withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
+import {generateContainerAttributes, withConditionalPlaceHolder, withStandardBaseCssClass} from "../../../AbstractCoreComponent";
 import {determineIsActive, NavigationV1Group, NavigationV1Item, NavigationV1Model} from "../../navigation/v1/NavigationV1";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {LanguageNavigationV1IsEmptyFn} from "./LanguageNavigationV1IsEmptyFn";
@@ -105,7 +105,7 @@ const LanguageNavigationV1Impl = (props:LanguageNavigationV1Model) => {
     };
 
     return (
-        <nav className={props.baseCssClass}
+        <nav {...generateContainerAttributes(props)}
              role="navigation"
              itemScope itemType="http://schema.org/SiteNavigationElement"
              aria-label={props.accessibilityLabel}>

@@ -72,7 +72,7 @@ class ContainerV1Impl extends Container<ContainerV1Properties,CoreContainerState
             title:"",
             cqPath: this.props.cqPath,
             isInEditor:false
-         }
+         };
         return (
             <div {...this.coreContainerProps}>
                 <div ref={this.mainDiv}

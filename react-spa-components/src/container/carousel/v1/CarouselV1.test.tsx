@@ -53,7 +53,14 @@ const defaultProps:CarouselV1Properties = {
     isInEditor: false,
     cqPath: "/content/carousel-path",
     allowedComponents: allowedComponents,
-    componentMapping: ComponentMapping
+    componentMapping: ComponentMapping,
+    id: "carousel-id",
+    dataLayer: {
+        "someData": {
+            "test1": "test",
+            "test2": "more"
+        }
+    },
 };
 
 
@@ -94,6 +101,10 @@ it('Renders a basic carousel properly and reacts on clicks', () => {
 
     // const Wrapped = withComponentMappingContext(AccordionV1);
     const wrapper = mount(<CarouselV1  {...defaultProps} componentMapping={ComponentMapping}/>);
+
+    const accordionRoot = wrapper.find('#carousel-id.cmp-carousel');
+    expect(JSON.parse(accordionRoot.prop("data-cmp-data-layer"))).toHaveProperty("someData");
+
     const content = wrapper.find('.cmp-carousel__content');
 
     expect(content).toHaveLength(1);
