@@ -109,7 +109,7 @@
     "build-css": "node-sass-chokidar --source-map-embed --include-path ./src --include-path ./node_modules src/ -o src/ --output-style compressed",
     "watch-css": "node-sass-chokidar --source-map-embed --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive --output-style expanded",
     "start-css": "npm-run-all -s build-css watch-css",
-    "server": "node dist/server/server.js",
+    "server": "node serverBuild/server.js",
     "install:link-deps": "npm install && npm run link-deps",
     "link-deps": "npm link @adobe/aem-spa-page-model-manager && npm link @adobe/cq-spa-component-mapping && npm link @adobe/aem-react-editable-components",
     "clean": "shx rm -rf ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm/react/clientlibs/react-spacomponents/resources && shx rm -rf coverage/ dist/ src/tsconfig.types.tsbuildinfo",
