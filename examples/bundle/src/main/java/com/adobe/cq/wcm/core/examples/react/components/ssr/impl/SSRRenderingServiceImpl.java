@@ -50,7 +50,7 @@ public class SSRRenderingServiceImpl implements SSRRenderingService {
     
     private static final Logger log = LoggerFactory.getLogger(SSRRenderingServiceImpl.class);
     
-    private static final String DEFAULT_HOST = "https://adobeioruntime.net/api/v1/web/28538-593goldlizard/default/prerender";
+    private static final String DEFAULT_HOST = "http://localhost:4200/prerender";
     
     @Reference
     private HttpClientBuilderFactory clientBuilderFactory;
