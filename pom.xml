@@ -145,6 +145,14 @@
                     <artifactId>filevault-package-maven-plugin</artifactId>
                     <version>1.1.6</version>
                     <configuration>
+                        <validatorsSettings>
+                            <jackrabbit-filter>
+                                <options>
+                                    <validRoots>/apps/core-components-examples/wcm/react,/conf/aem-react-core-webcomponents-example,/conf/aem-react-core-spacomponents-example,/content/experience-fragments/react-spa-examples,/content/aem-react-core-spacomponents-example</validRoots>
+                                </options>
+                            </jackrabbit-filter>
+                        </validatorsSettings>
+                        <acHandling>merge_preserve</acHandling>
                         <failOnMissingEmbed>true</failOnMissingEmbed>
                         <filterSource>${project.basedir}/src/content/META-INF/vault/filter.xml</filterSource>
                         <!-- temporary, until https://issues.apache.org/jira/browse/JCRVLT-219 is fixed -->

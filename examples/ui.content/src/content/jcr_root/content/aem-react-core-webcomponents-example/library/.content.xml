@@ -586,24 +586,24 @@
             </responsivegrid>
         </root>
     </jcr:content>
-    <accordion/>
-    <breadcrumb/>
-    <button/>
-    <carousel/>
-    <container/>
-    <content-fragment/>
-    <content-fragment-list/>
-    <download/>
-    <embed/>
-    <experience-fragment/>
-    <image/>
-    <language-navigation/>
-    <list/>
-    <navigation/>
-    <separator/>
-    <social-sharing/>
-    <tabs/>
-    <teaser/>
-    <text/>
-    <title/>
+    <accordion jcr:primaryType="cq:Page"/>
+    <breadcrumb jcr:primaryType="cq:Page"/>
+    <button jcr:primaryType="cq:Page"/>
+    <carousel jcr:primaryType="cq:Page"/>
+    <container jcr:primaryType="cq:Page"/>
+    <content-fragment jcr:primaryType="cq:Page"/>
+    <content-fragment-list jcr:primaryType="cq:Page"/>
+    <download jcr:primaryType="cq:Page"/>
+    <embed jcr:primaryType="cq:Page"/>
+    <experience-fragment jcr:primaryType="cq:Page"/>
+    <image jcr:primaryType="cq:Page"/>
+    <language-navigation jcr:primaryType="cq:Page"/>
+    <list jcr:primaryType="cq:Page"/>
+    <navigation jcr:primaryType="cq:Page"/>
+    <separator jcr:primaryType="cq:Page"/>
+    <social-sharing jcr:primaryType="cq:Page"/>
+    <tabs jcr:primaryType="cq:Page"/>
+    <teaser jcr:primaryType="cq:Page"/>
+    <text jcr:primaryType="cq:Page"/>
+    <title jcr:primaryType="cq:Page"/>
 </jcr:root>
