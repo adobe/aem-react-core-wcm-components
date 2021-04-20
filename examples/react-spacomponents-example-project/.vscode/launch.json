@@ -1,0 +1,33 @@
+{
+  "configurations": [
+    {
+      "type": "pwa-node",
+      "name": "Action:aem-core-components-react-spa-0.1.0/ssr",
+      "request": "launch",
+      "runtimeExecutable": "/Users/raaijmak/.nvm/versions/node/v10.23.1/bin/wskdebug",
+      "envFile": "${workspaceFolder}/dist/.env.local",
+      "timeout": 30000,
+      "killBehavior": "polite",
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "/code",
+      "outputCapture": "std",
+      "attachSimplePort": 0,
+      "runtimeArgs": [
+        "aem-core-components-react-spa-0.1.0/ssr",
+        "${workspaceFolder}/serverBuild/adobeio.js",
+        "-v",
+        "--disable-concurrency",
+        "--kind",
+        "nodejs:10"
+      ]
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Actions",
+      "configurations": [
+        "Action:aem-core-components-react-spa-0.1.0/ssr"
+      ]
+    }
+  ]
+}

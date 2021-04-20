@@ -1,0 +1,14 @@
+packages:
+  __APP_PACKAGE__:
+    license: Apache-2.0
+    actions:
+      ssr:
+        function: serverBuild/adobeio.js
+        include:
+          - ["serverBuild/adobeio.js"]
+        web: 'yes'
+        runtime: 'nodejs:10'
+        inputs:
+          LOG_LEVEL: debug
+        annotations:
+          final: true
