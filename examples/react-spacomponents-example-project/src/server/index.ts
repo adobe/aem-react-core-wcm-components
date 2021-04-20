@@ -35,11 +35,11 @@ exapp.use(bodyParser.urlencoded({limit: '50mb',extended: true}));
 exapp.post('/prerender', (req, res, next) => {
 
     const parameters:ServerParameters = {
-        "model-root-url": req.header('modelRootUrl') || '',
-        "page-path": req.header('pagePath') || '',
-        "request-url": req.header('requestUrl') || '',
-        "root-page-path": req.header('rootPagePath') || '',
-        "wcm-mode": req.header('wcmMode') || ''
+        "model-root-url": req.header('model-root-url') || '',
+        "page-path": req.header('page-path') || '',
+        "request-url": req.header('request-url') || '',
+        "root-page-path": req.header('root-page-path') || '',
+        "wcm-mode": req.header('wcm-mode') || ''
     };
 
     preRender(req.body as PageModel, parameters).then((payload) => {
