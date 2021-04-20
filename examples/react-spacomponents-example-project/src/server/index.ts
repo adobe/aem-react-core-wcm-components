@@ -16,12 +16,12 @@
 
 // Expose XMLHttpRequest globally so ModelManager can use it
 
-import React from "react";
 import express from "express";
 import bodyParser from "body-parser";
 
 import preRender from "./prerender";
-import { ServerPayLoadModel } from "./ServerPayloadModel";
+import {PageModel} from "@adobe/aem-react-editable-components";
+import {ServerParameters} from "./ServerPayloadModel";
 
 const exapp = express();
 //Here we are configuring express to use body-parser as middle-ware.
@@ -34,8 +34,15 @@ exapp.use(bodyParser.urlencoded({limit: '50mb',extended: true}));
 
 exapp.post('/prerender', (req, res, next) => {
 
+    const parameters:ServerParameters = {
+        "model-root-url": req.header('modelRootUrl') || '',
+        "page-path": req.header('pagePath') || '',
+        "request-url": req.header('requestUrl') || '',
+        "root-page-path": req.header('rootPagePath') || '',
+        "wcm-mode": req.header('wcmMode') || ''
+    };
 
-    preRender(req.body as ServerPayLoadModel).then((payload) => {
+    preRender(req.body as PageModel, parameters).then((payload) => {
         res.json({
             code: 200,
             payload

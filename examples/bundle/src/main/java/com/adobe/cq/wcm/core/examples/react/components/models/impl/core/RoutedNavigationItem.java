@@ -22,40 +22,38 @@ import com.day.cq.wcm.api.Page;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.experimental.Delegate;
 
-import java.util.List;
-
 
 public class RoutedNavigationItem implements NavigationItem, RoutedModel {
-    
+
     private interface Overrides{
         Page getPage();
         String getExportedType();
     }
-    
+
     @Delegate(excludes = Overrides.class) @JsonIgnore
     private NavigationItem delegate;
-    
+
     public RoutedNavigationItem(NavigationItem delegate){
         this.delegate = delegate;
     }
-    
+
     @Override
     public boolean isRouted() {
-        
+
         boolean isRouted = false;
-        
+
         if(delegate != null){
            isRouted = RouterUtil.isUrlRouted(delegate.getPath());
         }
-        
+
         return isRouted;
     }
-    
+
     @JsonIgnore
     public Page getPage(){
         return delegate.getPage();
     }
-    
+
     @Override @JsonIgnore
     public String getExportedType() {
         return delegate.getExportedType();

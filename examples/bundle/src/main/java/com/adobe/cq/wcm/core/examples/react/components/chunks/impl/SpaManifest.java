@@ -17,18 +17,12 @@ package com.adobe.cq.wcm.core.examples.react.components.chunks.impl;
 
 
 import com.adobe.cq.wcm.core.examples.react.components.chunks.Manifest;
-import com.adobe.xfa.Obj;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.google.common.collect.ImmutableMap;
-import org.apache.commons.collections.MapUtils;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SpaManifest extends HashMap<String, String> implements Manifest {

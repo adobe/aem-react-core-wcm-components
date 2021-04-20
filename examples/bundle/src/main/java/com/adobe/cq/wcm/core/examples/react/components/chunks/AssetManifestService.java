@@ -20,7 +20,6 @@ import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.LoginException;
 
 import java.io.IOException;
-import java.util.Map;
 
 /**
  * Provides the react asset manifest object so print out JS / CSS with

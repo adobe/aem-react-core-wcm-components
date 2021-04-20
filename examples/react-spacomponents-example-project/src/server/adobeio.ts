@@ -1,11 +1,20 @@
 import preRender from "./prerender";
-import { ServerPayLoadModel } from "./ServerPayloadModel";
+import {PageModel} from "@adobe/aem-react-editable-components";
+import {ServerParameters} from "./ServerPayloadModel";
+
+/**
+ * The payload corresponds to the @PageModel, + __ow_headers from openwhisk, which include our ServerParameters.
+ * @see PageModel
+ */
+interface Params extends PageModel {
+    __ow_headers: ServerParameters
+}
 
 //@ts-ignore
-global.main = (parameters:ServerPayLoadModel) => {
+global.main = (pageModel:Params) => {
 
     return new Promise((resolve, reject) => {
-        preRender(parameters).then((html) => {
+        preRender(pageModel, pageModel.__ow_headers).then((html) => {
             resolve({
                 statusCode: 200,
                 body: {

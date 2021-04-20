@@ -15,8 +15,6 @@
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 package com.adobe.cq.wcm.core.examples.react.components.chunks;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-
 import java.util.List;
 
 

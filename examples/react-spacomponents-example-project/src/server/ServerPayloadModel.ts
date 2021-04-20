@@ -1,14 +1,7 @@
-import { PageModel } from "@adobe/aem-react-editable-components";
-
 export interface ServerParameters {
-    wcmMode: string
-    pagePath: string
-    requestUrl: string
-    modelRootUrl: string
-    rootPagePath: string
-}
-
-export interface ServerPayLoadModel {
-    model: PageModel,
-    parameters : ServerParameters
+    "wcm-mode": string
+    "page-path": string
+    "request-url": string
+    "model-root-url": string
+    "root-page-path": string
 }

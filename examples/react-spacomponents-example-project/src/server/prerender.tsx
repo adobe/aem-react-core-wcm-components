@@ -26,45 +26,31 @@ import {ReportChunks} from "react-universal-component";
 import {clearChunks} from 'react-universal-component/server';
 import "../mapping";
 
-import { ServerParameters, ServerPayLoadModel } from "./ServerPayloadModel";
+import { ServerParameters } from "./ServerPayloadModel";
 
 /**
  * Renders a valid model to a html stringify
  *
  * @param   {Object} model - the model to render
- * @param   {[type]} pagePath - the pagePath of the current model
- * @param   {[type]} requestUrl - the request url
- * @param   {[type]} requestPath - the request path
- * @param   {[type]} pageModelRootPath - Path to the app root
- * @param   {[type]} isInEditor - Is the app used in the context of the page editor
+ * @param   {Object} parameters - the header ServerParameters containing metadata
  * @returns {String} the string serialization of the html output + state
  */
 
-const renderModelToHTMLString = (payload:ServerPayLoadModel) => {
+const renderModelToHTMLString = (model:PageModel, parameters:ServerParameters) => {
 
-    const {
-        parameters : {
-            wcmMode = "DISABLED",
-            pagePath = "",
-            requestUrl
-        } = {}
-    } = payload;
+    const isInEditor = parameters["wcm-mode"] && parameters["wcm-mode"] === 'EDIT' || parameters["wcm-mode"] === 'PREVIEW';
 
-    const model:PageModel = payload.model as PageModel;
-
-    const isInEditor = wcmMode && wcmMode === 'EDIT' || wcmMode === 'PREVIEW';
-   
     clearChunks();
     let rawChunkNames:string[] = [];
     const html = ReactDOMServer.renderToString(
         <ReportChunks report={chunkName => !!chunkName && rawChunkNames.push(chunkName)}>
-            <StaticRouter location={requestUrl} context={{}}>
+            <StaticRouter location={parameters["request-url"]} context={{}}>
                 <EditorContext.Provider value={isInEditor}>
                     <App
                         cqChildren={model[":children"] || {}}
                         cqItems={model[":items"] || {}}
                         cqItemsOrder={model[":itemsOrder"] || []}
-                        cqPath={pagePath}
+                        cqPath={parameters["page-path"]}
                         isInEditor={isInEditor}
                     />
                 </EditorContext.Provider>
@@ -91,22 +77,15 @@ const renderModelToHTMLString = (payload:ServerPayLoadModel) => {
     }
 };
 
-const preRender = (payload:ServerPayLoadModel) => {
-
-    const {
-        parameters : {
-            rootPagePath
-        } = {},
-        model
-    } = payload;
+const preRender = (pageModel:PageModel, parameters:ServerParameters) => {
 
     return new Promise((resolve, reject) => {
         return ModelManager.initialize({
-            path: rootPagePath,
-            model,
+            path: parameters["root-page-path"],
+            model: pageModel,
             modelClient: new ModelClient()
         }).then((resolvedModel) => {
-            resolve(renderModelToHTMLString(payload));
+            resolve(renderModelToHTMLString(pageModel, parameters));
         }).catch((error) => {
             reject(error);
         });
