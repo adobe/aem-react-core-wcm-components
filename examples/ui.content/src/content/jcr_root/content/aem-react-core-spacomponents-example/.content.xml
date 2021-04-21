@@ -14,7 +14,7 @@
         sling:resourceType="foundation/components/redirect"
         redirectTarget="/content/aem-react-core-spacomponents-example/library">
         <image jcr:primaryType="nt:unstructured">
-            <file/>
+            <file jcr:primaryType="nt:unstructured"/>
         </image>
     </jcr:content>
 </jcr:root>

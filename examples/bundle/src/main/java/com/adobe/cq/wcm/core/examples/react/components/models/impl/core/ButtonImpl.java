@@ -38,7 +38,6 @@ import com.adobe.cq.wcm.core.components.models.Button;
 import com.adobe.cq.wcm.core.examples.react.components.models.RoutedModel;
 import com.adobe.cq.wcm.core.examples.react.components.utils.RouterUtil;
 import lombok.experimental.Delegate;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;

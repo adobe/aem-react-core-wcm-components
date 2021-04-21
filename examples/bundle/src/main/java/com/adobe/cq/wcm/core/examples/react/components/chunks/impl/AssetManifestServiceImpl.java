@@ -17,7 +17,6 @@ package com.adobe.cq.wcm.core.examples.react.components.chunks.impl;
 
 import com.adobe.cq.wcm.core.examples.react.components.chunks.AssetManifestService;
 import com.adobe.cq.wcm.core.examples.react.components.chunks.Manifest;
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
@@ -26,8 +25,6 @@ import org.osgi.service.component.annotations.Component;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.HashMap;
-import java.util.Map;
 
 
 @Component(service = AssetManifestService.class)

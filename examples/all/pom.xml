@@ -42,6 +42,7 @@
                 <artifactId>filevault-package-maven-plugin</artifactId>
                 <extensions>true</extensions>
                 <configuration>
+                    <acHandling>IGNORE</acHandling>
                     <showImportPackageReport>false</showImportPackageReport>
                     <embeddedTarget>/apps/core-components-examples/wcm/install</embeddedTarget>
                     <embeddeds>

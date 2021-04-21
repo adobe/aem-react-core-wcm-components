@@ -16,14 +16,12 @@
 package com.adobe.cq.wcm.core.examples.react.components.chunks.impl;
 
 
-
 import com.adobe.cq.wcm.core.examples.react.components.chunks.AssetManifestService;
 import com.adobe.cq.wcm.core.examples.react.components.chunks.Manifest;
 import com.adobe.cq.wcm.core.examples.react.components.chunks.PrintChunkService;
 import com.adobe.cq.wcm.core.examples.react.components.ssr.SpaPageBindingsProvider;
 import com.adobe.cq.wcm.core.examples.react.components.ssr.model.SSRResponse;
 import com.adobe.cq.wcm.core.examples.react.components.ssr.model.SSRResponsePayload;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.resource.LoginException;
@@ -33,10 +31,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 @Component(service = PrintChunkService.class)
 public class PrintChunkServiceImpl implements PrintChunkService {

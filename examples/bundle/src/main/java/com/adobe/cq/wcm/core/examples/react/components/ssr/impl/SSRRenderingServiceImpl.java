@@ -17,8 +17,6 @@ package com.adobe.cq.wcm.core.examples.react.components.ssr.impl;
 
 import com.adobe.cq.wcm.core.examples.react.components.models.HierarchyPage;
 import com.adobe.cq.wcm.core.examples.react.components.ssr.SSRRenderingService;
-import com.adobe.cq.wcm.core.examples.react.components.ssr.model.SSRParameters;
-import com.adobe.cq.wcm.core.examples.react.components.ssr.model.SSRPayload;
 import com.adobe.cq.wcm.core.examples.react.components.ssr.model.SSRResponse;
 import com.day.cq.wcm.api.WCMMode;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -89,8 +87,10 @@ public class SSRRenderingServiceImpl implements SSRRenderingService {
 
             HierarchyPage rootPage = requestedPage.getRootModel();
             HttpPost postMethod = new HttpPost(host);
-
-            final String payload = getModelJSON(  request, requestedPage, rootPage);
+            
+            addMetaDataHeaders(postMethod, request, requestedPage, rootPage);
+            
+            final String payload = getModelJSON( rootPage);
             StringEntity requestData = new StringEntity(payload, ContentType.APPLICATION_JSON);
             postMethod.setEntity(requestData);
 
@@ -107,7 +107,24 @@ public class SSRRenderingServiceImpl implements SSRRenderingService {
             }
         }
     }
-
+    
+    private void addMetaDataHeaders(HttpPost postMethod, SlingHttpServletRequest request, HierarchyPage requestedPage, HierarchyPage rootPage) {
+    
+        String wcmMode = WCMMode.fromRequest(request).toString();
+        
+        String pagePath = requestedPage.getExportedPath();
+        String modelRootUrl = rootPage.getRootUrl();
+        String requestUrl = request.getRequestURI();
+        String rootPagePath = rootPage.getExportedPath();
+        
+        postMethod.addHeader("wcm-mode", wcmMode);
+        postMethod.addHeader("page-path", pagePath);
+        postMethod.addHeader("model-root-url", modelRootUrl);
+        postMethod.addHeader("request-url", requestUrl);
+        postMethod.addHeader("root-page-path", rootPagePath);
+       
+    }
+    
     private SSRResponse parseOutput(CloseableHttpResponse preRenderedResponse) throws IOException {
         String responseBody = EntityUtils.toString(preRenderedResponse.getEntity());
 
@@ -121,25 +138,9 @@ public class SSRRenderingServiceImpl implements SSRRenderingService {
     }
     
     
-    private String getModelJSON(SlingHttpServletRequest request, HierarchyPage requestedPage, HierarchyPage rootPage) throws JsonProcessingException {
-        
-        String wcmMode = WCMMode.fromRequest(request).toString();
-        
-       
-        String pagePath = requestedPage.getExportedPath();
-        String modelRootUrl = rootPage.getRootUrl();
-        String requestUrl = request.getRequestURI();
-        String rootPagePath = rootPage.getExportedPath();
-        
-        SSRParameters parameters = new SSRParameters(wcmMode, requestUrl, pagePath, modelRootUrl, rootPagePath);
-        
-        SSRPayload payload = new SSRPayload();
-        payload.setModel(rootPage);
-        payload.setParameters(parameters);
-        
+    private String getModelJSON(HierarchyPage rootPage) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper.writeValueAsString(payload);
-        
+        return objectMapper.writeValueAsString(rootPage);
     }
     
     

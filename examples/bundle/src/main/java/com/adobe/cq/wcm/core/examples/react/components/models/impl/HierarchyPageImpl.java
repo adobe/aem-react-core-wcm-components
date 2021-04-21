@@ -27,7 +27,6 @@ import com.day.cq.wcm.api.TemplatedResource;
 import com.day.cq.wcm.api.components.ComponentContext;
 import com.day.cq.wcm.api.designer.Style;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.apache.commons.lang3.ArrayUtils;

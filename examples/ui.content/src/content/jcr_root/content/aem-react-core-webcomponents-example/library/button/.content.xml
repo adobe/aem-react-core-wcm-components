@@ -257,7 +257,7 @@
             </responsivegrid>
         </root>
         <image jcr:primaryType="nt:unstructured">
-            <file/>
+            <file jcr:primaryType="nt:unstructured"/>
         </image>
     </jcr:content>
 </jcr:root>
