@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180">
+  <g id="Group_80" data-name="Group 80" transform="translate(-2069 -297)">
+    <rect id="Rectangle_19" data-name="Rectangle 19" width="180" height="180" transform="translate(2069 297)" fill="none"/>
+    <g id="Group_7" transform="translate(2072.853 -1173.5)">
+      <g id="Group_73" data-name="Group 73" transform="translate(-4 1469)">
+        <path id="Path_656" data-name="Path 656" d="M57.112,58a1,1,0,0,1-.707-1.707L60.2,52.5l-3.793-3.793a1,1,0,0,1,1.414-1.414l4.5,4.5a1,1,0,0,1,0,1.414l-4.5,4.5A1,1,0,0,1,57.112,58Z" fill="#1473e6"/>
+      </g>
+      <g id="Group_74" data-name="Group 74" transform="translate(-4 1469)">
+        <path id="Path_657" data-name="Path 657" d="M57.112,80a1,1,0,0,1-.707-1.707L60.2,74.5l-3.793-3.793a1,1,0,0,1,1.414-1.414l4.5,4.5a1,1,0,0,1,0,1.414l-4.5,4.5A1,1,0,0,1,57.112,80Z" fill="#1473e6"/>
+      </g>
+      <g id="Group_75" data-name="Group 75" transform="translate(-4 1469)">
+        <path id="Path_658" data-name="Path 658" d="M58.506,101.75a1,1,0,0,1-.707-.293l-4.5-4.5a1,1,0,0,1,1.414-1.414l3.793,3.793L62.3,95.543a1,1,0,1,1,1.414,1.414l-4.5,4.5A1,1,0,0,1,58.506,101.75Z" fill="#1473e6"/>
+      </g>
+      <g id="Group_76" data-name="Group 76" transform="translate(-4 1469)">
+        <path id="Path_659" data-name="Path 659" d="M120.871,53.5h-48.5a1,1,0,0,1,0-2h48.5a1,1,0,0,1,0,2Z" fill="#1473e6"/>
+      </g>
+      <g id="Group_77" data-name="Group 77" transform="translate(-4 1469)">
+        <path id="Path_660" data-name="Path 660" d="M120.871,75.5h-48.5a1,1,0,0,1,0-2h48.5a1,1,0,0,1,0,2Z" fill="#1473e6"/>
+      </g>
+      <g id="Group_78" data-name="Group 78" transform="translate(-4 1469)">
+        <path id="Path_661" data-name="Path 661" d="M120.871,97.5h-48.5a1,1,0,0,1,0-2h48.5a1,1,0,0,1,0,2Z" fill="#1473e6"/>
+      </g>
+      <g id="Group_79" data-name="Group 79" transform="translate(-4 1469)">
+        <path id="Path_662" data-name="Path 662" d="M130.353,39.5H49.647a5.532,5.532,0,0,0-5.5,5.5v92a5.532,5.532,0,0,0,5.5,5.5h80.706a5.532,5.532,0,0,0,5.5-5.5V45A5.532,5.532,0,0,0,130.353,39.5ZM47.147,64.51h85.706v20H47.147Zm2.5-22.01h80.706a2.513,2.513,0,0,1,2.5,2.5V62.51H47.147V45A2.513,2.513,0,0,1,49.647,42.5Zm80.706,97H49.647a2.513,2.513,0,0,1-2.5-2.5V86.51h85.706V137A2.513,2.513,0,0,1,130.353,139.5Z" fill="#b3b3b3"/>
+      </g>
+    </g>
+  </g>
+</svg>

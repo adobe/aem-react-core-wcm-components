@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180">
+  <g id="Group_5" transform="translate(-5003 -908)">
+    <g id="Rectangle_20" transform="translate(5003 908)">
+      <rect id="Rectangle_6" data-name="Rectangle 6" width="180" height="180" fill="none"/>
+    </g>
+    <g id="Rectangle_21" transform="translate(5051.5 953.5)">
+      <path id="Path_477" data-name="Path 477" d="M83,1a1,1,0,0,0-1-1H1A1,1,0,0,0,0,1V24a1,1,0,0,0,1,1H82a1,1,0,0,0,1-1Z" fill="none" stroke="#b3b3b3" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" fill-rule="evenodd"/>
+    </g>
+    <g id="Rectangle_22" transform="translate(5051.5 993.5)">
+      <path id="Path_478" data-name="Path 478" d="M83,1a1,1,0,0,0-1-1H1A1,1,0,0,0,0,1V46a1,1,0,0,0,1,1H82a1,1,0,0,0,1-1Z" fill="none" stroke="#b3b3b3" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" fill-rule="evenodd"/>
+    </g>
+    <g id="Line_1" transform="translate(5046 986)">
+      <path id="Path_479" data-name="Path 479" stroke-linecap="round" fill="none" stroke="#1673e6" d="M0,0H94" stroke-linejoin="round" stroke-width="2" stroke-dasharray="1 4" fill-rule="evenodd"/>
+    </g>
+    <g id="Path_14" transform="translate(-2)">
+      <path id="Path_480" data-name="Path 480" d="M5148.61,981.5l-4.5,4.5,4.5,4.5" fill="none" stroke="#1673e6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
+    </g>
+    <path id="Path_15" d="M5037.11,981.5l4.5,4.5-4.5,4.5" fill="none" stroke="#1673e6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
+  </g>
+</svg>

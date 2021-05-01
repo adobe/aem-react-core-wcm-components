@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180">
+  <g id="Group_62" data-name="Group 62" transform="translate(-2077 -950)">
+    <rect id="Rectangle_10" data-name="Rectangle 10" width="180" height="180" transform="translate(2077 950)" fill="none"/>
+    <g id="S_IlluExperienceFragment_180" transform="translate(2078 953)">
+      <path id="Path_699" data-name="Path 699" d="M129,44H49a4.012,4.012,0,0,0-4,4v79a4.012,4.012,0,0,0,4,4h80a4.012,4.012,0,0,0,4-4V48A4.012,4.012,0,0,0,129,44Zm1,83a.945.945,0,0,1-1,1H49a.945.945,0,0,1-1-1V48a.945.945,0,0,1,1-1h80a.945.945,0,0,1,1,1Z" fill="#b3b3b3"/>
+      <path id="Path_700" data-name="Path 700" d="M130,86H48v3H69v39h3V110h58v-3H72V89h58Z" fill="#1473e6"/>
+    </g>
+  </g>
+</svg>

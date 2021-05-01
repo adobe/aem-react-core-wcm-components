@@ -21,4 +21,6 @@
     <filter root="/conf/aem-react-core-spacomponents-example"/>
     <filter root="/content/experience-fragments/react-spa-examples"/>
     <filter root="/content/aem-react-core-spacomponents-example"/>
+    
+    <filter root="/content/dam/core-components-examples"/>
 </workspaceFilter>

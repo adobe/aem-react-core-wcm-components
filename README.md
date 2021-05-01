@@ -85,7 +85,7 @@ Cloud:
 
     mvn clean install -PautoInstallPackage -PautoInstallSinglePackage
     
-6.5.5+:
+6.5.8+:
 
     mvn clean install -PautoInstallPackage -PautoInstallSinglePackage -Pclassic
     
@@ -115,12 +115,27 @@ The hostname and port of the instance can be changed with the following user def
 
 To enable server side rendering demo on the SPA demo site, simply:
 
-* Make sure you executed the full build at least 1 time
+* Make sure you executed the full production build at least 1 time (`npm run build:production`)
 * Go to the module react-spacomponents-example-project-directory in your CMD
-* Make sure port 4200 is free.
-* Execute either "npm run server" (simple server start) "npm run aemsync-ssr" (code sync to AEM with SSR restart)
+* Make sure port 3233 is free.
+* Execute either "npm run express" (simple express server) "npm run aemsync-ssr" (code sync to AEM with SSR restart)
 * Your react pages should now render with server side rendering.
 
+
+### Server Side Rendering demo - runtime
+
+* Make sure docker is installed
+* For local runs: make sure the following images are installed as well: 
+    * `docker pull openwhisk/action-nodejs-v10:latest`
+    * `docker pull adobeapiplatform/adobe-action-nodejs-v10:3.0.21`
+* For deployments to your runtime instance, make sure the following environment variables are set:
+    * `AIO_RUNTIME_NAMESPACE` your namespace
+    * `AIO_RUNTIME_AUTH` the authentication token
+    
+* For local deployment: `cd examples/react-spa-components && npm run build-adobeio && npm run start-ssr-ioruntime`
+* For remote deployment: 
+  * 1: `cd examples/react-spa-components && npm run build-adobeio && npm run deploy-to-runtime`
+  * 2: change the com.adobe.cq.wcm.core.examples.react.components.ssr.impl.SSRRenderingServiceImpl to add in the authentication header and use the adjusted URL.
 
 You can deploy the files from dist/serverBuild to your nodeJS, adobeIO or AWS lambda instance and change your rendering endpoint in OSGI to render from the cloud.
 See: com.adobe.cq.wcm.core.examples.react.components.ssr.impl.SSRRenderingServiceImpl.Configuration
