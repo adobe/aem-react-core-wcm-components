@@ -84,6 +84,8 @@
         <node.version>v10.13.0</node.version>
         <npm.version>6.4.1</npm.version>
         <core.wcm.components.version>2.15.2</core.wcm.components.version>
+        <aio.runtime.namespace>${env.AIO_RUNTIME_NAMESPACE}</aio.runtime.namespace>
+        <aio.runtime.auth>${env.AIO_RUNTIME_AUTH}</aio.runtime.auth>
     </properties>
     
     <!-- ====================================================================== -->

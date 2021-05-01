@@ -116,13 +116,11 @@
     "start-ssr-express": "node serverBuild/express.js",
     "start-ssr-ioruntime": "cross-env NODE_ENV=development aio app run --local",
     "deploy-to-runtime": "cross-env NODE_ENV=production aio app deploy",
-
     "start-aempack": "node scripts/aempack.js",
     "aempack": "cross-env PROXYHOST=local.aemcomponents.dev NODE_ENV=development npm-run-all -p watch-css start-aempack",
     "aempack-ssr": "cross-env DEVELOPSSR=true  NODE_ENV=development npm-run-all -p watch-css start-aempack",
     "aempack-pub": "cross-env PROXYHOST=local.aemcomponents.dev AEMPORT=4503 cross-env NODE_ENV=development npm-run-all -p watch-css start-aempack",
     "aempack-pub-ssr": "cross-env DEVELOPSSR=true npm-run-all -p aempack-pub",
-  
     "install:link-deps": "npm install && npm run link-deps",
     "link-deps": "npm link @adobe/aem-spa-page-model-manager && npm link @adobe/cq-spa-component-mapping && npm link @adobe/aem-react-editable-components",
     "clean": "shx rm -rf ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm/react/clientlibs/react-spacomponents/resources && shx rm -rf coverage/ dist/ src/tsconfig.types.tsbuildinfo"
