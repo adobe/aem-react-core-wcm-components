@@ -17,14 +17,14 @@ package com.adobe.cq.wcm.core.examples.react.components.ssr.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Builder;
 
 
-@JsonIgnoreProperties(ignoreUnknown = true)
+@Builder
 public class SSRResponse {
     
     private int statusCode;
     
-    @JsonProperty("code")
     private Integer code;
     
     public int getStatusCode(){

@@ -32,17 +32,16 @@ exapp.use(express.static("dist"));
 exapp.use(bodyParser.json({limit: '50mb', extended: true}));
 exapp.use(bodyParser.urlencoded({limit: '50mb',extended: true}));
 
-exapp.post('/prerender', (req, res, next) => {
+exapp.post('/api/v1/web/guest/aem-core-components-react-spa-0.1.0/ssr/*', (req, res, next) => {
 
     const parameters:ServerParameters = {
-        "model-root-url": req.header('model-root-url') || '',
-        "page-path": req.header('page-path') || '',
-        "request-url": req.header('request-url') || '',
-        "root-page-path": req.header('root-page-path') || '',
-        "wcm-mode": req.header('wcm-mode') || ''
+        pagePath: req.path.replace('.html', ''),
+        pageRoot: req.header('page-model-root-url') || '',
+        wcmmode: req.header('wcm-mode') || '',
+        data: req.body as PageModel
     };
 
-    preRender(req.body as PageModel, parameters).then((payload) => {
+    preRender(parameters).then((payload) => {
         res.json({
             code: 200,
             payload
@@ -60,4 +59,4 @@ exapp.post('/prerender', (req, res, next) => {
     })
 });
 
-exapp.listen(4200, () => console.log('Example exapp listening on port 4200!'));
+exapp.listen(3233, () => console.log('Example exapp listening on port 3233!'));

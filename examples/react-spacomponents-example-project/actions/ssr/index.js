@@ -5,19 +5,16 @@ async function main(args) {
 
 
     const refinedArgs = {
-        data: args,
         pageRoot: args.__ow_headers['page-model-root-url'],
         pagePath: args.__ow_path,
-        wcmmode: args.__ow_headers['wcm-mode']
+        wcmmode: args.__ow_headers['wcm-mode'],
+        data: args
     }
 
     try {
         const response = await app.default(refinedArgs);
         console.log("Response", response);
         return {
-            headers: {
-                'Content-Type': 'text/html'
-            },
             statusCode: 200,
             body: response
         };
