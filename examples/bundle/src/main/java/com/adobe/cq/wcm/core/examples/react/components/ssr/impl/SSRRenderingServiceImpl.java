@@ -41,6 +41,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.util.Map;
 
 @Component(
         service = {SSRRenderingService.class},
@@ -56,6 +57,7 @@ public class SSRRenderingServiceImpl implements SSRRenderingService {
     @Reference
     private HttpClientBuilderFactory clientBuilderFactory;
 
+    private Map<String,String> additionalRequestHeaders;
 
     private boolean fallbackToCSR;
     private String host;
@@ -66,6 +68,13 @@ public class SSRRenderingServiceImpl implements SSRRenderingService {
         host = configuration.host();
         fallbackToCSR = configuration.fallbackToCSR();
         isEnabled = configuration.enabled();
+        
+        for (String rawRequestHeaderField: configuration.getAdditionalRequestHeaders()) {
+            String[] requestHeaderArray = rawRequestHeaderField.trim().split("=");
+            if (requestHeaderArray.length == 2) {
+                additionalRequestHeaders.put(requestHeaderArray[0], requestHeaderArray[1]);
+            }
+        }
     }
 
     @Override
@@ -94,7 +103,11 @@ public class SSRRenderingServiceImpl implements SSRRenderingService {
             final String payload = getModelJSON( rootPage);
             StringEntity requestData = new StringEntity(payload, ContentType.APPLICATION_JSON);
             postMethod.setEntity(requestData);
-
+    
+            for (Map.Entry<String, String> header : additionalRequestHeaders.entrySet()) {
+                postMethod.setHeader(header.getKey(), header.getValue());
+            }
+            
             CloseableHttpResponse preRenderedResponse = client.execute(postMethod);
             return parseOutput(preRenderedResponse);
 
@@ -146,7 +159,10 @@ public class SSRRenderingServiceImpl implements SSRRenderingService {
                 type = AttributeType.STRING
         )
         String host() default DEFAULT_HOST;
-
+    
+        @AttributeDefinition(name = "Additional request headers", description = "Additional headers to be added to the request sent to the remote endpoint. Pattern: key=value", defaultValue = "")
+        String[] getAdditionalRequestHeaders();
+        
         @AttributeDefinition(
                 name = "Fall back to client side configuration",
                 type = AttributeType.BOOLEAN
