@@ -48,11 +48,13 @@ const publicUrl = '';
 // Get environment variables to inject into our app.
 const env = getClientEnvironment(publicUrl);
 
+const isServer =  process.env.server &&  process.env.server === 'true';
+const tsConfigFile = isServer ? "./tsconfig.server.json" : "./tsconfig.json";
+
 // Inject mode into stringified environment
 Object.assign(env.stringified['process.env'], {
-    IS_SERVER: false,
+    IS_SERVER: isServer,
 });
-
 
 // style files regexes
 const cssRegex = /\.css$/;
@@ -158,6 +160,7 @@ module.exports = {
             // Adds support for installing with Plug'n'Play, leading to faster installs and adding
             // guards against forgotten dependencies and such.
             PnpWebpackPlugin,
+            new TsconfigPathsPlugin({ configFile: tsConfigFile })
         ],
     },
     resolveLoader: {

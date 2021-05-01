@@ -1,5 +1,4 @@
 {
-    "baseUrl": ".",
     "paths":{
         "react": ["node_modules/react"],
         "react-router": ["node_modules/react-router"],

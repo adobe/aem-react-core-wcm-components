@@ -42,10 +42,7 @@ exapp.post('/api/v1/web/guest/aem-core-components-react-spa-0.1.0/ssr/*', (req, 
     };
 
     preRender(parameters).then((payload) => {
-        res.json({
-            code: 200,
-            payload
-        });
+        res.json(payload);
         res.statusCode = 200;
         res.end()
     }).catch((error) => {

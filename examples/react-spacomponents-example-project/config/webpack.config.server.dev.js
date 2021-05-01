@@ -17,6 +17,8 @@
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 const webpack = require('webpack');
+
+process.env.server = 'true';
 const devConfig = require('./webpack.config.dev');
 const getClientEnvironment = require('./env');
 const path = require('path');
@@ -31,12 +33,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const publicPath = '/';
 const publicUrl = publicPath.slice(0, -1);
 const env = getClientEnvironment(publicUrl);
-
-// Inject mode into stringified environment
-Object.assign(env.stringified['process.env'], {
-    IS_SERVER: true,
-});
-
 
 module.exports = Object.assign({}, devConfig, {
     entry: [paths.appServerIndexJs],

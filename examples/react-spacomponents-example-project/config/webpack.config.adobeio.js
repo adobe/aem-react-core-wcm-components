@@ -15,6 +15,8 @@
  */
 
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+
+process.env.server = 'true';
 const prodConfig = require('./webpack.config.prod');
 const webpack = require('webpack');
 const path = require('path');
@@ -50,25 +52,6 @@ module.exports = Object.assign({}, prodConfig, {
         filename: 'app.js',
         libraryTarget: 'commonjs2',
     },
-    resolve: {
-        extensions: ['.ts', '.tsx', '.js'],
-
-        // This allows you to set a fallback for where Webpack should look for modules.
-        // We placed these paths second because we want `node_modules` to "win"
-        // if there are any conflicts. This matches Node resolution mechanism.
-        // https://github.com/facebook/create-react-app/issues/253
-        modules: ['node_modules'].concat(
-            // It is guaranteed to exist because we tweak it in `env.js`
-            process.env.NODE_PATH.split(path.delimiter).filter(Boolean)
-        ),
-        alias: aliases,
-        plugins: [
-            // Adds support for installing with Plug'n'Play, leading to faster installs and adding
-            // guards against forgotten dependencies and such.
-            PnpWebpackPlugin,
-            new TsconfigPathsPlugin({ configFile: "./tsconfig.server.json" })
-        ],
-    },
     optimization: {},
     externals: {
         express: true,
@@ -80,7 +63,6 @@ module.exports = Object.assign({}, prodConfig, {
         cluster: true,
     },
     plugins: [
-
         new webpack.DefinePlugin(env.stringified),
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output
@@ -89,19 +71,9 @@ module.exports = Object.assign({}, prodConfig, {
             chunkFilename: 'static/css/[name].[contenthash:8].chunk.css',
         }),
 
-
-        new ManifestPlugin({
-            fileName: 'asset-manifest.json',
-            publicPath: publicPath,
-        }),
-
         new webpack.optimize.LimitChunkCountPlugin({
             maxChunks: 1,
         }),
-
-
         new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-
-
     ].filter(Boolean),
 });
