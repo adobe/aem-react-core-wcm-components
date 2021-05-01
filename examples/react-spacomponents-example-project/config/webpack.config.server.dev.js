@@ -14,6 +14,8 @@
  *  limitations under the License.
  */
 
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+
 const webpack = require('webpack');
 const devConfig = require('./webpack.config.dev');
 const getClientEnvironment = require('./env');
@@ -42,7 +44,7 @@ module.exports = Object.assign({}, devConfig, {
     target: 'node',
     output: {
         path: paths.serverDist,
-        filename: 'server.js',
+        filename: 'express.js',
         libraryTarget: 'commonjs2',
     },
     optimization: {},
@@ -70,7 +72,8 @@ module.exports = Object.assign({}, devConfig, {
         plugins: [
             // Adds support for installing with Plug'n'Play, leading to faster installs and adding
             // guards against forgotten dependencies and such.
-            PnpWebpackPlugin
+            PnpWebpackPlugin,
+            new TsconfigPathsPlugin({ configFile: "./tsconfig.server.json" })
         ],
     },
     plugins: [

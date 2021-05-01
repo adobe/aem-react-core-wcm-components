@@ -14,6 +14,8 @@
  *  limitations under the License.
  */
 
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+
 const webpack = require('webpack');
 const devConfig = require('./webpack.config.prod');
 const getClientEnvironment = require('./env');
@@ -37,7 +39,7 @@ module.exports = Object.assign({}, devConfig, {
     target: 'node',
     output: {
         path: paths.serverBuild,
-        filename: 'server.js',
+        filename: 'express.js',
         libraryTarget: 'commonjs2',
     },
     optimization: {},
@@ -50,6 +52,13 @@ module.exports = Object.assign({}, devConfig, {
         tls: true,
         cluster: true,
     },
+
+    resolve: {
+        plugins: [
+            new TsconfigPathsPlugin({ configFile: "./tsconfig.server.json" })
+        ]
+    },
+
     plugins: [
 
         new webpack.DefinePlugin(env.stringified),

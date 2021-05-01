@@ -14,10 +14,15 @@
  *  limitations under the License.
  */
 
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const prodConfig = require('./webpack.config.prod');
 const webpack = require('webpack');
+const path = require('path');
 const getClientEnvironment = require('./env');
 const paths = require('./paths');
+const aliases = require("./aliases");
+const PnpWebpackPlugin = require('pnp-webpack-plugin');
+
 const ManifestPlugin = require('webpack-manifest-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -41,9 +46,28 @@ module.exports = Object.assign({}, prodConfig, {
     target: 'node',
     entry: [paths.preRenderServer],
     output: {
-        path: paths.serverBuild,
-        filename: 'adobeio.js',
+        path: paths.runtimeBuild,
+        filename: 'app.js',
         libraryTarget: 'commonjs2',
+    },
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js'],
+
+        // This allows you to set a fallback for where Webpack should look for modules.
+        // We placed these paths second because we want `node_modules` to "win"
+        // if there are any conflicts. This matches Node resolution mechanism.
+        // https://github.com/facebook/create-react-app/issues/253
+        modules: ['node_modules'].concat(
+            // It is guaranteed to exist because we tweak it in `env.js`
+            process.env.NODE_PATH.split(path.delimiter).filter(Boolean)
+        ),
+        alias: aliases,
+        plugins: [
+            // Adds support for installing with Plug'n'Play, leading to faster installs and adding
+            // guards against forgotten dependencies and such.
+            PnpWebpackPlugin,
+            new TsconfigPathsPlugin({ configFile: "./tsconfig.server.json" })
+        ],
     },
     optimization: {},
     externals: {

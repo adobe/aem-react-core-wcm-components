@@ -20,6 +20,9 @@ atlassian-ide-plugin.xml
 node
 node_modules
 
+actions/common/**/*
+actions/common/**
+
 react-app-env.d.ts
 dist
 build

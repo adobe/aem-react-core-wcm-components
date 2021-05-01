@@ -1,11 +1,5 @@
 {
-    "baseUrl": ".",
-    "paths":{
-        "react": ["node_modules/react"],
-        "react-router": ["node_modules/react-router"],
-        "react-router-dom": ["node_modules/react-router-dom"],
-        "@adobe/*":  ["node_modules/@adobe/*"]
-    },
+    "extends": "./tsconfig.base.json",
     "compilerOptions": {
         "baseUrl": ".",
         "target": "esnext",
@@ -14,23 +8,7 @@
             "dom.iterable",
             "esnext"
         ],
-        "inlineSourceMap": true,
-        "experimentalDecorators": true,
-        "allowJs": true,
-        "skipLibCheck": true,
-        "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true,
-        "strict": true,
-        "forceConsistentCasingInFileNames": true,
         "module": "commonjs",
-        "types": [ "node" ],
         "moduleResolution": "node",
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-        "jsx": "react"
-    },
-    "lib": [ "esnext" ],
-    "include": [
-        "src"
-    ]
+    }
 }

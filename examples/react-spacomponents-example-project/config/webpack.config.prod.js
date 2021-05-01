@@ -34,6 +34,7 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 const StatsWriterPlugin = require("webpack-stats-plugin").StatsWriterPlugin;
 const aliases = require("./aliases");
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 const getStyleLoaders = require('./styleloaders');
 
