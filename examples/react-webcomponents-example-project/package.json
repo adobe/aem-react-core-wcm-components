@@ -31,9 +31,9 @@
   "scripts": {
     "aempack": "cross-env NODE_ENV=development node scripts/aempack.js",
     "start": "react-scripts start",
-    "clean": "shx rm -rf ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm/react/clientlibs/react-webcomponents/resources && shx rm -rf -rf coverage/ dist/ src/tsconfig.types.tsbuildinfo",
-    "build": "npm run clean && react-scripts build && shx mv build ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm/react/clientlibs/react-webcomponents/resources",
-    "build-prod": "npm run clean && cross-env GENERATE_SOURCEMAP=false react-scripts build && shx mv build ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm/react/clientlibs/react-webcomponents/resources",
+    "clean": "shx rm -rf ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm-react/clientlibs/react-webcomponents/resources && shx rm -rf -rf coverage/ dist/ src/tsconfig.types.tsbuildinfo",
+    "build": "npm run clean && react-scripts build && shx mv build ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm-react/clientlibs/react-webcomponents/resources",
+    "build-prod": "npm run clean && cross-env GENERATE_SOURCEMAP=false react-scripts build && shx mv build ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm-react/clientlibs/react-webcomponents/resources",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

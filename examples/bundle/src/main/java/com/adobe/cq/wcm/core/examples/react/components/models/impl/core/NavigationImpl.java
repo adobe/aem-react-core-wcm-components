@@ -36,7 +36,8 @@ import com.adobe.cq.export.json.ComponentExporter;
 import com.adobe.cq.export.json.ExporterConstants;
 import com.adobe.cq.wcm.core.components.models.Navigation;
 import com.adobe.cq.wcm.core.components.models.NavigationItem;
-import lombok.experimental.Delegate;
+import com.adobe.cq.wcm.core.components.models.datalayer.ComponentData;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Exporter;
@@ -59,14 +60,8 @@ import static com.adobe.cq.wcm.core.examples.react.components.models.impl.core.N
 @Exporter(name = ExporterConstants.SLING_MODEL_EXPORTER_NAME, extensions = ExporterConstants.SLING_MODEL_EXTENSION)
 public class NavigationImpl implements Navigation {
     
-    static final String RESOURCE_TYPE = "core-components-examples/wcm/react/components/navigation";
+    static final String RESOURCE_TYPE = "core-components-examples/wcm-react/components/navigation";
     
-    private interface Overrides{
-        List<NavigationItem> getItems();
-        String getExportedType();
-    }
-    
-    @Delegate(excludes = Overrides.class)
     @Self
     @Via(type = ForcedResourceType.class, value = "core/wcm/components/navigation/v1/navigation")
     Navigation delegate;
@@ -77,6 +72,23 @@ public class NavigationImpl implements Navigation {
     public List<NavigationItem> getItems(){
         List<NavigationItem> items = delegate.getItems();
         return items.stream().map(RoutedNavigationItem::new).collect(Collectors.toList());
+    }
+    
+    @Override
+    public String getAccessibilityLabel() {
+        return delegate.getAccessibilityLabel();
+    }
+    
+    @Override
+
+    public String getId() {
+        return delegate.getId();
+    }
+    
+    @Override
+    @JsonProperty("dataLayer")
+    public ComponentData getData() {
+        return delegate.getData();
     }
     
     public String getExportedType(){

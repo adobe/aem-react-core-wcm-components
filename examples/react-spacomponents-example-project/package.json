@@ -1,5 +1,5 @@
 {
-  "name": "@adobe/aem-core-components-react-spa",
+  "name": "react-spa-example",
   "version": "0.1.0",
   "dependencies": {
     "@adobe/aem-core-components-react-base": "file:../../react-base-components",
@@ -123,7 +123,7 @@
     "aempack-pub-ssr": "cross-env DEVELOPSSR=true npm-run-all -p aempack-pub",
     "install:link-deps": "npm install && npm run link-deps",
     "link-deps": "npm link @adobe/aem-spa-page-model-manager && npm link @adobe/cq-spa-component-mapping && npm link @adobe/aem-react-editable-components",
-    "clean": "shx rm -rf ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm/react/clientlibs/react-spacomponents/resources && shx rm -rf coverage/ dist/ src/tsconfig.types.tsbuildinfo"
+    "clean": "shx rm -rf ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm-react/clientlibs/react-spacomponents/resources && shx rm -rf coverage/ dist/ src/tsconfig.types.tsbuildinfo"
   },
   "eslintConfig": {
     "extends": "react-app"

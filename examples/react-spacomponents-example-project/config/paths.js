@@ -81,9 +81,9 @@ const resolveModule = (resolveFn, filePath) => {
     return resolveFn(`${filePath}.js`);
 };
 
-const clientLibTarget = 'core-components-examples/wcm/react/clientlibs/react-spacomponents/resources';
+const clientLibTarget = 'core-components-examples/wcm-react/clientlibs/react-spacomponents/resources';
 const clientLibRelativePath = '/apps/' + clientLibTarget;
-const clientLibRoot = resolveApp('../ui.apps/src/content/jcr_root' + clientLibRelativePath);
+const clientLibRoot = resolveApp('../ui.apps/src/main/content/jcr_root' + clientLibRelativePath);
 
 // config after eject: we're in ./config/
 module.exports = {

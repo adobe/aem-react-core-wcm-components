@@ -16,8 +16,14 @@
 package com.adobe.cq.wcm.core.examples.react.components.models.impl;
 
 import com.day.cq.wcm.api.Page;
+import com.day.cq.wcm.api.components.AnalyzeContext;
+import com.day.cq.wcm.api.components.Component;
 import com.day.cq.wcm.api.components.ComponentContext;
-import lombok.experimental.Delegate;
+import com.day.cq.wcm.api.components.EditContext;
+import com.day.cq.wcm.api.designer.Cell;
+import org.apache.sling.api.resource.Resource;
+
+import java.util.Set;
 
 public class HierarchyComponentContextWrapper implements ComponentContext {
 
@@ -25,7 +31,6 @@ public class HierarchyComponentContextWrapper implements ComponentContext {
         Page getPage();
     }
     
-    @Delegate(excludes =  Excludes.class)
     private ComponentContext wrappedComponentContext;
     private Page hierarchyPage;
 
@@ -35,8 +40,93 @@ public class HierarchyComponentContextWrapper implements ComponentContext {
     }
     
     @Override
+    public ComponentContext getParent() {
+        return wrappedComponentContext.getParent();
+    }
+    
+    @Override
+    public ComponentContext getRoot() {
+        return wrappedComponentContext.getRoot();
+    }
+    
+    @Override
+    public boolean isRoot() {
+        return wrappedComponentContext.isRoot();
+    }
+    
+    @Override
+    public Resource getResource() {
+        return wrappedComponentContext.getResource();
+    }
+    
+    @Override
+    public Cell getCell() {
+        return wrappedComponentContext.getCell();
+    }
+    
+    @Override
+    public EditContext getEditContext() {
+        return wrappedComponentContext.getEditContext();
+    }
+    
+    @Override
+    public AnalyzeContext getAnalyzeContext() {
+        return wrappedComponentContext.getAnalyzeContext();
+    }
+    
+    @Override
+    public Component getComponent() {
+        return wrappedComponentContext.getComponent();
+    }
+    
+    @Override
     public Page getPage() {
         return hierarchyPage;
+    }
+    
+    @Override
+    public Object getAttribute(String s) {
+        return wrappedComponentContext.getAttribute(s);
+    }
+    
+    @Override
+    public Object setAttribute(String s, Object o) {
+        return wrappedComponentContext.setAttribute(s,o);
+    }
+    
+    @Override
+    public Set<String> getCssClassNames() {
+        return wrappedComponentContext.getCssClassNames();
+    }
+    
+    @Override
+    public boolean hasDecoration() {
+        return wrappedComponentContext.hasDecoration();
+    }
+    
+    @Override
+    public void setDecorate(boolean b) {
+        wrappedComponentContext.setDecorate(b);
+    }
+    
+    @Override
+    public String getDecorationTagName() {
+        return wrappedComponentContext.getDecorationTagName();
+    }
+    
+    @Override
+    public void setDecorationTagName(String s) {
+        wrappedComponentContext.setDecorationTagName(s);
+    }
+    
+    @Override
+    public String getDefaultDecorationTagName() {
+        return wrappedComponentContext.getDefaultDecorationTagName();
+    }
+    
+    @Override
+    public void setDefaultDecorationTagName(String s) {
+        wrappedComponentContext.setDefaultDecorationTagName(s);
     }
     
 }

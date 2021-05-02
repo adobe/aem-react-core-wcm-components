@@ -43,8 +43,8 @@ import org.apache.sling.models.annotations.injectorspecific.ScriptVariable;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.factory.ModelFactory;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+
+
 import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -65,12 +65,12 @@ public class HierarchyPageImpl implements HierarchyPage {
     /**
      * Resource type of associated with the current implementation
      */
-    public static final String RESOURCE_TYPE = "core-components-examples/wcm/react/components/page/react-spacomponents-page";
+    public static final String RESOURCE_TYPE = "core-components-examples/wcm-react/components/page/react-spacomponents-page";
     
     /**
      * Resource type of associated with the current implementation
      */
-    public static final String XF_RESOURCE_TYPE = "core-components-examples/wcm/react/components/page/react-spacomponents-page/xf-page";
+    public static final String XF_RESOURCE_TYPE = "core-components-examples/wcm-react/components/page/react-spacomponents-page/xf-page";
     /**
      * Request attribute key of the component context
      */
@@ -149,13 +149,13 @@ public class HierarchyPageImpl implements HierarchyPage {
     @JsonIgnore
     protected Style currentStyle;
 
-    @Nullable
+
     @Override
     public String getExportedHierarchyType() {
         return HierarchyTypes.PAGE;
     }
 
-    @Nonnull
+
     @Override
     @JsonInclude(JsonInclude.Include.ALWAYS)
     public Map<String, ? extends HierarchyPage> getExportedChildren() {
@@ -165,7 +165,7 @@ public class HierarchyPageImpl implements HierarchyPage {
         return childPages;
     }
 
-    @Nonnull
+
     @Override
     public Map<String, ? extends ComponentExporter> getExportedItems() {
         if (childModels == null) {
@@ -175,7 +175,7 @@ public class HierarchyPageImpl implements HierarchyPage {
         return childModels;
     }
 
-    @Nonnull
+
     @Override
     public String[] getExportedItemsOrder() {
         Map<String, ? extends ComponentExporter> models = getExportedItems();
@@ -187,7 +187,7 @@ public class HierarchyPageImpl implements HierarchyPage {
         return models.keySet().toArray(ArrayUtils.EMPTY_STRING_ARRAY);
     }
 
-    @Nonnull
+
     @Override
     public String getExportedType() throws IllegalStateException {
         Resource contentResource = currentPage.getContentResource();
@@ -199,8 +199,8 @@ public class HierarchyPageImpl implements HierarchyPage {
         return contentResource.getResourceType();
     }
 
-    @Nonnull
-    private SlingHttpServletRequest getHierarchyServletRequest(@Nonnull SlingHttpServletRequest request, @Nonnull Page hierarchyPage) {
+
+    private SlingHttpServletRequest getHierarchyServletRequest(SlingHttpServletRequest request, Page hierarchyPage) {
         SlingHttpServletRequest wrapper = new SlingHttpServletRequestWrapper(request);
 
         ComponentContext componentContext = (ComponentContext) request.getAttribute(COMPONENT_CONTEXT_ATTR);
@@ -219,9 +219,9 @@ public class HierarchyPageImpl implements HierarchyPage {
      * @param modelClass  The Sling Model class to be adapted to.
      * @return Returns a map (resource name => Sling Model class) of the given resource children's Sling Models that can be adapted to {@link T}.
      */
-    @Nonnull
-    private <T> Map<String, T> getItemModels(@Nonnull SlingHttpServletRequest slingRequest,
-                                             @Nonnull Class<T> modelClass) {
+
+    private <T> Map<String, T> getItemModels(SlingHttpServletRequest slingRequest,
+                                          Class<T> modelClass) {
         Map<String, T> itemWrappers = new LinkedHashMap<>();
 
         Iterable<Resource> iterable = slingModelFilter.filterChildResources(request.getResource().getChildren());
@@ -246,7 +246,7 @@ public class HierarchyPageImpl implements HierarchyPage {
      * @param depth                 - Depth of the traversal
      * @return
      */
-    @Nonnull
+
     private List<Page> getChildPageRecursive(Page page, SlingHttpServletRequest slingRequest, List<Pattern> structurePatterns, int depth) {
         // By default the value is 0 meaning we do not expose child pages
         // If the value is set as a positive number it is going to be exposed until the counter is brought down to 0
@@ -297,7 +297,7 @@ public class HierarchyPageImpl implements HierarchyPage {
      * @param slingRequest  The current servlet request
      * @param childPages    List of child pages
      */
-    private void addAsynchronousChildPage(@Nonnull SlingHttpServletRequest slingRequest, @Nonnull List<Page> childPages) {
+    private void addAsynchronousChildPage(SlingHttpServletRequest slingRequest, List<Page> childPages) {
         // Child pages are only added to the root page
         if (Boolean.TRUE.equals(slingRequest.getAttribute(IS_CHILD_PAGE_ATTR))) {
             return;
@@ -323,9 +323,9 @@ public class HierarchyPageImpl implements HierarchyPage {
         childPages.add(entryPointPage);
     }
 
-    @Nonnull
-    private <T> Map<String, T> getChildPageModels(@Nonnull SlingHttpServletRequest slingRequest,
-                                                  @Nonnull Class<T> modelClass) {
+
+    private <T> Map<String, T> getChildPageModels(SlingHttpServletRequest slingRequest,
+                                               Class<T> modelClass) {
 
         int pageTreeTraversalDepth = getPageTreeTraversalDepth();
 
@@ -371,8 +371,8 @@ public class HierarchyPageImpl implements HierarchyPage {
      * @param slingRequest  - Request
      * @return
      */
-    @Nonnull
-    private List<Pattern> getStructurePatterns(@Nonnull SlingHttpServletRequest slingRequest) {
+
+    private List<Pattern> getStructurePatterns(SlingHttpServletRequest slingRequest) {
         RequestParameter pageFilterParameter = slingRequest.getRequestParameter(STRUCTURE_PATTERNS_PN.toLowerCase());
 
         String rawPageFilters = null;
@@ -418,7 +418,7 @@ public class HierarchyPageImpl implements HierarchyPage {
         return pageTreeTraversalDepth;
     }
 
-    @Nonnull
+
     @Override
     public String getExportedPath() {
         return currentPage.getPath();
@@ -433,7 +433,7 @@ public class HierarchyPageImpl implements HierarchyPage {
      * @param page
      * @return
      */
-    private String getURL(@Nonnull SlingHttpServletRequest request, @Nonnull Page page) {
+    private String getURL(SlingHttpServletRequest request, Page page) {
         String vanityURL = page.getVanityUrl();
         return StringUtils.isEmpty(vanityURL) ? request.getContextPath() + page.getPath() + ".html" : request.getContextPath() + vanityURL;
     }
@@ -445,7 +445,7 @@ public class HierarchyPageImpl implements HierarchyPage {
      * @param page
      * @return
      */
-    private String getModelUrl(@Nonnull SlingHttpServletRequest request, @Nonnull Page page) {
+    private String getModelUrl(SlingHttpServletRequest request, Page page) {
         String url = getURL(request, page);
 
         if (StringUtils.isBlank(url)) {
@@ -498,7 +498,7 @@ public class HierarchyPageImpl implements HierarchyPage {
                 }
             }
             
-            isRootModel =  page.getContentResource().getResourceType().equalsIgnoreCase("core-components-examples/wcm/react/components/page/react-spacomponents-page/app");
+            isRootModel =  page.getContentResource().getResourceType().equalsIgnoreCase("core-components-examples/wcm-react/components/page/react-spacomponents-page/app");
             
             if(!isRootModel){
                 page= page.getParent();
@@ -509,7 +509,7 @@ public class HierarchyPageImpl implements HierarchyPage {
         return page;
     }
 
-    @Nullable
+
     @Override
     public String getRootUrl() {
         if (currentStyle != null && currentStyle.containsKey(PR_IS_ROOT)) {
@@ -525,7 +525,7 @@ public class HierarchyPageImpl implements HierarchyPage {
         return null;
     }
 
-    @Nullable
+
     @Override
     public String getTitle() {
         if (!StringUtils.isBlank(currentPage.getNavigationTitle())) {

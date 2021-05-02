@@ -1,7 +1,7 @@
 /*global process */
 //@ts-nocheck
 
-import statsFile from '../../../../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm/react/clientlibs/react-spacomponents/resources/stats.json';
+import statsFile from '../../../../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm-react/clientlibs/react-spacomponents/resources/stats.json';
 
 export const webpackBuildStats = statsFile;
 

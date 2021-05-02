@@ -20,7 +20,6 @@ import com.adobe.cq.wcm.core.examples.react.components.models.HierarchyPage;
 import com.adobe.cq.wcm.core.examples.react.components.ssr.SSRRenderingService;
 import com.adobe.cq.wcm.core.examples.react.components.ssr.SpaPageBindingsProvider;
 import com.adobe.cq.wcm.core.examples.react.components.ssr.model.SSRResponse;
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.request.RequestPathInfo;
 import org.osgi.framework.Constants;
@@ -45,7 +44,6 @@ import java.util.regex.Pattern;
                 Constants.SERVICE_DESCRIPTION + "=SpaPageBindingsProviderImpl - loads up Server Side Rendering and binds it to the SPA context",
                 Constants.SERVICE_RANKING + ":Integer=-30",
         })
-@SuppressFBWarnings
 public class SpaPageBindingsProviderImpl implements SpaPageBindingsProvider, Filter {
     
     
@@ -59,8 +57,8 @@ public class SpaPageBindingsProviderImpl implements SpaPageBindingsProvider, Fil
     static final Pattern SPA_PATH_CHECK = Pattern.compile("/content/aem-react-core-spacomponents-example(.*)\\.html");
     
     private static final String HEADER_REQUESTED_BY = "requested-by";
-    private static final String RT_SPA_CONTENT_PAGE = "core-components-examples/wcm/react/components/page/react-spacomponents-page";
-    private static final String RT_SPA_XF_PAGE      = "core-components-examples/wcm/react/components/page/react-spacomponents-page/xf-page";
+    private static final String RT_SPA_CONTENT_PAGE = "core-components-examples/wcm-react/components/page/react-spacomponents-page";
+    private static final String RT_SPA_XF_PAGE      = "core-components-examples/wcm-react/components/page/react-spacomponents-page/xf-page";
     
     
     @Reference

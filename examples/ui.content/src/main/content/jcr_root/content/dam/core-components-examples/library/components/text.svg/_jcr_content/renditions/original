@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180">
+  <g id="Group_8" transform="translate(4 -1675)">
+    <g id="Rectangle_25" transform="translate(-4 1675)">
+      <rect id="Rectangle_2" data-name="Rectangle 2" width="180" height="180" fill="none"/>
+    </g>
+    <g id="Rectangle_36" transform="translate(25 1716.5)">
+      <path id="Path_448" data-name="Path 448" d="M122,2a2,2,0,0,0-2-2H2A2,2,0,0,0,0,2V85a2,2,0,0,0,2,2H120a2,2,0,0,0,2-2Z" fill="none" stroke="#b3b3b3" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" fill-rule="evenodd"/>
+    </g>
+    <g id="Line_24" transform="translate(44.5 1763.66)">
+      <path id="Path_449" data-name="Path 449" d="M0,0H82" fill="none" stroke="#b3b3b3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
+    </g>
+    <g id="Line_25" transform="translate(44.5 1770.11)">
+      <path id="Path_450" data-name="Path 450" d="M0,0H75" fill="none" stroke="#b3b3b3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
+    </g>
+    <g id="Line_26" transform="translate(44.5 1783)">
+      <path id="Path_451" data-name="Path 451" d="M0,0H75" fill="none" stroke="#b3b3b3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
+    </g>
+    <g id="Line_27" transform="translate(44.5 1776.55)">
+      <path id="Path_452" data-name="Path 452" d="M0,0H82" fill="none" stroke="#b3b3b3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
+    </g>
+    <g id="Line_28" transform="translate(44.5 1737.66)">
+      <path id="Path_453" data-name="Path 453" d="M0,0H82" fill="none" stroke="#1673e6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
+    </g>
+    <g id="Line_29" transform="translate(44.5 1744.11)">
+      <path id="Path_454" data-name="Path 454" d="M0,0H75" fill="none" stroke="#1673e6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
+    </g>
+    <g id="Line_30" transform="translate(44.5 1757)">
+      <path id="Path_455" data-name="Path 455" d="M0,0H75" fill="none" stroke="#1673e6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
+    </g>
+    <g id="Line_31" transform="translate(44.5 1750.55)">
+      <path id="Path_456" data-name="Path 456" d="M0,0H82" fill="none" stroke="#1673e6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>

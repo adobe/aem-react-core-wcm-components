@@ -30,7 +30,7 @@ import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Optional;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
-import javax.annotation.Nonnull;
+
 
 
 @Model(adaptables = SlingHttpServletRequest.class, resourceType = DemoContainer.RESOURCE_TYPE, adapters = {ContainerExporter.class,ComponentExporter.class})
@@ -38,7 +38,7 @@ import javax.annotation.Nonnull;
 @JsonSerialize(as = DemoContainerExporter.class)
 public class DemoContainer extends ResponsiveGrid implements DemoContainerExporter {
     
-    static final String RESOURCE_TYPE = "core-components-examples/wcm/react/components/demo";
+    static final String RESOURCE_TYPE = "core-components-examples/wcm-react/components/demo";
     
     @ValueMapValue @Optional @Default(booleanValues = true)
     private boolean fullWidth;
@@ -49,7 +49,7 @@ public class DemoContainer extends ResponsiveGrid implements DemoContainerExport
         return super.getParent();
     }
     
-    @Nonnull
+
     @Override
     public String getExportedType() {
         return RESOURCE_TYPE;

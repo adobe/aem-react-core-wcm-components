@@ -30,7 +30,6 @@
     <!-- P R O J E C T  D E S C R I P T I O N                                   -->
     <!-- ====================================================================== -->
     <artifactId>core.wcm.components.react.examples.all</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
     <packaging>content-package</packaging>
     
     <name>Adobe Experience Manager Core WCM Components - React Examples - Full Package</name>
@@ -41,30 +40,60 @@
                 <groupId>org.apache.jackrabbit</groupId>
                 <artifactId>filevault-package-maven-plugin</artifactId>
                 <extensions>true</extensions>
+                <version>1.1.4</version>
                 <configuration>
-                    <acHandling>IGNORE</acHandling>
-                    <showImportPackageReport>false</showImportPackageReport>
-                    <embeddedTarget>/apps/core-components-examples/wcm/install</embeddedTarget>
+                    <group>com.adobe.cq</group>
+                    <packageType>container</packageType>
+                    <skipSubPackageValidation>true</skipSubPackageValidation>
                     <embeddeds>
                         <embedded>
                             <groupId>${project.groupId}</groupId>
+                            <artifactId>core.wcm.components.react.examples.ui.apps</artifactId>
+                            <type>zip</type>
+                            <target>/apps/core-components-examples/wcm-react/application/install</target>
+                        </embedded>
+                        <embedded>
+                            <groupId>${project.groupId}</groupId>
                             <artifactId>core.wcm.components.examples.react.bundle</artifactId>
-                            <target>/apps/core-components-examples/wcm/install</target>
+                            <type>jar</type>
+                            <target>/apps/core-components-examples/wcm-react/application/install</target>
+                        </embedded>
+                        <embedded>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>core.wcm.components.react.examples.ui.content</artifactId>
+                            <type>zip</type>
+                            <target>/apps/core-components-examples/wcm-react/content/install</target>
+                        </embedded>
+                        <embedded>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>core.wcm.components.react.examples.ui.config</artifactId>
+                            <type>zip</type>
+                            <target>/apps/core-components-examples/wcm-react/application/install</target>
                         </embedded>
                     </embeddeds>
-                    <subPackages>
-                        <subPackage>
-                            <groupId>${project.groupId}</groupId>
-                            <artifactId>core.wcm.components.examples.react.ui.apps</artifactId>
-                            <filter>true</filter>
-                        </subPackage>
-                    </subPackages>
                     <packageType>container</packageType>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>com.day.jcr.vault</groupId>
                 <artifactId>content-package-maven-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <verbose>true</verbose>
+                    <failOnError>true</failOnError>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>auto-clean</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
@@ -125,59 +154,64 @@
                 </plugins>
             </build>
         </profile>
-        <profile>
-            <id>classic</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.jackrabbit</groupId>
-                        <artifactId>filevault-package-maven-plugin</artifactId>
-                        <extensions>true</extensions>
-                        <configuration>
-                            <group>com.adobe.cq</group>
-                            <name>core.wcm.components.react.examples.all</name>
-                            <properties>
-                                <cloudManagerTarget>none</cloudManagerTarget>
-                            </properties>
-                            <embeddeds>
-                                <embedded>
-                                    <groupId>${project.groupId}</groupId>
-                                    <artifactId>core.wcm.components.examples.react.bundle</artifactId>
-                                    <target>/apps/core-components-examples/wcm/install</target>
-                                </embedded>
-                                <!-- Embed Core Component dependency 6.x -->
-                                <embedded>
-                                    <groupId>com.adobe.cq</groupId>
-                                    <artifactId>core.wcm.components.core</artifactId>
-                                    <target>/apps/core-components-examples/wcm/install</target>
-                                </embedded>
-                            </embeddeds>
-                            <subPackages>
-                                <subPackage>
-                                    <groupId>${project.groupId}</groupId>
-                                    <artifactId>core.wcm.components.examples.react.ui.apps</artifactId>
-                                    <filter>true</filter>
-                                </subPackage>
-                            </subPackages>
-                            <dependencies>
-                                <dependency>
-                                    <groupId>com.adobe.cq</groupId>
-                                    <artifactId>core.wcm.components.content</artifactId>
-                                </dependency>
-                                <dependency>
-                                    <groupId>com.adobe.cq</groupId>
-                                    <artifactId>core.wcm.components.config</artifactId>
-                                </dependency>
-                            </dependencies>
-                            <packageType>container</packageType>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
+<!--        <profile>-->
+<!--            <id>classic</id>-->
+<!--            <activation>-->
+<!--                <activeByDefault>false</activeByDefault>-->
+<!--            </activation>-->
+<!--            <build>-->
+<!--                <plugins>-->
+<!--                    <plugin>-->
+<!--                        <groupId>org.apache.jackrabbit</groupId>-->
+<!--                        <artifactId>filevault-package-maven-plugin</artifactId>-->
+<!--                        <extensions>true</extensions>-->
+<!--                        <configuration>-->
+<!--                            <group>com.adobe.cq</group>-->
+<!--                            <name>core.wcm.components.react.examples.all</name>-->
+<!--                            <properties>-->
+<!--                                <cloudManagerTarget>none</cloudManagerTarget>-->
+<!--                            </properties>-->
+<!--                            <embeddeds>-->
+<!--                                <embedded>-->
+<!--                                    <groupId>${project.groupId}</groupId>-->
+<!--                                    <artifactId>core.wcm.components.examples.react.bundle</artifactId>-->
+<!--                                    <target>/apps/core-components-examples/wcm/install</target>-->
+<!--                                </embedded>-->
+<!--                                &lt;!&ndash; Embed Core Component dependency 6.x &ndash;&gt;-->
+<!--                                <embedded>-->
+<!--                                    <groupId>com.adobe.cq</groupId>-->
+<!--                                    <artifactId>core.wcm.components.core</artifactId>-->
+<!--                                    <target>/apps/core-components-examples/wcm/install</target>-->
+<!--                                </embedded>-->
+<!--                            </embeddeds>-->
+<!--                            <subPackages>-->
+<!--                                <subPackage>-->
+<!--                                    <groupId>${project.groupId}</groupId>-->
+<!--                                    <artifactId>core.wcm.components.examples.react.ui.apps</artifactId>-->
+<!--                                    <filter>true</filter>-->
+<!--                                </subPackage>-->
+<!--                                <subPackage>-->
+<!--                                    <groupId>${project.groupId}</groupId>-->
+<!--                                    <artifactId>core.wcm.components.examples.react.ui.config</artifactId>-->
+<!--                                    <filter>true</filter>-->
+<!--                                </subPackage>-->
+<!--                            </subPackages>-->
+<!--                            <dependencies>-->
+<!--                                <dependency>-->
+<!--                                    <groupId>com.adobe.cq</groupId>-->
+<!--                                    <artifactId>core.wcm.components.content</artifactId>-->
+<!--                                </dependency>-->
+<!--                                <dependency>-->
+<!--                                    <groupId>com.adobe.cq</groupId>-->
+<!--                                    <artifactId>core.wcm.components.config</artifactId>-->
+<!--                                </dependency>-->
+<!--                            </dependencies>-->
+<!--                            <packageType>container</packageType>-->
+<!--                        </configuration>-->
+<!--                    </plugin>-->
+<!--                </plugins>-->
+<!--            </build>-->
+<!--        </profile>-->
     </profiles>
 
     <!-- ====================================================================== -->
@@ -186,22 +220,28 @@
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>core.wcm.components.examples.react.bundle</artifactId>
-            <version>${project.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
             <artifactId>core.wcm.components.react.examples.ui.apps</artifactId>
             <version>${project.version}</version>
             <type>zip</type>
-            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>core.wcm.components.react.examples.ui.content</artifactId>
+            <version>${project.version}</version>
+            <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>core.wcm.components.react.examples.ui.config</artifactId>
+            <type>zip</type>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.adobe.cq</groupId>
             <artifactId>core.wcm.components.content</artifactId>
             <type>zip</type>
         </dependency>
+    
         <dependency>
             <groupId>com.adobe.cq</groupId>
             <artifactId>core.wcm.components.config</artifactId>

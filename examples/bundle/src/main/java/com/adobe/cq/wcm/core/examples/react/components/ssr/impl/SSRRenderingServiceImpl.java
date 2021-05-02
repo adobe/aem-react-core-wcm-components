@@ -41,6 +41,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 @Component(
@@ -57,7 +58,7 @@ public class SSRRenderingServiceImpl implements SSRRenderingService {
     @Reference
     private HttpClientBuilderFactory clientBuilderFactory;
 
-    private Map<String,String> additionalRequestHeaders;
+    private final Map<String,String> additionalRequestHeaders = new HashMap<>();
 
     private boolean fallbackToCSR;
     private String host;
@@ -69,7 +70,7 @@ public class SSRRenderingServiceImpl implements SSRRenderingService {
         fallbackToCSR = configuration.fallbackToCSR();
         isEnabled = configuration.enabled();
         
-        for (String rawRequestHeaderField: configuration.getAdditionalRequestHeaders()) {
+        for (String rawRequestHeaderField: configuration.additionalRequestHeaders()) {
             String[] requestHeaderArray = rawRequestHeaderField.trim().split("=");
             if (requestHeaderArray.length == 2) {
                 additionalRequestHeaders.put(requestHeaderArray[0], requestHeaderArray[1]);
@@ -139,7 +140,7 @@ public class SSRRenderingServiceImpl implements SSRRenderingService {
         SSRResponsePayload responseParsed = mapper.readValue(responseBody, SSRResponsePayload.class);
     
         int statusCode = preRenderedResponse.getStatusLine().getStatusCode();
-        return SSRResponse.builder().code(statusCode).payload(responseParsed).build();
+        return new SSRResponse(statusCode,responseParsed);
     }
 
 
@@ -161,7 +162,7 @@ public class SSRRenderingServiceImpl implements SSRRenderingService {
         String host() default DEFAULT_HOST;
     
         @AttributeDefinition(name = "Additional request headers", description = "Additional headers to be added to the request sent to the remote endpoint. Pattern: key=value", defaultValue = "")
-        String[] getAdditionalRequestHeaders();
+        String[] additionalRequestHeaders();
         
         @AttributeDefinition(
                 name = "Fall back to client side configuration",

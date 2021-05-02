@@ -1,3 +1,4 @@
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  ~ Copyright 2018 Adobe Systems Incorporated
  ~
@@ -18,7 +19,6 @@ package com.adobe.cq.wcm.core.examples.react.components.models.impl.core;
 import com.adobe.cq.export.json.ComponentExporter;
 import com.adobe.cq.export.json.ExporterConstants;
 import com.adobe.cq.wcm.core.components.models.Title;
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
@@ -31,10 +31,9 @@ import org.apache.sling.models.annotations.via.ResourceSuperType;
         resourceType = TitleComponent.RESOURCE_TYPE
 )
 @Exporter(name = ExporterConstants.SLING_MODEL_EXPORTER_NAME, extensions = ExporterConstants.SLING_MODEL_EXTENSION)
-@SuppressFBWarnings
 public class TitleComponent implements Title {
     
-    public static final String RESOURCE_TYPE = "core-components-examples/wcm/react/components/title";
+    public static final String RESOURCE_TYPE = "core-components-examples/wcm-react/components/title";
     
     @Self @Via(type = ResourceSuperType.class)
     private Title delegate;

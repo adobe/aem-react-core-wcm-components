@@ -31,7 +31,6 @@
     <!-- P R O J E C T  D E S C R I P T I O N                                   -->
     <!-- ====================================================================== -->
     <artifactId>core.wcm.components.react.examples.web-components</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Adobe Experience Manager Core WCM Components - React Examples - Web Components</name>
     

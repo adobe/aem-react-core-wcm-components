@@ -15,17 +15,17 @@
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 package com.adobe.cq.wcm.core.examples.react.components.ssr.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Builder;
-
-
-@Builder
 public class SSRResponse {
     
     private int statusCode;
+    private SSRResponsePayload payload;
     
     private Integer code;
+    
+    public SSRResponse(Integer code, SSRResponsePayload payload) {
+        this.code = code;
+        this.payload = payload;
+    }
     
     public int getStatusCode(){
         if(statusCode != 200){
@@ -38,8 +38,7 @@ public class SSRResponse {
         this.statusCode = statusCode;
     }
     
-    private SSRResponsePayload payload;
-    
+  
     public SSRResponsePayload getPayload() {
         return payload;
     }
