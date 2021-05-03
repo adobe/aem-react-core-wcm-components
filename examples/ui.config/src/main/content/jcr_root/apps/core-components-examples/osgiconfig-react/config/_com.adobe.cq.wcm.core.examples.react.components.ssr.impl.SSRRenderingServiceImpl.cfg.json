@@ -1,8 +1,0 @@
-{
-    "host": "https://28538-593goldlizard.adobeioruntime.net/api/v1/web/react-spa-example-0.1.0/ssr",
-    "additionalRequestHeaders": [
-        "Authorization=Basic YzMxZmMxMDAtMjA5NS00Y2NmLThmN2YtODQ1ZDhhNzY1NjNiOmhCRVkzRkc1WDR3aU14Q3MyNjZXNDU2R2hNa3czVHZQTHQ1eTE2UnEyZko1ZjJiUFhUMXhkcWJCNEwxYndSN1Y="
-    ],
-    "enabled": true,
-    "fallbackToCSR": true
-}
