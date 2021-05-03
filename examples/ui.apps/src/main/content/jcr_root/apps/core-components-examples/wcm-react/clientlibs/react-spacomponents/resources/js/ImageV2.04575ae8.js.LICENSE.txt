@@ -1,0 +1,69 @@
+/*! ../../../AbstractCoreComponent */
+
+/*! ../../../routing/RoutedLink */
+
+/*! ./ImageV2IsEmptyFn */
+
+/*! ./common/placeholder */
+
+/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/objectSpread2 */
+
+/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/objectWithoutProperties */
+
+/*! ./src/authoring/image/v2/ImageV2 */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! all exports used */
+
+/*! exports provided: EditorPlaceHolder */
+
+/*! exports provided: ImageV2IsEmptyFn */
+
+/*! exports provided: RoutedLink */
+
+/*! exports provided: default */
+
+/*! exports provided: withStandardBaseCssClass, withConditionalPlaceHolder */
+
+/*! no static exports found */
+
+/*! react */
+
+/*! react-router-dom */
+
+/*!************************!*\
+        !*** external "react" ***!
+        \************************/
+
+/*!***********************************!*\
+        !*** external "react-router-dom" ***!
+        \***********************************/
+
+/*!************************************!*\
+        !*** ./src/common/placeholder.tsx ***!
+        \************************************/
+
+/*!************************************!*\
+        !*** ./src/routing/RoutedLink.tsx ***!
+        \************************************/
+
+/*!***************************************!*\
+        !*** ./src/AbstractCoreComponent.tsx ***!
+        \***************************************/
+
+/*!********************************************!*\
+        !*** ./src/authoring/image/v2/ImageV2.tsx ***!
+        \********************************************/
+
+/*!**********************************************!*\
+        !*** multi ./src/authoring/image/v2/ImageV2 ***!
+        \**********************************************/
+
+/*!****************************************************!*\
+        !*** ./src/authoring/image/v2/ImageV2IsEmptyFn.ts ***!
+        \****************************************************/
+
+/*!************************************************************************************************************************!*\
+  !*** /Users/raaijmak/workspace/aem-react-core-wcm-components/react-base-components/dist/authoring/image/v2/ImageV2.js ***!
+  \************************************************************************************************************************/

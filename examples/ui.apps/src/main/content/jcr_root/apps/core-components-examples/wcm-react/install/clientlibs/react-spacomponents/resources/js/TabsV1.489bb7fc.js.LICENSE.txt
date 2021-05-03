@@ -1,0 +1,61 @@
+/*! ../../../AbstractCoreContainerComponent */
+
+/*! ./TabsV1IsEmptyFn */
+
+/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/assertThisInitialized */
+
+/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/classCallCheck */
+
+/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/createClass */
+
+/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/createSuper */
+
+/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/inherits */
+
+/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/objectSpread2 */
+
+/*! ./src/container/tabs/v1/TabsV1.tsx */
+
+/*! @adobe/aem-react-editable-components */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! all exports used */
+
+/*! exports provided: TabsV1IsEmptyFn */
+
+/*! exports provided: default */
+
+/*! exports provided: withStandardBaseCssClass, withAuthorPanelSwitch */
+
+/*! no static exports found */
+
+/*! react */
+
+/*!************************!*\
+        !*** external "react" ***!
+        \************************/
+
+/*!******************************************!*\
+        !*** ./src/container/tabs/v1/TabsV1.tsx ***!
+        \******************************************/
+
+/*!************************************************!*\
+        !*** ./src/AbstractCoreContainerComponent.tsx ***!
+        \************************************************/
+
+/*!************************************************!*\
+        !*** multi ./src/container/tabs/v1/TabsV1.tsx ***!
+        \************************************************/
+
+/*!**************************************************!*\
+        !*** ./src/container/tabs/v1/TabsV1IsEmptyFn.ts ***!
+        \**************************************************/
+
+/*!*******************************************************!*\
+        !*** external "@adobe/aem-react-editable-components" ***!
+        \*******************************************************/
+
+/*!*********************************************************************************************************************!*\
+  !*** /Users/raaijmak/workspace/aem-react-core-wcm-components/react-spa-components/dist/container/tabs/v1/TabsV1.js ***!
+  \*********************************************************************************************************************/

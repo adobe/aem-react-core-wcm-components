@@ -1,0 +1,53 @@
+/*! ../../../AbstractCoreComponent */
+
+/*! ./DownloadV1IsEmptyFn */
+
+/*! ./common/placeholder */
+
+/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/objectSpread2 */
+
+/*! ./src/authoring/download/v1/DownloadV1 */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! all exports used */
+
+/*! exports provided: DownloadV1IsEmptyFn */
+
+/*! exports provided: EditorPlaceHolder */
+
+/*! exports provided: getDownloadV1Href, DownloadV1HeadingContent, DownloadV1HeadingElement, renderProperty, DownloadV1Details, DownloadV1Description, DownloadV1Link, DownloadV1Impl, default */
+
+/*! exports provided: withStandardBaseCssClass, withConditionalPlaceHolder */
+
+/*! no static exports found */
+
+/*! react */
+
+/*!************************!*\
+        !*** external "react" ***!
+        \************************/
+
+/*!************************************!*\
+        !*** ./src/common/placeholder.tsx ***!
+        \************************************/
+
+/*!***************************************!*\
+        !*** ./src/AbstractCoreComponent.tsx ***!
+        \***************************************/
+
+/*!**************************************************!*\
+        !*** ./src/authoring/download/v1/DownloadV1.tsx ***!
+        \**************************************************/
+
+/*!****************************************************!*\
+        !*** multi ./src/authoring/download/v1/DownloadV1 ***!
+        \****************************************************/
+
+/*!**********************************************************!*\
+        !*** ./src/authoring/download/v1/DownloadV1IsEmptyFn.ts ***!
+        \**********************************************************/
+
+/*!******************************************************************************************************************************!*\
+  !*** /Users/raaijmak/workspace/aem-react-core-wcm-components/react-base-components/dist/authoring/download/v1/DownloadV1.js ***!
+  \******************************************************************************************************************************/

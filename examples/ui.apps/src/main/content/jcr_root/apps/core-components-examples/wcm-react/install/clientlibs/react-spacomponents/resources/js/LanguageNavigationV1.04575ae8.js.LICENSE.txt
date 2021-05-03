@@ -1,0 +1,85 @@
+/*! ../../../AbstractCoreComponent */
+
+/*! ../../../routing/RoutedLink */
+
+/*! ../../navigation/v1/NavigationV1 */
+
+/*! ./LanguageNavigationV1IsEmptyFn */
+
+/*! ./NavigationV1IsEmptyFn */
+
+/*! ./common/placeholder */
+
+/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/objectSpread2 */
+
+/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/objectWithoutProperties */
+
+/*! ./src/layout/language-navigation/v1/LanguageNavigationV1 */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! all exports used */
+
+/*! exports provided: EditorPlaceHolder */
+
+/*! exports provided: LanguageNavigationV1IsEmptyFn */
+
+/*! exports provided: LanguageNavigationV1Link, LanguageNavigationV1Group, LanguageNavigationV1Item, default */
+
+/*! exports provided: NavigationV1IsEmptyFn */
+
+/*! exports provided: RoutedLink */
+
+/*! exports provided: determineIsActive, NavigationV1Group, NavigationV1Item, NavigationV1Impl, NavigationV1, default */
+
+/*! exports provided: withStandardBaseCssClass, withConditionalPlaceHolder */
+
+/*! no static exports found */
+
+/*! react */
+
+/*! react-router-dom */
+
+/*!************************!*\
+        !*** external "react" ***!
+        \************************/
+
+/*!***********************************!*\
+        !*** external "react-router-dom" ***!
+        \***********************************/
+
+/*!************************************!*\
+        !*** ./src/common/placeholder.tsx ***!
+        \************************************/
+
+/*!************************************!*\
+        !*** ./src/routing/RoutedLink.tsx ***!
+        \************************************/
+
+/*!***************************************!*\
+        !*** ./src/AbstractCoreComponent.tsx ***!
+        \***************************************/
+
+/*!***************************************************!*\
+        !*** ./src/layout/navigation/v1/NavigationV1.tsx ***!
+        \***************************************************/
+
+/*!***********************************************************!*\
+        !*** ./src/layout/navigation/v1/NavigationV1IsEmptyFn.ts ***!
+        \***********************************************************/
+
+/*!********************************************************************!*\
+        !*** ./src/layout/language-navigation/v1/LanguageNavigationV1.tsx ***!
+        \********************************************************************/
+
+/*!**********************************************************************!*\
+        !*** multi ./src/layout/language-navigation/v1/LanguageNavigationV1 ***!
+        \**********************************************************************/
+
+/*!****************************************************************************!*\
+        !*** ./src/layout/language-navigation/v1/LanguageNavigationV1IsEmptyFn.ts ***!
+        \****************************************************************************/
+
+/*!************************************************************************************************************************************************!*\
+  !*** /Users/raaijmak/workspace/aem-react-core-wcm-components/react-base-components/dist/layout/language-navigation/v1/LanguageNavigationV1.js ***!
+  \************************************************************************************************************************************************/

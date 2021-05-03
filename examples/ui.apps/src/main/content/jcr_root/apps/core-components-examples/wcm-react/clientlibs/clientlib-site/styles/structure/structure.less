@@ -1,0 +1,206 @@
+/*
+ *  Copyright 2018 Adobe
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+
+@cmp-react-examples-structure-header-height: 48*@px;
+@cmp-react-examples-structure-header-height-l: 118*@px;
+
+@cmp-react-examples-structure-main-grid-gap-s: @cmp-react-examples-spacing-4;
+@cmp-react-examples-structure-main-grid-gap-m: @cmp-react-examples-spacing-6;
+@cmp-react-examples-structure-main-grid-gap-l: @cmp-react-examples-spacing-7;
+
+@cmp-react-examples-structure-aside-content-width: 200*@px;
+@cmp-react-examples-structure-aside-width: @cmp-react-examples-structure-aside-content-width + (2 * @cmp-react-examples-spacing-5);
+@cmp-react-examples-structure-aside-width-l: @cmp-react-examples-structure-aside-content-width + (2 * @cmp-react-examples-spacing-8);
+
+.cmp-react-examples-structure {
+    > div > .aem-Grid,
+    > .aem-Grid {
+        .display-grid();
+        width: 100%;
+        max-width: @cmp-react-examples-breakpoint-l;
+        margin: 0 auto;
+        grid-template-areas: 'header' 'main' 'footer';
+        .grid-template-columns(1fr);
+        .grid-template-rows(@cmp-react-examples-structure-header-height 1fr auto);
+    }
+}
+
+.cmp-react-examples-structure__header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-area: header;
+    z-index: @cmp-react-examples-z-index-fixed;
+
+    width: 100vw;
+    height: @cmp-react-examples-structure-header-height;
+    margin: 0;
+    border-bottom: 1*@px solid @cmp-react-examples-color-gray-300;
+    padding: @cmp-react-examples-spacing-1 @cmp-react-examples-spacing-2;
+
+    background-color: @cmp-react-examples-color-background;
+}
+
+.cmp-react-examples-structure__aside {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+    grid-area: initial;
+    z-index: @cmp-react-examples-z-index-aside;
+
+    display: block;
+    width: @cmp-react-examples-structure-aside-width !important;
+    padding: @cmp-react-examples-structure-header-height-l @cmp-react-examples-spacing-5 0;
+
+    background-color: @cmp-react-examples-color-white;
+
+    .transform(translateX(-@cmp-react-examples-structure-aside-width));
+    .transition-transform(~'@{cmp-react-examples-animation-duration-2} ease-in-out');
+
+    &--open {
+        .transform(translateX(0));
+    }
+
+    > .aem-Grid,
+    > div > .aem-Grid{
+        height: 100%;
+        overflow-y: auto;
+        width: ~"calc(100% + @{cmp-react-examples-spacing-5})";
+    }
+}
+
+.cmp-react-examples-structure__main,
+.cmp-react-examples-structure__footer {
+    width: auto !important;
+    min-width: 0;
+    margin: @cmp-react-examples-spacing-8 0 !important;
+    padding: 0 (@cmp-react-examples-structure-main-grid-gap-s / 2);
+
+    .aem-GridColumn {
+        padding: 0 (@cmp-react-examples-structure-main-grid-gap-s / 2);
+    }
+}
+
+.cmp-react-examples-structure__main {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-area: main;
+}
+
+.cmp-react-examples-structure__footer {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-area: footer;
+
+    font-size: @cmp-react-examples-font-size-s;
+    text-align: right;
+    color: @cmp-react-examples-color-gray-800;
+}
+
+@media @cmp-react-examples-screen-s-min {
+    .cmp-react-examples-structure__aside {
+        width: @cmp-react-examples-structure-aside-width-l !important;
+        padding: @cmp-react-examples-structure-header-height-l @cmp-react-examples-spacing-8 0;
+        .transform(translateX(-@cmp-react-examples-structure-aside-width-l));
+
+        &--open {
+            .transform(translateX(0));
+        }
+
+        > .aem-Grid {
+            width: ~"calc(100% + @{cmp-react-examples-spacing-8})";
+        }
+    }
+}
+
+@media @cmp-react-examples-screen-m-min {
+    .cmp-react-examples-structure__main {
+        margin: @cmp-react-examples-spacing-8 (@cmp-react-examples-structure-main-grid-gap-m / 2) !important;
+
+        .aem-GridColumn {
+            padding: 0 (@cmp-react-examples-structure-main-grid-gap-m / 2);
+        }
+    }
+}
+
+@media @cmp-react-examples-screen-l-min {
+    .cmp-react-examples-structure {
+        > .aem-Grid {
+            grid-template-areas: 'header header' 'aside main' '. footer';
+            .grid-template-columns(@cmp-react-examples-structure-aside-width-l 1fr);
+            .grid-template-rows(@cmp-react-examples-spacing-9 1fr auto);
+        }
+    }
+
+    .cmp-react-examples-structure__header {
+        left: auto;
+
+        height: @cmp-react-examples-structure-header-height-l;
+        border-bottom: 0;
+        padding: @cmp-react-examples-spacing-8;
+
+        background: transparent;
+
+        pointer-events: none;
+    }
+
+    .cmp-react-examples-structure__aside,
+    .cmp-react-examples-structure__aside--open {
+        top: @cmp-react-examples-structure-header-height-l;
+        left: auto;
+
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1;
+        grid-area: aside;
+
+        display: block;
+        width: @cmp-react-examples-structure-aside-width-l !important;
+        padding-top: 0;
+
+        // prevents transition flash when resizing window across breakpoints
+        margin-left: @cmp-react-examples-structure-aside-width-l;
+        .transform(translateX(-@cmp-react-examples-structure-aside-width-l));
+        transition: none;
+    }
+
+    .cmp-react-examples-structure__main {
+        -ms-grid-column: 2;
+
+        margin: 0 @cmp-react-examples-spacing-7 @cmp-react-examples-spacing-8 @cmp-react-examples-spacing-4 !important;
+    }
+
+    .cmp-react-examples-structure__footer {
+        -ms-grid-column: 2;
+
+        margin: 0 @cmp-react-examples-spacing-7 @cmp-react-examples-spacing-8 @cmp-react-examples-spacing-4 !important;
+    }
+}
+
+@media @cmp-react-examples-screen-xl-min {
+    .cmp-react-examples-structure__main {
+        .aem-GridColumn {
+            padding: 0 (@cmp-react-examples-structure-main-grid-gap-l / 2);
+        }
+    }
+}

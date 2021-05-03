@@ -53,8 +53,8 @@
     <!-- M O D U L E S                                                          -->
     <!-- ====================================================================== -->
     <modules>
-<!--        <module>react-base-components</module>-->
-<!--        <module>react-spa-components</module>-->
+        <module>react-base-components</module>
+        <module>react-spa-components</module>
         <module>examples</module>
     </modules>
     
@@ -310,7 +310,7 @@
                 <plugin>
                     <groupId>org.apache.sling</groupId>
                     <artifactId>sling-maven-plugin</artifactId>
-                    <version>2.4.0</version>
+                    <version>2.4.2</version>
         
                     <configuration>
                         <slingUrl>http://${aem.host}:${aem.port}/system/console</slingUrl>
@@ -512,55 +512,32 @@ Bundle-DocURL:
         <profile>
         
             <id>autoInstallBundle</id>
-        
-            <!--
-                      To enable this feature for a bundle, the sling-maven-plugin
-                      (without configuration) needs to be included:
-      
-                      <plugin>
-                          <groupId>org.apache.sling</groupId>
-                          <artifactId>sling-maven-plugin</artifactId>
-                       </plugin>
-                  -->
-        
+     
             <activation>
-            
                 <activeByDefault>false</activeByDefault>
-        
             </activation>
         
             <build>
             
                 <pluginManagement>
-                
                     <plugins>
                     
                         <plugin>
-                        
                             <groupId>org.apache.sling</groupId>
-                        
                             <artifactId>sling-maven-plugin</artifactId>
-                        
                             <executions>
                             
                                 <execution>
-                                
                                     <id>install-bundle</id>
-                                
                                     <goals>
-                                    
                                         <goal>install</goal>
-                                
                                     </goals>
-                            
                                 </execution>
                         
                             </executions>
                     
                         </plugin>
-                
                     </plugins>
-            
                 </pluginManagement>
         
             </build>
@@ -867,6 +844,12 @@ Bundle-DocURL:
             <dependency>
                 <groupId>com.adobe.cq</groupId>
                 <artifactId>core.wcm.components.content</artifactId>
+                <type>zip</type>
+                <version>${core.wcm.components.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.adobe.cq</groupId>
+                <artifactId>core.wcm.components.all</artifactId>
                 <type>zip</type>
                 <version>${core.wcm.components.version}</version>
             </dependency>

@@ -1,0 +1,61 @@
+/*! ../../../AbstractCoreContainerComponent */
+
+/*! ./AccordionV1IsEmptyFn */
+
+/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/assertThisInitialized */
+
+/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/classCallCheck */
+
+/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/createClass */
+
+/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/createSuper */
+
+/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/inherits */
+
+/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/objectSpread2 */
+
+/*! ./src/container/accordion/v1/AccordionV1.tsx */
+
+/*! @adobe/aem-react-editable-components */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! all exports used */
+
+/*! exports provided: AccordionV1IsEmptyFn */
+
+/*! exports provided: default */
+
+/*! exports provided: withStandardBaseCssClass, withAuthorPanelSwitch */
+
+/*! no static exports found */
+
+/*! react */
+
+/*!************************!*\
+        !*** external "react" ***!
+        \************************/
+
+/*!************************************************!*\
+        !*** ./src/AbstractCoreContainerComponent.tsx ***!
+        \************************************************/
+
+/*!****************************************************!*\
+        !*** ./src/container/accordion/v1/AccordionV1.tsx ***!
+        \****************************************************/
+
+/*!*******************************************************!*\
+        !*** external "@adobe/aem-react-editable-components" ***!
+        \*******************************************************/
+
+/*!**********************************************************!*\
+        !*** multi ./src/container/accordion/v1/AccordionV1.tsx ***!
+        \**********************************************************/
+
+/*!************************************************************!*\
+        !*** ./src/container/accordion/v1/AccordionV1IsEmptyFn.ts ***!
+        \************************************************************/
+
+/*!*******************************************************************************************************************************!*\
+  !*** /Users/raaijmak/workspace/aem-react-core-wcm-components/react-spa-components/dist/container/accordion/v1/AccordionV1.js ***!
+  \*******************************************************************************************************************************/

@@ -1,0 +1,53 @@
+/*! ../../../AbstractCoreComponent */
+
+/*! ./SeparatorV1IsEmptyFn */
+
+/*! ./common/placeholder */
+
+/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/objectSpread2 */
+
+/*! ./src/authoring/separator/v1/SeparatorV1 */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! all exports used */
+
+/*! exports provided: EditorPlaceHolder */
+
+/*! exports provided: SeparatorV1IsEmptyFn */
+
+/*! exports provided: default */
+
+/*! exports provided: withStandardBaseCssClass, withConditionalPlaceHolder */
+
+/*! no static exports found */
+
+/*! react */
+
+/*!************************!*\
+        !*** external "react" ***!
+        \************************/
+
+/*!************************************!*\
+        !*** ./src/common/placeholder.tsx ***!
+        \************************************/
+
+/*!***************************************!*\
+        !*** ./src/AbstractCoreComponent.tsx ***!
+        \***************************************/
+
+/*!****************************************************!*\
+        !*** ./src/authoring/separator/v1/SeparatorV1.tsx ***!
+        \****************************************************/
+
+/*!******************************************************!*\
+        !*** multi ./src/authoring/separator/v1/SeparatorV1 ***!
+        \******************************************************/
+
+/*!************************************************************!*\
+        !*** ./src/authoring/separator/v1/SeparatorV1IsEmptyFn.ts ***!
+        \************************************************************/
+
+/*!********************************************************************************************************************************!*\
+  !*** /Users/raaijmak/workspace/aem-react-core-wcm-components/react-base-components/dist/authoring/separator/v1/SeparatorV1.js ***!
+  \********************************************************************************************************************************/

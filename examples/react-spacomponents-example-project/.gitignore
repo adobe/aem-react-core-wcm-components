@@ -22,6 +22,7 @@ node_modules
 
 actions/common/**/*
 actions/common/**
+.vscode/**/*
 
 react-app-env.d.ts
 dist
