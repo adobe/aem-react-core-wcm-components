@@ -1,6 +1,27 @@
 {
-  "name": "react-spa-example",
+  "name": "aem-core-components-react-spa",
   "version": "0.1.0",
+  
+  "scripts": {
+    "build": "cross-env NODE_ENV=development npm-run-all build-css build-js",
+    "build-js": "node scripts/build.js && node scripts/build-express.js",
+    "build-adobeio": "cross-env NODE_ENV=development node scripts/build-adobeio.js",
+    "build-css": "node-sass-chokidar --source-map-embed --include-path ./src --include-path ./node_modules src/ -o src/ --output-style compressed",
+    "watch-css": "node-sass-chokidar --source-map-embed --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive --output-style expanded",
+    "start-css": "npm-run-all -s build-css watch-css",
+    "start-ssr-express": "node dist/express/express.js",
+    "start-ssr-ioruntime": "cross-env NODE_ENV=development aio app run --local",
+    "deploy-to-runtime": "cross-env NODE_ENV=production aio app deploy",
+    "start-aempack": "node scripts/aempack.js",
+    "aempack": "cross-env PROXYHOST=local.aemcomponents.dev NODE_ENV=development npm-run-all -p watch-css start-aempack",
+    "aempack-ssr": "cross-env DEVELOPSSR=true  NODE_ENV=development npm-run-all -p watch-css start-aempack",
+    "aempack-pub": "cross-env PROXYHOST=local.aemcomponents.dev AEMPORT=4503 cross-env NODE_ENV=development npm-run-all -p watch-css start-aempack",
+    "aempack-pub-ssr": "cross-env DEVELOPSSR=true npm-run-all -p aempack-pub",
+    "install:link-deps": "npm install && npm run link-deps",
+    "link-deps": "npm link @adobe/aem-spa-page-model-manager && npm link @adobe/cq-spa-component-mapping && npm link @adobe/aem-react-editable-components",
+    "clean": "shx rm -rf ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm-react/clientlibs/react-spacomponents/resources && shx rm -rf coverage/ dist/ src/tsconfig.types.tsbuildinfo"
+  },
+  
   "dependencies": {
     "@adobe/aem-core-components-react-base": "file:../../react-base-components",
     "@adobe/aem-core-components-react-spa": "file:../../react-spa-components",
@@ -105,26 +126,7 @@
     "@adobe/aio-cli": "^6.0.0",
     "@adobe/wskdebug": "^1.1.3"
   },
-  "scripts": {
-    "build": "cross-env NODE_ENV=development npm-run-all build-css build-js",
-    "build:production": "cross-env NODE_ENV=production npm-run-all build-css build-js",
-    "build-js": "node scripts/build.js && node scripts/build-express.js",
-    "build-adobeio": "cross-env NODE_ENV=production node scripts/build-adobeio.js",
-    "build-css": "node-sass-chokidar --source-map-embed --include-path ./src --include-path ./node_modules src/ -o src/ --output-style compressed",
-    "watch-css": "node-sass-chokidar --source-map-embed --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive --output-style expanded",
-    "start-css": "npm-run-all -s build-css watch-css",
-    "start-ssr-express": "node serverBuild/express.js",
-    "start-ssr-ioruntime": "cross-env NODE_ENV=development aio app run --local",
-    "deploy-to-runtime": "cross-env NODE_ENV=production aio app deploy",
-    "start-aempack": "node scripts/aempack.js",
-    "aempack": "cross-env PROXYHOST=local.aemcomponents.dev NODE_ENV=development npm-run-all -p watch-css start-aempack",
-    "aempack-ssr": "cross-env DEVELOPSSR=true  NODE_ENV=development npm-run-all -p watch-css start-aempack",
-    "aempack-pub": "cross-env PROXYHOST=local.aemcomponents.dev AEMPORT=4503 cross-env NODE_ENV=development npm-run-all -p watch-css start-aempack",
-    "aempack-pub-ssr": "cross-env DEVELOPSSR=true npm-run-all -p aempack-pub",
-    "install:link-deps": "npm install && npm run link-deps",
-    "link-deps": "npm link @adobe/aem-spa-page-model-manager && npm link @adobe/cq-spa-component-mapping && npm link @adobe/aem-react-editable-components",
-    "clean": "shx rm -rf ../ui.apps/src/content/jcr_root/apps/core-components-examples/wcm-react/clientlibs/react-spacomponents/resources && shx rm -rf coverage/ dist/ src/tsconfig.types.tsbuildinfo"
-  },
+ 
   "eslintConfig": {
     "extends": "react-app"
   },

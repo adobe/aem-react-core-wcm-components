@@ -17,7 +17,7 @@
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 process.env.server = 'true';
-const prodConfig = require('./webpack.config.prod');
+const devConfig = require('./webpack.config.dev');
 const webpack = require('webpack');
 const path = require('path');
 const getClientEnvironment = require('./env');
@@ -44,7 +44,7 @@ Object.assign(env.stringified['process.env'], {
     IS_SERVER: true,
 });
 
-module.exports = Object.assign({}, prodConfig, {
+module.exports = Object.assign({}, devConfig, {
     target: 'node',
     entry: [paths.preRenderServer],
     output: {

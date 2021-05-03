@@ -18,17 +18,15 @@ process.env.BABEL_ENV = process.env.NODE_ENV;
 
 const webpack = require('webpack');
 
-const isDevelopment = process.env.NODE_ENV === 'development';
 
-const config = isDevelopment?  require('../config/webpack.config.dev') : require('../config/webpack.config.prod');
+const config = require('../config/webpack.config.dev');
 
-const identifier = isDevelopment ? '(development)' : '(production)';
 
-console.log("building bundle "+ identifier + "..")
+console.log("building bundle ..")
 webpack(config, (err)=> {
-    console.log("completed building bundle."+ identifier + "");
+    console.log("completed building bundle.");
     if(err != null){
-        console.log("Error building bundle"+ identifier + "!");
+        console.log("Error building bundle!");
         throw err;
     }
 });

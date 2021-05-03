@@ -127,31 +127,34 @@ public class SpaPageBindingsProviderImpl implements SpaPageBindingsProvider, Fil
             ))){
                 SSRResponse ssrResponse = ssrRenderingService.getSSRRenderedResponse(request, hierarchyPage);
     
-                SSR_RESPONSE.set(ssrResponse);
-                SSR_ACTIVATED_FLAG.set(true);
-                
-                if (ssrResponse != null && ssrResponse.getStatusCode() >= 400) {
+                if(ssrResponse != null && ssrResponse.getPayload() != null && ssrResponse.getPayload().getChunkNames() != null){
+                    SSR_RESPONSE.set(ssrResponse);
+                    SSR_ACTIVATED_FLAG.set(true);
+    
+                    if (ssrResponse.getStatusCode() >= 400) {
         
-                    String error = "Rendering App server-side finished with error code: " + ssrResponse.getStatusCode()
-                            + " and message: " +  ((ssrResponse.getPayload() != null)  ? ssrResponse.getPayload().getHtml() : "");
-                    if (ssrRenderingService.isFallbackEnabled()) {
-                        log.error(error);
-                        SSR_ACTIVATED_FLAG.set(false);
-                        CSR_FALLBACK_ACTIVATED_FLAG.set(true);
-                        
-                    } else {
-                        throw new IOException(error);
+                        String error = "Rendering App server-side finished with error code: " + ssrResponse.getStatusCode()
+                                + " and message: " +  ((ssrResponse.getPayload() != null)  ? ssrResponse.getPayload().getHtml() : "");
+                        if (ssrRenderingService.isFallbackEnabled()) {
+                            log.error(error);
+                            SSR_ACTIVATED_FLAG.set(false);
+                            CSR_FALLBACK_ACTIVATED_FLAG.set(true);
+            
+                        } else {
+                            throw new IOException(error);
+                        }
+                    }else{
+                        log.info("Successfully computed SSR");
                     }
-                }else if(ssrResponse == null){
+                }else{
                     if (ssrRenderingService.isFallbackEnabled()) {
                         SSR_ACTIVATED_FLAG.set(false);
                         CSR_FALLBACK_ACTIVATED_FLAG.set(true);
                     }else{
                         throw new SSRException("failed to compute server side rendered response!");
                     }
-                }else{
-                    log.info("Successfully computed SSR");
                 }
+            
             }
             
         } else {
