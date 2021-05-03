@@ -38,19 +38,19 @@ import { ServerParameters } from "./ServerPayloadModel";
 
 const renderModelToHTMLString = (model:PageModel, parameters:ServerParameters) => {
 
-    const isInEditor = parameters["wcm-mode"] && parameters["wcm-mode"] === 'EDIT' || parameters["wcm-mode"] === 'PREVIEW';
+    const isInEditor = parameters["wcmmode"] && parameters["wcmmode"] === 'EDIT' || parameters["wcmmode"] === 'PREVIEW';
 
     clearChunks();
     let rawChunkNames:string[] = [];
     const html = ReactDOMServer.renderToString(
         <ReportChunks report={chunkName => !!chunkName && rawChunkNames.push(chunkName)}>
-            <StaticRouter location={parameters["request-url"]} context={{}}>
+            <StaticRouter location={parameters.pagePath} context={{}}>
                 <EditorContext.Provider value={isInEditor}>
                     <App
                         cqChildren={model[":children"] || {}}
                         cqItems={model[":items"] || {}}
                         cqItemsOrder={model[":itemsOrder"] || []}
-                        cqPath={parameters["page-path"]}
+                        cqPath={parameters.pagePath}
                         isInEditor={isInEditor}
                     />
                 </EditorContext.Provider>
@@ -77,15 +77,15 @@ const renderModelToHTMLString = (model:PageModel, parameters:ServerParameters) =
     }
 };
 
-const preRender = (pageModel:PageModel, parameters:ServerParameters) => {
+const preRender = (parameters:ServerParameters) => {
 
     return new Promise((resolve, reject) => {
         return ModelManager.initialize({
-            path: parameters["root-page-path"],
-            model: pageModel,
+            path: parameters.pageRoot,
+            model: parameters.data,
             modelClient: new ModelClient()
         }).then((resolvedModel) => {
-            resolve(renderModelToHTMLString(pageModel, parameters));
+            resolve(renderModelToHTMLString(parameters.data, parameters));
         }).catch((error) => {
             reject(error);
         });

@@ -16,11 +16,15 @@
 package com.adobe.cq.wcm.core.examples.react.components.models.impl.core;
 
 import com.adobe.cq.wcm.core.components.models.NavigationItem;
+import com.adobe.cq.wcm.core.components.models.datalayer.ComponentData;
 import com.adobe.cq.wcm.core.examples.react.components.models.RoutedModel;
 import com.adobe.cq.wcm.core.examples.react.components.utils.RouterUtil;
 import com.day.cq.wcm.api.Page;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.experimental.Delegate;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Calendar;
+import java.util.List;
 
 
 public class RoutedNavigationItem implements NavigationItem, RoutedModel {
@@ -29,8 +33,7 @@ public class RoutedNavigationItem implements NavigationItem, RoutedModel {
         Page getPage();
         String getExportedType();
     }
-
-    @Delegate(excludes = Overrides.class) @JsonIgnore
+    
     private NavigationItem delegate;
 
     public RoutedNavigationItem(NavigationItem delegate){
@@ -48,7 +51,71 @@ public class RoutedNavigationItem implements NavigationItem, RoutedModel {
 
         return isRouted;
     }
+    
+    @Override
+    public boolean isActive() {
+        return delegate.isActive();
+    }
+    
+    @Override
+    public List<NavigationItem> getChildren() {
+        return delegate.getChildren();
+    }
+    
+    @Override
+    public int getLevel() {
+        return delegate.getLevel();
+    }
+    
+    
+    @Override
+    @Deprecated
 
+    public String getURL() {
+        return delegate.getURL();
+    }
+    
+    @Override
+
+    public String getTitle() {
+        return delegate.getTitle();
+    }
+    
+    @Override
+
+    public String getDescription() {
+        return delegate.getDescription();
+    }
+    
+    @Override
+    public Calendar getLastModified() {
+        return delegate.getLastModified();
+    }
+    
+    @Override
+
+    public String getPath() {
+        return delegate.getPath();
+    }
+    
+    @Override
+
+    public String getName() {
+        return delegate.getName();
+    }
+    
+    @Override
+
+    public String getId() {
+        return delegate.getId();
+    }
+    
+    @Override
+    @JsonProperty("dataLayer")
+    public ComponentData getData() {
+        return delegate.getData();
+    }
+    
     @JsonIgnore
     public Page getPage(){
         return delegate.getPage();

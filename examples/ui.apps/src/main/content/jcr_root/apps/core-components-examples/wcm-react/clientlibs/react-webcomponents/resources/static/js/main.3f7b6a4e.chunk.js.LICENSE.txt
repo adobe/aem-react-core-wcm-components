@@ -1,0 +1,57 @@
+/*! ../../../AbstractCoreComponent */
+
+/*! ../../../routing/RoutedLink */
+
+/*! ./ButtonV1IsEmptyFn */
+
+/*! ./common/placeholder */
+
+/*! ./src/authoring/button/v1/ButtonV1 */
+
+/*! exports provided: ButtonV1Content, default */
+
+/*! exports provided: ButtonV1IsEmptyFn */
+
+/*! exports provided: EditorPlaceHolder */
+
+/*! exports provided: RoutedLink */
+
+/*! exports provided: withStandardBaseCssClass, withConditionalPlaceHolder */
+
+/*! no static exports found */
+
+/*! react */
+
+/*! react-router-dom */
+
+/*!************************!*\
+        !*** external "react" ***!
+        \************************/
+
+/*!***********************************!*\
+        !*** external "react-router-dom" ***!
+        \***********************************/
+
+/*!************************************!*\
+        !*** ./src/common/placeholder.tsx ***!
+        \************************************/
+
+/*!************************************!*\
+        !*** ./src/routing/RoutedLink.tsx ***!
+        \************************************/
+
+/*!***************************************!*\
+        !*** ./src/AbstractCoreComponent.tsx ***!
+        \***************************************/
+
+/*!**********************************************!*\
+        !*** ./src/authoring/button/v1/ButtonV1.tsx ***!
+        \**********************************************/
+
+/*!************************************************!*\
+        !*** multi ./src/authoring/button/v1/ButtonV1 ***!
+        \************************************************/
+
+/*!******************************************************!*\
+        !*** ./src/authoring/button/v1/ButtonV1IsEmptyFn.ts ***!
+        \******************************************************/

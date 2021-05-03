@@ -1,0 +1,8 @@
+{
+    "host": "http://localhost:3233/api/v1/web/guest/aem-core-components-react-spa-0.1.0/ssr",
+    "additionalRequestHeaders": [
+    
+    ],
+    "enabled": true,
+    "fallbackToCSR": true
+}

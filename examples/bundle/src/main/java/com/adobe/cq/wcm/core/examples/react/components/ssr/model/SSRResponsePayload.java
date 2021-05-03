@@ -16,11 +16,8 @@
 package com.adobe.cq.wcm.core.examples.react.components.ssr.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-@SuppressFBWarnings
 public class SSRResponsePayload{
     private String html;
     private String[] chunkNames;

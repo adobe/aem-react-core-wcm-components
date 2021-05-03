@@ -18,6 +18,7 @@ package com.adobe.cq.wcm.core.examples.react.components.ssr.impl;
 import com.adobe.cq.wcm.core.examples.react.components.models.HierarchyPage;
 import com.adobe.cq.wcm.core.examples.react.components.ssr.SSRRenderingService;
 import com.adobe.cq.wcm.core.examples.react.components.ssr.model.SSRResponse;
+import com.adobe.cq.wcm.core.examples.react.components.ssr.model.SSRResponsePayload;
 import com.day.cq.wcm.api.WCMMode;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -40,6 +41,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 @Component(
         service = {SSRRenderingService.class},
@@ -47,36 +50,44 @@ import java.io.IOException;
 )
 @Designate(ocd = SSRRenderingServiceImpl.Configuration.class)
 public class SSRRenderingServiceImpl implements SSRRenderingService {
-    
+
     private static final Logger log = LoggerFactory.getLogger(SSRRenderingServiceImpl.class);
     
-    private static final String DEFAULT_HOST = "http://localhost:4200/prerender";
+    private static final String DEFAULT_HOST = "http://localhost:3233/api/v1/web/guest/aem-core-components-react-spa-0.1.0/ssr";
     
     @Reference
     private HttpClientBuilderFactory clientBuilderFactory;
-    
-    
+
+    private final Map<String,String> additionalRequestHeaders = new HashMap<>();
+
     private boolean fallbackToCSR;
     private String host;
     private boolean isEnabled;
-    
+
     @Activate
     protected void activate(Configuration configuration) {
         host = configuration.host();
         fallbackToCSR = configuration.fallbackToCSR();
         isEnabled = configuration.enabled();
+        
+        for (String rawRequestHeaderField: configuration.additionalRequestHeaders()) {
+            String[] requestHeaderArray = rawRequestHeaderField.trim().split("=");
+            if (requestHeaderArray.length == 2) {
+                additionalRequestHeaders.put(requestHeaderArray[0], requestHeaderArray[1]);
+            }
+        }
     }
-    
+
     @Override
     public boolean isEnabled() {
         return isEnabled;
     }
-    
+
     @Override
     public boolean isFallbackEnabled() {
         return fallbackToCSR;
     }
-    
+
     @Override
     public SSRResponse getSSRRenderedResponse(SlingHttpServletRequest request, HierarchyPage requestedPage) throws SSRException {
 
@@ -86,14 +97,18 @@ public class SSRRenderingServiceImpl implements SSRRenderingService {
             CloseableHttpClient client = clientBuilderFactory.newBuilder().build();
 
             HierarchyPage rootPage = requestedPage.getRootModel();
-            HttpPost postMethod = new HttpPost(host);
-            
-            addMetaDataHeaders(postMethod, request, requestedPage, rootPage);
-            
+            HttpPost postMethod = new HttpPost(host + request.getPathInfo());
+
+            addMetaDataHeaders(postMethod, request, rootPage);
+
             final String payload = getModelJSON( rootPage);
             StringEntity requestData = new StringEntity(payload, ContentType.APPLICATION_JSON);
             postMethod.setEntity(requestData);
-
+    
+            for (Map.Entry<String, String> header : additionalRequestHeaders.entrySet()) {
+                postMethod.setHeader(header.getKey(), header.getValue());
+            }
+            
             CloseableHttpResponse preRenderedResponse = client.execute(postMethod);
             return parseOutput(preRenderedResponse);
 
@@ -107,44 +122,35 @@ public class SSRRenderingServiceImpl implements SSRRenderingService {
             }
         }
     }
-    
-    private void addMetaDataHeaders(HttpPost postMethod, SlingHttpServletRequest request, HierarchyPage requestedPage, HierarchyPage rootPage) {
-    
+
+    private void addMetaDataHeaders(HttpPost postMethod, SlingHttpServletRequest request, HierarchyPage rootPage) {
+
         String wcmMode = WCMMode.fromRequest(request).toString();
         
-        String pagePath = requestedPage.getExportedPath();
         String modelRootUrl = rootPage.getRootUrl();
-        String requestUrl = request.getRequestURI();
-        String rootPagePath = rootPage.getExportedPath();
-        
+     
         postMethod.addHeader("wcm-mode", wcmMode);
-        postMethod.addHeader("page-path", pagePath);
-        postMethod.addHeader("model-root-url", modelRootUrl);
-        postMethod.addHeader("request-url", requestUrl);
-        postMethod.addHeader("root-page-path", rootPagePath);
-       
+        postMethod.addHeader("page-model-root-url", modelRootUrl);
     }
-    
+
     private SSRResponse parseOutput(CloseableHttpResponse preRenderedResponse) throws IOException {
         String responseBody = EntityUtils.toString(preRenderedResponse.getEntity());
 
         ObjectMapper mapper = new ObjectMapper();
-        SSRResponse responseParsed = mapper.readValue(responseBody, SSRResponse.class);
-
+        SSRResponsePayload responseParsed = mapper.readValue(responseBody, SSRResponsePayload.class);
+    
         int statusCode = preRenderedResponse.getStatusLine().getStatusCode();
-        responseParsed.setStatusCode(statusCode);
-
-        return responseParsed;
+        return new SSRResponse(statusCode,responseParsed);
     }
-    
-    
+
+
     private String getModelJSON(HierarchyPage rootPage) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.writeValueAsString(rootPage);
     }
-    
-    
-    
+
+
+
     @ObjectClassDefinition(name = "Single Page Applications - Server Side Rendering Configuration",
             description = "URLs of the servers responsible for returning the HTML based on the model data send in request")
     @interface Configuration {
@@ -154,7 +160,10 @@ public class SSRRenderingServiceImpl implements SSRRenderingService {
                 type = AttributeType.STRING
         )
         String host() default DEFAULT_HOST;
-
+    
+        @AttributeDefinition(name = "Additional request headers", description = "Additional headers to be added to the request sent to the remote endpoint. Pattern: key=value", defaultValue = "")
+        String[] additionalRequestHeaders();
+        
         @AttributeDefinition(
                 name = "Fall back to client side configuration",
                 type = AttributeType.BOOLEAN

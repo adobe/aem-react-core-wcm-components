@@ -28,7 +28,7 @@ import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.factory.ModelFactory;
 
-import javax.annotation.Nonnull;
+
 import javax.annotation.PostConstruct;
 import javax.servlet.ServletException;
 import java.io.IOException;
@@ -38,7 +38,7 @@ import java.io.IOException;
 @Exporter(name = ExporterConstants.SLING_MODEL_EXPORTER_NAME, extensions = ExporterConstants.SLING_MODEL_EXTENSION)
 public class DemoJsonExporterImpl extends AbstractDemoComponent {
     
-    static final String RESOURCE_TYPE = "core-components-examples/wcm/react/components/demo/json";
+    static final String RESOURCE_TYPE = "core-components-examples/wcm-react/components/demo/json";
     
     @SlingObject
     private SlingHttpServletResponse response;
@@ -66,7 +66,7 @@ public class DemoJsonExporterImpl extends AbstractDemoComponent {
     }
     
     
-    @Nonnull
+
     @Override
     public String getExportedType() {
         return RESOURCE_TYPE;

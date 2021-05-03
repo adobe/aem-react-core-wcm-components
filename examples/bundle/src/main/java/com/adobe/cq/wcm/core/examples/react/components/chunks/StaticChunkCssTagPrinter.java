@@ -26,9 +26,10 @@ import javax.servlet.ServletException;
 import java.io.IOException;
 
 @Component(
+        immediate = true,
         service = {Servlet.class},
         property = {
-                "sling.servlet.resourceTypes=core-components-examples/wcm/react/chunks/static-css",
+                "sling.servlet.resourceTypes=core-components-examples/wcm-react/chunks/static-css",
                 "sling.servlet.methods=GET"
         }
 )

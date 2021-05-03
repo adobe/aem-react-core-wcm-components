@@ -81,9 +81,9 @@ const resolveModule = (resolveFn, filePath) => {
     return resolveFn(`${filePath}.js`);
 };
 
-const clientLibTarget = 'core-components-examples/wcm/react/clientlibs/react-spacomponents/resources';
+const clientLibTarget = 'core-components-examples/wcm-react/clientlibs/react-spacomponents/resources';
 const clientLibRelativePath = '/apps/' + clientLibTarget;
-const clientLibRoot = resolveApp('../ui.apps/src/content/jcr_root' + clientLibRelativePath);
+const clientLibRoot = resolveApp('../ui.apps/src/main/content/jcr_root' + clientLibRelativePath);
 
 // config after eject: we're in ./config/
 module.exports = {
@@ -92,10 +92,11 @@ module.exports = {
     appBuild: resolveApp('build'),
     appDist: resolveApp('dist'),
     serverBuild: resolveApp('serverBuild'),
-    serverDist: resolveApp('dist/server'),
+    runtimeBuild: resolveApp('actions') + '/common',
+    serverDist: resolveApp('dist/express'),
     appIndexJs: resolveModule(resolveApp, 'src/index'),
-    preRenderServer: resolveModule(resolveApp, 'src/server/adobeio'),
-    appServerIndexJs: resolveModule(resolveApp, 'src/server/index'),
+    preRenderServer: resolveModule(resolveApp, 'src/server/prerender'),
+    appServerIndexJs: resolveModule(resolveApp, 'src/server/express'),
     appPackageJson: resolveApp('package.json'),
     appSrc: resolveApp('src'),
     appNodeModules: resolveApp('node_modules'),

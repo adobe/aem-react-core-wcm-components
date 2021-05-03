@@ -14,10 +14,17 @@
  *  limitations under the License.
  */
 
-const prodConfig = require('./webpack.config.prod');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+
+process.env.server = 'true';
+const devConfig = require('./webpack.config.dev');
 const webpack = require('webpack');
+const path = require('path');
 const getClientEnvironment = require('./env');
 const paths = require('./paths');
+const aliases = require("./aliases");
+const PnpWebpackPlugin = require('pnp-webpack-plugin');
+
 const ManifestPlugin = require('webpack-manifest-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -37,12 +44,12 @@ Object.assign(env.stringified['process.env'], {
     IS_SERVER: true,
 });
 
-module.exports = Object.assign({}, prodConfig, {
+module.exports = Object.assign({}, devConfig, {
     target: 'node',
     entry: [paths.preRenderServer],
     output: {
-        path: paths.serverBuild,
-        filename: 'adobeio.js',
+        path: paths.runtimeBuild,
+        filename: 'app.js',
         libraryTarget: 'commonjs2',
     },
     optimization: {},
@@ -56,7 +63,6 @@ module.exports = Object.assign({}, prodConfig, {
         cluster: true,
     },
     plugins: [
-
         new webpack.DefinePlugin(env.stringified),
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output
@@ -65,19 +71,9 @@ module.exports = Object.assign({}, prodConfig, {
             chunkFilename: 'static/css/[name].[contenthash:8].chunk.css',
         }),
 
-
-        new ManifestPlugin({
-            fileName: 'asset-manifest.json',
-            publicPath: publicPath,
-        }),
-
         new webpack.optimize.LimitChunkCountPlugin({
             maxChunks: 1,
         }),
-
-
         new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-
-
     ].filter(Boolean),
 });

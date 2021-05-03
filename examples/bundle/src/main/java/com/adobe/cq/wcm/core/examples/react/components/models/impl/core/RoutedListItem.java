@@ -17,15 +17,15 @@
 package com.adobe.cq.wcm.core.examples.react.components.models.impl.core;
 
 import com.adobe.cq.wcm.core.components.models.ListItem;
+import com.adobe.cq.wcm.core.components.models.datalayer.ComponentData;
 import com.adobe.cq.wcm.core.examples.react.components.models.RoutedModel;
 import com.adobe.cq.wcm.core.examples.react.components.utils.RouterUtil;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.experimental.Delegate;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Calendar;
 
 public class RoutedListItem implements ListItem, RoutedModel {
     
-    @Delegate(types = ListItem.class) @JsonIgnore
     private final ListItem delegate;
     
     public RoutedListItem(ListItem delegate){
@@ -35,5 +35,58 @@ public class RoutedListItem implements ListItem, RoutedModel {
     @Override
     public boolean isRouted() {
        return RouterUtil.isUrlRouted(delegate.getPath());
+    }
+
+    @Override
+    @Deprecated
+
+    public String getURL() {
+        return delegate.getURL();
+    }
+    
+    @Override
+
+    public String getTitle() {
+        return delegate.getTitle();
+    }
+    
+    @Override
+
+    public String getDescription() {
+        return delegate.getDescription();
+    }
+    
+    @Override
+    public Calendar getLastModified() {
+        return delegate.getLastModified();
+    }
+    
+    @Override
+
+    public String getPath() {
+        return delegate.getPath();
+    }
+    
+    @Override
+
+    public String getName() {
+        return delegate.getName();
+    }
+    
+    @Override
+
+    public String getId() {
+        return delegate.getId();
+    }
+    
+    @Override
+    @JsonProperty("dataLayer")
+    public ComponentData getData() {
+        return delegate.getData();
+    }
+    
+    @Override
+    public String getExportedType() {
+        return delegate.getExportedType();
     }
 }

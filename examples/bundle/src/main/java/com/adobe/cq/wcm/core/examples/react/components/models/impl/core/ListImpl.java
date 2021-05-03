@@ -20,8 +20,10 @@ import com.adobe.cq.export.json.ComponentExporter;
 import com.adobe.cq.export.json.ExporterConstants;
 import com.adobe.cq.wcm.core.components.models.List;
 import com.adobe.cq.wcm.core.components.models.ListItem;
+import com.adobe.cq.wcm.core.components.models.datalayer.ComponentData;
+import com.day.cq.wcm.api.Page;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.experimental.Delegate;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
@@ -41,16 +43,8 @@ import static com.adobe.cq.wcm.core.examples.react.components.models.impl.core.L
 @Exporter(name = ExporterConstants.SLING_MODEL_EXPORTER_NAME, extensions = ExporterConstants.SLING_MODEL_EXTENSION)
 public class ListImpl implements List {
     
+    public static final String RESOURCE_TYPE = "core-components-examples/wcm-react/components/list";
     
-    private interface Excludes{
-        boolean linkItems();
-        String getExportedType();
-        Collection<ListItem> getListItems();
-    }
-    
-    public static final String RESOURCE_TYPE = "core-components-examples/wcm/react/components/list";
-    
-    @Delegate(types = List.class,excludes = ListImpl.Excludes.class)
     @Self
     @Via(type = ResourceSuperType.class)
     List delegate;
@@ -65,6 +59,38 @@ public class ListImpl implements List {
         return delegate.linkItems();
     }
     
+    @Override
+    @Deprecated
+    public Collection<Page> getItems() {
+        return delegate.getItems();
+    }
+    
+    @Override
+    public boolean showDescription() {
+        return delegate.showDescription();
+    }
+    
+    @Override
+    public boolean showModificationDate() {
+        return delegate.showModificationDate();
+    }
+    
+    @Override
+    public String getDateFormatString() {
+        return delegate.getDateFormatString();
+    }
+    
+    @Override
+
+    public String getId() {
+        return delegate.getId();
+    }
+    
+    @Override
+    @JsonProperty("dataLayer")
+    public ComponentData getData() {
+        return delegate.getData();
+    }
     
     @Override
     public String getExportedType() {

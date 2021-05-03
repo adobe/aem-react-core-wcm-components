@@ -35,9 +35,11 @@ package com.adobe.cq.wcm.core.examples.react.components.models.impl.core;
 import com.adobe.cq.export.json.ComponentExporter;
 import com.adobe.cq.export.json.ExporterConstants;
 import com.adobe.cq.wcm.core.components.models.Button;
+import com.adobe.cq.wcm.core.components.models.datalayer.ComponentData;
 import com.adobe.cq.wcm.core.examples.react.components.models.RoutedModel;
 import com.adobe.cq.wcm.core.examples.react.components.utils.RouterUtil;
-import lombok.experimental.Delegate;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
@@ -57,13 +59,9 @@ import static com.adobe.cq.wcm.core.examples.react.components.models.impl.core.B
 @Exporter(name = ExporterConstants.SLING_MODEL_EXPORTER_NAME, extensions = ExporterConstants.SLING_MODEL_EXTENSION)
 public class ButtonImpl implements Button, RoutedModel {
     
-    private interface Excludes{
-        String getExportedType();
-    }
+
+    public static final String RESOURCE_TYPE = "core-components-examples/wcm-react/components/button";
     
-    public static final String RESOURCE_TYPE = "core-components-examples/wcm/react/components/button";
-    
-    @Delegate(types = Button.class,excludes = Excludes.class)
     @Self
     @Via(type = ResourceSuperType.class)
     Button delegate;
@@ -82,6 +80,35 @@ public class ButtonImpl implements Button, RoutedModel {
         return RouterUtil.isUrlRouted(link);
     }
     
+    @Override
+    public String getText() {
+        return delegate.getText();
+    }
     
+    @Override
+    public String getLink() {
+        return delegate.getLink();
+    }
     
+    @Override
+    public String getIcon() {
+        return delegate.getIcon();
+    }
+    
+    @Override
+    public String getAccessibilityLabel() {
+        return delegate.getAccessibilityLabel();
+    }
+    
+    @Override
+
+    public String getId() {
+        return delegate.getId();
+    }
+    
+    @Override
+    @JsonProperty("dataLayer")
+    public ComponentData getData() {
+        return delegate.getData();
+    }
 }

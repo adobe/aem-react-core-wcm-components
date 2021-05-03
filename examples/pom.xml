@@ -38,7 +38,9 @@
         <module>react-webcomponents-example-project</module>
         <module>react-spacomponents-example-project</module>
         <module>bundle</module>
+        <module>ui.apps.structure</module>
         <module>ui.apps</module>
+        <module>ui.config</module>
         <module>ui.content</module>
         <module>all</module>
     </modules>

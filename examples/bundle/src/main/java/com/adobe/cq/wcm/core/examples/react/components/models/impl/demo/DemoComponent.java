@@ -24,7 +24,7 @@ import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
 
-import javax.annotation.Nonnull;
+
 
 
 @Model(adaptables = SlingHttpServletRequest.class, resourceType = DemoComponent.RESOURCE_TYPE, adapters = {ContainerExporter.class,ComponentExporter.class})
@@ -32,9 +32,9 @@ import javax.annotation.Nonnull;
 @Exporter(name = ExporterConstants.SLING_MODEL_EXPORTER_NAME, extensions = ExporterConstants.SLING_MODEL_EXTENSION)
 public class DemoComponent extends ResponsiveGrid {
     
-    static final String RESOURCE_TYPE = "core-components-examples/wcm/react/components/demo/component";
+    static final String RESOURCE_TYPE = "core-components-examples/wcm-react/components/demo/component";
     
-    @Nonnull
+
     @Override
     public String getExportedType() {
         return RESOURCE_TYPE;

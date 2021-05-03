@@ -14,14 +14,14 @@
  *  limitations under the License.
  */
 
+
 const webpack = require('webpack');
+
+process.env.server = 'true';
 const devConfig = require('./webpack.config.dev');
 const getClientEnvironment = require('./env');
-const path = require('path');
-const PnpWebpackPlugin = require('pnp-webpack-plugin');
 
 const paths = require('./paths');
-const aliases = require("./aliases");
 
 const ManifestPlugin = require('webpack-manifest-plugin');
 
@@ -30,19 +30,13 @@ const publicPath = '/';
 const publicUrl = publicPath.slice(0, -1);
 const env = getClientEnvironment(publicUrl);
 
-// Inject mode into stringified environment
-Object.assign(env.stringified['process.env'], {
-    IS_SERVER: true,
-});
-
-
 module.exports = Object.assign({}, devConfig, {
     entry: [paths.appServerIndexJs],
     devtool: 'inline-module-source-map',
     target: 'node',
     output: {
         path: paths.serverDist,
-        filename: 'server.js',
+        filename: 'express.js',
         libraryTarget: 'commonjs2',
     },
     optimization: {},
@@ -54,24 +48,6 @@ module.exports = Object.assign({}, devConfig, {
         cors: true,
         tls: true,
         cluster: true,
-    },
-    resolve: {
-        extensions: ['.ts', '.tsx', '.js'],
-
-        // This allows you to set a fallback for where Webpack should look for modules.
-        // We placed these paths second because we want `node_modules` to "win"
-        // if there are any conflicts. This matches Node resolution mechanism.
-        // https://github.com/facebook/create-react-app/issues/253
-        modules: ['node_modules'].concat(
-            // It is guaranteed to exist because we tweak it in `env.js`
-            process.env.NODE_PATH.split(path.delimiter).filter(Boolean)
-        ),
-        alias: aliases,
-        plugins: [
-            // Adds support for installing with Plug'n'Play, leading to faster installs and adding
-            // guards against forgotten dependencies and such.
-            PnpWebpackPlugin
-        ],
     },
     plugins: [
 

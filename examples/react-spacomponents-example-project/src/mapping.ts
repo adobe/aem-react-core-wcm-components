@@ -68,32 +68,32 @@ type p = MappedComponentProperties;
 
 
 
-MapTo<ContainerProperties & p>('core-components-examples/wcm/react/components/experience-fragment')(Container, {isEmpty: ( props ) => props.cqItemsOrder && props.cqItemsOrder.length > 0});
-MapTo<DownloadV1Model & p>('core-components-examples/wcm/react/components/download')(DownloadV1, {isEmpty: DownloadV1IsEmptyFn});
-MapTo<ListV2Model & p>('core-components-examples/wcm/react/components/list')(ListV2, {isEmpty: ListV2IsEmptyFn});
-MapTo<CoreComponentModel & p>('core-components-examples/wcm/react/components/separator')(SeparatorV1, {isEmpty: SeparatorV1IsEmptyFn});
-MapTo<TextV2Model & p>('core-components-examples/wcm/react/components/text')(TextV2, {isEmpty: TextV2IsEmptyFn});
-MapTo<BreadCrumbV2Model & p>('core-components-examples/wcm/react/components/breadcrumb')(BreadCrumbV2, {isEmpty: BreadCrumbV2IsEmptyFn});
-MapTo<ButtonV1Model & p>('core-components-examples/wcm/react/components/button')(ButtonV1, {isEmpty: ButtonV1IsEmptyFn});
-MapTo<TeaserV1Model & p>('core-components-examples/wcm/react/components/teaser')(TeaserV1, {isEmpty: TeaserV1IsEmptyFn});
-MapTo<ImageV2Model & p>('core-components-examples/wcm/react/components/image')(ImageV2, {isEmpty: ImageV2IsEmptyFn});
-MapTo<TitleV2Model & p>('core-components-examples/wcm/react/components/title')(TitleV2, {isEmpty: TitleV2IsEmptyFn});
+MapTo<ContainerProperties & p>('core-components-examples/wcm-react/components/experience-fragment')(Container, {isEmpty: ( props ) => props.cqItemsOrder && props.cqItemsOrder.length > 0});
+MapTo<DownloadV1Model & p>('core-components-examples/wcm-react/components/download')(DownloadV1, {isEmpty: DownloadV1IsEmptyFn});
+MapTo<ListV2Model & p>('core-components-examples/wcm-react/components/list')(ListV2, {isEmpty: ListV2IsEmptyFn});
+MapTo<CoreComponentModel & p>('core-components-examples/wcm-react/components/separator')(SeparatorV1, {isEmpty: SeparatorV1IsEmptyFn});
+MapTo<TextV2Model & p>('core-components-examples/wcm-react/components/text')(TextV2, {isEmpty: TextV2IsEmptyFn});
+MapTo<BreadCrumbV2Model & p>('core-components-examples/wcm-react/components/breadcrumb')(BreadCrumbV2, {isEmpty: BreadCrumbV2IsEmptyFn});
+MapTo<ButtonV1Model & p>('core-components-examples/wcm-react/components/button')(ButtonV1, {isEmpty: ButtonV1IsEmptyFn});
+MapTo<TeaserV1Model & p>('core-components-examples/wcm-react/components/teaser')(TeaserV1, {isEmpty: TeaserV1IsEmptyFn});
+MapTo<ImageV2Model & p>('core-components-examples/wcm-react/components/image')(ImageV2, {isEmpty: ImageV2IsEmptyFn});
+MapTo<TitleV2Model & p>('core-components-examples/wcm-react/components/title')(TitleV2, {isEmpty: TitleV2IsEmptyFn});
 
 
 
 
-MapTo('core-components-examples/wcm/react/components/navigation')(NavigationV1);
-MapTo('core-components-examples/wcm/react/components/languagenavigation')(LanguageNavigationV1);
+MapTo('core-components-examples/wcm-react/components/navigation')(NavigationV1);
+MapTo('core-components-examples/wcm-react/components/languagenavigation')(LanguageNavigationV1);
 
-MapTo<TabsV1Properties>('core-components-examples/wcm/react/components/tabs')(TabsV1, {isEmpty: TabsV1IsEmptyFn});
-MapTo<AccordionV1Properties>('core-components-examples/wcm/react/components/accordion')(AccordionV1, {isEmpty: AccordionV1IsEmptyFn});
-MapTo<CarouselV1Properties>('core-components-examples/wcm/react/components/carousel')(CarouselV1, {isEmpty: CarouselV1IsEmptyFn});
-MapTo<ContainerV1Properties>('core-components-examples/wcm/react/components/container')(ContainerV1, {isEmpty: ContainerV1IsEmptyFn});
+MapTo<TabsV1Properties>('core-components-examples/wcm-react/components/tabs')(TabsV1, {isEmpty: TabsV1IsEmptyFn});
+MapTo<AccordionV1Properties>('core-components-examples/wcm-react/components/accordion')(AccordionV1, {isEmpty: AccordionV1IsEmptyFn});
+MapTo<CarouselV1Properties>('core-components-examples/wcm-react/components/carousel')(CarouselV1, {isEmpty: CarouselV1IsEmptyFn});
+MapTo<ContainerV1Properties>('core-components-examples/wcm-react/components/container')(ContainerV1, {isEmpty: ContainerV1IsEmptyFn});
 
-MapTo<JsonProperties>('core-components-examples/wcm/react/components/demo/json')(Json);
-MapTo<PropertiesModel>('core-components-examples/wcm/react/components/demo/properties')(Properties);
-MapTo<MarkupProperties>('core-components-examples/wcm/react/components/demo/markup')(Markup);
-MapTo<DemoContainerProperties>('core-components-examples/wcm/react/components/demo')(Demo);
-MapTo<ContainerProperties>('core-components-examples/wcm/react/components/demo/component')(Container);
-MapTo<PageProperties>('core-components-examples/wcm/react/components/page/react-spacomponents-page')(withRoute(ContribPage));
+MapTo<JsonProperties>('core-components-examples/wcm-react/components/demo/json')(Json);
+MapTo<PropertiesModel>('core-components-examples/wcm-react/components/demo/properties')(Properties);
+MapTo<MarkupProperties>('core-components-examples/wcm-react/components/demo/markup')(Markup);
+MapTo<DemoContainerProperties>('core-components-examples/wcm-react/components/demo')(Demo);
+MapTo<ContainerProperties>('core-components-examples/wcm-react/components/demo/component')(Container);
+MapTo<PageProperties>('core-components-examples/wcm-react/components/page/react-spacomponents-page')(withRoute(ContribPage));
 

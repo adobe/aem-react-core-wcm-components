@@ -39,7 +39,7 @@ public class PrintChunkServiceImpl implements PrintChunkService {
     
     private static final Logger log = LoggerFactory.getLogger(PrintChunkServiceImpl.class);
     
-    private static final String PATH_TO_WEBCOMPONENT_CLIENTLIB = "/etc.clientlibs/core-components-examples/wcm/react/clientlibs/react-webcomponents/resources/";
+    private static final String PATH_TO_WEBCOMPONENT_CLIENTLIB = "/etc.clientlibs/core-components-examples/wcm-react/clientlibs/react-webcomponents/resources/";
    
     private static final String SCRIPT_TAG = "\n<script type=\"text/javascript\" src=\"%s\"></script>";
     private static final String CSS_TAG = "\n<link rel=\"stylesheet\" href=\"%s\" type=\"text/css\">";
