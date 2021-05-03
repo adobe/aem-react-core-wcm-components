@@ -71,8 +71,8 @@ class ContainerV1Impl extends Container<ContainerV1Properties,CoreContainerState
             cqItemsOrder:this.props.cqItemsOrder,
             title:"",
             cqPath: this.props.cqPath,
-            isInEditor:false
-         }
+            isInEditor:this.props.isInEditor
+         };
         return (
             <div {...this.coreContainerProps}>
                 <div ref={this.mainDiv}
@@ -80,13 +80,13 @@ class ContainerV1Impl extends Container<ContainerV1Properties,CoreContainerState
                      className={this.props.baseCssClass}>
 
                     {(this.props.layout && this.props.layout === 'simple')  &&
-                              <Container 
-                                componentMapping={this.state.componentMapping}    
+                              <Container
+                                componentMapping={this.state.componentMapping}
                                 cqForceReload={this.props.cqForceReload}
                                 cqPath={this.props.cqPath}
                                 cqItems={this.props.cqItems}
                                 cqItemsOrder={this.props.cqItemsOrder}
-                                isInEditor={false}>
+                                isInEditor={this.props.isInEditor}>
                                     {this.childComponents}
                                 </Container>}
 
