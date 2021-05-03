@@ -16,13 +16,11 @@
 
 package com.adobe.cq.wcm.core.examples.react.components.models.impl.core;
 
-import com.adobe.cq.wcm.core.components.commons.link.Link;
 import com.adobe.cq.wcm.core.components.models.ListItem;
 import com.adobe.cq.wcm.core.components.models.datalayer.ComponentData;
 import com.adobe.cq.wcm.core.examples.react.components.models.RoutedModel;
 import com.adobe.cq.wcm.core.examples.react.components.utils.RouterUtil;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import java.util.Calendar;
 
@@ -38,12 +36,7 @@ public class RoutedListItem implements ListItem, RoutedModel {
     public boolean isRouted() {
        return RouterUtil.isUrlRouted(delegate.getPath());
     }
-    
-    @Override
-    public Link getLink() {
-        return delegate.getLink();
-    }
-    
+
     @Override
     @Deprecated
 

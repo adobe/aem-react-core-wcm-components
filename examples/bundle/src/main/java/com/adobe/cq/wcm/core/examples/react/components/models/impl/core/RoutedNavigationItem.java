@@ -15,7 +15,6 @@
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 package com.adobe.cq.wcm.core.examples.react.components.models.impl.core;
 
-import com.adobe.cq.wcm.core.components.commons.link.Link;
 import com.adobe.cq.wcm.core.components.models.NavigationItem;
 import com.adobe.cq.wcm.core.components.models.datalayer.ComponentData;
 import com.adobe.cq.wcm.core.examples.react.components.models.RoutedModel;
@@ -23,7 +22,6 @@ import com.adobe.cq.wcm.core.examples.react.components.utils.RouterUtil;
 import com.day.cq.wcm.api.Page;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import java.util.Calendar;
 import java.util.List;
@@ -60,11 +58,6 @@ public class RoutedNavigationItem implements NavigationItem, RoutedModel {
     }
     
     @Override
-    public boolean isCurrent() {
-        return delegate.isCurrent();
-    }
-    
-    @Override
     public List<NavigationItem> getChildren() {
         return delegate.getChildren();
     }
@@ -74,10 +67,6 @@ public class RoutedNavigationItem implements NavigationItem, RoutedModel {
         return delegate.getLevel();
     }
     
-    @Override
-    public Link getLink() {
-        return delegate.getLink();
-    }
     
     @Override
     @Deprecated

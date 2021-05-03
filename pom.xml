@@ -67,6 +67,8 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <aem.java.version>8</aem.java.version>
+        <aem.classic.version>6.5.8</aem.classic.version>
+        <aem.cloud.version>2021.4.5226.20210427T070726Z-210325</aem.cloud.version>
         <aem.host>localhost</aem.host>
         <aem.port>4502</aem.port>
         <aem.publish.host>localhost</aem.publish.host>

@@ -37,12 +37,7 @@
 
     <build>
         <plugins>
-        
-<!--            <plugin>-->
-<!--                <groupId>org.apache.felix</groupId>-->
-<!--                <artifactId>maven-bundle-plugin</artifactId>-->
-<!--                <extensions>true</extensions>-->
-<!--            </plugin>-->
+            
             <plugin>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>sling-maven-plugin</artifactId>
@@ -212,6 +207,25 @@ Import-Package: javax.annotation;version=0.0.0,*
         </profile>
         
         <profile>
+            <id>cloud</id>
+            
+            <dependencies>
+                <dependency>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-annotations</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>com.adobe.aem</groupId>
+                    <artifactId>aem-sdk-api</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>com.adobe.cq</groupId>
+                    <artifactId>core.wcm.components.core</artifactId>
+                </dependency>
+            </dependencies>
+        </profile>
+        
+        <profile>
             <id>classic</id>
             
             <dependencies>
@@ -301,7 +315,7 @@ Import-Package: javax.annotation;version=0.0.0,*
             </dependencies>
         </profile>
     </profiles>
-
+    
     <!-- ====================================================================== -->
     <!-- D E P E N D E N C I E S                                                -->
     <!-- ====================================================================== -->
@@ -398,7 +412,13 @@ Import-Package: javax.annotation;version=0.0.0,*
             <dependency>
                 <groupId>com.adobe.aem</groupId>
                 <artifactId>uber-jar</artifactId>
-                <version>6.5.8</version>
+                <version>${aem.classic.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.adobe.aem</groupId>
+                <artifactId>aem-sdk-api</artifactId>
+                <version>${aem.cloud.version}</version>
                 <scope>provided</scope>
             </dependency>
             <!-- Apache Sling Dependencies -->
