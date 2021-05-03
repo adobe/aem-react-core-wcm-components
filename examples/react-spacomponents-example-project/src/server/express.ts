@@ -26,7 +26,7 @@ import {ServerParameters} from "./ServerPayloadModel";
 const exapp = express();
 //Here we are configuring express to use body-parser as middle-ware.
 exapp.use(bodyParser.urlencoded({ extended: false }));
-
+exapp.disable("x-powered-by");
 exapp.use(express.static("dist"));
 //@ts-ignore
 exapp.use(bodyParser.json({limit: '50mb', extended: true}));
