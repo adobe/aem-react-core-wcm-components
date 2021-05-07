@@ -217,6 +217,7 @@ class CarouselV1Impl extends Container<CarouselV1Properties,CarouselV1State> {
         return (
             <div className={this.props.baseCssClass}
                  role="group"
+                 data-panelcontainer="carousel"
                  aria-label={this.props.accessibilityLabel}
                  aria-roledescription="carousel">
                 {
