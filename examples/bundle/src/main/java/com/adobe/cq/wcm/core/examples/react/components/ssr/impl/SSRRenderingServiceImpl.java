@@ -52,9 +52,9 @@ import java.util.Map;
 public class SSRRenderingServiceImpl implements SSRRenderingService {
 
     private static final Logger log = LoggerFactory.getLogger(SSRRenderingServiceImpl.class);
-    
+
     private static final String DEFAULT_HOST = "http://localhost:3233/api/v1/web/guest/aem-core-components-react-spa-0.1.0/ssr";
-    
+
     @Reference
     private HttpClientBuilderFactory clientBuilderFactory;
 
@@ -69,7 +69,7 @@ public class SSRRenderingServiceImpl implements SSRRenderingService {
         host = configuration.host();
         fallbackToCSR = configuration.fallbackToCSR();
         isEnabled = configuration.enabled();
-        
+
         for (String rawRequestHeaderField: configuration.additionalRequestHeaders()) {
             String[] requestHeaderArray = rawRequestHeaderField.trim().split("=");
             if (requestHeaderArray.length == 2) {
@@ -104,11 +104,11 @@ public class SSRRenderingServiceImpl implements SSRRenderingService {
             final String payload = getModelJSON( rootPage);
             StringEntity requestData = new StringEntity(payload, ContentType.APPLICATION_JSON);
             postMethod.setEntity(requestData);
-    
+
             for (Map.Entry<String, String> header : additionalRequestHeaders.entrySet()) {
                 postMethod.setHeader(header.getKey(), header.getValue());
             }
-            
+
             CloseableHttpResponse preRenderedResponse = client.execute(postMethod);
             return parseOutput(preRenderedResponse);
 
@@ -138,7 +138,7 @@ public class SSRRenderingServiceImpl implements SSRRenderingService {
 
         ObjectMapper mapper = new ObjectMapper();
         SSRResponsePayload responseParsed = mapper.readValue(responseBody, SSRResponsePayload.class);
-    
+
         int statusCode = preRenderedResponse.getStatusLine().getStatusCode();
         return new SSRResponse(statusCode,responseParsed);
     }
@@ -160,10 +160,10 @@ public class SSRRenderingServiceImpl implements SSRRenderingService {
                 type = AttributeType.STRING
         )
         String host() default DEFAULT_HOST;
-    
+
         @AttributeDefinition(name = "Additional request headers", description = "Additional headers to be added to the request sent to the remote endpoint. Pattern: key=value", defaultValue = "")
         String[] additionalRequestHeaders();
-        
+
         @AttributeDefinition(
                 name = "Fall back to client side configuration",
                 type = AttributeType.BOOLEAN

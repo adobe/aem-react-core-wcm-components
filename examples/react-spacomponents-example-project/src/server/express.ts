@@ -32,10 +32,14 @@ exapp.use(express.static("dist"));
 exapp.use(bodyParser.json({limit: '50mb', extended: true}));
 exapp.use(bodyParser.urlencoded({limit: '50mb',extended: true}));
 
-exapp.post('/api/v1/web/guest/aem-core-components-react-spa-0.1.0/ssr/*', (req, res, next) => {
+const pathPrefix = '/api/v1/web/guest/aem-core-components-react-spa-0.1.0/ssr/'
+
+exapp.post(pathPrefix + '*', (req, res, next) => {
+
+    const pagePath = req.path.replace(pathPrefix, '').replace('.html', '');
 
     const parameters:ServerParameters = {
-        pagePath: req.path.replace('.html', ''),
+        pagePath: pagePath,
         pageRoot: req.header('page-model-root-url') || '',
         wcmmode: req.header('wcm-mode') || '',
         data: req.body as PageModel

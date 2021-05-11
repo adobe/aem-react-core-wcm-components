@@ -24,14 +24,16 @@ import {
     TabsV1IsEmptyFn
 } from "@adobe/aem-core-components-react-spa/dist/isEmptyFunctions";
 
-import withAsyncImport from "./utils/withAsyncImport";
+import withRoute from '../utils/RouteHelper';
+import ContribPage from '../components/Page';
+import Demo, {DemoContainerProperties} from '../components/demo/Demo';
+import Json, {JsonProperties} from '../components/demo/Json';
+import Markup, {MarkupProperties} from "../components/demo/Markup";
+import Properties, {PropertiesModel} from "../components/demo/Properties";
 
-import withRoute from './utils/RouteHelper';
-import ContribPage from './components/Page';
-import Demo, {DemoContainerProperties} from './components/demo/Demo';
-import Json, {JsonProperties} from './components/demo/Json';
-import Markup, {MarkupProperties} from "./components/demo/Markup";
-import Properties, {PropertiesModel} from "./components/demo/Properties";
+import {
+    TabsV1, CarouselV1, AccordionV1, ContainerV1
+} from '@adobe/aem-core-components-react-spa';
 import {
     DownloadV1Model,
     ListV2Model,
@@ -41,30 +43,24 @@ import {
     ButtonV1Model,
     TeaserV1Model,
     ImageV2Model,
-    TitleV2Model
+    TitleV2Model,
+    TitleV2,
+    BreadCrumbV2,
+    TextV2,
+    NavigationV1,
+    ButtonV1,
+    ImageV2,
+    LanguageNavigationV1,
+    TeaserV1,
+    DownloadV1,
+    SeparatorV1,
+    ListV2
 } from '@adobe/aem-core-components-react-base';
 
 import {TabsV1Properties, AccordionV1Properties, CarouselV1Properties, ContainerV1Properties} from '@adobe/aem-core-components-react-spa';
 
-
-const TitleV2 = withAsyncImport(() => import(/* webpackChunkName: "TitleV2" */ '@adobe/aem-core-components-react-base/dist/authoring/title/v2/TitleV2'));
-const BreadCrumbV2 = withAsyncImport(() => import(/* webpackChunkName: "BreadCrumbV2" */ '@adobe/aem-core-components-react-base/dist/layout/breadcrumb/v2/BreadCrumbV2'));
-const TextV2 = withAsyncImport(() => import(/* webpackChunkName: "TextV2" */ '@adobe/aem-core-components-react-base/dist/authoring/text/v2/TextV2'));
-const NavigationV1 = withAsyncImport(() => import(/* webpackChunkName: "NavigationV1" */ '@adobe/aem-core-components-react-base/dist/layout/navigation/v1/NavigationV1'));
-const ButtonV1 = withAsyncImport(() => import(/* webpackChunkName: "ButtonV1" */ '@adobe/aem-core-components-react-base/dist/authoring/button/v1/ButtonV1'));
-const ImageV2 = withAsyncImport(() => import(/* webpackChunkName: "ImageV2" */ '@adobe/aem-core-components-react-base/dist/authoring/image/v2/ImageV2'));
-const LanguageNavigationV1 = withAsyncImport(() => import(/* webpackChunkName: "LanguageNavigationV1" */ '@adobe/aem-core-components-react-base/dist/layout/language-navigation/v1/LanguageNavigationV1'));
-const TeaserV1 = withAsyncImport(() => import(/* webpackChunkName: "TeaserV1" */ '@adobe/aem-core-components-react-base/dist/authoring/teaser/v1/TeaserV1'));
-const DownloadV1 = withAsyncImport(() => import(/* webpackChunkName: "DownloadV1" */ '@adobe/aem-core-components-react-base/dist/authoring/download/v1/DownloadV1'));
-const SeparatorV1 = withAsyncImport(() => import(/* webpackChunkName: "SeparatorV1" */ '@adobe/aem-core-components-react-base/dist/authoring/separator/v1/SeparatorV1'));
-const ListV2 = withAsyncImport(() => import(/* webpackChunkName: "ListV2" */ '@adobe/aem-core-components-react-base/dist/authoring/list/v2/ListV2'));
-
-const ContainerV1 = withAsyncImport(() => import(/* webpackChunkName: "ContainerV1" */ '@adobe/aem-core-components-react-spa/dist/container/container/v1/ContainerV1'));
-const TabsV1 = withAsyncImport(() => import(/* webpackChunkName: "TabsV1" */ '@adobe/aem-core-components-react-spa/dist/container/tabs/v1/TabsV1'));
-const CarouselV1 = withAsyncImport(() => import(/* webpackChunkName: "CarouselV1" */ '@adobe/aem-core-components-react-spa/dist/container/carousel/v1/CarouselV1'));
-const AccordionV1 = withAsyncImport(() => import(/* webpackChunkName: "AccordionV1" */ '@adobe/aem-core-components-react-spa/dist/container/accordion/v1/AccordionV1'));
-
 type p = MappedComponentProperties;
+
 
 
 MapTo<ContainerProperties & p>('core-components-examples/wcm-react/components/experience-fragment')(Container, {isEmpty: ( props ) => props.cqItemsOrder && props.cqItemsOrder.length > 0});
@@ -81,8 +77,8 @@ MapTo<TitleV2Model & p>('core-components-examples/wcm-react/components/title')(T
 
 
 
-MapTo('core-components-examples/wcm-react/components/navigation')(NavigationV1);
-MapTo('core-components-examples/wcm-react/components/languagenavigation')(LanguageNavigationV1);
+MapTo<any>('core-components-examples/wcm-react/components/navigation')(NavigationV1);
+MapTo<any>('core-components-examples/wcm-react/components/languagenavigation')(LanguageNavigationV1);
 
 MapTo<TabsV1Properties>('core-components-examples/wcm-react/components/tabs')(TabsV1, {isEmpty: TabsV1IsEmptyFn});
 MapTo<AccordionV1Properties>('core-components-examples/wcm-react/components/accordion')(AccordionV1, {isEmpty: AccordionV1IsEmptyFn});
@@ -94,5 +90,5 @@ MapTo<PropertiesModel>('core-components-examples/wcm-react/components/demo/prope
 MapTo<MarkupProperties>('core-components-examples/wcm-react/components/demo/markup')(Markup);
 MapTo<DemoContainerProperties>('core-components-examples/wcm-react/components/demo')(Demo);
 MapTo<ContainerProperties>('core-components-examples/wcm-react/components/demo/component')(Container);
-MapTo<PageProperties>('core-components-examples/wcm-react/components/page/react-spacomponents-page')(withRoute(ContribPage));
+MapTo<PageProperties>('core-components-examples/wcm-react/components/page/react-spacomponents-page')(ContribPage);
 
