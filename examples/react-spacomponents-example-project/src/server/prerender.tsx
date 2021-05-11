@@ -24,7 +24,7 @@ import {ModelClient, ModelManager} from '@adobe/aem-spa-page-model-manager';
 import {webpackExistingChunks} from './constants/webpackBuildStats';
 import {ReportChunks} from "react-universal-component";
 import {clearChunks} from 'react-universal-component/server';
-import "../mapping";
+import "./servermapping";
 
 import { ServerParameters } from "./ServerPayloadModel";
 
