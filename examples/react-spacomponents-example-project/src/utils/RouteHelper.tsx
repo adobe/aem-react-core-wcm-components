@@ -37,8 +37,10 @@ const withRoute = <P extends MappedComponentProperties>(WrappedComponent:Compone
                 return <WrappedComponent {...this.props}/>;
             }
 
+            extension = extension || 'html';
+
             // Context path + route path + extension
-            return <Route key={ routePath } path={ '(.*)' + routePath } render={ (routeProps:unknown) => {
+            return <Route key={ routePath } path={ '(.*)' + routePath  + '.' + extension  } render={ (routeProps:unknown) => {
                 return <WrappedComponent {...this.props} {...routeProps}/>;
             } } />
         }
