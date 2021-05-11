@@ -19,7 +19,7 @@
     {
       "groupName": "external fixes",
       "updateTypes": ["patch", "pin", "digest", "minor"],
-      "automerge": true,
+      "automerge": false,
       "schedule": ["after 1pm on Monday"],
       "packagePatterns": ["^.+"],
       "excludePackagePatterns": ["^@adobe/"]

@@ -68,7 +68,7 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <aem.java.version>8</aem.java.version>
         <aem.classic.version>6.5.8</aem.classic.version>
-        <aem.cloud.version>2021.4.5226.20210427T070726Z-210325</aem.cloud.version>
+        <aem.cloud.version>2021.5.5257.20210505T101930Z-210429</aem.cloud.version>
         <aem.host>localhost</aem.host>
         <aem.port>4502</aem.port>
         <aem.publish.host>localhost</aem.publish.host>
@@ -78,7 +78,7 @@
         <sling.password>admin</sling.password>
         <vault.user>admin</vault.user>
         <vault.password>admin</vault.password>
-        <jacoco.version>0.8.6</jacoco.version>
+        <jacoco.version>0.8.7</jacoco.version>
         <node.version>v10.13.0</node.version>
         <npm.version>6.4.1</npm.version>
         <bnd.version>5.3.0</bnd.version>
