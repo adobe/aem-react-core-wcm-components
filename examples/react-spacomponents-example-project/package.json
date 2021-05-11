@@ -4,6 +4,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=development npm-run-all build-css build-js",
     "build-js": "node scripts/build.js && node scripts/build-express.js",
+    "build-adobeio": "cross-env NODE_ENV=development node scripts/build-adobeio.js",
     "build-css": "node-sass-chokidar --source-map-embed --include-path ./src --include-path ./node_modules src/ -o src/ --output-style compressed",
     "watch-css": "node-sass-chokidar --source-map-embed --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive --output-style expanded",
     "start-css": "npm-run-all -s build-css watch-css",
