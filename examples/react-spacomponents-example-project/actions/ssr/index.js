@@ -6,7 +6,7 @@ async function main(args) {
 
     const refinedArgs = {
         pageRoot: args.__ow_headers['page-model-root-url'],
-        pagePath: args.__ow_path,
+        pagePath: args.__ow_path.replace('//', '/').replace('.html', ''),
         wcmmode: args.__ow_headers['wcm-mode'],
         data: args
     }

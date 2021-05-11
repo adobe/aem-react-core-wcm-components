@@ -67,7 +67,6 @@ const AccordionV1 = withAsyncImport(() => import(/* webpackChunkName: "Accordion
 type p = MappedComponentProperties;
 
 
-
 MapTo<ContainerProperties & p>('core-components-examples/wcm-react/components/experience-fragment')(Container, {isEmpty: ( props ) => props.cqItemsOrder && props.cqItemsOrder.length > 0});
 MapTo<DownloadV1Model & p>('core-components-examples/wcm-react/components/download')(DownloadV1, {isEmpty: DownloadV1IsEmptyFn});
 MapTo<ListV2Model & p>('core-components-examples/wcm-react/components/list')(ListV2, {isEmpty: ListV2IsEmptyFn});

@@ -144,16 +144,11 @@ module.exports = {
             // Disable require.ensure as it's not a standard language feature.
             { parser: { requireEnsure: false } },
 
-            {
-                test: /\.(js|mjs|jsx|ts|tsx)$/,
-                use: ['source-map-loader'],
-                enforce: 'pre',
-            },
             // First, run the linter.
             // It's important to do this before Babel processes the JS.
             {
                 test: /\.(js|mjs|jsx)$/,
-                enforce: 'post',
+                enforce: 'pre',
                 use: [
                     {
                         options: {
@@ -167,16 +162,49 @@ module.exports = {
                 include: paths.appSrc,
             },
             {
+                test: /\.ts$|\.tsx$/,
+                exclude: /(node_modules|dist)/,
+                loader:  require.resolve('ts-loader'),
+                enforce: 'pre',
+            },
+            {
+                test: /\.(ts|tsx|js|mjs|jsx)$/,
+                include: paths.appSrc,
+                enforce: 'post',
+                loader: require.resolve('babel-loader'),
+                options: {
+                    customize: require.resolve(
+                        'babel-preset-react-app/webpack-overrides'
+                    ),
+
+                    presets: [
+                        require.resolve("@babel/preset-typescript")
+                    ],
+                    plugins: [
+                        ['@babel/plugin-proposal-class-properties'],
+                        ['@babel/plugin-proposal-object-rest-spread'],
+                        [
+                            require.resolve('babel-plugin-named-asset-import'),
+                            {
+                                loaderMap: {
+                                    svg: {
+                                        ReactComponent: '@svgr/webpack?-prettier,-svgo![path]',
+                                    },
+                                },
+                            }
+                        ],
+                        ['universal-import'],
+                    ],
+
+                    cacheDirectory: true,
+                    cacheCompression: false,
+                },
+            },
+            {
                 // "oneOf" will traverse all following loaders until one will
                 // match the requirements. When no loader matches it will fall
                 // back to the "file" loader at the end of the loader list.
                 oneOf: [
-                    {
-                        test: /\.ts$|\.tsx$/,
-                        exclude: /(node_modules|dist)/,
-                        loader:  require.resolve('ts-loader'),
-                        enforce: 'post',
-                    },
                     // inline SVG assets
                     {
                         test: /\.svg/,
@@ -217,7 +245,7 @@ module.exports = {
                             ],
                             cacheDirectory: true,
                             cacheCompression: false,
-                            sourceMaps: true,
+                            sourceMaps: false,
                         },
                     },
 
