@@ -21,6 +21,7 @@
     "postversion": "git push origin && git push origin --tags",
     "tmprelease": "node release.js",
     
+    
     "semantic-release": "semantic-release"
   },
   "description": "AEM Spa editor - React Implementation for the AEM Core Components",
