@@ -1,8 +1,8 @@
-name: Release Base Components
+name: Release Spa Components
 on: workflow_dispatch
 defaults:
   run:
-    working-directory: ./react-base-components
+    working-directory: ./react-spa-components
 jobs:
   release:
     name: Release and publish module
