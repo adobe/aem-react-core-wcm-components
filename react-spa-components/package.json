@@ -13,15 +13,8 @@
     "build": "npm run clean && webpack --config config/webpack.config.core.js  && webpack --config config/webpack.config.lib.js  &&   tsc -p src/tsconfig.types.json",
     "build:production": "cross-env NODE_ENV=production npm run clean && webpack  --config config/webpack.config.core.js --mode=production && webpack --config config/webpack.config.lib.js  --mode=production &&  tsc -p src/tsconfig.types.json",
     "build:types": "npm run clean && tsc -p src/tsconfig.types.json",
-    "docs": "jsdoc -c ./jsdoc_conf.json && doxdox \"src/**/*.+(js|jsx)\" --layout templates/DOCUMENTATION.hbs --output DOCUMENTATION.md",
-    "readme": "node node_modules/markdown-include/bin/cli.js markdown-include.config.json",
-    "docs-readme": "npm run docs && npm run readme",
-    "preversion": "npm run test && npm run build:production && npm run docs-readme",
-    "version": "npm run docs-readme && git add DOCUMENTATION.md README.md package.json",
+    "preversion": "npm run test && npm run build:production",
     "postversion": "git push origin && git push origin --tags",
-    "tmprelease": "node release.js",
-    
-    
     "semantic-release": "semantic-release"
   },
   "description": "AEM Spa editor - React Implementation for the AEM Core Components",
